@@ -1,0 +1,98 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Provision Fee Detail</span>
+  </div>
+  <!-- <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div> -->
+</div>
+<div class="popupBody">
+  <div class="row bodyContainer fieldContainer customAccordianMain paddingBottom25">
+    <div class="col-md-12 noPadding">
+      <div class="customTop15" [formGroup]="this.PROPOSALPROVISIONFEEDETAIL">
+        <div class="row noMargin ">
+          <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Min. Provision Fee % (Upfront)'"
+              [Label]="'Min. Provision Fee % (Upfront)'" formControlName="MINPROVISIONFEEPERCENTAGE"
+              [Name]="'MINPROVISIONFEEPERCENTAGE'" [Component]="'Asset'" [isControlDisable]=true>
+            </nfs-currency>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Min. Provision Fee Amount (Upfront)'"
+              [Label]="'Min. Provision Fee Amount (Upfront)'" formControlName="MINPROVISIONFEE"
+              [Name]="'MINPROVISIONFEE'" [Component]="'Asset'" [isControlDisable]=true>
+            </nfs-currency>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Max. Provision Fee % (Upfront)'"
+              [Label]="'Max. Provision Fee % (Upfront)'" formControlName="MAXPROVISIONFEEPERCENTAGE"
+              [Name]="'MAXPROVISIONFEEPERCENTAGE'" [Component]="'Asset'" [isControlDisable]=true>
+            </nfs-currency>
+          </div>
+          <div class="col-md-3 top15 iconPopup">
+            <nfs-currency [Placeholder]="'Provision Fee Amount'" [Label]="'Provision Fee Amount'"
+              formControlName="TOTALPROVISIONFEE" [Name]="'TOTALPROVISIONFEE'" [Component]="'Assets'"
+              (Change)="this.totalProvisionFeeChange($event)">
+            </nfs-currency>
+            <div class="iconPopupMain" [ngClass]="{'disabledDiv': !ProvisionTaxEnable}">
+              <p (click)="openProvisionFeeAmount()">More</p>
+            </div>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Provision Fee %'" [Label]="'Provision Fee %'"
+              [maxNumberLength]="2" formControlName="PROVISIONFEEPERCENTAGE" [Name]="'PROVISIONFEEPERCENTAGE'"
+              [Component]="'Asset'" (Change)="this.totalProvisionFeePercentageChange($event)">
+            </nfs-currency>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Provision Fee (Financed)'"
+              [Label]="'Provision Fee (Financed)'" formControlName="PROVISIONFEEFINANCED"
+              [Name]="'PROVISIONFEEFINANCED'" [Component]="'Asset'"
+              (Change)="this.provisionFeeFinanceAmountChange($event)">
+            </nfs-currency>
+          </div>
+          <div class="col-md-3 top15 iconPopup">
+            <nfs-currency [maxLength]="100" [isControlDisable]="true" [Placeholder]="'Provision Fee Commission'"
+              [Label]="'Provision Fee Commission'" formControlName="PROVISIONFEECOMMISSION"
+              [Name]="'PROVISIONFEECOMMISSION'" [Component]="'Asset'">
+            </nfs-currency>
+            <div class="iconPopupMain" [ngClass]="{'disabledDiv': true}">
+              <p (click)="openProvisionFeeCommission()">More</p>
+            </div>
+          </div>
+        </div>
+        <div class="row noMargin ">
+          <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Provision Fee (Upfront)'"
+              [Label]="'Provision Fee (Upfront)'" formControlName="PROVISIONFEEUPFRONT" [Name]="'PROVISIONFEEUPFRONT'"
+              [Component]="'Asset'" (Change)="this.provisionFeeUpfrontAmountChange($event)">
+            </nfs-currency>
+          </div>
+          <div class="col-md-3">
+            <section class="example-section" style="margin-top: 10px;">
+              <nfs-checkbox class="example-margin" formControlName="RECEIVEDBYDEALERIND" [Name]="'RECEIVEDBYDEALERIND'"
+                [Label]="'Received By Dealer'" [isControlDisable]="this.isCF" (Change)="receivedByDealerChange($event)">
+              </nfs-checkbox>
+              <!-- <mat-checkbox formControlName="RECEIVEDBYDEALERIND" class="example-margin" (change)="receivedByDealerChange($event)" [disabled]="this.isCF">Received By Dealer</mat-checkbox> -->
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-12 searchBtns topMargin20">
+        <! --    <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false"
+                [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+            </nfs-button>
+        </div> -->
+  </div>
+</div>
+<div class="row popupFooter">
+  <div mat-dialog-actions class="d-flex justify-content-end">
+    <div class="">
+      <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [alwaysEnable]="true"
+        [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnOk_click()"></nfs-button>
+    </div>
+  </div>
+</div>

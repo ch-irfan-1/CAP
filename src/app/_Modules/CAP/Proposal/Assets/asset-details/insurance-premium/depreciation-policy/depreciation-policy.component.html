@@ -1,0 +1,20 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Chart Depreciation Policy</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain">
+        <div class="col-md-12 tableMain rentalDetail customTop15">
+            <nfs-static-grid [inputArr]="depPolicyData" [isRadioBtnRequired]="false" [IsActionRequired]="false"
+             [columns]="columns" [Labels]="Labels"></nfs-static-grid>
+    
+        </div>
+    </div>
+</div>
+

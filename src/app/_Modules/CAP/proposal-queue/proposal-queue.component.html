@@ -1,0 +1,143 @@
+<ng-container>
+  <div class="main-content">
+    <div class="mainContainer" [formGroup]="QueueSearchForm">
+      <div class="workQueueTopMain row" style="height: 50px !important;">
+        <div class="col-md-6">
+          <h4>Total Application ({{this.dataSourcelength}})</h4>
+        </div>
+        <div class="col-md-6 row justify-content-end noPadding">
+          <div class="col-md-4 fieldContainer"
+            style="margin-top: -30px;margin-right: 22px;padding-bottom: 0;">
+            <nfs-dropdown class="userLabel" [Label]="'User Name: '" [controlPlaceholder]="'All'" [Ismultiselect]="false"
+              [EnableFilter]="true" [TextForUnselectOpt]="'All'" [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="USERID" [Name]="'USERID'"
+              [DataArray]="this.AllSystemUsers" (selectionChange)="SelectedUserChanged($event)" [isControlDisable]="this.isUserNameDisabled">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-4 row justify-content-end noPadding">
+            <span class="createAppBtn">
+              <nfs-button [text]="'Create Application'" [color]="'primary'"
+                [iconPng]="'assets/Images/createAppWhite.png'" [matButton]="false" [matRaisedButton]="false"
+                [matRaisedButtonIcon]="true" (onBtnClick)="btnCreateApplication()">
+              </nfs-button>
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div class="workQueueSearchMain row fieldContainer">
+        <h5>Search Criteria</h5>
+        <div class="col-md-2 top15 searchField customTop8" style="height: 40px;">
+          <nfs-textbox name="ApplicationNumber" maxlength="100" [Placeholder]="'Search Application Number'"
+            formControlName="ApplicationNumber" [Label]="'Search Application Number'" [Name]="'ApplicationNumber'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 customTop8" style="height: 40px;">
+          <nfs-textbox name="ApplicantName" maxlength="100" [Placeholder]="'Applicant Name'"
+            formControlName="ApplicantName" [Label]="'Applicant Name'" [Name]="'ApplicantName'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 customTop8">
+          <nfs-dropdown [Name]="'DateBy'" [Label]="'Date By*'" [controlPlaceholder]="'Date By'" [Ismultiselect]="false"
+            [FilterControlPlaceholder]="'Find Some Values...'" (selectionChange)="openMultiSelectDates($event)"
+            formControlName="DateBy" [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllDateBy">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 customTop8" style="height: 40px;" >
+          <!-- [ngClass]="{'disabledDiv': isDatePickerDisabled}"> -->
+          <nfs-datepicker [isControlDisable]="isDatePickerDisabled" matInput formControlName="FromDate" name="FROMDTE" [Max]="this.maxDate"
+            [Placeholder]="'From Date'" [Label]="'From Date'" (Change)="onFromDateChanged()">
+          </nfs-datepicker>
+        </div>
+        <div class="col-md-2 top15 customTop8" style="height: 40px;">
+          <!-- [ngClass]="{'disabledDiv': isDatePickerDisabled}"> -->
+          <nfs-datepicker matInput [isControlDisable]="isDatePickerDisabled" formControlName="ToDate" name="TODTE" [Max]="this.maxToDate"
+            [Min]="QueueSearchForm.controls.FromDate.value" [Placeholder]="'To Date'" [Label]="'To Date'">
+          </nfs-datepicker>
+        </div>
+        <div class="col-md-2 top15 customTop8">
+          <nfs-dropdown formControlName="STATUS" [Name]="'STATUS'" [Label]="'Status'" [controlPlaceholder]="'Status'"
+            [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllStatuses">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5">
+          <nfs-dropdown formControlName="INTRODUCER" [Name]="'INTRODUCER'" [Label]="'Introducer'"
+            [controlPlaceholder]="'Introducer'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.AllIntroducers">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5">
+          <nfs-dropdown formControlName="APPLICANTTYPE" [Name]="'APPLICANTTYPE'" [Label]="'Applicant Type'"
+            [controlPlaceholder]="'Applicant Type'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.AllProposalTypes">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5">
+          <nfs-dropdown formControlName="FINANCIALCAMPAIGN" [Name]="'FINANCIALCAMPAIGN'" [Label]="'Financial Campaign'"
+            [controlPlaceholder]="'Financial Campaign'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.AllFinancialProducts">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5">
+          <nfs-dropdown formControlName="FINANCIALCAMPAIGNGROUP" [Name]="'FINANCIALCAMPAIGNGROUP'"
+            [Label]="'Financial Campaign Group'" [controlPlaceholder]="'Financial Campaign Group'"
+            [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllFinancialGroups">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5">
+          <nfs-dropdown formControlName="EApproval" [Name]="'EApproval'" [Label]="'E-Approval'"
+            [controlPlaceholder]="'E-Approval'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.EApproval">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 paddingLeftRight8">
+          <section class="example-section" style="margin-top: 4px;">
+            <nfs-checkbox class="example-margin" formControlName="CONSENTTOSHARE" [Name]="'CONSENTTOSHARE'"
+              [Label]="'mPOS Applications'">
+            </nfs-checkbox>
+            <!-- <mat-checkbox class="example-margin" formControlName="CONSENTTOSHARE">mPOS Applications
+          </mat-checkbox> -->
+        </section>
+      </div>
+      <div class="col-md-2 top15 iconPopup top5">
+        <nfs-textbox class="customWrap" [Placeholder]="'MVO Survey'" [Label]="'MVO Survey'" formControlName="MVONames"
+          [isControlDisable]=true [Name]="'MVONames'">
+        </nfs-textbox>
+        <div class="iconPopupMain">
+          <p (click)="openMVOSearch()">More</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 row justify-content-end searchBtns" style="margin-top: 1rem !important;">
+        <nfs-button [text]="'Search'" [disabled]="false" [matButton]="false" [matRaisedButton]="true"
+          [matRaisedButtonIcon]="false" [iconPngHover]="'assets/Images/searchWhite2.png'"
+          [iconPng]="'assets/Images/searchWhite2.png'" [color]="'primary'" (onBtnClick)="btnSearch()">
+        </nfs-button>
+        <nfs-button [text]="'Reset'" [disabled]="false" [matButton]="false" [matRaisedButton]="true"
+          [matRaisedButtonIcon]="false" [iconPngHover]="'assets/Images/reset.png'"
+          [iconPng]="'assets/Images/reset.png'" [color]="'primary'" (onBtnClick)="btnReset()" class="resetQueue">
+        </nfs-button>
+      </div>
+    </div>
+    <div class="row workQueueTableMain rentalDetail">
+      @if (resizeResetGrid) {
+        <nfs-static-grid [inputArr]="ProposalQueueDataset" [isRadioBtnRequired]="false" [columns]="columns"
+          [checkboxPropertyName]="'CHECKBOX'" [pipes]="pipes" [contextMenu]="ContextMenu"
+          (SelectionChange)="ProposalQueueOutput($event)" [isWorkQueue]="true" [WorkQueueSrc]="'CAP'" [Labels]="Labels"
+          [DisableSorting]="false" [IsActionRequired]=false [rightClickContextMenuEnable]=true
+          [showTooTip]="EnableTooltip" [IsResizable]="true" [IsActionRequired]="false">
+        </nfs-static-grid>
+      }
+      <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="PageSelectionChanged($event)">
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+</ng-container>

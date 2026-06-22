@@ -1,0 +1,12 @@
+<div>
+  <mat-form-field appearance="outline" class="fill-container" [ngClass]="{'mandatory': IsRequiredField === true}">
+    <mat-label [matTooltip]="Label">{{Label}}</mat-label>
+    <textarea [readonly]="isControlDisable" matInput [formControl]="TextAreaControl" maxlength="{{maxLength}}"
+      placeholder="{{Placeholder}}" matInput cdkTextareaAutosize
+      cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="4" [tabIndex]="SetTabIndex()"></textarea>
+    @if (IsFieldValid()) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>

@@ -1,0 +1,122 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <h3 mat-dialog-title>Exposure Search</h3>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true" (click) = "close()">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="">
+        <div class="TabInnerMain">
+            <mat-tab-group animationDuration="0ms" dynamicHeight (selectedIndexChange)="IndexChange($event)">
+                <mat-tab label="Application Exposure">
+                    <ng-template matTabContent>
+                        <div class="tableMain rentalDetail">
+                            <div class="applicationExpScroll">
+                                <nfs-static-grid [inputArr]="this.PRPLEXPR" [isRadioBtnRequired]="false"
+                                    [IsActionRequired]="true" [ActionLabel]="'Load Applicant'"
+                                    [IsDeleteRequired]="false" [columns]="appEXColumns" [Mode]="Mode"
+                                    [Labels]="appEXLabels" (SelectionChange)="LoadPOSExposureData($event)" [pipes]="ApplicationExposurePipes">
+                                </nfs-static-grid>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-tab>
+                <mat-tab label="Bad Customer">
+                    <ng-template matTabContent>
+                        <mat-accordion class="top15">
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Internal Bad Customer
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="tableMain rentalDetail top10" style="margin-top: 22px !important;">
+                                    <div class="internalBadScroll">
+                                        <nfs-static-grid [inputArr]="this.PRPLINTBLKCUSTEXP"
+                                            [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                                            [ActionLabel]="'Load Applicant'" [IsDeleteRequired]="false"
+                                            [columns]="internalBadCustColumns" [Mode]="Mode"
+                                            [Labels]="internalBadCustLabels" [pipes]="internalBadCustpips">
+                                        </nfs-static-grid>
+                                    </div>
+
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        <mat-accordion class="top10">
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Internal Bad Customer Solo's
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="tableMain rentalDetail top22" style="margin-top: 22px !important;">
+                                    <div class="internalBadScroll">
+                                        <nfs-static-grid [inputArr]="this.PRPLINTBLKCUSTSOLO"
+                                            [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                                            [ActionLabel]="'Load Applicant'" [IsDeleteRequired]="false"
+                                            [columns]="internalBadCustSoloColumns" [Mode]="Mode"
+                                            [Labels]="internalBadCustSoloLabels" [pipes]="internalBadCustSolopips">
+                                        </nfs-static-grid>
+                                    </div>
+
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        <mat-accordion class="top10 top10">
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        External Bad Customer
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="tableMain top10 rentalDetail" style="margin-top: 22px !important;">
+                                    <nfs-static-grid [inputArr]="this.PRPLBLACKLISTEXPInfo" [isRadioBtnRequired]="false"
+                                        [IsActionRequired]="false" [ActionLabel]="'Load Applicant'"
+                                        [IsDeleteRequired]="false" [columns]="externalBadCustColumns" [Mode]="Mode"
+                                        [Labels]="externalBadCustLabels" [pipes]="externalBadCustpips">
+                                    </nfs-static-grid>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        <mat-accordion class="top10">
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        OJK Bad Customer
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="tableMain top10 rentalDetail" style="margin-top: 22px !important;">
+                                    <nfs-static-grid [inputArr]="this.IOJKBADCUSTInfo" [isRadioBtnRequired]="false"
+                                        [IsActionRequired]="false" [ActionLabel]="'Load Applicant'"
+                                        [IsDeleteRequired]="false" [columns]="ojkBadCustColumns" [Mode]="Mode"
+                                        [Labels]="ojkBadCustLabels" [pipes]="ojkBadCustpips">
+                                    </nfs-static-grid>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </ng-template>
+                </mat-tab>
+                <mat-tab label="Contract Exposure">
+                    <ng-template matTabContent>
+                        <div class="tableMain top10 rentalDetail">
+                            <div class="applicationContractScroll">
+                          <nfs-static-grid [inputArr]="this.CONTEXPR" [isRadioBtnRequired]="false" [columns]="contEXColumns"
+                            (ItemRemoved)="childOutput($event)" [IsActionRequired]="true" [ActionLabel]="'Load Applicant'"
+                            [IsDeleteRequired]="false" (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="contEXLabels"
+                            (SelectionChange)="LoadCMSExposureData($event)" [pipes]="Pipes">
+                          </nfs-static-grid>
+                        </div>
+
+
+                        </div>
+                    </ng-template>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

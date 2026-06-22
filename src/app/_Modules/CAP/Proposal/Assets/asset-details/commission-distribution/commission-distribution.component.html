@@ -1,0 +1,298 @@
+<!-- <div class="row popupHeader">
+<div class="col-md-11">
+  <span class="popupMainHeading">JP1-JP2 Recipient Commission Distribution</span>
+</div>
+<div class="col-md-1">
+  <button mat-icon-button class="close-button">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+</div>
+</div> -->
+<div class="popupBody customPopupBody" style="margin-top: 15px !important;">
+  <div class="customAccordianMain">
+    <div class="row">
+      <div class="row fieldContainer noMargin customColor" [formGroup]="schemeTemp">
+        <h3 style="margin-bottom: 0px !important;">JP1-JP2 Recipient Commission Distribution</h3>
+        <div class="col-md-2 top15">
+          <nfs-textbox [maxLength]="100" [Placeholder]="'Commission Type'" [Label]="'Commission Type'"
+            formControlName="COMMISSIONTYPECDE" [isControlDisable]=true>
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-currency [maxLength]="100" [Placeholder]="'JP1 Commission Amount'" [Label]="'JP1 Commission Amount'"
+            formControlName="JP1COMMISSIONAMT" [isControlDisable]=true>
+          </nfs-currency>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-currency [maxLength]="100" [Placeholder]="'JP2 Commission Amount'" [Label]="'JP2 Commission Amount'"
+            formControlName="JP2COMMISSIONAMT" [isControlDisable]=true>
+          </nfs-currency>
+        </div>
+      </div>
+      <div class="row noMargin " style="width: 100%;">
+        <div class="jp1-jp2Scroll tableMainStanderdInsurance jp1-jp2Grid">
+          <div class="col-md-12 top15 top28 tableMain fieldContainer rentalDetail">
+            @if (resizeResetGrid) {
+              <mat-table #table [dataSource]="dataSource" multiTemplateDataRows class="demoTable commTable"
+                [ngClass]="{'CommissionDisabledTable': isViewMode == true}">
+                <!-- <ng-container matColumnDef="Role">
+                <th mat-header-cell *matHeaderCellDef> Role </th>
+                <td mat-cell *matCellDef="let element">
+                  <nfs-textbox  [maxLength]="100" [Placeholder]="'Role'" [Label]="''" >
+                  </nfs-textbox>
+                </td>
+              </ng-container> -->
+              <ng-container matColumnDef="ROLEDSC">
+                <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'ROLEDSC')"
+                  [enableGhostResize]="true" mwlResizable>
+                  <p> Role</p>
+                  <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element; let i=dataIndex;">
+                  <p>{{element.ROLEDSC}}</p>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="RECIPIENTID" class="col-md-2 top15 fieldContainer">
+                <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'RECIPIENTID')" mwlResizable
+                  [enableGhostResize]="true">
+                  <p>Recipient </p>
+                  <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element; let i=dataIndex">
+                  <!-- <mat-form-field placeholder="never">
+                  <input matInput [value]="element.RECIPIENTID" [(ngModel)]="element.RECIPIENTID">
+                </mat-form-field> -->
+                <mat-form-field [ngClass]="{'CommissionDisabled': isViewMode == false}">
+                  <!-- <mat-label>Please Select</mat-label> -->
+                  <mat-select (selectionChange)="recepientOnChange($event.value, i, element)"
+                    [(ngModel)]="element.RECIPIENTID" [disabled]="this.isViewMode">
+                    <mat-option>
+                      <ngx-mat-select-search name="Recipient Search" [(ngModel)]="element.filterData"
+                        [placeholderLabel]="'Find Some Values...'" [noEntriesFoundLabel]="'No Search Entries Found'">
+                      </ngx-mat-select-search>
+                    </mat-option>
+                    @for (rcpt of getFilteredValue(element); track rcpt) {
+                      <mat-option [value]="rcpt.code">
+                        {{rcpt.TextValue}}
+                      </mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="JP1COMMISSIONAMT">
+              <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'JP1COMMISSIONAMT')" mwlResizable
+                [enableGhostResize]="true">
+                <p>JP1 Commission</p>
+                <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element; let i=dataIndex">
+                <mat-form-field placeholder="never"
+                  [ngClass]="{'control-disabled': i == 0 || element.JP1ACTIVEIND == false}" class="fieldContainer">
+                  <input matInput [(ngModel)]="element.JP1COMMISSIONAMT"
+                    (change)="this.txtJP1CommAmnt_LostFocus(element)" mask="{{mask}}" [disabled]="isViewMode"  onClick="this.select();">
+                </mat-form-field>
+                <!-- <div class="iconPopupMain">
+                <p (click)="openJP1CommissionTaxDetail(element)">More</p>
+              </div> -->
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="OPENJP1">
+            <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'OPENJP1')" mwlResizable
+              [enableGhostResize]="true"> <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element; let i=dataIndex">
+              <div class="iconPopupMain">
+                <p (click)="openJP1CommissionTaxDetail(element)">More</p>
+              </div>
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="JP1ACCBANKNME">
+            <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'JP1ACCBANKNME')" mwlResizable
+              [enableGhostResize]="true">
+              <p>Bank Name </p>
+              <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+            </mat-header-cell>
+            <!-- <td mat-cell *matCellDef="let element; let i=dataIndex"  class="fieldContainer">
+            <mat-form-field placeholder="never" [ngClass]="{'control-disabled': true}">
+              <input matInput [value]="element.JP1ACCBANKNME" [(ngModel)]="element.JP1ACCBANKNME">
+            </mat-form-field>
+          </td> -->
+          <mat-cell *matCellDef="let element; let i=dataIndex" class="fieldContainer">
+            <p>{{element.JP1ACCBANKNME}}</p>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="JP1ACCNBR">
+          <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'JP1ACCNBR')" mwlResizable
+            [enableGhostResize]="true">
+            <p>Account #</p>
+            <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i=dataIndex" class="fieldContainer">
+            <!-- <mat-form-field placeholder="never" [ngClass]="{'control-disabled': true}">
+            <input matInput [value]="element.JP1ACCNBR" [(ngModel)]="element.JP1ACCNBR">
+          </mat-form-field> -->
+          <p>{{element.JP1ACCNBR}}</p>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="JP2COMMISSIONAMT">
+        <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'JP2COMMISSIONAMT')" mwlResizable
+          [enableGhostResize]="true">
+          <p>JP2 Commission</p>
+          <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element; let i=dataIndex" class="fieldContainer"
+          [ngClass]="{'CommissionDisabled': isViewMode == false}">
+          <mat-form-field placeholder="never" [ngClass]="{'control-disabled': i == 0}">
+            <input matInput [(ngModel)]="element.JP2COMMISSIONAMT" onClick="this.select();"
+              (change)="this.txtJP2CommAmnt_LostFocus(element)" mask="{{mask}}" [disabled]="isViewMode">
+          </mat-form-field>
+          <!-- <div class="iconPopupMain">
+          <p (click)="openJP2CommissionTaxDetail(element)">More</p>
+        </div> -->
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="OPENJP2">
+      <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'OPENJP2')" mwlResizable
+        [enableGhostResize]="true"> <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element; let i=dataIndex">
+        <div class="iconPopupMain">
+          <p (click)="openJP2CommissionTaxDetail(element)">More</p>
+        </div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="JP2ACCBANKNME">
+      <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'JP2ACCBANKNME')" mwlResizable
+        [enableGhostResize]="true">
+        <p>Bank Name </p>
+        <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element; let i=dataIndex" class="fieldContainer">
+        <!-- <mat-form-field placeholder="never" [ngClass]="{'control-disabled': true}">
+        <input matInput [value]="element.JP2ACCBANKNME" [(ngModel)]="element.JP2ACCBANKNME">
+      </mat-form-field> -->
+      <p>{{element.JP2ACCBANKNME}}</p>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="JP2ACCNBR">
+    <mat-header-cell *matHeaderCellDef (resizeEnd)="onResizeEnd($event, 'JP2ACCNBR')" mwlResizable
+      [enableGhostResize]="true">
+      <p>Account # </p>
+      <span mwlResizeHandle [resizeEdges]="{ right: true }"></span>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element; let i=dataIndex" class="fieldContainer">
+      <!-- <mat-form-field placeholder="never">
+      <input matInput [value]="element.JP2ACCNBR" [(ngModel)]="element.JP2ACCNBR">
+    </mat-form-field> -->
+    <p>{{element.JP2ACCNBR}}</p>
+  </mat-cell>
+</ng-container>
+<!-- <ng-container matColumnDef="Recipient">
+<th mat-header-cell *matHeaderCellDef> Recipient </th>
+<td mat-cell *matCellDef="let element">
+  <nfs-dropdown [Label]="''" [controlPlaceholder]="'Recipient'" [Ismultiselect]="false"
+    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+  [noSearchEntriesFoundLabel]="'No Matching Values'"></nfs-dropdown>
+</td>
+</ng-container>
+<ng-container matColumnDef="JP1CommissionAmount">
+  <th mat-header-cell *matHeaderCellDef> JP1 Commission Amount </th>
+  <td mat-cell *matCellDef="let element">
+    <div class="iconPopup">
+      <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+      </nfs-textbox>
+      <div class="iconPopupMain">
+        <p (click)="openJP1JP2CommissionTaxDetail()">More</p>
+      </div>
+    </div>
+  </td>
+</ng-container>
+<ng-container matColumnDef="BankName1">
+  <th mat-header-cell *matHeaderCellDef> Bank Name </th>
+  <td mat-cell *matCellDef="let element">
+    <nfs-textbox  [maxLength]="100" [Placeholder]="'Bank Name'" [Label]="''" >
+    </nfs-textbox>
+  </td>
+</ng-container>
+<ng-container matColumnDef="Account1">
+  <th mat-header-cell *matHeaderCellDef> Account # </th>
+  <td mat-cell *matCellDef="let element">
+    <nfs-textbox  [maxLength]="100" [Placeholder]="'Account'" [Label]="''" >
+    </nfs-textbox>
+  </td>
+</ng-container>
+<ng-container matColumnDef="JP2CommissionAmount">
+  <th mat-header-cell *matHeaderCellDef> JP2 Commission Amount </th>
+  <td mat-cell *matCellDef="let element">
+    <div class="iconPopup">
+      <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+      </nfs-textbox>
+      <div class="iconPopupMain">
+        <p (click)="openJP1JP2CommissionTaxDetail()">More</p>
+      </div>
+    </div>
+  </td>
+</ng-container>
+<ng-container matColumnDef="BankName2">
+  <th mat-header-cell *matHeaderCellDef> Bank Name </th>
+  <td mat-cell *matCellDef="let element">
+    <nfs-textbox  [maxLength]="100" [Placeholder]="'Bank Name'" [Label]="''" >
+    </nfs-textbox>
+  </td>
+</ng-container>
+<ng-container matColumnDef="Account2">
+  <th mat-header-cell *matHeaderCellDef> Account # </th>
+  <td mat-cell *matCellDef="let element">
+    <nfs-textbox  [maxLength]="100" [Placeholder]="'Account'" [Label]="''" >
+    </nfs-textbox>
+  </td>
+</ng-container> -->
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns; let l = dataIndex" class="example-element-row">
+</mat-row>
+</mat-table>
+}
+</div>
+</div>
+
+<!-- <div class="col-md-12 searchBtns topMargin20">
+
+</div> -->
+</div>
+
+</div>
+</div>
+</div>
+<div class="row popupFooter">
+  <div class="row bodyContainer">
+    <div class="col-md-12 searchBtns Commissionmargintop30">
+      <nfs-button [text]="'Back'" [color]="'primary'" [disabled]="false" [alwaysEnable]="true" [matButton]="false"
+        [matRaisedButton]="false" [matRaisedButtonIcon]="true" (click)="btnOK()">
+      </nfs-button>
+    </div>
+  </div>
+</div>
+<!-- <div class="popupBody">
+<div class="row bodyContainer fieldContainer">
+  <div class="col-md-12 noPadding">
+    <div class="TabInnerMainForm">
+      <div class="row noMargin " [formGroup]="schemeTemp">
+        <div class="col-md-3 top15">
+          <nfs-textbox [maxLength]="100" [Placeholder]="'Commission Type'" [Label]="'Commission Type'" formControlName="COMMISSIONTYPECDE" [isControlDisable]=true>
+          </nfs-textbox>
+        </div>
+        <div class="col-md-3 top15">
+          <nfs-textbox [maxLength]="100" [Placeholder]="'JP1 Commission Amount'" [Label]="'JP1 Commission Amount'" formControlName="JP1COMMISSIONAMT" [isControlDisable]=true>
+          </nfs-textbox>
+        </div>
+        <div class="col-md-3 top15">
+          <nfs-textbox [maxLength]="100" [Placeholder]="'JP2 Commission Amount'" [Label]="'JP2 Commission Amount'" formControlName="JP2COMMISSIONAMT" [isControlDisable]=true>
+          </nfs-textbox>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div> -->

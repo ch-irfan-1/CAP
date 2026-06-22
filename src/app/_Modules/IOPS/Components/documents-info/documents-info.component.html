@@ -1,0 +1,171 @@
+<div class="documentsPage TabInnerMain">
+  <div class="commonForm" [formGroup]="DocumentForm">
+    <div>
+      <div class="row">
+        <div class="col-md-12 createLeadHeading topMargin30">
+          <p>Please fill in your Information</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer documentForm">
+            <div class="col-md-2 top15">
+              <nfs-dropdown [Label]="'Document Type'" [controlPlaceholder]="'Select Some Values'"
+                formControlName="DOCUMENTCDE" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.DocumentTypes">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15 noPaddingRight"
+              (click)="!this.IsEditable ? $event.stopPropagation() : myClickHandler($event); !this.IsEditable ? false : null"
+              [class.isDisabled]="!this.IsEditable">
+              <!-- File Upload -->
+              <div class="uploadDivContainer" appDragDrop (fileDropped)="onFileDropped($event)">
+                <input type="file" #fileDropRef id="fileDropRef" accept="{{accept}}"
+                  (change)="fileBrowseHandler($event)" />
+                <p><img src="assets/Images/uploadGray.png"> Drop File to upload or
+                  <span>browse</span>
+                </p>
+              </div>
+              <!-- End File Upload -->
+            </div>
+            <!-- <div class="col-md-3">
+            <nfs-textbox matInput maxlength="1000" matInput name="DOCUMENTNAME"
+              [Placeholder]="'Document Name'" [Label]="'Document Name'">
+            </nfs-textbox>
+          </div> -->
+
+          <!-- <div class="col-md-3 btn-right saveBtns noPaddingRight">
+          <nfs-button [text]="'Upload'" [color]="'primary'" [disabled]="false" [matButton]="false"
+            [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+            [iconPng]="'assets/Images/Upload-icon.png'" [Mode]="Mode" (click)="SelectAndUpaload()">
+          </nfs-button>
+          <button id="upload-Button" [disableRipple]="true" #selectAfterAdding mat-button
+            (click)="SelectAndUpaload()">
+            <img src="assets/Images/uploadWhite.png"> Upload
+          </button>
+        </div>
+
+        <div class="col-md-3 btn-right saveBtns noPaddingRight">
+          <nfs-button [text]="'Upload'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+            [matRaisedButtonIcon]="true" [iconPng]="'assets/Images/uploadWhite.png'" [Mode]="Mode" (click)="SelectAndUpaload()">
+          </nfs-button>
+
+          <button id="upload-Button" [disableRipple]="true" #selectAfterAdding mat-button
+            (click)="OpenCamera()">
+            <img src="assets/Images/Camera-icon.png"> Take Photo
+          </button>
+        </div> -->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row uploadBtn">
+  <div class="col-md-12">
+    <nfs-button [text]="'Upload'" [color]="'primary'" [matButton]="false" [matRaisedButton]="false"
+      [matRaisedButtonIcon]="true" [iconPng]="'assets/Images/uploadWhite.png'" [Mode]="Mode"
+      (onBtnClick)="SelectAndUpaload()">
+    </nfs-button>
+    <nfs-button [text]="'Take Photo'" [color]="'primary'" [matButton]="false" [matRaisedButton]="false"
+      [matRaisedButtonIcon]="true" [iconPng]="'assets/Images/cameraWhite.png'" [Mode]="Mode"
+      (onBtnClick)="OpenCamera()">
+    </nfs-button>
+
+    <!-- <button id="upload-Button" [disableRipple]="true" #selectAfterAdding mat-button
+    (click)="SelectAndUpaload()">
+    <img src="assets/Images/uploadWhite.png"> Upload
+  </button> -->
+</div>
+</div>
+<!-- <div class="row uploadBtn">
+<div class="col-md-12">
+  <button id="upload-Button" [disableRipple]="true" #selectAfterAdding mat-button
+    (click)="SelectAndUpaload()">
+    <img src="assets/Images/uploadWhite.png"> Upload
+  </button>
+</div>
+</div> -->
+
+<!-- <div class="row uploadBtn">
+<div class="col-md-12">
+  <button id="upload-Button" [disableRipple]="true" #selectAfterAdding mat-button (click)="OpenCamera()">
+    <img src="assets/Images/men.png"> Take Photo
+  </button>
+</div>
+</div> -->
+
+<!-- <a class="posBtn" (click) =" openCamera()">
+<mat-icon >camera</mat-icon>Take Photo</a> -->
+
+<div class="uploadDocumentContainer">
+  <div class="row">
+    <div class="col-md-12 topMargin15">
+      <div class="row fieldContainer leftPadding15px">
+        <div class="col-md-12 documentGrigHeader">
+          <div class="documentNamHeading">
+            <p>Name</p>
+          </div>
+          <div class="documentTypeHeading">
+            <p>Type</p>
+          </div>
+          <div class="documentSizeHeading">
+            <p>Size</p>
+          </div>
+          <div class="documentIconsHeading">
+            <p>Actions</p>
+          </div>
+        </div>
+        @for (file of files; track file; let i = $index) {
+          <div class="col-md-12 UploadedDocumentsArray">
+            <div class="documentName">
+              <img src="assets/Images/file.png">
+              <span>{{ file?.name }}</span>
+            </div>
+            <div class="documentTypeDesc">
+              <span>{{ file?.documenttypdsc }}</span>
+            </div>
+            <div class="documentSize">
+              <span>{{ formatBytes(file?.size, 2) }}</span>
+            </div>
+            <div class="documentIcons">
+              <ng-container matColumnDef="viewDocument">
+                <button mat-button (click)="viewDocument(file)">
+                  <i class="material-icons">
+                    remove_red_eye
+                  </i>
+                </button>
+              </ng-container>
+              <ng-container matColumnDef="downloadDocument">
+                <button mat-button (click)="downloadDocument(file)">
+                  <i class="material-icons">
+                    file_download
+                  </i>
+                </button>
+              </ng-container>
+              <ng-container matColumnDef="downloadDocument">
+                @if (this.Mode!='View') {
+                  <button mat-button (click)="deleteFile(file, i)">
+                    <i class="material-icons">
+                      delete
+                    </i>
+                  </button>
+                }
+              </ng-container>
+            </div>
+            <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- <input type="file" id="fileUpload" name="fileUpload" multiple="multiple" accept="{{accept}}" style="display:none;" /> -->

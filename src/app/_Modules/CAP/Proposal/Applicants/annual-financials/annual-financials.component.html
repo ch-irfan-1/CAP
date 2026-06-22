@@ -1,0 +1,219 @@
+<div class="row fieldContainer" [ngClass]="{'disabledDiv': isControlDisable}">
+  <div class="col-md-12 top15 yearField">
+
+    <div class="col-lg-6 top15">
+      <mat-label style="font-weight: bold;">Year</mat-label>
+    </div>
+    <div class="d-flex customWidthControl">
+      <div class="col-md-2 top15 customTop2 widthSet">
+        <mat-form-field appearance="fill">
+          <input class="customInput customWidth" #y1 matInput type="number" [value]="inputYear1" (change)="onChangeYeareader($event)">
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-2 top15 customTop2 widthSet">
+        <mat-form-field appearance="fill">
+          <input class="customInput customWidth" #y2 matInput type="number" readonly [value]="inputYear2" >
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-2 top15 customTop2 widthSet">
+        <mat-form-field appearance="fill">
+          <input class="customInput customWidth" #y3 matInput type="number" readonly [value]="inputYear3">
+        </mat-form-field>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<mat-tab-group>
+  <div >
+    <mat-tab label="Balance Sheet" style="margin-top: 15px !important;">
+      <div class="tableMain top15 annualFinancialGrid">
+        <table mat-table [dataSource]="BalanceSheet" class="mat-elevation-z8">
+          <ng-container matColumnDef="Account">
+            <th mat-header-cell *matHeaderCellDef> {{this.BalanceSheetLabel[0]}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.CSFLDSC}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year1">
+            <th mat-header-cell *matHeaderCellDef> {{this.BalanceSheetLabel[1]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <mat-form-field appearance="fill" class="directive controls-margin fieldContainer">
+                <input class="customFillInput" [maxlength]="20" mask="{{mask}}" matInput value="element.CSFLITEMVALUE" [readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE"
+                  (change)="onBalanceSheetUpdate($event, element, i, element.CSFLITEMCDE)" onClick="this.select();">
+                <!-- <label *ngIf="checkLength(element.CSFLITEMVALUE, i)" class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label> -->
+                @if (checkLength(element.CSFLITEMVALUE, i)) {
+                  <mat-label class="text-danger">Enter 13 DIGIT and 2 decimal place value</mat-label>
+                }
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year2">
+            <th mat-header-cell *matHeaderCellDef> {{this.BalanceSheetLabel[2]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <mat-form-field appearance="fill" class="directive controls-margin fieldContainer">
+                <input class="customFillInput" [maxlength]="20" mask="{{mask}}" matInput value="element.CSFLITEMVALUE1" [readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE1"
+                  (change)="onBalanceSheetUpdate($event,element, i, element.CSFLITEMCDE)"  onClick="this.select();">
+                <!-- <label *ngIf="checkLength(element.CSFLITEMVALUE1, i)" class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label> -->
+                @if (checkLength(element.CSFLITEMVALUE1, i)) {
+                  <mat-label class="text-danger">Enter 13 DIGIT and 2 decimal place value</mat-label>
+                }
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year3">
+            <th mat-header-cell *matHeaderCellDef> {{this.BalanceSheetLabel[3]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <mat-form-field appearance="fill" class="directive controls-margin fieldContainer">
+                <input class="customFillInput" [maxlength]="20" mask="{{mask}}" matInput value="element.CSFLITEMVALUE2" [readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE2"
+                  (change)="onBalanceSheetUpdate($event,element, i, element.CSFLITEMCDE)"   onClick="this.select();">
+                <!-- <label *ngIf="checkLength(element.CSFLITEMVALUE2, i)" class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label> -->
+                @if (checkLength(element.CSFLITEMVALUE2, i)) {
+                  <mat-label class="text-danger">Enter 13 DIGIT and 2 decimal place value</mat-label>
+                }
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="BalanceSheetLabel"></tr>
+          <tr mat-row *matRowDef="let row; columns: BalanceSheetLabel;"></tr>
+        </table>
+
+        <div class="row fieldContainer totalYear">
+          <div class="col-md-3 top15 yearField">
+            <p  style="text-align: left;">Total: </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right; padding-right: 2vw;padding-left: 0;">
+            <p>{{TotalNetBalanceYear1 | currency:'':''}} </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right;padding-right: 2vw;">
+            <p>{{TotalNetBalanceYear2 | currency:'':''}} </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right; padding-right: 2vw;padding-left: 14px;">
+            <p>{{TotalNetBalanceYear3 | currency:'':''}} </p>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Profit and Loss">
+      <div class="tableMain top15 annualFinancialGrid">
+
+        <table mat-table [dataSource]="ProfitnLoss" class="mat-elevation-z8">
+          <ng-container matColumnDef="Account">
+            <th mat-header-cell *matHeaderCellDef> {{this.ProfitnLossLabel[0]}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.CSFLDSC}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year1">
+            <th mat-header-cell *matHeaderCellDef> {{this.ProfitnLossLabel[1]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <mat-form-field appearance="fill" class="directive controls-margin fieldContainer">
+                <input class="customFillInput" [maxlength]="20" mask="{{mask}}" matInput value="element.CSFLITEMVALUE" [readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE"
+                  (change)="onProfitnLossUpdate($event, element, i, element.CSFLITEMCDE)" onClick="this.select();">
+                <!-- <label *ngIf="checkLength(element.CSFLITEMVALUE, i)" class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label> -->
+                @if (checkLength(element.CSFLITEMVALUE, i)) {
+                  <mat-label class="text-danger">Enter 13 DIGIT and 2 decimal place value</mat-label>
+                }
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year2">
+            <th mat-header-cell *matHeaderCellDef> {{this.ProfitnLossLabel[2]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <mat-form-field appearance="fill" class="directive controls-margin fieldContainer">
+                <input  class="customFillInput" [maxlength]="20" mask="{{mask}}" matInput value="element.CSFLITEMVALUE1" [readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE1"
+                  (change)="onProfitnLossUpdate($event,element, i, element.CSFLITEMCDE)"  onClick="this.select();">
+                <!-- <label *ngIf="checkLength(element.CSFLITEMVALUE1, i)" class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label> -->
+                @if (checkLength(element.CSFLITEMVALUE1, i)) {
+                  <mat-label class="text-danger">Enter 13 DIGIT and 2 decimal place value</mat-label>
+                }
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year3">
+            <th mat-header-cell *matHeaderCellDef> {{this.ProfitnLossLabel[3]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <mat-form-field appearance="fill" class="directive controls-margin fieldContainer">
+                <input class="customFillInput" [maxlength]="20" mask="{{mask}}" matInput value="element.CSFLITEMVALUE2" [readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE2"
+                  (change)="onProfitnLossUpdate($event,element, i, element.CSFLITEMCDE)" onClick="this.select();">
+                <!-- <label *ngIf="checkLength(element.CSFLITEMVALUE2, i)" class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label> -->
+                @if (checkLength(element.CSFLITEMVALUE2, i)) {
+                  <mat-label class="text-danger">Enter 13 DIGIT and 2 decimal place value</mat-label>
+                }
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="ProfitnLossLabel"></tr>
+          <tr mat-row *matRowDef="let row; columns: ProfitnLossLabel;"></tr>
+        </table>
+
+        <div class="row fieldContainer totalYear">
+          <div class="col-md-3 top15 yearField">
+            <p  style="text-align: left;">Total: </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right; padding-right: 2vw;padding-left: 4px;">
+            <p>{{TotalNetProfitnLossYear1 | currency:'':''}} </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right;padding-right: 2vw;">
+            <p>{{TotalNetProfitnLossYear2 | currency:'':''}} </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right; padding-right: 2vw;padding-left: 15px;">
+            <p>{{TotalNetProfitnLossYear3 | currency:'':''}} </p>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Annual Financials">
+      <div class="tableMain top15">
+
+        <table mat-table [dataSource]="CashFlowFilterSource" class="mat-elevation-z8">
+          Position Column
+          <ng-container matColumnDef="Account">
+            <th mat-header-cell *matHeaderCellDef> {{this.CashFlowFilterLabel[0]}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.DESCRIPTION}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year1">
+            <th mat-header-cell *matHeaderCellDef> {{this.CashFlowFilterLabel[1]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index"> {{element.Year1}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year2">
+            <th mat-header-cell *matHeaderCellDef> {{this.CashFlowFilterLabel[2]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">{{element.Year2}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Year3">
+            <th mat-header-cell *matHeaderCellDef> {{this.BalanceSheetLabel[3]}} </th>
+            <td mat-cell *matCellDef="let element; let i = index">{{element.Year3}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="CashFlowFilterLabel"></tr>
+          <tr mat-row *matRowDef="let row; columns: CashFlowFilterLabel;"></tr>
+        </table>
+
+        <div class="row fieldContainer totalYear">
+          <div class="col-md-3 top15 yearField">
+            <p style="text-align: left;">Year: </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right;padding-right: 2vw;">
+            <p>0.00 </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right;padding-right: 2vw;">
+            <p>0.00 </p>
+          </div>
+          <div class="col-md-3 top15 yearField" style="text-align: right;padding-right: 2vw;">
+            <p>0.00 </p>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </div>
+</mat-tab-group>

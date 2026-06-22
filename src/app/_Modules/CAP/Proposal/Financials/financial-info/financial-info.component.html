@@ -1,0 +1,134 @@
+<div class="FormMain">
+
+    <div class="row fieldContainer">
+        <ng-container [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+            <div class="col-md-2 top15">
+                <nfs-datepicker matInput [Placeholder]="'Enter Date'" [Label]="'Start Date'"
+                    formControlName="CONTRACTSTARTDTE">
+                </nfs-datepicker>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Frequency'" [controlPlaceholder]="'Frequency'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="FREQUENCYCDE"
+                    [DataArray]="this._FCMasterDataService.Frequencies"></nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Rental Mode'" [controlPlaceholder]="'Rental Mode'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="RENTALMODETYP"
+                    [DataArray]="this._FCMasterDataService.RentalModes"></nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Terms(Months)'" [Label]="'Terms(Months)'"
+                    formControlName="CONTRACTTRM">
+                </nfs-textbox>
+            </div>
+        </ng-container>
+
+
+        <ng-container [formGroup]="this.financialInfoForm">
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Total Cost'" [Label]="'Total Cost'"
+                    formControlName="TOTALCOST">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Down Payment'" [Label]="'Down Payment'"
+                    formControlName="DOWNPAYMENT">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'On Road Cost'" [Label]="'On Road Cost'"
+                    formControlName="ONROADCOST">
+                </nfs-textbox>
+            </div>
+
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Down Payment (%)'" [Label]="'Down Payment (%)'"
+                    formControlName="DOWNPAYMENTPERCENTAGE">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Financed Amount'" [Label]="'Financed Amount'"
+                    formControlName="FINANCEDAMOUNT">
+                </nfs-textbox>
+            </div>
+
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'RV/Balloon Amount'" [Label]="'RV/Balloon Amount'"
+                    formControlName="BALLOONAMOUNT">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Financed Amount (%)'" [Label]="'Financed Amount (%)'"
+                    formControlName="FINANCEDAMOUNTPERCENTAGE">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'RV/Balloon Amount (%)'" [Label]="'RV/Balloon Amount (%)'"
+                    formControlName="BALLOONAMOUNTPERCENTAGE">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Total Term Charges'" [Label]="'Total Term Charges'"
+                    formControlName="TOTALTERMCHARGES">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Trade In Amount'" [Label]="'Trade In Amount'"
+                    formControlName="TRADEAMOUNT">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Balance Payable'" [Label]="'Balance Payable'"
+                    formControlName="BALANCEPAYABLE">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Dep. Amount'" [Label]="'Sec. Dep. Amount'"
+                    formControlName="DEPAMOUNT">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Dep. Config'" [Label]="'Sec. Dep. Config'"
+                    formControlName="DEPCONFIG">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Total Amount Payable'" [Label]="'Total Amount Payable'"
+                    formControlName="TOTALAMOUNTPAYABLE">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'RV Subsidy by factory %'"
+                    [Label]="'RV Subsidy by factory %'" formControlName="SUBSIDYPERCENTAGE">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Dep. Calc Method'" [Label]="'Sec. Dep. Calc Method'"
+                    formControlName="DEPCALCMETHOD">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Payer/Payee'" [Label]="'Payer/Payee'"
+                    formControlName="PAYER">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-4 top15">
+                 <section class="example-section" > <!--formControlName="ISSUBSIDYFSCTORYAPPLICABLE" -->
+                    <nfs-checkbox class="example-margin" formControlName="ISSUBSIDYFSCTORYAPPLICABLE" [Name]="'ISSUBSIDYFSCTORYAPPLICABLE'"
+                        [Label]="'RV Subsidy by factory applicable'">
+                    </nfs-checkbox>
+                    <!-- <mat-checkbox class="example-margin">RV Subsidy by factory applicable</mat-checkbox> -->
+                </section>
+            </div>
+        </ng-container>
+        <div class="col-md-2 top15 iconPopup">
+            Repayment Plan
+            <div class="iconPopupMain">
+                <p (click)="openRepaymentPlan()">More</p>
+            </div>
+        </div>
+    </div>
+</div>

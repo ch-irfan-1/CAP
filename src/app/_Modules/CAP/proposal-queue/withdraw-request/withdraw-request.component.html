@@ -1,0 +1,31 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Withdraw Request</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button">
+            <mat-icon class="close-icon" color="warn" (click)="cancel()">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain customAccordianMain">
+        <div class="row interestFieldAdjustBox fieldContainer" [formGroup]="WithdrawRequestForm">
+            <div class="col-md-12 top15">
+                <nfs-textarea class="surveyTextArea" [maxLength]="500" [Placeholder]="'Reason'" [Label]="'Withdrawn Reason'"
+                    formControlName="WITHDRAWREQUESTCOMMENT">
+                </nfs-textarea>
+            </div>
+            <div class="col-md-12 searchBtns marginTop15">
+    
+                <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="!_isWithdrawRequestAllowed" [matButton]="false"
+                    [disabled]="!this._isWithdrawRequestAllowed" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                    (onBtnClick)="WithdrawRequest()">
+                </nfs-button>
+                <nfs-button [text]="'Close'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                    [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="cancel()">
+                </nfs-button>
+            </div>
+        </div>
+    </div>
+</div>

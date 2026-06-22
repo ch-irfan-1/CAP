@@ -1,0 +1,346 @@
+.theme2 .loginField button {
+    background-color: #034da2 !important;
+}
+.theme2 .leftNav.active1 li.active a {
+    background: #034da2;
+    padding: 10px 12px !important
+}
+.theme2 .backIcon p {
+    color: #034da2;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+.theme2 .mat-mdc-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #034da2 !important;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+.theme2 .mat-radio-checked .mat-radio-inner-circle {
+    background-color: #034da2 !important;
+}
+
+.theme2 .mat-mdc-radio-button .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,
+.theme2 .mat-mdc-radio-button .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle {
+    border-color: #034da2 !important;
+}
+/* .applicationType .backIcon img {
+    background: url("../../assets/Images/arrow-back-blue.png");
+} */
+.theme2 .applicationNetxtBtn a {
+    background: #034da2;
+}
+.theme2 .loginField mat-form-field .mat-mdc-form-field-flex {
+    border: 2px solid #ffffff;
+}
+.theme2 .loginField mat-form-field.mat-focused .mat-mdc-form-field-flex {
+    border: 2px solid #034da2;
+}
+.theme2 .showMore {
+    color: #034da2;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .TabInnerMain .mat-tab-labels .mat-tab-label-active .mat-tab-label-content {
+    color: #034da2 !important;
+}
+/* .theme2 .TabInnerMain .mat-tab-labels .mat-tab-label.mat-tab-label-active {
+    border-bottom: 2px solid #034da2;
+} */
+.theme2 mat-ink-bar.mat-ink-bar {
+    background: #034da2 !important;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .TabInnerMainAddress .mat-tab-labels .mat-tab-label.mat-tab-label-active {
+    border: 1px solid #034da2;
+    background: #fff;
+}
+.theme2 .mat-mdc-raised-button.mat-mdc-button-base:hover {
+    color: #034da2 !important;
+    border: 1px solid #034da2;
+}
+.theme2 .proposalTabMain.activeTabAsset {
+    background: #034da2;
+    border: 1px solid #034da2;
+}
+/* .theme2 .greenArrow {
+    display: none;
+}
+.theme2 .blueArrow {
+    display: block;
+} */
+.theme2 .showLess {
+    color: #034da2;
+}
+.theme2 .proposalTabMain img:nth-child(4) {
+    display: none;
+}
+.theme2 .proposalTabMain.activeTabApplicant img:nth-child(3) {
+    display: none;
+}
+.theme2 .proposalTabMain.activeTabApplicant img:nth-child(4) {
+    display: block;
+    position: absolute;
+    right: -8px;
+    top: 35px;
+}
+.theme2 .proposalTabMain.activeTabAsset img:nth-child(3) {
+    display: none;
+}
+.theme2 .proposalTabMain.activeTabAsset img:nth-child(4) {
+    display: block;
+    position: absolute;
+    right: -8px;
+    top: 28px;
+}
+.theme2 .proposalTabMain.activeTabApplicant {
+    background: #034da2;
+    border: 1px solid #034da2;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
+.theme2 .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #034da2 !important;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .AddressInfoPage .mat-tab-labels .mat-tab-label-active .mat-tab-label-content {
+    background: #034da2 !important;
+    color: #fff !important;
+}
+.theme2 .mat-mdc-unelevated-button.mat-primary,.theme2 .mat-mdc-raised-button.mat-primary,.theme2 .mat-mdc-fab.mat-primary,.theme2 .mat-mdc-mini-fab.mat-primary {
+    background-color: #034da2 !important;
+    border: 1px solid #034da2;
+}
+.theme2 .mat-mdc-raised-button.mat-primary:hover {
+    color: #fff !important;
+}
+.theme2 mat-action-row .posBtn {
+    color: #034da2 !important;
+}
+.theme2 .mat-mdc-button.mat-primary {
+    color: #034da2 !important;
+}
+.theme2 .addAddressBtn .mat-mdc-button {
+    border: 1px solid #034da2 !important;
+    color: #034da2 !important;
+}
+.theme2 .uploadDivContainer p span {
+    color: #034da2 !important;
+}
+.theme2 .uploadBtn .mat-mdc-button {
+    background: #034da2 !important;
+}
+/* .theme2 .iops.active p {
+    background: url('../Images/iopsBlue.png');
+    display: block;
+    height: 22px;
+    width: 22px;
+    background-repeat: no-repeat;
+} */
+/* .theme2 .workQueue.active p {
+    background: url('../Images/workQueueBlue.png');
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-repeat: no-repeat;
+} */
+.theme2 .borderGreen {
+    border: 3px solid #034da2 !important;
+}
+.theme2 table tbody tr {
+    /* background: #edecfc !important;
+    height: 63px !important; */
+}
+.theme2 .scrollFiles::-webkit-scrollbar-thumb {
+    background: #034da2;
+    border-radius: 10px;
+}
+.theme2 .scrollFiles::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #034da2;
+    border-radius: 10px;
+}
+.theme2 div.scrollFiles .fileDiv.active {
+    border-bottom: 3px solid #034da2;
+    background-color: #f7f7f7;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .mat-tab-labels .mat-tab-label-active .profileIcon {
+    background: url('../Images/ProfileBlue.png');
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .mat-tab-labels .mat-tab-label-active .homeIcon {
+    background: url('../Images/HomeBlue.png');
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .mat-tab-labels .mat-tab-label-active .genInfoIcon {
+    background: url('../Images/Alert-infoBlue.png');
+}
+.theme2 .saveBtnTheme span:nth-child(2) {
+    background: url('../Images/saveBlue.png');
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+    background-position: 30% 100% !important;
+} 
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.theme2 .mat-tab-labels .mat-tab-label-active .documentIcon {
+    background: url('../Images/documentBlue.png');
+}
+/* TODO(mdc-migration): The following rule targets internal classes of radio that may no longer apply for the MDC version. */
+.theme2 .mat-mdc-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple {
+    background-color: #034da2 !important;
+}
+.theme2 .existingBpSearchPage button {
+    background: #034da2 !important;
+    color: #fff !important;
+}
+.theme2 app-nfs-dialog button {
+    background: #034da2 !important;
+    color: #fff !important;
+}
+.theme2 app-cancellead button span {
+    color: #fff;
+}
+.theme2 app-cancellead button {
+    background: #034da2 !important;
+}
+.theme2 .existingBpSearchPage td button {
+    background: none !important;
+    color: #000 !important;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
+.theme2 .mat-checkbox-checked.mat-primary .mat-checkbox-background {
+    background-color: #034da2 !important;
+}
+.theme2 .mat-mdc-raised-button.mat-primary.mat-button-disabled, .theme2 .mat-raised-button.mat-accent.mat-button-disabled, .theme2 .mat-raised-button.mat-warn.mat-button-disabled, .theme2 .mat-raised-button.mat-button-disabled.mat-button-disabled {
+    background-color: rgba(0, 0, 0, 0.12) !important; 
+    border: 1px solid #9e9e9e;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+/* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+.theme2 .fieldContainer .mat-form-field-appearance-fill.mandatory .mat-form-field-flex {
+    background-color: rgb(213 228 245) !important;
+}
+.theme2 .TabInnerMain .mat-ink-bar {
+    background: #034da2 !important;
+  }
+  .theme2 .leftNav .nav>li.active a {
+    background: #034da2 !important;
+}
+/******** radio *************/
+
+  /* When the radio button is checked, add a blue background */
+  .theme2 .container input:checked ~ .checkmark {
+    background-color: #fff !important;
+  }
+  .theme2 label.container .checkmark:after {
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #034da2 !important;
+}
+.theme2 .iconPopup p {
+    color: #034da2 !important;
+}
+.theme2 .fieldContainer .mat-form-field-appearance-fill.mandatory .mat-mdc-form-field-flex .mat-mdc-form-field-infix .customDropdown,
+.theme2 .fieldContainer .mat-form-field-appearance-fill.mandatory .mat-mdc-form-field-flex .mat-mdc-form-field-infix .customInput,
+.theme2 .fieldContainer .mat-form-field-appearance-fill.mandatory .mat-mdc-form-field-flex .mat-mdc-form-field-infix .customCurrency,
+.theme2 .fieldContainer .mat-form-field-appearance-fill.mandatory .mat-mdc-form-field-flex .mat-mdc-form-field-infix .customNumber,
+.theme2 .fieldContainer .mat-form-field-appearance-fill.mandatory .mat-mdc-form-field-flex .mat-mdc-form-field-infix .customDatePicker {
+    background-color: rgb(213 228 245) !important;
+}
+.theme2 .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: rgb(213 228 245) !important;
+  }
+  .theme2 .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    border-color: #00000061 !important;
+  }
+  .theme2 .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: #9e9e9e4d !important;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version. */
+  .theme2 .mat-primary .mat-mdc-option.mat-selected:not(.mat-option-disabled) {
+    color: #9e9e9e !important;
+  }
+  .theme2 .mat-mdc-option.mat-mdc-option-active.mdc-list-item {
+    background: rgba(0,0,0,.04) !important;
+    color: #000000de !important;
+  }
+/* TODO(mdc-migration): The following rule targets internal classes of option that may no longer apply for the MDC version. */
+.theme2 .mat-mdc-option.mdc-list-item--selected:not(.mat-option-disabled)  {
+    color: #9e9e9e !important;
+  }
+  .theme2 .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) {
+    background: rgba(0,0,0,.12) !important;
+  }
+.theme2 .loginField .mat-mdc-form-field.mat-focused .mat-mdc-form-field-flex {
+    border: 2px solid #034da2 !important;
+  }
+  .theme2.light .mat-calendar-body-disabled>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    color: #00000061 !important;
+}
+.theme2.light .mat-calendar-body-selected {
+    background-color: #9e9e9e !important;
+    color: #000000de !important;
+}
+.theme2.light .mat-calendar-body-today.mat-calendar-body-selected {
+    box-shadow: inset 0 0 0 1px #000000de !important;
+}
+.theme2 .mat-mdc-input-element {
+    caret-color: #9e9e9e !important;
+  }
+  .theme2.light .mat-datepicker-toggle-active {
+    color: #9e9e9e !important;
+}
+.theme2.light .mat-mdc-input-element {
+    caret-color: #9e9e9e !important;
+  }
+  .theme2.light .mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    background-color: #9e9e9e4d !important;
+  }
+
+.theme2.light .TabInnerMain div.mat-mdc-tab.mdc-tab--active .mdc-tab__content .mdc-tab__text-label {
+    color: #034da2 !important;
+}
+
+.theme2.light .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+    color: rgb(158, 158, 158);
+}
+
+.theme2.light .proposalTabsInner .TabInnerMain div.mat-mdc-tab .mdc-tab-indicator__content,
+.theme2.light .TabInnerMainAddress div.mat-mdc-tab.mdc-tab--active,
+.theme2.light app-exposure div.mat-mdc-tab .mdc-tab-indicator__content {
+    border-color: #034da2 !important;
+}
+
+.theme2.light .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, 
+.theme2.light .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background {
+    border-color: #034da2 !important;
+    background-color: #034da2 !important;
+}
+
+.theme2 .mat-mdc-header-cell:not(.jp1-jp2Scroll .mat-mdc-header-cell) {
+    border-bottom-color:#d0cccc !important;
+}
+
+.theme2 app-commission-scheme-configurations .jp1-jp2Scroll .tableMain .mat-mdc-row:not(:last-child) {
+    border-bottom: unset !important;
+}
+
+.theme2 app-commission-scheme-configurations .tableMain .mat-mdc-row .mat-mdc-cell:last-child {
+    border-right: unset;
+}
+
+html .theme2 .mat-mdc-tab-group,
+html .theme2 .mat-mdc-tab-nav-bar {
+    --mat-tab-active-ripple-color: #2c2c2c;
+    --mat-tab-inactive-ripple-color: #2c2c2c;
+}
+
+.theme2 .mat-mdc-tab .mdc-tab-indicator__content--underline,
+.theme2 .mat-mdc-tab.mdc-tab--active:focus .mdc-tab-indicator__content--underline {
+    border-color: #034da2 
+}
+.theme2 .mdc-checkbox__native-control:disabled:checked~.mdc-checkbox__background,
+ .theme2 .mdc-checkbox__native-control:disabled:indeterminate~.mdc-checkbox__background {
+    background-color: #034da2;
+    opacity: 0.5;
+
+}

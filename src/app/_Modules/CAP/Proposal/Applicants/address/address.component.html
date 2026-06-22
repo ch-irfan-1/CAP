@@ -1,0 +1,36 @@
+<mat-tab-group #tabRef disableRipple (selectedIndexChange)="tabSelectionChange(tabRef.selectedIndex)" >
+  @for (address of (this.Addresses.controls | RemovedStateFilter); track address; let addressindex = $index) {
+    <div>
+      @if (address.controls.RowState.value != dataRowState.Removed) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Address - {{addressindex+1}}
+            @if (!isViewMode) {
+              <button disableRipple class="tabsIconsAdjustment" (click)="removeAddress(address, addressindex)"
+                mat-icon-button aria-label="remove tab">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </ng-template>
+          <ng-template matTabContent>
+            <app-sub-address [Address]="address" [ComponentName]="this.getComponentName()"
+            (MarkDefaultAddress)="MarkDefaultAddress($event)" [Index]= "addressindex + 1"></app-sub-address>
+          </ng-template>
+        </mat-tab>
+      }
+    </div>
+  }
+  @if (!isViewMode) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <button class="addTab" (click)="AddAddress()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+        </button>
+      </ng-template>
+    </mat-tab>
+  }
+  @if (isViewMode && this.Addresses.controls.length > 0) {
+    <mat-tab>
+    </mat-tab>
+  }
+</mat-tab-group>

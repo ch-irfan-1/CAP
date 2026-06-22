@@ -1,0 +1,80 @@
+.findRetailer {
+  background: #fff;
+}
+.findRetailerSec .mainContentsMid {
+  width: calc(100% - 1px);
+  padding: 0 15px;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.findRetailerSec .mat-tab-label {
+  /* width: 30%; */
+  font-size: 15px;
+  /* text-transform: uppercase; */
+  padding: 0;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.findRetailerSec .findRetailer .mat-tab-label {
+  width: auto !important;
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.findRetailerSec .findRetailer .mat-tab-label {
+  background: transparent;
+  color: #378a35 !important;
+  border: 0;
+}
+#mainContents .findRetailerSec .mainContentsMid {
+  width: calc(100%);
+  padding: 0;
+}
+.findRetailerSec .tab-content .documentsMain .carsList {
+  height: 220px;
+  margin-bottom: 40px;
+}
+/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.findRetailerSec .mat-tab-label {
+  padding: 0 24px !important;
+}/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.findRetailerSec .mat-tab-body-content {
+  overflow: inherit;
+}/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+.findRetailerSec .mat-tab-label .mat-icon {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.mainContentsIn {
+  display: flex;
+}
+
+.mainContentsMid {
+  width: calc(100% - 600px);
+  padding: 0 15px;
+}
+
+.findRetailerSec .mainContentsMid {
+  width: calc(100% - 1px);
+  padding: 0 15px;
+}
+
+.mainContentsMid {
+  width: calc(100% - 520px);
+}
+
+.mainContentsMid {
+  width: calc(100% - 260px);
+  padding-right: 0;
+}
+
+#mainContents .findRetailerSec .mainContentsMid {
+  width: calc(100%);
+  padding: 0;
+}
+
+.mainContentsMid {
+  width: 100%;
+  padding: 0;
+}

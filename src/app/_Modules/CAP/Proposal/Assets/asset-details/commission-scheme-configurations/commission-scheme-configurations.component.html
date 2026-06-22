@@ -1,0 +1,161 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Commission Scheme Configuration</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="row fieldContainer FormMain bodyContainer customAccordianMain">
+    <div class="jp1-jp2Scroll">
+      <div class="col-md-12 noPadding tableMain top10">
+
+        <mat-table [dataSource]="dataSource" multiTemplateDataRows>
+
+
+          <!-- <ng-container matColumnDef="COMMISSIONTYPENME">
+                        <th mat-header-cell *matHeaderCellDef> Commission </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'Commission'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="COMMISSIONTYPENME">
+            <mat-header-cell *matHeaderCellDef style="min-width: 214px;"> Commission </mat-header-cell>
+            <mat-cell *matCellDef="let element" style="min-width: 214px;">
+              <mat-form-field placeholder="never" class="fieldContainer">
+                <input matInput [value]="element.COMMISSIONTYPENME" [(ngModel)]="element.COMMISSIONTYPENME" [disabled]="true">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+          <!-- <ng-container matColumnDef="JP1PCT">
+                        <th mat-header-cell *matHeaderCellDef> JP1 % </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="JP1PCT">
+            <mat-header-cell *matHeaderCellDef> JP1 % </mat-header-cell>
+            <mat-cell *matCellDef="let element; let i=dataIndex">
+              <mat-form-field placeholder="never" class="fieldContainer">
+                <input mask="{{mask}}" (change)="txtJP1Percentage_LostFocus($event,element,i)" matInput
+                  [(ngModel)]="element.JP1PCT" [disabled]="this.viewMode"  onClick="this.select();">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+          <!-- <ng-container matColumnDef="JP1COMMISSIONAMT">
+                        <th mat-header-cell *matHeaderCellDef> JP1 Commission Amount </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="JP1COMMISSIONAMT">
+            <mat-header-cell *matHeaderCellDef>JP1 Commission</mat-header-cell>
+            <mat-cell *matCellDef="let element; let i=dataIndex">
+              <mat-form-field placeholder="never" class="fieldContainer">
+                <input (change)="txtJP1CommAmnt_LostFocus($event,element,i)" mask="{{mask}}" matInput
+                  [(ngModel)]="element.JP1COMMISSIONAMT" [disabled]="this.viewMode"  onClick="this.select();">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+          <!-- <ng-container matColumnDef="JP2PCT">
+                        <th mat-header-cell *matHeaderCellDef> JP2 % </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="JP2PCT">
+            <mat-header-cell *matHeaderCellDef> JP2 % </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <mat-form-field placeholder="never" class="fieldContainer">
+                <input matInput mask="{{mask}}" [(ngModel)]="element.JP2PCT" [disabled]="true">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+          <!-- <ng-container matColumnDef="JP2COMMISSIONAMT">
+                        <th mat-header-cell *matHeaderCellDef> JP2 Commission Amount </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="JP2COMMISSIONAMT">
+            <mat-header-cell *matHeaderCellDef style="min-width: 200px;">JP2 Commission</mat-header-cell>
+            <mat-cell *matCellDef="let element"  style="min-width: 200px;">
+              <mat-form-field placeholder="never" class="fieldContainer">
+                <input matInput mask="{{mask}}" [(ngModel)]="element.JP2COMMISSIONAMT" [disabled]="true">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+          <!-- <ng-container matColumnDef="JP2SCHEMEPCT">
+                        <th mat-header-cell *matHeaderCellDef> JP1 Scheme % </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="JP2SCHEMEPCT">
+            <mat-header-cell *matHeaderCellDef> JP2 Scheme % </mat-header-cell>
+            <mat-cell *matCellDef="let element; let i=dataIndex">
+              <mat-form-field placeholder="never">
+                <input (change)="txtJP2SchemePercentage_LostFocus($event,element,i)" mask="{{mask}}"
+                  thousandSeparator="," matInput [(ngModel)]="element.JP2SCHEMEPCT" [disabled]="this.viewMode"  onClick="this.select();">
+                <!-- input mask="{{mask}}" step="0.01" thousandSeparator="," matInput
+                                    value="element.UNITAMT" [(ngModel)]="element.UNITAMT"
+                                    (ngModelChange)="Recalculate(element)"> -->
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+          <!-- <ng-container matColumnDef="JP2SCHEMECOMMISSIONAMT">
+                        <th mat-header-cell *matHeaderCellDef> JP2 Scheme Commission Amount </th>
+                        <td mat-cell *matCellDef="let element">
+                            <nfs-textbox  [maxLength]="100" [Placeholder]="'0.00 %'" [Label]="''" >
+                            </nfs-textbox>
+                        </td>
+                    </ng-container> -->
+
+          <ng-container matColumnDef="JP2SCHEMECOMMISSIONAMT">
+            <mat-header-cell *matHeaderCellDef>JP2 Scheme Commission</mat-header-cell>
+            <mat-cell *matCellDef="let element; let i=dataIndex">
+              <mat-form-field placeholder="never" class="fieldContainer">
+                <input (change)="txtJP2SchemeCommAmnt_LostFocus($event,element,i)" mask="{{mask}}" matInput
+                  [(ngModel)]="element.JP2SCHEMECOMMISSIONAMT" [disabled]="this.viewMode"  onClick="this.select();">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+
+
+          <mat-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-row>
+          <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"
+            [hidden]="row.RowState == 4 || row.COMMISSIONTYPECDE == '00002'"></mat-row>
+        </mat-table>
+
+      </div>
+    </div>
+
+
+    <div class="col-md-12 searchBtns topMargin20">
+      <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [alwaysEnable]="true" [matButton]="false"
+        [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="onClickOk()">
+      </nfs-button>
+    </div>
+  </div>
+</div>

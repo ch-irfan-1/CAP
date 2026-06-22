@@ -1,0 +1,55 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">JP1-JP2 Commission Tax Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer">
+        <div class="col-md-3 top15 customTop2">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Component Name'" [Label]="'Component Name'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-3 top15 customTop2">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Component Type'" [Label]="'Component Type'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-3 top15 customTop2">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Recipient Name'" [Label]="'Recipient Name'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-3 top15 customTop2">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Recipient Amount'" [Label]="'Recipient Amount'">
+            </nfs-currency>
+        </div>
+        <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Tax Inclusive Amount'" [Label]="'Tax Inclusive Amount'">
+            </nfs-currency>
+        </div>
+        <div class="col-md-3 top15">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Tax Exclusive Amount'" [Label]="'Tax Exclusive Amount'">
+            </nfs-currency>
+        </div>
+        <div class="col-md-12 top25">
+            <span class="SubHeading">Tax Detail</span>
+            <div class="TabInnerMainForm">
+                <div class="row fieldContainer popupGridAdjusment">
+                    <div class="col-md-12 tableMain">
+                        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                            [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels" [pipes]="pipes"></nfs-static-grid>
+                    </div>
+                    <div class="col-md-12 noPadding">
+                        <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                            [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+                        </mat-paginator>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

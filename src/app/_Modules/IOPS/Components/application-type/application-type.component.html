@@ -1,0 +1,64 @@
+<ng-container>
+  <div class="main-content">
+    <div class="mainContainer">
+      <form>
+        <div class="row">
+          <div class="col-md-12 applicationType noPadding">
+            <div class="col-md-12 backIcon">
+              <p (click)="goBack()" routerLinkActive="active">
+                @if (this.appConfig.CompanyCode === '001') {
+                  <img src="assets/Images/arrowBack.png"/>
+                }
+                @if (this.appConfig.CompanyCode === '002') {
+                  <img src="assets/Images/backBlue.png"/>
+                }
+                Back
+              </p>
+
+            </div>
+
+            <div class="col-md-12">
+              <p>Select Applicant Type</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 topMargin30">
+            <div class="row">
+              <mat-radio-group class="marginAuto">
+                <div class="radioGroupBtn" [ngClass]="{'borderGreen' : type == 'Company'}">
+                  <div>
+                    <mat-radio-button value="Company" (change)="onChange('Company')"></mat-radio-button>
+                  </div>
+                  <div>
+                    <img src="assets/Images/company.png">
+                  </div>
+                  <div>
+                    <p>Company</p>
+                  </div>
+                </div>
+                <div class="radioGroupBtn" [ngClass]="{'borderGreen' : type == 'Individual'}">
+                  <div>
+                    <mat-radio-button value="Individual" (change)="onChange('Individual')"></mat-radio-button>
+                  </div>
+                  <div>
+                    <img src="assets/Images/individual.png">
+                  </div>
+                  <div>
+                    <p>Individual</p>
+                  </div>
+                </div>
+              </mat-radio-group>
+
+            </div>
+          </div>
+        </div>
+        <div class="row noDisplay" [ngClass]="{'blockDisplay' : selected}">
+          <div class="col-md-12 applicationNetxtBtn">
+            <a [routerLink]="'/IOPS/createLead'">Next</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-container>

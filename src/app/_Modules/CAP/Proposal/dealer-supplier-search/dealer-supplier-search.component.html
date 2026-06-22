@@ -1,0 +1,45 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <h3 mat-dialog-title>Dealer/Supplier Search</h3>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="customAccordianMain">
+        <div class="row">
+            <div mat-dialog-content>
+                <h4>Search Criteria</h4>
+                <div class="row fieldContainer paddingBottom20" [formGroup]="this.DealerSearchForm">
+                    <div class="col-md-3 top15" style="margin-top: -8px !important;">
+                        <nfs-textbox formControlName="searchtxt" name="searchtxt" [maxLength]="100"
+                            [Placeholder]="'Dealer Search'" [Label]="'Search By Name'" [Name]="'searchtxt'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-2 top15 margintop15">
+                        <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                            [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="SearchDealerSupplierSearch()">
+                        </nfs-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="customAccordianMain">
+        <div class="row searchResult">
+            <div class="col-md-12 top15 tableMain rentalDetail">
+                <nfs-static-grid [inputArr]="dealerSearchData" [isRadioBtnRequired]="false" [columns]="dealerResultColumns"
+                    [pipes]="pipes" [ActionLabel]="'Load Dealer'" [IsDeleteRequired]="false" [Labels]="Labels"
+                    [DisableSorting]="false" (SelectionChange)="DelaerLoadchildOutput($event)">
+                </nfs-static-grid>
+                <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize" [pageSizeOptions]="pageSizeOptions"
+                    (page)="PageSelectionChanged($event)">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,105 @@
+@if (!this.OJKFlag) {
+  <div>
+    <!-- <div class="row popupHeader">
+    <div class="col-md-11">
+      <span class="popupMainHeading">Commission</span>
+    </div>
+    <div class="col-md-1">
+      <button mat-icon-button class="close-button" [mat-dialog-close]="true" (click)="commissionEventEmitter()">
+        <mat-icon class="close-icon" color="warn">close</mat-icon>
+      </button>
+    </div>
+  </div> -->
+  <div class="popupBody" style="margin-top: 30px !important;">
+    <div class="customAccordianMain">
+      <div class="row">
+        <div mat-dialog-content>
+          <div class="row fieldContainer noMargin" [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+            <h3>Commission</h3>
+            <!-- <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Commission Calc. Method'"
+              [Label]="'Commission Calc. Method'" formControlName="COMMMTHDCDE">
+            </nfs-textbox>
+          </div> -->
+          <div class="col-md-2 top15 customTop8">
+            <nfs-dropdown formControlName="COMMMTHDCDE" [Label]="'Commission Calc. Method'"
+              [Name]="'COMMMTHDCDE'" [controlPlaceholder]="'Commission Calc. Method'"
+              [Ismultiselect]="false" [DataArray]="commissionMethodMasterData"
+              [Component]="'Commission'" (selectionChange)="this.CommissionCalcMethodOnChange($event)">
+            </nfs-dropdown>
+            <!-- <nfs-textbox formControlName="OLRCPTNGBNK" name="OLRCPTNGBNK" [maxLength]="100"
+            [Placeholder]="'OL Receipting Bank *'" [Label]="'OL Receipting Bank *'" [Name]="'OLRCPTNGBNK'"
+            [Component]="'GeneralHeader'">
+          </nfs-textbox> -->
+        </div>
+        <div class="col-md-2 top15 customTop8">
+          <nfs-currency [maxLength]="100" [Placeholder]="'Commission Amount'"
+            [Label]="'Commission Amount'" formControlName="OJKMARKETINGCOMMISSIONAMT"
+            [isControlDisable]=true>
+          </nfs-currency>
+        </div>
+        <div class="col-md-2 top15 customTop8">
+          <nfs-currency [maxLength]="100" [Placeholder]="'% of Income'"
+            [Label]="'% of Commission Fee'" formControlName="COMMCALCPCT">
+          </nfs-currency>
+        </div>
+        <div class="col-md-2 top15 customTop8">
+          <nfs-currency [maxLength]="100" [Placeholder]="'Max. % of Income'"
+            [Label]="'Max. % of Commission Fee'" formControlName="COMMBASICCALCPCT"
+            [isControlDisable]=true>
+          </nfs-currency>
+        </div>
+        <div class="col-md-2 paddingLeftRight8">
+          <section class="example-section">
+            <mat-checkbox class="example-margin" [matTooltip]="'Commission Pass to Customer'" formControlName="PRIVACYACTIND"
+              [disabled]="this.isCommissionPassToCustomer" style="margin-top: 0rem !important;">
+              Commission Pass to Customer
+            </mat-checkbox>
+            <!-- <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND" [disabled]=true>
+            Commission Pass to Customer
+          </mat-checkbox> -->
+        </section>
+      </div>
+      <div class="col-md-2 top10 iconPopup customTop8">
+        <nfs-currency [maxLength]="100" [Placeholder]="'OJK Commission  '"
+          [Label]="'OJK Commission'" formControlName="COMMFIXAMT"
+          (Change)="this.OJKCommissionOnChange($event)">
+        </nfs-currency>
+        <div class="iconPopupMain">
+          <p (click)="openOJKCommission()">More</p>
+        </div>
+      </div>
+      <div class="col-md-12 searchBtns topMargin20" style="padding-right: 0;">
+        <nfs-button [text]="'Reset'" [color]="'primary'" [disabled]="false"
+          [tooltip]="'Reset OJK Commission'" [matButton]="false" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="true" (click)="this.btnResetOJKCommission_Click()">
+        </nfs-button>
+        <nfs-button [text]="'Back'" [color]="'primary'" [disabled]="false"
+          [matButton]="false" [matRaisedButton]="false" [alwaysEnable]="true"
+          [matRaisedButtonIcon]="true" (onBtnClick)="this.closeOJKType()">
+        </nfs-button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+}
+@if (this.OJKFlag && !this.isClosed) {
+  <div>
+    <app-commission-distribution (OJKEventEmitter)="childOutput($event)"></app-commission-distribution>
+  </div>
+}
+<!-- <div class="popupBody">
+<div class="row bodyContainer fieldContainer">
+  <div class="col-md-12 noPadding">
+    <div class="TabInnerMainForm">
+      <div class="row noMargin " >
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div> -->

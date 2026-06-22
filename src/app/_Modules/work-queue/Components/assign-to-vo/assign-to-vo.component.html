@@ -1,0 +1,62 @@
+<h2 mat-dialog-title class="text-left">Assign Application</h2>
+
+<form [formGroup]="assignToVOForm">
+  <div class="row">
+    <div class="col-md-6">
+      <nfs-dropdown formControlName="VOList" [Label]="'VO List'" [Name]="'VOList'" [controlPlaceholder]="'Select MVO'"
+        [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find MVO list...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.VOList">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-6">
+      <nfs-dropdown formControlName="ApprovalTypeList" [Name]="'ApprovalTypeList'" [Label]="'Approval Types'"
+        [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find VO list...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.CreditApprovalTypes">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-12 textArea noPadding">
+        <nfs-textarea formControlName="Comments" matInput [Name]="'Comments'" [Placeholder]="'Comments'"
+          [Label]="'Comments'" [maxLength]="1000">
+        </nfs-textarea>
+      </div>
+    </div>
+  </div>
+</form>
+
+<mat-dialog-actions align="end" class="cancleLeadBtns">
+  <!-- <button class="mat-raised-button mat-primary" style="color:#fff;margin:'2px 2px 2px 2px'" (click)="btnAssignClick()">Assign</button>
+  <button class="mat-raised-button mat-primary" style="color:#fff" (click)="cancel()">Cancel</button> -->
+
+  @if (this.appConfig.CompanyCode === '002') {
+    <span>
+      <div class="btns">
+        <nfs-button [text]="'Assign'" [color]="'primary'" [disabled]="false" [matButton]="true" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="false" [iconPng]="'assets/Images/assignBlue1.png'" (onBtnClick)="btnAssignClick()">
+        </nfs-button>
+      </div>
+      <div class="btns">
+        <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="false" [iconPng]="'assets/Images/closeBlue1.png'" (onBtnClick)="cancel()">
+        </nfs-button>
+      </div>
+    </span>
+  }
+
+  @if (this.appConfig.CompanyCode === '001') {
+    <span>
+      <div class="btns">
+        <nfs-button [text]="'Assign'" [color]="'primary'" [disabled]="false" [matButton]="true" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="false" [iconPng]="'assets/Images/assignGreen1.png'" (onBtnClick)="btnAssignClick()">
+        </nfs-button>
+      </div>
+      <div class="btns">
+        <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="false" [iconPng]="'assets/Images/closeGreen1.png'" (onBtnClick)="cancel()">
+        </nfs-button>
+      </div>
+    </span>
+  }
+
+</mat-dialog-actions>

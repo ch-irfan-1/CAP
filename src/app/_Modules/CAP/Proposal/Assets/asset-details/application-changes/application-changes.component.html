@@ -1,0 +1,352 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Application Charges</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody appChangres tableMainStanderdInsurance">
+  <div class="row bodyContainer fieldContainer FormMain tableMain">
+    <div class="col-md-12 noPadding">
+
+
+      <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 demoTable">
+
+        <ng-container matColumnDef="feeOpen">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <span (click)="expandedElement = expandedElement === element ? null : element">
+              @if (expandedElement === element ? null : element) {
+                <mat-icon>add</mat-icon>
+              }
+              @if (expandedElement !== element ? null : element) {
+                <mat-icon>remove</mat-icon>
+              }
+            </span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PRPLCHRG.CHARGEDSC">
+          <th mat-header-cell *matHeaderCellDef> Fee (s) </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input  matInput [value]="element.PRPLCHRG.CHARGEDSC" [(ngModel)]="element.PRPLCHRG.CHARGEDSC"
+                [disabled]="true">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PRPLCHRG.CHARGEAMT">
+          <th mat-header-cell *matHeaderCellDef> Amount </th>
+          <td mat-cell *matCellDef="let element; let i=dataIndex">
+            <mat-form-field placeholder="never">
+              <input  maxlength="{{maxLength}}" [disabled]="!element.PRPLCHRG.OTOEDITABLEIND || isViewMode" value="element.PRPLCHRG.CHARGEAMT"
+                matInput mask="{{mask}}" step="0.01" thousandSeparator="," (change)="onChangeChargeAmount($event,element,i)" onClick="this.select();"
+                [(ngModel)]="element.PRPLCHRG.CHARGEAMT">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="TAXINCULSIVEAMT">
+          <th mat-header-cell *matHeaderCellDef> Tax Inclusive Amount </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input  matInput [value]="element.TAXINCULSIVEAMT" [ngModel]="element.TAXINCULSIVEAMT | number : '1.0-2'"
+                [disabled]="true">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PRPLCHRG.FINANCEDIND">
+          <th mat-header-cell *matHeaderCellDef> Financed </th>
+          <td mat-cell *matCellDef="let element; let i=dataIndex">
+            <nfs-checkbox class="example-margin" [(ngModel)]="element.PRPLCHRG.TEMPFINANCEIND"
+              [isControlDisable]="!element.PRPLCHRG.FINANCEenabled || isViewMode"
+              (Change)="financeIndCheck($event, element,i)">
+            </nfs-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PRPLCHRG.RECEIVEBYDEALERIND">
+          <th mat-header-cell *matHeaderCellDef> Receive By Dealer </th>
+          <td mat-cell *matCellDef="let element; let i=dataIndex">
+            <nfs-checkbox class="example-margin" [(ngModel)]="element.PRPLCHRG.RECEIVEBYDEALERIND"
+              [isControlDisable]="!element.PRPLCHRG.ReceivedByDealerEnabled || isViewMode || this.isCF"
+              (Change)="receivedByDealerCheck($event, element,i)" >
+            </nfs-checkbox>
+          </td>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element;let j=dataIndex" [attr.colspan]="columnsToDisplay.length">
+            <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+              <div class="example-element-description">
+
+                <div class="row fieldContainer" style="margin: 10px 0px; margin-top: -10px !important;">
+                  <div class=" col-lg-3 col-md-3 col-sm-3 topMargin15 subtablefields noPadding">
+                    <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Component Name'"
+                    [Label]="'Component Name'" [isControlDisable] ="true"
+                    [Name]="'COMONENTNME'">
+                  </nfs-textbox> -->
+                  <mat-form-field appearance="fill">
+                    <mat-label>Component Name</mat-label>
+                    <input class="customInput" readonly matInput [value]="'Receivable Charges'">
+                  </mat-form-field>
+                </div>
+                <!-- <ng-container [formGroup]="element"> -->
+                <div class=" col-lg-3 col-md-3 col-sm-3 topMargin15 subtablefields">
+                  <!-- <nfs-currency [maxLength]="100" [Placeholder]="'Charge Amount'"
+                  [Label]="'Charge Amount'" formControlName="element.PRPLCHRG.CHARGEAMT" [isControlDisable] ="true"
+                  [Name]="'CHARGEAMT'">
+                </nfs-currency> -->
+                <mat-form-field appearance="fill">
+                  <mat-label>Charge Amount</mat-label>
+                  <input class="customInput" matInput [value]="element.PRPLCHRG.CHARGEAMT"
+                    [ngModel]="element.PRPLCHRG.CHARGEAMT  | number : '1.0-2'" [disabled]="true">
+                </mat-form-field>
+              </div>
+            <!-- </ng-container> -->
+            <div class=" col-lg-3 col-md-3 col-sm-3 topMargin15 subtablefields">
+              <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Tax Inclusive Amount'"
+              [Label]="'Tax Inclusive Amount'"
+              [Name]="'TAXINCULSIVEAMT'">
+            </nfs-textbox> -->
+            <mat-form-field appearance="fill">
+              <mat-label>Tax Inclusive Amount</mat-label>
+              <input class="customInput" matInput [value]="element.TAXINCULSIVEAMT"
+                [ngModel]="element.TAXINCULSIVEAMT  | number : '1.0-2'" [disabled]="true">
+            </mat-form-field>
+          </div>
+          <div class=" col-lg-3 col-md-3 col-sm-3 topMargin15 subtablefields">
+            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Tax Exclusive Amount'"
+            [Label]="'Tax Exclusive Amount'"
+            [Name]="'TAXEXCULSIVEAMT'">
+          </nfs-textbox> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Tax Exclusive Amount</mat-label>
+            <input class="customInput" matInput [value]="element.TAXEXCULSIVEAMT"
+              [ngModel]="element.TAXEXCULSIVEAMT  | number : '1.0-2'" [disabled]="true">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="additionalInsuranceTabMain ">
+        <div class="tableMain fieldContainer FormMain rentalDetail">
+          <nfs-static-grid
+            [inputArr]="this._proposalDataService.PROPOSALARTICLE.controls[this._proposalDataService.PROPOSALARTICLE.controls.length - 1].controls.ASSETENTITY.controls.PROPOSALCHARGE.controls[j].controls.PRPLCHRGTAX"
+            [isRadioBtnRequired]="false" [columns]="columns" [pipes]="Pipes" [Labels]="Labels"
+            [IsActionRequired]="false">
+          </nfs-static-grid>
+          <!--<table class="table">
+          <nfs-static-grid
+            [inputArr]="this._proposalDataService.PROPOSALARTICLE.controls[this._proposalDataService.PROPOSALARTICLE.controls.length - 1].controls.ASSETENTITY.controls.PROPOSALCHARGE.controls[j].controls.PRPLCHRGTAX"
+            [isRadioBtnRequired]="false" [columns]="columns" [pipes]="Pipes" [Labels]="Labels" [IsActionRequired]="false">
+          </nfs-static-grid>
+          <thead>
+            <tr>
+              <th class="header">Tax Type</th>
+              <th class="header">Base Amount</th>
+              <th class="header">Tax Rate</th>
+              <th class="header">Tax Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let element of this._proposalDataService.PROPOSALARTICLE.controls[this._proposalDataService.PROPOSALARTICLE.controls.length - 1].controls.ASSETENTITY.controls.PROPOSALCHARGE.controls[j].controls.PRPLCHRGTAX.value; let index = index">
+              <td class="content" style="width: 150px;">
+                <span>{{index +1}}</span>
+              </td>
+              <td class="content" style="width: 130px;">
+                <span>{{element.BASEAMOUNT}}</span>
+              </td>
+              <td class="content" style="width: 142px;">
+                <span>{{element.TAXRATE}}</span>
+              </td>
+              <td class="content" style="width: 142px;">
+                <span>{{element.TAXAMT}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+      </div>
+      <div class="row totalValueBox boxFix">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3 subtablefields noPadding">
+          <mat-form-field appearance="fill">
+            <mat-label>Total</mat-label>
+            <input class="customInput" matInput [value]="this._calculatioinService.totalTaxAmountArr[j]"
+              [ngModel]="this._calculatioinService.totalTaxAmountArr[j]  | number : '1.0-2'"
+              [disabled]="true">
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+<tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+  [class.example-expanded-row]="expandedElement === element">
+</tr>
+<tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+
+<!-- <mat-table [dataSource]="dataSource" multiTemplateDataRows>
+
+<ng-container matColumnDef="feeOpen">
+  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+  <mat-cell *matCellDef="let element; let k = dataIndex">
+    <span (click)="this.PROPOSALCHARGE.value[k] = element">
+
+    </span>
+  </mat-cell>
+</ng-container>
+<ng-container matColumnDef="PRPLCHRG.CHARGEDSC">
+  <mat-header-cell *matHeaderCellDef> Fee (s) </mat-header-cell>
+  <mat-cell *matCellDef="let element">
+    <mat-form-field placeholder="never">
+      <input matInput [value]="element.PRPLCHRG.CHARGEDSC"
+        [(ngModel)]="element.PRPLCHRG.CHARGEDSC" [disabled]="true">
+    </mat-form-field>
+  </mat-cell>
+</ng-container>
+<ng-container matColumnDef="PRPLCHRG.CHARGEAMT">
+  <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+  <mat-cell *matCellDef="let element; let i=dataIndex">
+    <mat-form-field placeholder="never">
+      <input type="tel" maxlength="{{maxLength}}"
+        [disabled]="!element.PRPLCHRG.OTOEDITABLEIND" matInput mask="{{mask}}"
+        (change)="onChangeChargeAmount($event,element,i)"
+        [ngModel]="element.PRPLCHRG.CHARGEAMT | number : '1.0-2'">
+    </mat-form-field>
+  </mat-cell>
+</ng-container>
+<ng-container matColumnDef="TAXINCULSIVEAMT">
+  <th mat-header-cell *matHeaderCellDef> Tax Inclusive Amount </th>
+  <td mat-cell *matCellDef="let element">
+    <mat-form-field placeholder="never">
+      <input matInput [value]="element.TAXINCULSIVEAMT"
+        [ngModel]="element.TAXINCULSIVEAMT | number : '1.0-2'" [disabled]="true">
+    </mat-form-field>
+  </td>
+</ng-container>
+<ng-container matColumnDef="PRPLCHRG.FINANCEDIND">
+  <mat-header-cell *matHeaderCellDef> Financed </mat-header-cell>
+  <mat-cell *matCellDef="let element; let i=dataIndex">
+    <section class="example-section">
+      <nfs-checkbox class="example-margin" [(ngModel)]="element.PRPLCHRG.TEMPFINANCEIND"
+        [isControlDisable]="!element.PRPLCHRG.FINANCEenabled"
+      (Change)="financeIndCheck($event,i)"></nfs-checkbox>
+    </section>
+  </mat-cell>
+</ng-container>
+<ng-container matColumnDef="PRPLCHRG.RECEIVEBYDEALERIND">
+  <mat-header-cell *matHeaderCellDef> Recieve By Dealer </mat-header-cell>
+  <mat-cell *matCellDef="let element; let i=dataIndex">
+    <section class="example-section">
+      <nfs-checkbox class="example-margin" [(ngModel)]="element.PRPLCHRG.RECEIVEBYDEALERIND"
+        [isControlDisable]="!element.PRPLCHRG.ReceivedByDealerEnabled"
+        (Change)="receivedByDealerCheck($event,i)" [disabled]="this.isCF">
+      </nfs-checkbox>
+    </section>
+  </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="expandedDetail">
+  <mat-cell *matCellDef="let element;let j=dataIndex">
+    <div class="example-element-detail"
+      [@detailExpand]="element == this.PROPOSALCHARGE.value[j] ? 'expanded' : 'collapsed'">
+      <div class="example-element-description">
+        <div class="row noMargin fieldContainer">
+          <div class="col-md-6 top15">
+            <mat-form-field appearance="fill">
+              <mat-label>Component Name</mat-label>
+              <input readonly matInput [value]="'Receivable Charges'">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 top15">
+            <mat-form-field appearance="fill">
+              <mat-label>Charge Amount</mat-label>
+              <input matInput [value]="element.PRPLCHRG.CHARGEAMT"
+                [ngModel]="element.PRPLCHRG.CHARGEAMT  | number : '1.0-2'"
+                [disabled]="true">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 top15">
+            <mat-form-field appearance="fill">
+              <mat-label>Tax Inclusive Amount</mat-label>
+              <input matInput [value]="element.TAXINCULSIVEAMT"
+                [ngModel]="element.TAXINCULSIVEAMT  | number : '1.0-2'"
+                [disabled]="true">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 top15">
+            <mat-form-field appearance="fill">
+              <mat-label>Tax Exclusive Amount</mat-label>
+              <input matInput [value]="element.TAXEXCULSIVEAMT"
+                [ngModel]="element.TAXEXCULSIVEAMT  | number : '1.0-2'"
+                [disabled]="true">
+            </mat-form-field>
+          </div>
+          <div class="col-md-12 noPadding botmMargin30">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="SubHeading">
+                    Tax Details
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="tableMain">
+                  <nfs-static-grid
+                    [inputArr]="this._proposalDataService.PROPOSALARTICLE.controls[this._proposalDataService.PROPOSALARTICLE.controls.length - 1].controls.ASSETENTITY.controls.PROPOSALCHARGE.controls[j].controls.PRPLCHRGTAX"
+                    [isRadioBtnRequired]="false" [columns]="columns" [pipes]="Pipes"
+                  [Labels]="Labels" [IsActionRequired]="false"></nfs-static-grid>
+                </div>
+                <div class="row noMargin">
+                  <div class="col-md-6 top15">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Total</mat-label>
+                      <input matInput
+                        [value]="this._calculatioinService.totalTaxAmountArr[j]"
+                        [ngModel]="this._calculatioinService.totalTaxAmountArr[j]  | number : '1.0-2'"
+                        [disabled]="true">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-cell>
+</ng-container>
+
+<mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+<mat-row *matRowDef="let element; columns: columnsToDisplay; let l = dataIndex"
+  class="example-element-row" [class.example-expanded-row]="this.PROPOSALCHARGE.value[l] === element">
+</mat-row>
+<mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></mat-row>
+</mat-table> -->
+</div>
+</div>
+</div>
+<div class="row popupFooter">
+  <div class="row bodyContainer">
+    <div class="col-md-12 searchBtns">
+      <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+        [alwaysEnable]="true" [matRaisedButtonIcon]="true" (onBtnClick)="btnOk()">
+      </nfs-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <h3 mat-dialog-title>MVO Search</h3>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" (click)="CloseWithoutSave()" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="customAccordianMain">
+        <div class="row">
+            <div mat-dialog-content>
+                <h4>Search Criteria</h4>
+                <div class="row fieldContainer noMargin" [formGroup]="this.MVOSearchForm">
+                    <div class="col-md-6 top15 topNeg10">
+                        <nfs-dropdown formControlName="MVOUsersList" [Label]="'MVO List'" [Name]="'MVOUsersList'"
+                            [controlPlaceholder]="'Select MVO'" [Ismultiselect]="true" [EnableFilter]="true"
+                            [FilterControlPlaceholder]="'Find MVO list...'"
+                            [noSearchEntriesFoundLabel]="'No Matching Values'"
+                            (selectionChange)="MVOSelectionChange($event)"
+                            [DataArray]="this._masterDataService.MVOList">
+                        </nfs-dropdown>
+                    </div>
+                        <div class="col-md-6 top15 topNeg10">
+                            <nfs-dropdown formControlName="selectedUsers" [AllowUnSelect]="false" [Label]="'Selected Users'" [Name]="'selectedUsers'"
+                            [controlPlaceholder]="'Selected Users'" [Ismultiselect]="false" [EnableFilter]="false"
+                            [noSearchEntriesFoundLabel]="'No Matching Values'"
+                            [DataArray]="this.selectedMVOs">
+                        </nfs-dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+<div class="row popupFooter">
+    <div mat-dialog-actions class="d-flex justify-content-end">
+        <div class="">
+            <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="SelectAndClose()"></nfs-button>
+        </div>
+
+    </div>
+</div>

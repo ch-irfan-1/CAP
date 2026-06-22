@@ -1,0 +1,9 @@
+import { ICOMM_APLC_CNFG_ATCHInfo } from "./ICOMM_APLC_CNFG_ATCHInfo";
+import { ITPLE_PERD_CNFG_ATCHInfo } from "./ITPLE_PERD_CNFG_ATCHInfo";
+import { ITPLE_PERD_HEDR_ATCHInfo } from "./ITPLE_PERD_HEDR_ATCHInfo";
+
+export interface IAttachedPeriodConfigEntity{
+    TPLEPERDHEDRATCH: ITPLE_PERD_HEDR_ATCHInfo;
+    TPLEPERDCNFGATCH: ITPLE_PERD_CNFG_ATCHInfo;
+    COMMAPLCCNFG: Array<ICOMM_APLC_CNFG_ATCHInfo>
+}

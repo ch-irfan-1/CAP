@@ -1,0 +1,27 @@
+.disabledDiv {
+    pointer-events: none;
+    opacity: 1;
+}
+.TempDisable
+/* .disabledDiv nfs-textbox span label {
+    color: rgba(0, 0, 0, 0.38) !important;
+}
+.mat-tab-label-container {
+    z-index: 2 !important;
+} */
+.TempDisable nfs-datepicker
+  .mat-mdc-form-field
+  .mat-mdc-text-field-wrapper
+  .mat-mdc-form-field-flex
+  .mat-mdc-form-field-infix
+  .mat-mdc-floating-label {
+  color: #100f0f8c !important;
+}
+.TempDisable nfs-datepicker
+  .mat-mdc-form-field
+  .mat-mdc-text-field-wrapper
+  .mat-mdc-form-field-flex
+  .mat-mdc-form-field-infix
+  input {
+  color: #100f0f8c !important;
+}

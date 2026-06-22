@@ -1,0 +1,267 @@
+<ng-container>
+  <div class="main-content">
+    <div class="mainContainer">
+      <form [formGroup]="QueueSearchForm">
+        <div class="workQueueTopMain row">
+          <div class="col-md-6">
+            <h4>Total Leads {{totalRows}}</h4>
+          </div>
+        </div>
+        <div class="workQueueSearchMain row fieldContainer">
+          <h5>Search Criteria</h5>
+          <div class="col-md-2 top15 searchField" style="height: 40px;">
+            <nfs-dropdown formControlName="SearchByColumn" [Label]="'Filter'"
+              (selectionChange)="changeColumnSelection()" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.workQueueColumnData">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15" style="height: 40px;">
+            <nfs-textbox name="SEARCHTXT" maxlength="100" [Placeholder]="'Search Text'"
+              formControlName="SearchText" [Label]="'Search Text'" [Name]="'SEARCHTXT'"
+              (InputText)='applyFilter()'>
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15" style="height: 40px;">
+            <nfs-datepicker matInput  formControlName="FromDate" name="FROMDTE"
+              [Max]="QueueSearchForm.controls.ToDate.value" [Placeholder]="'From Date'"
+              [Label]="'From Date'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15" style="height: 40px;">
+            <nfs-datepicker matInput  formControlName="ToDate" name="TODTE" [Max]="this.maxDate"
+              [Min]="QueueSearchForm.controls.FromDate.value" [Placeholder]="'To Date'"
+              [Label]="'To Date'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-4 top15" style="height: 40px;" [formGroup]='RadioOptions'>
+            @if (this.IsAPCuserLoggedin) {
+              <mat-radio-group aria-label="Select Status"
+                formControlName="Option">
+                <mat-radio-button [checked]='true' value="All" (change)="applyFilterCustom('00000')"
+                  style="width: 88px;">All
+                </mat-radio-button>
+                <mat-radio-button value="New" (change)="applyFilterCustom('00002')" style="width: 100px;">
+                  New
+                </mat-radio-button>
+                <mat-radio-button value="Cancelled" (change)="applyFilterCustom('00033')"
+                  style="width: 136px;">Cancelled
+                </mat-radio-button>
+                <mat-radio-button value="Assigned" (change)="applyFilterCustom('00144')">Assigned
+                </mat-radio-button>
+              </mat-radio-group>
+            }
+          </div>
+          <div class="col-md-12 row justify-content-end" style="margin-top: 15px !important;">
+            <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false" [matButton]="false"
+              [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+              [iconPng]="'assets/Images/searchwhite.png'" (onBtnClick)="btnSearch()" style="margin-right: 15px;">
+            </nfs-button>
+            <nfs-button [text]="'Reset Grid'" [color]="'primary'" [disabled]="false" [matButton]="false"
+              [matRaisedButton]="false" [matRaisedButtonIcon]="true" [iconPng]="'assets/Images/reset.png'"
+              (onBtnClick)="btnReset()">
+            </nfs-button>
+          </div>
+        </div>
+        <!-- <div class="workQueueTop row">
+        <div class="col-md-9 searchsection">
+          <div class="row">
+            <div class="col-md-3">
+              <nfs-dropdown formControlName="SearchByColumn" [Label]="'Filter'"
+                (selectionChange)="changeColumnSelection()" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this.workQueueColumnData">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3">
+              <nfs-textbox name="SEARCHTXT" maxlength="100" [Placeholder]="'Search Text'"
+                formControlName="SearchText" [Label]="'Search Text'" [Name]="'SEARCHTXT'"
+                (InputText)='applyFilter()'>
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3">
+              <nfs-datepicker matInput readonly formControlName="FromDate" name="FROMDTE"
+                [Max]="QueueSearchForm.controls.ToDate.value" [Placeholder]="'From Date'"
+                [Label]="'From Date'">
+              </nfs-datepicker>
+            </div>
+            <div class="col-md-3">
+              <nfs-datepicker matInput readonly formControlName="ToDate" name="TODTE"
+                [Max]="this.maxDate" [Min]="QueueSearchForm.controls.FromDate.value"
+                [Placeholder]="'To Date'" [Label]="'To Date'">
+              </nfs-datepicker>
+            </div>
+            <div class="col-md-12 searchBtns">
+              <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                [iconPng]="'assets/Images/searchwhite.png'" (onBtnClick)="btnSearch()">
+              </nfs-button>
+              <nfs-button [text]="'Reset Grid'" [color]="'primary'" [disabled]="false"
+                [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                [iconPng]="'assets/Images/reset.png'" (onBtnClick)="btnReset()">
+              </nfs-button>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div id="QueueDateSearch" class="row ml-5 mt-5 mb-5"> -->
+      <!-- <div class="col-md-3">
+
+      <div class="col-lg-2 col-md-6">
+
+        <nfs-datepicker matInput  readonly formControlName="FromDate"  name="FromDate"
+          [Placeholder]="'From Date'" [Label]="'From Date'">
+        </nfs-datepicker>
+      </div>
+
+
+    </div>
+
+    <div class="col-lg-2 col-md-6">
+
+      <nfs-datepicker matInput  readonly formControlName="ToDate"  name="ToDate"
+        [Placeholder]="'To Date'" [Label]="'To Date'">
+      </nfs-datepicker>
+    </div>
+
+    <div class="col-md-2 mt-3">
+      <button id="WorkQueueRefreshButton" (click)='getWorkQueueData(1, 20)' mat-raised-button color="primary">Refresh
+        <mat-icon class="mat-20">refresh</mat-icon>
+      </button>
+    </div> -->
+
+    <!-- <div class="col-md-3">
+    <mat-form-field >
+      <input matInput formControlName="SearchBar" placeholder="Search Workqueue" name="TextSearchBar">
+      <mat-icon matSuffix >search</mat-icon>
+      <mat-icon matSuffix >close</mat-icon>
+    </mat-form-field>
+  </div> -->
+
+
+
+  <!------- Radio Buttons ------->
+  <!-- <div class="search-radiobtn">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-radio-group aria-label="Select Status" formControlName="ShowByStatus">
+        <mat-radio-button value="All" (change)="applyFilterCustom('')" >All</mat-radio-button>
+        <mat-radio-button value="New" (change)="applyFilterCustom('New')">New</mat-radio-button>
+        <mat-radio-button value="Cancelled" (change)="applyFilterCustom('Cancelled')">Cancelled</mat-radio-button>
+        <mat-radio-button value="Assigned" (change)="applyFilterCustom('Assigned')">Assigned</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+</div> -->
+
+
+</form>
+
+<div class="autoScroll workQueueTableMain">
+  <!-- <div class="search-radiobtn" [formGroup]='RadioOptions'>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-radio-group aria-label="Select Status" *ngIf="this.IsAPCuserLoggedin"
+        formControlName="Option">
+
+        <mat-radio-button [checked]='true' value="All" (change)="applyFilterCustom('00000')">All
+        </mat-radio-button>
+        <mat-radio-button value="New" (change)="applyFilterCustom('00002')">New
+        </mat-radio-button>
+        <mat-radio-button value="Cancelled" (change)="applyFilterCustom('00033')">Cancelled
+        </mat-radio-button>
+        <mat-radio-button value="Assigned" (change)="applyFilterCustom('00144')">Assigned
+        </mat-radio-button>
+
+      </mat-radio-group>
+
+    </div>
+
+  </div>
+
+</div> -->
+<nfs-static-grid [inputArr]="workQueueDataset" [isRadioBtnRequired]="false" [columns]="columns"
+  [pipes]="pipes" [contextMenu]="ContextMenu" (SelectionChange)="workQueueOutput($event)"
+  [isWorkQueue]="true" [WorkQueueSrc]="'IOPS'" [Labels]="Labels" [DisableSorting]="false" [rightClickContextMenuEnable]=true
+  [IsActionRequired]=false>
+</nfs-static-grid>
+
+<mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize" [ngClass]="'work-queue-paginator'"
+  [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+</mat-paginator>
+</div>
+<!-- <div class="mat-elevation-z8 example-container">
+<table id="WorkQueueTable" mat-table [dataSource]="this.QueueData" matSort matSortDirection="desc" matSortActive="creationDate">
+
+  <ng-container matColumnDef="leadGeneratorRevisedNumber" sticky>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Lead Number</th>
+    <td mat-cell (click)="openDialog(row)" *matCellDef="let row"> {{row.leadGeneratorRevisedNumber}}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="creationDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+    <td mat-cell (click)="openDialog(row)" *matCellDef="let row"> {{row.creationDate | date}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fpCampaignName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Campaign Name </th>
+    <td mat-cell (click)="openDialog(row)" *matCellDef="let row"> {{row.fpCampaignName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="customer">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name </th>
+    <td mat-cell (click)="openDialog(row)" *matCellDef="let row" matTooltip="{{row.customer}}"
+    matTooltipPosition="above"> {{row.customer}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dealername">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Dealer Name </th>
+    <td mat-cell (click)="openDialog(row)" *matCellDef="let row"> {{row.dealername}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+    <td mat-cell (click)="openDialog(row)" *matCellDef="let row">
+      <span ngClass="{{row.status}} : Rounded "><span class="roundCircle"
+      ngClass="{{row.status}} : Rounded "></span>{{row.status}}</span> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-button [matMenuTriggerFor]="afterMenu" [disabled]='row.status == "Submitted" && this.UserGroups.includes("00105")'>
+          <i class="material-icons">
+            more_horiz
+          </i>
+        </button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+          <button mat-menu-item (click)="viewLeadFromQueue(row.leadGenertorNumber,false)" *ngIf='row.status == "Draft" && this.UserGroups.includes("00105")'>
+            Edit
+          </button>
+          <button mat-menu-item (click)="viewLeadFromQueue(row.leadGenertorNumber,true)" *ngIf="row.status != 'Submitted'">
+            View
+          </button>
+
+          <button mat-menu-item (click)="cancelLeadFromQueue(row.leadGenertorNumber)" *ngIf="row.status == 'Draft' || row.status == 'New'">
+            Cancel
+          </button>
+
+          <button mat-menu-item (click)="submitLeadToMH(row.leadGenertorNumber ,row.leadGeneratorRevisedNumber)" *ngIf='row.status == "Draft" && this.UserGroups.includes("00105")'>
+            Submit Lead
+          </button>
+
+        </mat-menu>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[15, 50, 100]"></mat-paginator>
+  </div> -->
+</div>
+</div>
+</ng-container>

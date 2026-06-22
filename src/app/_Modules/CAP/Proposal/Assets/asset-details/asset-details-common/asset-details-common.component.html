@@ -1,0 +1,573 @@
+@if (!this.commissionFlag && !this.commissionDistributionFlag) {
+  <div class="row fieldContainer">
+    <ng-container [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+      <div class="col-md-2 top15" *IsControlVisible="'ASSETAMT'">
+        <nfs-currency [Placeholder]="'Asset Cost'" [Label]="'Asset Cost'" formControlName="ASSETAMT"
+          [isControlDisable]="isControlDisable('ASSETAMT')" [Name]="'ASSETAMT'" [Component]="this.ComponentName"
+          (Change)="this.assetAmountonChange($event)">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'CASHDEPOSITAMT'">
+        <nfs-currency formControlName="CASHDEPOSITAMT" [Placeholder]="'Down Payment'" [Label]="'Down Payment'"
+          [isControlDisable]="isControlDisable('CASHDEPOSITAMT')" [Name]="'CASHDEPOSITAMT'"
+          [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'CASHDEPOSITPCT'">
+        <nfs-currency formControlName="CASHDEPOSITPCT" [Placeholder]="'Down Payment (%)'" [Label]="'Down Payment %'"
+          [isControlDisable]="isControlDisable('CASHDEPOSITPCT')" [Name]="'CASHDEPOSITPCT'" [maxNumberLength]="2"
+          [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'DSCTAMNTOTO'">
+        <nfs-currency formControlName="DSCTAMNTOTO" [Placeholder]="'Down Payment RF'" [Label]="'Down Payment RF'"
+          [isControlDisable]="isControlDisable('DSCTAMNTOTO')" [Name]="'DSCTAMNTOTO'" [Component]="this.ComponentName"
+          (Change)="this.downPaymentChange($event,'DSCTAMNTOTO')">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'DSCTAMNTPCTOTO'">
+        <nfs-currency formControlName="DSCTAMNTPCTOTO" [Placeholder]="'Down Payment (%) RF'"
+          [isControlDisable]="isControlDisable('DSCTAMNTPCTOTO')" [Label]="'Down Payment (%) RF'" [maxNumberLength]="2"
+          [Name]="'DSCTAMNTPCTOTO'" [Component]="this.ComponentName"
+          (Change)="this.downPaymentChange($event,'DSCTAMNTPCTOTO')">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'VATONASSETCOST'">
+        <nfs-currency [Placeholder]="'VAT On Asset Cost'" [Label]="'VAT On Asset Cost'"
+          [isControlDisable]="isControlDisable('VATONASSETCOST')" formControlName="VATONASSETCOST"
+          [Name]="'VATONASSETCOST'" [Component]="this.ComponentName" (Change)="this.onChangeVATOnAssetCost($event)">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'TOTALCOST'">
+        <nfs-currency [Placeholder]="'Total Cost'" [Label]="'Total Cost'" formControlName="TOTALCOST"
+          [isControlDisable]="true" [Name]="'TOTALCOST'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'TOTALDOWNPAYMENT'">
+        <nfs-currency [Placeholder]="'Total Down Payment'" [Label]="'Total Down Payment'" [isControlDisable]="true"
+          formControlName="TOTALDOWNPAYMENT" [Name]="'TOTALDOWNPAYMENT'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'CHARGEAMT'">
+        <nfs-currency [Placeholder]="'Application Charges'" [Label]="'Application Charges'" [isControlDisable]="true"
+          formControlName="CHARGEAMT" [Name]="'CHARGEAMT'" [Component]="this.ComponentName">
+        </nfs-currency>
+        <div class="iconPopupMain">
+          <p (click)="openApplicationCharges()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'FINANNCEDPCT'">
+        <nfs-textbox [Placeholder]="'Net Financed Amount (%)'" [Label]="'Net Financed Amount (%)'"
+          [isControlDisable]="true" formControlName="FINANNCEDPCT" [Name]="'FINANNCEDPCT'"
+          [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'ADJUSTEDFINANCEDAMT'">
+        <nfs-currency [Placeholder]="'Net Financed Amount'" [Label]="'Net Financed Amount'" [isControlDisable]="true"
+          formControlName="ADJUSTEDFINANCEDAMT" [Name]="'ADJUSTEDFINANCEDAMT'" [Component]="this.ComponentName">
+        </nfs-currency>
+        <div class="iconPopupMain">
+          <p (click)="openNetFinancedAmount()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'ACCESSORYAMT'">
+        <nfs-currency [Label]="'Accessories'" [Placeholder]="'Accessories'" formControlName="ACCESSORYAMT"
+          [isControlDisable]="true" [Name]="'ACCESSORYAMT'" [Component]="this.ComponentName">
+        </nfs-currency>
+        <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('ACCESSORYAMT')}">
+          <p (click)="openAccessories()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'ACCYWITHOUTVAT'">
+        <nfs-currency [Placeholder]="'Accessories Without VAT'" [Label]="'Accessories Without VAT'"
+          [isControlDisable]="isControlDisable('ACCYWITHOUTVAT')" formControlName="ACCYWITHOUTVAT"
+          [Name]="'ACCYWITHOUTVAT'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'RESIDUALTYP'">
+        <nfs-dropdown [Label]="'RV/Balloon'" [controlPlaceholder]="'RV/Balloon'" formControlName="RESIDUALTYP"
+          [Name]="'RESIDUALTYP'" [Component]="this.ComponentName" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._financialClubMasterDataService.RVBaloonApplicable" [Component]="this.ComponentName"
+        [isControlDisable]="true" [AllowUnSelect]=false></nfs-dropdown>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'RESIDUALAMT'">
+        <nfs-currency [Placeholder]="'RV/Balloon Amount'" [Label]="'RV/Balloon Amount'" formControlName="RESIDUALAMT"
+          [Name]="'RESIDUALAMT'" [Component]="this.ComponentName"
+          [isControlDisable]="isControlDisable('RESIDUALAMT') || !this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.RVEDITIND.value"
+          (Change)="this.CalculateRV($event, 'RESIDUALAMT')">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'RESIDUALPCT'">
+        <nfs-currency [Placeholder]="'RV/Balloon Amount (%)'" [Label]="'RV/Balloon Amount (%)'" [maxNumberLength]="2"
+          formControlName="RESIDUALPCT" [Name]="'RESIDUALPCT'" [Component]="this.ComponentName"
+          [isControlDisable]="isControlDisable('RESIDUALPCT') || !this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.RVEDITIND.value"
+          (Change)="this.CalculateRV($event, 'RESIDUALPCT')">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'FINANCEDAMT'">
+        <nfs-currency [Placeholder]="'Adjusted Financed Amount'" [Label]="'Adjusted Financed Amount'"
+          [isControlDisable]="true" formControlName="FINANCEDAMT" [Name]="'FINANCEDAMT'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'DSBRAMNTOTO'">
+        <nfs-currency [Placeholder]="'Disburse Amount'" [Label]="'Disburse Amount'" formControlName="DSBRAMNTOTO"
+          [isControlDisable]="true" [Name]="'DSBRAMNTOTO'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'APPLIEDCUSTOMERRTE'">
+        <nfs-currency [mask]="'separator.5'" [maxNumberLength]="2" formControlName="APPLIEDCUSTOMERRTE"
+          [Name]="'APPLIEDCUSTOMERRTE'" [Component]="this.ComponentName" matInput
+          [Placeholder]="'Interest Rate (Effective)'" [isControlDisable]="!this.isInterestRateEffEnable"
+          [Label]="'Interest Rate (Effective)'" (Change)="this.interestRateOnChange($event)">
+        </nfs-currency>
+        <div class="iconPopupMain">
+          <p (click)="openInterestRate()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'APPLIEDCUSTOMERRTECALCULATED'">
+        <nfs-currency [mask]="'separator.5'" [maxNumberLength]="2" [Placeholder]="'Interest Rate (Flat)'"
+          [Label]="'Interest Rate (Flat)'" [isControlDisable]="!this.isInterestRateFlatEnable"
+          formControlName="APPLIEDCUSTOMERRTECALCULATED" [Name]="'APPLIEDCUSTOMERRTECALCULATED'"
+          [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'TRADEINAMT'">
+        <nfs-currency [Placeholder]="'Trade In Amount'" [Label]="'Trade In Amount'" formControlName="TRADEINAMT"
+          [isControlDisable]="isControlDisable('TRADEINAMT')" [Name]="'TRADEINAMT'" [Component]="this.ComponentName"
+          (Change)="this.tradeinAmountOnChange($event)">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'BALANCEPAYABLE'">
+        <nfs-currency [Placeholder]="'Balance Payable'" [Label]="'Balance Payable'" formControlName="BALANCEPAYABLE"
+          [isControlDisable]="true" [Name]="'BALANCEPAYABLE'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15" *IsControlVisible="'TOTALPAYABLEAMT'">
+        <nfs-currency [Placeholder]="'Total Amount Payable'" [Label]="'Total Amount Payable'" [isControlDisable]="true"
+          formControlName="TOTALPAYABLEAMT" [Name]="'TOTALPAYABLEAMT'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'TOTALSUBSIDYAMT'">
+        <nfs-currency [Label]="'Total Subsidy Amount'" [Placeholder]="'Total Subsidy Amount'" [isControlDisable]="true"
+          formControlName="TOTALSUBSIDYAMT" [Name]="'TOTALSUBSIDYAMT'" [Component]="this.ComponentName">
+        </nfs-currency>
+        <div class="iconPopupMain" [ngClass]="{'disabledDiv': true}">
+          <p (click)="openTotalSubsidyAmount()">More</p><!-- (click)="openExposure()" -->
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'TOTALFIRSTPAYMENT'">
+        <nfs-currency formControlName="TOTALFIRSTPAYMENT" [Name]="'TOTALFIRSTPAYMENT'" [isControlDisable]="true"
+          [Component]="this.ComponentName" matInput [Placeholder]="'Total First Payment'" [Label]="'Total First Payment'">
+        </nfs-currency>
+        <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('FIRSTPAYMENTPOPUP')}">
+          <p (click)="openTotalFirstPayment()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'ETAMNTOTO'">
+        <nfs-currency formControlName="ETAMNTOTO" [Name]="'ETAMNTOTO'" [Component]="this.ComponentName" matInput
+          [isControlDisable]="isControlDisable('ETAMNTOTO') || this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value" [Placeholder]="'ET Amount'" [Label]="'ET Amount'">
+        </nfs-currency>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'INSURANCEPREMIUM'">
+        <nfs-currency formControlName="INSURANCEPREMIUM" [Name]="'INSURANCEPREMIUM'" [isControlDisable]="true"
+          [Component]="this.ComponentName" matInput [Placeholder]="'Insurance Premium'" [Label]="'Insurance Premium'">
+        </nfs-currency>
+        <div class="iconPopupMain">
+          <p (click)="openInsurancePremium()">More</p><!-- (click)="openExposure()" -->
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'GPALLOWEDIND'">
+        <nfs-currency formControlName="TOTALGPINTERESTAMNT" [Name]="'GPALLOWEDIND'" [Component]="this.ComponentName"
+          [Placeholder]="'Total GP Interest Amount'" [Label]="'Total GP Interest Amount'" [isControlDisable]="true">
+        </nfs-currency>
+        <div class="iconPopupMain"
+          [ngClass]="{'disabledDiv': !this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.GPALLOWEDIND.value}">
+          <p (click)="openTotalGPAmount()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup">
+        <nfs-currency [Placeholder]="'Old Contract -ET Amount'"
+          [Label]="'Old Contract -ET Amount'" [isControlDisable]="true"
+          formControlName="OLDCONTRCBL" [Name]="'OLDCONTRCBL'" [Component]="this.ComponentName">
+        </nfs-currency>
+        <div class="iconPopupMain">
+          <p (click)="openOldContractBreakupComonent()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'COMMFIXAMT'">
+        <nfs-currency formControlName="COMMFIXAMT" [Name]="'COMMFIXAMT'" [Component]="this.ComponentName"
+          [isControlDisable]="true" [Placeholder]="'Commission'" [Label]="'Commission'">
+        </nfs-currency>
+        @if (!isControlDisable('COMMFIXAMT')) {
+          <div class="iconPopupMain">
+            <p (click)="openCommission()">More</p>
+          </div>
+        }
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'INSRCOMMAMTOTO'">
+        <nfs-currency formControlName="INSRCOMMAMTOTO" [Name]="'INSRCOMMAMTOTO'" [Component]="this.ComponentName"
+          [Placeholder]="'Insurance Commission-OTO'" [Label]="'Insurance Commission-OTO'" [isControlDisable]="true"
+          (Change)="selectionChange_INSRCOMMAMTOTO($event)">
+        </nfs-currency>
+        <div class="iconPopupMain"
+          [ngClass]="{'disabledDiv': this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.INSRCOMMAMTOTO.value == 0}">
+          <p (click)="openInsuranceCommissionOTO()">More</p>
+        </div>
+      </div>
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'TOTALACQUISITIONINCOME'">
+        <nfs-currency formControlName="TOTALACQUISITIONINCOME" [Name]="'TOTALACQUISITIONINCOME'" [isControlDisable]="true"
+          [Component]="this.ComponentName" [Placeholder]="'Total Acquisition Income'"
+          [Label]="'Total Acquisition Income'">
+        </nfs-currency>
+        <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('FIRSTPAYMENTPOPUP')}">
+          <p (click)="openTotalAcquisitionAmount()">More</p>
+        </div>
+      </div>
+      @if (this._proposalManagerService.ISRDPIND) {
+        <div class="col-md-2 top15 iconPopup">
+          <nfs-currency formControlName="REALDOWNPAYMENTAMT"
+            [Name]="'REALDOWNPAYMENTAMT'" [Component]="this.ComponentName" [Placeholder]="'Real Down Payment'"
+            [Label]="'Real Down Payment'" (Change)="onReadownpaymentChange($event)">
+          </nfs-currency>
+        </div>
+      }
+      <div class="col-md-2 top15 iconPopup" *IsControlVisible="'INSURANCECOMMISSIONAMOUNT'">
+        <nfs-currency [isControlDisable]='true' formControlName="INSURANCECOMMISSIONAMOUNT"
+          [Name]="'INSURANCECOMMISSIONAMOUNT'" [Placeholder]="'Insurance Commission PICs'"
+          [Label]="'Insurance Commission PICs'" [Component]="this.ComponentName">
+        </nfs-currency>
+        <!-- <div class="iconPopupMain">
+        <p (click)="btnInsuranceCommissionTaxDetail_Click()">More</p>
+      </div> -->
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'NMSIR'">
+      <nfs-currency [mask]="'separator.5'" formControlName="NMSIR" [Name]="'NMSIR'" [isControlDisable]='true'
+        [Component]="this.ComponentName" [Placeholder]="'NMSIR'" [Label]="'NMSIR'">
+      </nfs-currency>
+      <div class="iconPopupMain">
+        <p (click)="openNMSIR()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'TOTALADMINFEE'">
+      <nfs-currency formControlName="TOTALADMINFEE" [Name]="'TOTALADMINFEE'" [Component]="this.ComponentName"
+        [isControlDisable]='true' [Placeholder]="'Total Admin Fee'" [Label]="'Total Admin Fee'"
+        formControlName="TOTALADMINFEE">
+      </nfs-currency>
+      <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('TOTALADMINFEE')}">
+        <p (click)="openTotalAdminFee()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'MAXINSURANCECOMMISSIONAMOUNT'">
+      <nfs-currency [isControlDisable]='true' formControlName="MAXINSURANCECOMMISSIONAMOUNT"
+        [Name]="'MAXINSURANCECOMMISSIONAMOUNT'" [Component]="this.ComponentName"
+        [Placeholder]="'Max Insr. Commission PICs'" [Label]="'Max Insr. Commission PICs'">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'DEALERPOAMOUNT'">
+      <nfs-currency formControlName="DEALERPOAMOUNT" [Name]="'DEALERPOAMOUNT'" [Component]="this.ComponentName"
+        [isControlDisable]='true' matInput [Placeholder]="'Dealer PO Amount'" [Label]="'Dealer PO Amount'">
+      </nfs-currency>
+      <div class="iconPopupMain"
+        [ngClass]="{'disabledDiv': this.PROPOSALFINANCIALAGREEMENT.value.DEALERPOAMOUNT == 0 }">
+        <p (click)="openDealerPOAmount()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'PROVISIONFEE'">
+      <nfs-currency formControlName="PROVISIONFEE" [Name]="'PROVISIONFEE'" [Component]="this.ComponentName"
+        [isControlDisable]='true' [Placeholder]="'Provision Fee'" [Label]="'Provision Fee'">
+      </nfs-currency>
+      <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('PROVISIONFEE')}">
+        <p (click)="openProvisionFee()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'OJKINSURANCECOMMISSIONAMT'">
+      <nfs-currency formControlName="OJKINSURANCECOMMISSIONAMT" [Name]="'OJKINSURANCECOMMISSIONAMT'"
+        [isControlDisable]='true' [Component]="this.ComponentName" [Placeholder]="'OJK Insurance Commission'"
+        [Label]="'OJK Insurance Commission'">
+      </nfs-currency>
+      <div class="iconPopupMain" [ngClass]="{'disabledDiv': true}">
+        <p (click)="openOJKInsuranceCommission()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup">
+      <nfs-currency formControlName="POLICYFEE" [Name]="'POLICYFEE'" [Component]="this.ComponentName" matInput
+        [isControlDisable]="true" [Placeholder]="'Policy Fee'" [Label]="'Policy Fee'">
+      </nfs-currency>
+      <div class="iconPopupMain" [ngClass]="{'disabledDiv': this.PROPOSALFINANCIALAGREEMENT.value.POLICYFEE == 0 }">
+        <p (click)="openPolicyFee()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup">
+      <nfs-currency formControlName="SECURITYDEPOSITAMT" [Name]="'SECURITYDEPOSITAMT'" [isControlDisable]='true'
+        [Component]="this.ComponentName" matInput [Placeholder]="'Total Sec. Deposit'" [Label]="'Total Sec. Deposit'">
+      </nfs-currency>
+      <div class="iconPopupMain">
+        <p (click)="openTotalSecurityDeposit()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'FIDUCIAFEE'">
+      <nfs-currency [isControlDisable]="isControlDisable('FIDUCIAFEE')" formControlName="FIDUCIAFEE"
+        [Name]="'FIDUCIAFEE'" [Component]="this.ComponentName" [Placeholder]="'Fiducia Fee'" [Label]="'Fiducia Fee'">
+      </nfs-currency>
+      <div class="iconPopupMain"
+        [ngClass]="{'disabledDiv': isControlDisable('FIDUCIAFEE') ||  this.PROPOSALFINANCIALAGREEMENT.controls.FIDUCIAFEE.value == 0}">
+        <p (click)="openFiduciaFee()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-currency [Placeholder]="'Total Term Charges'" [Label]="'Total Term Charges'" [isControlDisable]='true'
+        formControlName="TOTALINTERESTAMT" [Name]="'TOTALINTERESTAMT'" [Component]="this.ComponentName">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'MAXSOFCOMMISSION'">
+      <nfs-currency formControlName="MAXSOFCOMMISSION" [Name]="'MAXSOFCOMMISSION'" [isControlDisable]='true'
+        [Component]="this.ComponentName" [Placeholder]="'Max Commission '" [Label]="'Max Commission '">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'TOTALSOFCOMMISSION'">
+      <nfs-currency formControlName="TOTALSOFCOMMISSION" [Name]="'TOTALSOFCOMMISSION'" [isControlDisable]='true'
+        [Component]="this.ComponentName" [Placeholder]="'Total Commission'" [Label]="'Total Commission'">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-currency [Placeholder]="'Total Income'" [Label]="'Total Income'" [isControlDisable]='true'
+        formControlName="OJKTOTALCALCULATEDINCOME" [Name]="'OJKTOTALCALCULATEDINCOME'" [Component]="this.ComponentName">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'SOFJP1COMMISSION'">
+      <nfs-currency [isControlDisable]='true' [Placeholder]="'JP1 Commission'" [Label]="'JP1 Commission'"
+        formControlName="SOFJP1COMMISSION" [Name]="'SOFJP1COMMISSION'" [Component]="this.ComponentName">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'SOFJP2COMMISSION'">
+      <nfs-currency [isControlDisable]='true' [Placeholder]="'JP2 Commission'" [Label]="'JP2 Commission'"
+        formControlName="SOFJP2COMMISSION" [Name]="'SOFJP2COMMISSION'" [Component]="this.ComponentName">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'SOFJP2SCHEMECOMMISSION'">
+      <nfs-currency [isControlDisable]='true' [Placeholder]="'JP2 Scheme Commission'" [Label]="'JP2 Scheme Commission'"
+        formControlName="SOFJP2SCHEMECOMMISSION" [Name]="'SOFJP2SCHEMECOMMISSION'" [Component]="this.ComponentName">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15" *IsControlVisible="'UNALLOCATEDEXPENSEAMT'">
+      <nfs-currency [Placeholder]="'Unallocated Expanse'" [Label]="'Unallocated Expanse'" [isControlDisable]='true'
+        formControlName="UNALLOCATEDEXPENSEAMT" [Name]="'UNALLOCATEDEXPENSEAMT'" [Component]="this.ComponentName">
+      </nfs-currency>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'CommissionDistribution'">
+      <span class="popupSpn" style="margin-top: 33px !important;">
+        <mat-label matTooltip="Commission Distribution">Commission Distribution</mat-label>
+      </span>
+      <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('COMMSCHEMPOPUP')}">
+        <p (click)="openCommissionDistribution()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15 iconPopup" *IsControlVisible="'CommissionSchemeConfigurations'">
+      <span class="popupSpn" style="margin-top: 33px !important;">
+        <mat-label matTooltip="Commission Scheme Configurations">Commission Scheme Configurations</mat-label>
+      </span>
+      <div class="iconPopupMain" [ngClass]="{'disabledDiv': isControlDisable('COMMSCHEMPOPUP')}">
+        <p (click)="openCommissionSchemeConfigurations()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 paddingLeftRight8" *IsControlVisible="'COMMISSIONINCLUDETOPO'">
+      <section class="example-section" style="margin-top: 12px;">
+        <nfs-checkbox class="example-margin" formControlName="COMMISSIONINCLUDETOPO" [Name]="'COMMISSIONINCLUDETOPO'"
+          [Label]="'JP1 Commission Include in PO'"
+          [isControlDisable]="!this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.COMMISSIONINCLUDETOPOACTIVEIND.value" (Change)='onJP1CommissionIncludeToPOChange($event)'>
+        </nfs-checkbox>
+        <!-- <mat-checkbox class="example-margin" formControlName="COMMISSIONINCLUDETOPO"
+        [disabled]="!this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.COMMISSIONINCLUDETOPOACTIVEIND.value">
+        JP1 Commission Include in
+        PO
+      </mat-checkbox> -->
+    </section>
+  </div>
+  <div class="col-md-2 paddingLeftRight8" *IsControlVisible="'GPALLOWEDIND'">
+    <!--[ngClass]="{'disabledDiv': true}" -->
+    <section class="example-section" style="margin-top: 8px;">
+      <nfs-checkbox class="example-margin" formControlName="GPALLOWEDIND" [Name]="'GPALLOWEDIND'"
+        [Label]="'Grace Period Allowed'" (Change)="this.chkGracePeriodAllowed_valuehanged($event)"
+        [isControlDisable]="this._proposaldataService.PROPOSAL.value.FINANCETYP !== '00005'">
+      </nfs-checkbox>
+      <!-- <mat-checkbox class="example-margin" formControlName="GPALLOWEDIND">Grace Period Allowed</mat-checkbox> -->
+    </section>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'DISCOUNT'">
+    <nfs-currency [Placeholder]="'Discount'" [Label]="'Discount'" formControlName="DISCOUNT" [Name]="'DISCOUNT'"
+      [Component]="this.ComponentName" (Change)="this.discountOnChange($event)">
+    </nfs-currency>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'LASTPAYMENTDTE'">
+    <nfs-datepicker matInput [Placeholder]="'Last Payment Date'" [Label]="'Last Payment Date'"
+      [ngClass]="{'disabledDiv': isControlDisable('LASTPAYMENTDTE')}" formControlName="LASTPAYMENTDTE"
+      [Name]="'LASTPAYMENTDTE'" [Component]="this.ComponentName" [isControlDisable]=true>
+    </nfs-datepicker>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'MONTHLYLEASECOSTWITHOUTMAINTENANCE'">
+    <nfs-currency [Placeholder]="'Monthly Lease Cost w/o Maint'" [Label]="'Monthly Lease Cost w/o Maint'"
+      formControlName="MONTHLYLEASECOSTWITHOUTMAINTENANCE" [Name]="'MONTHLYLEASECOSTWITHOUTMAINTENANCE'"
+      [Component]="this.ComponentName">
+    </nfs-currency>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'MONTHLYMAINTENANCECOST'">
+    <nfs-currency [Placeholder]="'Monthly Maintenance Cost'" [Label]="'Monthly Maintenance Cost'"
+      [isControlDisable]="isControlDisable('MONTHLYMAINTENANCECOST')" formControlName="MONTHLYMAINTENANCECOST"
+      [Name]="'MONTHLYMAINTENANCECOST'" [Component]="this.ComponentName"
+      (Change)="this._calculationService.ResetRentalDetail()">
+    </nfs-currency>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'MONTHLYLEASEFEEAMT'">
+    <nfs-currency [Placeholder]="'Monthly Lease Fee Amount'" [Label]="'Monthly Lease Fee Amount'"
+      formControlName="MONTHLYLEASEFEEAMT" [Name]="'MONTHLYLEASEFEEAMT'" [Component]="this.ComponentName"
+      (Change)="this._calculationService.ResetRentalDetail()">
+    </nfs-currency>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'SALESMARGINRTE'">
+    <nfs-currency [mask]="'separator.5'" [Placeholder]="'Sales Margin Rate'" [Label]="'Sales Margin Rate'"
+      [isControlDisable]='true' formControlName="SALESMARGINRTE" [Name]="'SALESMARGINRTE'"
+      [Component]="this.ComponentName">
+    </nfs-currency>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'SALESMARGINAMT'">
+    <nfs-currency [Placeholder]="'Sales Margin Amount'" [Label]="'Sales Margin Amount'" [isControlDisable]='true'
+      formControlName="SALESMARGINAMT" [Name]="'SALESMARGINAMT'" [Component]="this.ComponentName">
+    </nfs-currency>
+  </div>
+  <div class="col-md-2 top15" *IsControlVisible="'NOOFMONTHSDELAY'">
+    <nfs-dropdown [Label]="'No Of Month(s) Delay'" [controlPlaceholder]="'No Of Month(s) Delay'"
+      [AllowUnSelect]="false" formControlName="NOOFMONTHSDELAY" [Name]="'NOOFMONTHSDELAY'"
+      [Component]="this.ComponentName" [Ismultiselect]="false" [EnableFilter]="false"
+      [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+      [DataArray]="this.noOfMonthDelay" (selectionChange)="this.NoOfMonthsOnChange($event)">
+    </nfs-dropdown>
+  </div>
+</ng-container>
+<ng-container [formGroup]="this.PROPOSALASSET">
+  <div class="col-md-2 top15">
+    <nfs-datepicker matInput [Placeholder]="'Estimated Invoice Date'" [Label]="'Estimated Invoice Date'"
+      formControlName="ESTMINVCDTE" [Name]="'ESTMINVCDTE'" [Component]="this.ComponentName">
+    </nfs-datepicker>
+  </div>
+  <div class="col-md-2 top15">
+    <nfs-dropdown [isControlDisable]="BKBPOwbershipFilter" [Label]="'BBN Agent'" [controlPlaceholder]="'BBN Agent'"
+      [Ismultiselect]="false" formControlName="BBNAGENTID" [Name]="'BBNAGENTID'" [Component]="this.ComponentName"
+      [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+      [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._financialClubMasterDataService.BBNAgent"
+    (selectionChange)="onBBNAgentIdChange($event)"></nfs-dropdown>
+  </div>
+  <div class="col-md-2 top15 iconPopup">
+    <nfs-currency formControlName="BBNCHARGES" [Name]="'BBNCHARGES'" [Component]="this.ComponentName" matInput
+      [Placeholder]="'BBN Charges'" [Label]="'BBN Charges'" [isControlDisable]=isBBNChargesDisabled
+      (Change)="onChangeBBNValue($event)">
+    </nfs-currency>
+    <div class="iconPopupMain" [ngClass]="{'disabledDiv': BKBPOwbershipFilter == true}">
+      <p (click)="openBBNChanges()">More</p>
+    </div>
+  </div>
+  <div class="col-md-2 top10 MigrationMarginTop26" *IsControlVisible="'MIGRATIONIND'">
+    <nfs-checkbox class="example-margin" formControlName="MIGRATIONIND" [Name]="'MIGRATIONIND'" [Label]="'Migration'"
+      [isControlDisable]="true">
+    </nfs-checkbox>
+    <!-- <mat-checkbox class="example-margin" [disabled]="true" formControlName="MIGRATIONIND">Migration
+  </mat-checkbox> -->
+</div>
+<div class="col-md-2 top15 iconPopup margintop8">
+  <span class="popupSpn" style="margin-top: 33px !important;">
+    <mat-label matTooltip="Repayment Plan">Repayment Plan</mat-label>
+  </span>
+  <div class="iconPopupMain">
+    <p (click)="RepaymentPlanTrigger()">More</p>
+  </div>
+</div>
+<div class="col-md-2 paddingLeftRight8" style="margin-top: 8px;">
+  <!--[ngClass]="{'disabledDiv': this.PROPOSALASSET.controls.CONDITION.value !== '00002' || isViewBPKPOwnershipEnabled}" -->
+  <section class="example-section">
+    <nfs-checkbox class="example-margin" formControlName="BPKBCHANGEOWNERSHIPIND" [Name]="'BPKBCHANGEOWNERSHIPIND'"
+      [Label]="'Change BPKB Ownership'"
+      [isControlDisable]="this.PROPOSALASSET.controls.CONDITION.value !== '00002' || isViewBPKPOwnershipEnabled"
+      (Change)="onClickChangeBKBPownership()">
+    </nfs-checkbox>
+    <!-- <mat-checkbox class="example-margin" formControlName="BPKBCHANGEOWNERSHIPIND"
+    (change)="onClickChangeBKBPownership()">Change BPKB Ownership
+  </mat-checkbox> -->
+</section>
+</div>
+</ng-container>
+<ng-container [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+  <div class="col-md-2 paddingLeftRight8" style="margin-top: 8px;" *IsControlVisible="'INSTALMENTPAYTOINTRODUCER'">
+    <section class="example-section">
+      <nfs-checkbox class="example-margin" formControlName="INSTALMENTPAYTOINTRODUCER"
+        [Name]="'INSTALMENTPAYTOINTRODUCER'" [Label]="'Installment Pay to Dealer'"
+        [isControlDisable]="this.isCF || !this.isAdvanceMode" (Change)="isInstallmentPayToDealerValuechanged($event)">
+      </nfs-checkbox>
+      <!-- <mat-checkbox class="example-margin" formControlName="INSTALMENTPAYTOINTRODUCER"
+      [disabled]="this.isCF || !this.isAdvanceMode" (change)="isInstallmentPayToDealerValuechanged($event)">
+      Installment Pay to
+      Dealer
+    </mat-checkbox> -->
+  </section>
+</div>
+<div style="margin-top: 27px !important;" class="col-md-2 top10 iconPopup" *IsControlVisible="'ArticleComponentConfiguration'"
+  [ngClass]="{'disabledDiv': this.ArticleComponentInd}">
+  <span class="popupSpn">
+    <mat-label matTooltip="Article Component Configuration">Article Component Configuration</mat-label>
+  </span>
+  <div class="iconPopupMain">
+    <p style="top: 2px !important;" (click)="openArticleComponentConfiguration()">More</p>
+  </div>
+</div>
+<div class="col-md-2 paddingLeftRight8"  style="margin-top: 8px;" *IsControlVisible="'DOWNPAYMENTPAIDTOINTIND'">
+  <section class="example-section">
+    <nfs-checkbox class="example-margin" formControlName="DOWNPAYMENTPAIDTOINTIND"
+      [Name]="'DOWNPAYMENTPAIDTOINTIND'" [Label]="'Down Payment Dealer Deduction'" [isControlDisable]="this.isCF"
+      (Change)="isDownpaymentPayToDealerValuechanged($event)">
+    </nfs-checkbox>
+    <!-- <mat-checkbox class="example-margin" formControlName="DOWNPAYMENTPAIDTOINTIND" [disabled]="this.isCF"
+    (change)="isDownpaymentPayToDealerValuechanged($event)">
+    Down Payment Dealer
+    Deduction
+  </mat-checkbox> -->
+</section>
+</div>
+<div class="col-md-2 paddingLeftRight8 iconPopup chkBoxPopup" style="margin-top: 8px;" *IsControlVisible="'ISSTRUCTUREDRENTAL'">
+  <!-- [ngClass]="{'disabledDiv': true}"> -->
+  <section class="example-section">
+    <nfs-checkbox class="example-margin" formControlName="ISSTRUCTUREDRENTAL" [Name]="'ISSTRUCTUREDRENTAL'"
+      [Label]="'Structured'" [isControlDisable]="!this._proposaldataService.ASSETENTITY.controls.PROPOSALFINANCIALAGREEMENT.controls.STRUCTUREDRENTALIND.value" (Change)="isStructuredRentalsValueChanged()">
+    </nfs-checkbox>
+    <div class="iconPopupMain" [ngClass]="{'disabledDiv':this._proposaldataService.PROPOSALFINANCIALAGREEMENT.controls.ISSTRUCTUREDRENTAL.value !== true}">
+      <p style="top: 25px !important;" (click)='openStructured()'>More</p>
+    </div>
+    <!-- <mat-checkbox class="example-margin" formControlName="ISSTRUCTUREDRENTAL">Structured</mat-checkbox> -->
+  </section>
+</div>
+</ng-container>
+</div>
+}
+
+@if (this.commissionFlag ) {
+  <div >
+    <!-- <nfs-button (onBtnClick)="this.closeCommissionType()" [text]="'Close'" [color]="'primary'">
+  </nfs-button> -->
+  <!-- <app-commission (commissionFlagEvent) = "childOutput($event)"></app-commission> -->
+  <nfs-button  [text]="'Close'" [color]="'primary'">
+  </nfs-button>
+  <app-commission (commissionFlagEvent) = "childOutput($event)"></app-commission>
+</div>
+}
+
+
+@if (this.commissionDistributionFlag) {
+  <div >
+    <!-- <nfs-button (onBtnClick)="this.closeCommissionType()" [text]="'Close'" [color]="'primary'">
+  </nfs-button> -->
+  <!-- <app-commission (commissionFlagEvent) = "childOutput($event)"></app-commission> -->
+  <nfs-button  [text]="'Close'" [color]="'primary'">
+  </nfs-button>
+  <app-commission-distribution (AssetDetailsCommonEventEmitter) = "assetCommonOutput($event)"></app-commission-distribution>
+</div>
+}
+<!-- </div> -->
+

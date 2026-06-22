@@ -1,0 +1,73 @@
+
+<mat-dialog-content class="mat-typography">
+
+  <h1>
+    <!-- {{this.errorString}} -->
+  </h1>
+
+  <div class="row">
+    <div class="col-md-12 ">
+      <h2 >Live Preview</h2>
+      @if (showWebcam) {
+        <webcam [height]="320" [width]="320" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+          [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+          [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+        (initError)="handleInitError($event)"></webcam>
+      }
+    </div>
+    <div class="col-md-12">
+      @if (webcamImage) {
+        <div class="snapshot">
+          <h2>Captured Picture</h2>
+          <img [src]="webcamImage.imageAsDataUrl" />
+        </div>
+      }
+
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-md-12">
+      @if (showWebcam) {
+        <input id="cameraSwitchCheckbox" type="checkbox">
+        }@if (showWebcam) {
+        <label style="margin-left:5px;"
+        for="cameraSwitchCheckbox">Allow Camera Switch</label>
+      }
+    </div>
+  </div>
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="center" class="dialogMargin">
+  <div class="captureAbc">
+
+    @if (showWebcam) {
+      <button mat-button (click)="showNextWebcam(true);"
+      [disabled]="!multipleWebcamsAvailable">Next Webcam</button>
+    }
+  </div>
+  <div class="captureImg">
+    <img src="assets/Images/capture.png" width="45" height="45"/>
+    @if (showWebcam) {
+      <button mat-raised-button color="primary" class="actionBtn" (click)="triggerSnapshot();">Capture</button>
+    }
+  </div>
+  <div class="captureImg">
+    <img src="assets/Images/uploadWhite.png" width="45" height="45"/>
+    @if (showWebcam) {
+      <button mat-raised-button color="primary" class="actionBtn" (click)="uploadImageFromCamera()">
+      Upload</button>
+    }
+  </div>
+  <div class="captureImg again">
+    <img src="assets/Images/reload.png" width="45" height="45"/>
+    @if (showWebcam) {
+      <button mat-raised-button color="primary" class="actionBtn" (click)="imageAgain();">
+      Image Again</button>
+    }
+  </div>
+
+
+
+</mat-dialog-actions>

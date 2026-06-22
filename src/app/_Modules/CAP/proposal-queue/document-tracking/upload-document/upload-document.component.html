@@ -1,0 +1,92 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Document Uploading</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="row bodyContainer fieldContainer customAccordianMain">
+    <ng-container [formGroup]="PropDTSDoc">
+      <div class="col-md-3 top15 customTopNegatiive">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Select Document Type'" [isControlDisable]=true
+          [Label]="'Select Document Type'" formControlName="DOCUMENTDSC">
+        </nfs-textbox>
+      </div>
+      <div class="col-md-3 top15 customTopNegatiive">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Select Required For'" [isControlDisable]=true
+          [Label]="'Select Required For'" formControlName="GROUPNAME">
+        </nfs-textbox>
+      </div>
+      <div class="col-md-12 top15 top30">
+        <nfs-textarea class="customLengthUpload" [maxLength]="500" [Placeholder]="'Comments'" [Label]="'Comments'" formControlName="COMMENTS">
+        </nfs-textarea>
+      </div>
+    </ng-container>
+
+    @if (!uploadDisabled) {
+      <div class="col-md-12 noPadding" style="margin-top: 10px !important;">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true" [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="SubHeading">
+                File Upload
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tableMain rentalDetail">
+              <nfs-static-grid [inputArr]="fileDoctDataset" [isRadioBtnRequired]="false" [IsActionRequired]=false
+                [radioPropertyName]="'DEFAULTIND'" [columns]="fileColumns" [Labels]="fileLabels">
+              </nfs-static-grid>
+            </div>
+            <div class="row noMargin ">
+              <div class="col-md-12 searchBtns fileUploadBtnBox">
+                <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="!isCancelUpload" [matButton]="false"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="CancelFileUpload()">
+                </nfs-button>
+                <nfs-button [text]="'Upload'" [color]="'primary'" [disabled]="!isCancelUpload" [matButton]="false"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="UploadFiles()">
+                </nfs-button>
+                <nfs-button [text]="'Browse'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="true" [disabled]="false"
+                  (onBtnClick)="fileDropRef.click()">
+                </nfs-button>
+                <input style="display: none;" type="file" multiple #fileDropRef (change)="fileBrowseHandler($event)"
+                  id="fileDropRef" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <span class="fileUploadLabelBox">File size is supported upto 1.0 MB</span>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    }
+    <div class="col-md-12 noPadding topMargin15">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true" [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="SubHeading">
+              Uploaded Documents
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="tableMain rentalDetail">
+            <nfs-static-grid [inputArr]="ProposalDocEntity" (ItemRemoved)="delSelectedDocument($event)"
+              (MultiActionOption)="viewUpdateSelectedDocument($event)" [isRadioBtnRequired]="false"
+              [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels" [pipes]="pipes"
+              [IsActionRequired]="true" [IsDeleteRequired]="viewEnabled" [IsMultiActionRequired]="true"
+              [actionList]="ActionList" [ConfirmationMsg]="'Do you want to delete the file?'"
+              [showTooTip]="EnableTooltip">
+            </nfs-static-grid>
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,274 @@
+[
+  {
+    "Name": "ASSETAMT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "CASHDEPOSITAMT",
+    "Financetype": ["00005"]
+  },
+  {
+    "Name": "CASHDEPOSITPCT",
+    "Financetype": ["00005"]
+  },
+  {
+    "Name": "DSCTAMNTOTO",
+    "Financetype": ["00014"]
+  },
+  {
+    "Name": "DSCTAMNTPCTOTO",
+    "Financetype": ["00014"]
+  },
+  {
+    "Name": "VATONASSETCOST",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "TOTALCOST",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "TOTALDOWNPAYMENT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "CHARGEAMT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "FINANNCEDPCT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "ADJUSTEDFINANCEDAMT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "ACCESSORYAMT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "ACCYWITHOUTVAT",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "RESIDUALTYP",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "RESIDUALAMT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "RESIDUALPCT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "FINANCEDAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "DSBRAMNTOTO",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "APPLIEDCUSTOMERRTE",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "APPLIEDCUSTOMERRTECALCULATED",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "TRADEINAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "BALANCEPAYABLE",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "TOTALPAYABLEAMT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "TOTALSUBSIDYAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "TOTALFIRSTPAYMENT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "ETAMNTOTO",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "INSURANCEPREMIUM",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "OJKINSURANCECOMMISSIONAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "GPALLOWEDIND",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "COMMFIXAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "INSRCOMMAMTOTO",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "TOTALACQUISITIONINCOME",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "REALDOWNPAYMENTAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "INSURANCECOMMISSIONAMOUNT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "NMSIR",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "TOTALADMINFEE",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "MAXINSURANCECOMMISSIONAMOUNT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "DEALERPOAMOUNT",
+    "Financetype": ["00004", "00005", "00014"]
+  },
+  {
+    "Name": "PROVISIONFEE",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "DISCOUNT",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "LASTPAYMENTDTE",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "MONTHLYLEASECOSTWITHOUTMAINTENANCE",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "MONTHLYMAINTENANCECOST",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "MONTHLYLEASEFEEAMT",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "SALESMARGINRTE",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "SALESMARGINAMT",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "NOOFMONTHSDELAY",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "MIGRATIONIND",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "FIDUCIAFEE",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "MAXSOFCOMMISSION",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "TOTALSOFCOMMISSION",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "OJKTOTALCALCULATEDINCOME",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "SOFJP1COMMISSION",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "SOFJP2COMMISSION",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "SOFJP2SCHEMECOMMISSION",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "UNALLOCATEDEXPENSEAMT",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "CommissionDistribution",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "CommissionSchemeConfigurations",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "COMMISSIONINCLUDETOPO",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "GPALLOWEDIND",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "INSTALMENTPAYTOINTRODUCER",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "ArticleComponentConfiguration",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "DOWNPAYMENTPAIDTOINTIND",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "ISSTRUCTUREDRENTAL",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "SALESANDLEASEBACKIND",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "ASSETSELECTIONCDE",
+    "Financetype": ["00004"]
+  },
+  {
+    "Name": "OTOAPLTCTGYCDEAC",
+    "Financetype": ["00014", "00005"]
+  },
+  {
+    "Name": "OTOAPLTCTGYCDECT",
+    "Financetype": ["00004"]
+  }
+]

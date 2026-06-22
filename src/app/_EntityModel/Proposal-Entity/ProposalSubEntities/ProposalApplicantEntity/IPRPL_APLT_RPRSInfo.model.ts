@@ -1,0 +1,70 @@
+import { IBaseEntity } from "@NFS_Entity/Base-Entity/BaseEntity.model";
+import { Control } from "src/Library";
+
+export interface IPRPL_APLT_RPRSInfo extends IBaseEntity {
+    APPLICANTID: number;
+    REPRESENTATIVEID: number;
+    REPRESENTATIVETYPE: string;
+    SHAREHOLDERTYPE: string;
+    CUSTOMERID: number;
+    COMPANYNAME: string;
+    TYPECDE: string;
+    TRADINGAS: string;
+    BUSINESSTYPECDE: string;
+    BUSINESSLINECDE: string;
+    ESTBSINC: Control<Date>|null;
+    AGEINYEARCOMP: number;
+    AGEINMONTHCOMP: number;
+    ECNMSCTRCDE: string;
+    CONSENTTOSHARE: boolean;
+    IDTYPECDE: string;
+    IDCARDNBR: string;
+    TITLECDE: string;
+    FIRSTNME: string;
+    MIDDLENME: string;
+    LASTNME: string;
+    DATEOFBIRTH: Control<Date>|null
+    AGEINYEAR: number;
+    AGEINMONTH: number;
+    DESIGNATIONCDE: string;
+    MARITALSTATUSCDE: string;
+    EMAILADDRESS: string;
+    OFFICEPHONE: string;
+    HOMEPHONE: string;
+    MOBILEPHONE: string;
+    FAX: string;
+    COUNTRYID: number;
+    PROVINCEID: number;
+    KOTAMADYAIDOTO: number;
+    KECAMATANIDOTO: number;
+    KELURAHANIDOTO: number;
+    RWOTO: string;
+    RTOTO: string;
+    ADDRESSOTO: string;
+    POSTALCODE: string;
+    EXECUTIONDTE: Control<Date>;
+    EXECUTIONOFFSET: number;
+    SESSIONID: number;
+    SESSIONCDE: string;
+    IDTYPECDECOMY: string;
+    IDCARDNBRCOMY: string;
+    EMAILADDRESSCOMY: string;
+    TAXREGISTRATIONNBRCOMY: string;
+    DEPOSITEDCAPITALCOMY: number;
+    PERCENTAGESHARECOMY: number;
+    COMPANYFORMATCOMY: string;
+    PRIMARYCAPITALCOMY: number;
+    OCCUPATIONCDE: string;
+    COMPANYNAMEINDIVIDUAL: string;
+    REPRESENTATIVENBR: string;
+    TAXREGISTRATIONNBR: string;
+    GENDER: string;
+    CTZNSHIPCDE: string;
+    DEPOSITEDCAPITAL: number;
+    PERCENTAGESHARE: number;
+    PRIMARYCAPITAL: number;
+    SIGNATORYCDE: string|null;
+    ////////////
+    AREACDE: string;
+    ////////////
+}

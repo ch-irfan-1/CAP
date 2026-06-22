@@ -1,0 +1,24 @@
+[{
+    "text" : "View",
+    "icon" : "visibility",
+    "inputVal" : "View",
+    "status" : ["New", "Cancelled", "Assigned", "Submitted to CAP"]
+  },
+  {
+    "text" : "Cancel",
+    "icon" : "cancel",
+    "inputVal" : "Cancel",
+    "status" : ["New"]
+  },
+  {
+    "text" : "Assign Lead",
+    "icon" : "arrow_forward",
+    "inputVal" : "ASSIGN_To_VO",
+    "status" : ["New"]
+  },
+  {
+    "text" : "Re-Assign Lead",
+    "icon" : "arrow_forward",
+    "inputVal" : "RE_ASSIGN_To_VO",
+    "status" : ["Assigned"]
+  }]

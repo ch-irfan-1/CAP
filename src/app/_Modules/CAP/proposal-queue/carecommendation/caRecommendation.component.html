@@ -1,0 +1,250 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">CA Recommendation &amp; Comments</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" (click)="btnCancel_Click()">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="bodyContainer FormMain customAccordianMain">
+    <div class="row">
+      <div class="col-md-12 noPadding topMargin20">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Cancel/Reject History
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="tableMain eApprovalTable cnclTable">
+              <table mat-table [dataSource]="this.CancelHistory" class="mat-elevation-z8">
+
+                <ng-container matColumnDef="No">
+                  <th mat-header-cell *matHeaderCellDef> No </th>
+                  <td mat-cell *matCellDef="let element; let i = index"> {{ i + 1 }} </td>
+                </ng-container>
+                <ng-container matColumnDef="Application No">
+                  <th mat-header-cell *matHeaderCellDef> Application No </th>
+                  <td mat-cell *matCellDef="let element"> {{element.APPLICATIONNO}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="System">
+                  <th mat-header-cell *matHeaderCellDef> System </th>
+                  <td mat-cell *matCellDef="let element"> {{element.SYSTEME}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Category">
+                  <th mat-header-cell *matHeaderCellDef> Category </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CATEGORY}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Cancel/Reject Date">
+                  <th mat-header-cell *matHeaderCellDef> Cancel/Reject<br />Date </th>
+                  <td mat-cell *matCellDef="let element"> {{formatDateTime(element.CANCELDATE, 'dd-MM-yyyy')}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Cancel/Reject Reason">
+                  <th mat-header-cell *matHeaderCellDef> Cancel/Reject<br />Reason </th>
+                  <td mat-cell *matCellDef="let element" title={{element.CANCELLATIONREASON}}> {{element.CANCELLATIONREASON}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Cancel/Reject Comments">
+                  <th mat-header-cell *matHeaderCellDef> Cancel/Reject<br />Comments </th>
+                  <td mat-cell *matCellDef="let element" title={{element.CANCELLATIONCOMMENTS}}> {{element.CANCELLATIONCOMMENTS}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="CancelHistoryColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: CancelHistoryColumns;"></tr>
+              </table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div class="col-md-14 noPadding topMargin20 historyInfo">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Distance Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="tableMain">
+            <div class="horizontal-scroll-wrapper">
+              <nfs-static-grid [isRadioBtnRequired]="false" [radioPropertyName]="'DEFAULTIND'" [columns]="columnsDocInfo"
+              [Labels]="LabelsDocInfo" [IsActionRequired]="false" [IsDeleteRequired]="false" [inputArr]="historyInfoDocs" [showTooTip]="EnableTooltip"></nfs-static-grid>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="row interestFieldAdjustBox fieldContainer" [formGroup]="CaRecommendationForm">
+      <div class="col-md-3 top15 customTop2">
+        <nfs-dropdown formControlName="CRDTRCMDTYPCDE" [Component]="'CaRecommendation'" [Label]="'CA Recommendation'" [Name]="'CRDTRCMDTYPCDE'"
+          [Component]="'GeneralHeader'" [controlPlaceholder]="'CA Recommendation'" [Ismultiselect]="false" [isControlDisable]="this.isControlDisable"
+          [FilterControlPlaceholder]="'Find Some Values...'" (selectionChange)="onRecommendationChange($event)"
+          [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.carecommendationdrop">
+        </nfs-dropdown>
+      </div>
+      <div class="col-md-3 top15 customTop2 ">
+        <nfs-textbox name="USERNAME" maxlength="100" [Placeholder]="'Recommended By'" [isControlDisable]=true
+          formControlName="USERNAME" [disabled]="true" [Label]="'Recommended By'" [Name]="'USERNAME'">
+        </nfs-textbox>
+      </div>
+      <div class="col-md-3 top15 customTop2" >
+        @if (this.isRecommended) {
+          <nfs-dropdown  [Label]="this.recommendationLabel"
+            [EnableFilter]="false" [AllowUnSelect]="false"  [isControlDisable]="this.isControlDisable"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [Component]="'CaRecommendation'" formControlName="RJTNRESNCDE" [Name]="'RJTNRESNCDE'"
+            [DataArray]="this.rejectionReasonArray" >
+          </nfs-dropdown>
+        }
+      </div>
+      <div class="col-md-12 mt-2">
+        <mat-checkbox [disabled]="true" [checked]="this.mcomTopupInd">
+          Top Up
+        </mat-checkbox>
+      </div>
+      <div>
+        <ng-template #default>
+        </ng-template>
+      </div>
+      <div class="col-md-12 top15 top30">
+        <nfs-textarea class="customLengthUpload" [maxLength]="1000" [Placeholder]="'Comments'"  [Component]="'CaRecommendation'" [isControlDisable]="this.isControlDisable" [Label]="'Comments'"
+          formControlName="COMMENT">
+        </nfs-textarea>
+      </div>
+      <div class="col-md-12 searchBtns top10">
+
+        <nfs-button [text]="'Close'" [color]="'primary'" [disabled]="this.isControlDisable" [matButton]="false"
+          [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnCancel_Click()">
+        </nfs-button>
+        <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="this.isControlDisable" [matButton]="false"
+          [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnSave_Click()">
+        </nfs-button>
+      </div>
+
+      <div class="col-md-12 noPadding topMargin20">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                CA Recommendation History
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="tableMain eApprovalTable recTable">
+              <table mat-table [dataSource]="this.CACrdtRcmdHistory" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+                <ng-container matColumnDef="Recommendation">
+                  <th mat-header-cell *matHeaderCellDef> CA Recommendation </th>
+                  <td mat-cell *matCellDef="let element"> {{element.CRDTRCMDTYPEDSC}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="RecommendedBy">
+                  <th mat-header-cell *matHeaderCellDef> Recommended By </th>
+                  <td mat-cell *matCellDef="let element"> {{element.USERNAME}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="RecommedationTime">
+                  <th mat-header-cell *matHeaderCellDef> Recommended Date </th>
+                  <td mat-cell *matCellDef="let element"> {{formatDateTime(element.RECOMMENDATIONTIME)}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Rejection">
+                  <th mat-header-cell *matHeaderCellDef> Rejection Reason </th>
+                  <td mat-cell *matCellDef="let element" title={{element.RESNDSC}}> {{element.RESNDSC}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="Comment">
+                  <th mat-header-cell *matHeaderCellDef> Comments </th>
+                  <td mat-cell *matCellDef="let element" title={{element.COMMENT}}> {{element.COMMENT}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </div>
+
+        </div>
+         <div class="col-md-14 noPadding topMargin20 overflow">
+                <mat-accordion>
+                  <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Survey & Resurvey Duration
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain">
+                      <div class="horizontal-scroll-wrapper">
+                        <nfs-static-grid [isRadioBtnRequired]="false" [radioPropertyName]="'DEFAULTIND'" [columns]="columnsResurveyInfo" [inputArr]="this.ResurveyDurationInfo"
+                          [Labels]="LabelsResurveyInfo" [IsActionRequired]="false" [IsDeleteRequired]="false" [showTooTip]="EnableTooltip"></nfs-static-grid>
+                    </div>
+                  </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div>
+              @if (this.proposalData.APPLICANTTYP === 'Individual') {
+              <div class="col-md-12 noPadding topMargin20">
+                <mat-accordion>
+                  <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Income Analysis
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <div class="tableMain eApprovalTable">
+                      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="label">
+                          <th mat-header-cell *matHeaderCellDef>Components</th>
+                          <td mat-cell *matCellDef="let element"> {{ element.label }} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="value">
+                          <th mat-header-cell *matHeaderCellDef>Amount</th>
+                          <td mat-cell *matCellDef="let element">
+                            {{ element.isPercentage ? '' : 'IDR ' }}
+                            {{ element.value | number:'1.2-2' }}
+                            {{ element.isPercentage ? '%' : '' }}
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumnsIncm"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumnsIncm;"></tr>
+
+                      </table>
+                    </div>
+
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div>
+              }
+      <div class="noPadding topMargin20 col-md-12 overflow">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Deviation Information
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tableMain eApprovalTable dvtnTable">
+              <div class="deviationGrid">
+                <nfs-static-grid [isRadioBtnRequired]="false" [radioPropertyName]="'DEFAULTIND'"
+                  [columns]="columnsDeviationInfo" [inputArr]="this.DvtnTrckInformation" [Labels]="LabelsDeviationInfo"
+                  [IsActionRequired]="false" [IsDeleteRequired]="false" [showTooTip]="EnableTooltip"></nfs-static-grid>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>

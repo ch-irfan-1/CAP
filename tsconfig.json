@@ -1,0 +1,54 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@NFS_Core/*": [
+        "src/app/_Core/*"
+      ],
+      "@NFS_Modules/*": [
+        "src/app/_Modules/*"
+      ],
+      "@NFS_Interfaces/*": [
+        "src/app/_Interfaces/*"
+      ],
+      "@NFS_Entity/*": [
+        "src/app/_EntityModel/*"
+      ],
+      "@NFS_Assets/*": [
+        "src/assets/*"
+      ],
+      "@NFS_Enums/*": [
+        "src/app/_Enums/*"
+      ],
+      "my-lib/*": [
+        "src/Library/src/*"
+      ]
+    },
+    "outDir": "./dist/out-tsc",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

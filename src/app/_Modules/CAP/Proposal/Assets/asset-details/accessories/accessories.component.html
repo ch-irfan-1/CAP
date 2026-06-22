@@ -1,0 +1,159 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Asset Accessories</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="row bodyContainer fieldContainer AccessoriesBox customAccordianMain">
+    <div class="col-md-12 noPadding">
+      <div class="TabInnerMainForm">
+        @if (IsStardardAccessoriesReq) {
+          <div mat-dialog-content>
+            <h4>Stardard Accessories</h4>
+            <nfs-static-grid [inputArr]="StandardAccessories" [isRadioBtnRequired]="false" [columns]="Columns"
+              [IsDeleteRequired]="false" [Labels]="Labels" [DisableSorting]="false" [IsActionRequired]="false">
+            </nfs-static-grid>
+          </div>
+        }
+        <div mat-dialog-content>
+          <h4>Optional Accessories</h4>
+          <div class="row noMargin ">
+            <div class="col-md-12 top15 tableMain">
+              <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="ACCESSORYCDE" class="Accessories">
+                  <th mat-header-cell *matHeaderCellDef> Accessory</th>
+                  <td class="fixWidth" mat-cell *matCellDef="let element; let i = index">
+                    <mat-form-field placeholder="never" class="AccessoriesBox">
+                      <mat-select [(value)]="element.ACCESSORYCDE"
+                        (ngModelChange)="Recalculate(element)">
+                        @for (data of getFilterValues(i); track data) {
+                          <mat-option
+                            [value]="data.code">
+                          {{ data.TextValue }}</mat-option>
+                        }
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="UNITAMT">
+                  <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input mask="{{mask}}" step="0.01" thousandSeparator="," separatorLimit="{{separatorLimit}}" matInput
+                        value="element.UNITAMT" [(ngModel)]="element.UNITAMT"
+                        (ngModelChange)="Recalculate(element)"  onClick="this.select();">
+                      <!-- <input [maxlength]="20" mask="{{mask}}" value="element.CSFLITEMVALUE" [readonly]="isControlDisable"
+                      [(ngModel)]="element.CSFLITEMVALUE" thousandSeparator="," step="0.01" matInput (change)="onIncomeUpdate($event, element, i, element.CSFLITEMCDE)"> -->
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="QUANTITY">
+                  <th mat-header-cell *matHeaderCellDef> Quantity </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input type="text" maxlength="4" matInput [value]="element.QUANTITY"
+                        [(ngModel)]="element.QUANTITY"  min="0"  onClick="this.select();"
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                        (ngModelChange)="Recalculate(element)">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="ACCESSORYAMT">
+                  <th mat-header-cell *matHeaderCellDef> Inclusive Amount </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input  mask="{{mask}}" step="0.01" thousandSeparator="," matInput
+                        disabled value="element.ACCESSORYAMT" onClick="this.select();"
+                        [(ngModel)]="element.ACCESSORYAMT">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="VATAMT">
+                  <th mat-header-cell *matHeaderCellDef>VAT Amount</th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input matInput value="element.VATAMT"separatorLimit="{{separatorLimit}}"
+                        [(ngModel)]="element.VATAMT" mask="{{mask}}" step="0.01" thousandSeparator="," matInput
+                        (ngModelChange)="Recalculate(element)"  onClick="this.select();">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="EXCLUSIVEAMT">
+                  <th mat-header-cell *matHeaderCellDef> Exclusive Amount </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input disabled value="element.EXCLUSIVEAMT"
+                        mask="{{mask}}" step="0.01" thousandSeparator="," matInput
+                        [(ngModel)]="element.EXCLUSIVEAMT">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="BPSUPPLIERNAME">
+                  <th mat-header-cell *matHeaderCellDef> Introducer/Supplier </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input matInput disabled [value]="element.BPSUPPLIERNAME"
+                        [(ngModel)]="element.BPSUPPLIERNAME">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="dealerOpen" style="width: 40px;">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element; let i = index">
+                    <div (click)="openDealerSearch(i)" class="iconPopupMain">
+                      <p>More</p>
+                    </div>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="deleterow"  style="width: 40px;">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element; let i = index">
+                    <button mat-menu-item type="button" (click)="DeleteRow(element, i)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row accessoryFieldBox accessSpace">
+          <div class="col-md-4 top15"></div>
+          <div class="col-md-5 top15"></div>
+          <div class="col-md-3 top15" style="padding-right: 15px;">
+            <nfs-currency [maxLength]="100" disabled [Placeholder]="'Total Price'" [Label]="'Total Price'"
+              [(ngModel)]="TotalPrice">
+            </nfs-currency>
+          </div>
+        </div>
+        <div class="row noMargin ">
+
+          <div class="col-md-12 searchBtns topMargin20">
+            <nfs-button [text]="'Close'" [color]="'primary'" [disabled]="false" (onBtnClick)="Close()"
+              [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+            </nfs-button>
+            <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" (onBtnClick)="CloseAndPostData()"
+              [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+            </nfs-button>
+            <nfs-button [text]="'Add'" [color]="'primary'" [disabled]="false" [disabled]="!IsbtnAddEnable"
+              [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+              (onBtnClick)="AddAccessory($event)">
+            </nfs-button>
+            <nfs-button [text]="'Calculate'" [color]="'primary'" [disabled]="false"
+              (onBtnClick)="CalcualteTotal()" [matButton]="false" [matRaisedButton]="false"
+              [matRaisedButtonIcon]="true" [disabled]="!IsbtnCalculateEnable">
+            </nfs-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

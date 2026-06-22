@@ -1,0 +1,210 @@
+<div>
+  @if (!this.assetTypeFlag) {
+    <div class="FormMain">
+      <mat-accordion [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Financial
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer">
+            <ng-container [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+              <div class="col-md-2 top15 customTop2">
+                <nfs-datepicker matInput [Placeholder]="'Enter Date'" [Label]="'Start Date'"
+                  formControlName="CONTRACTSTARTDTE" [Name]="'CONTRACTSTARTDTE'" [Component]="'ProposalFinancialDetail'"
+                  (Change)="selectionChange_CONTRACTSTARTDTE($event)"
+                  [isControlDisable]="this._generalService.FormMode == 'View'">
+                </nfs-datepicker>
+              </div>
+              <div class="col-md-2 top15 customTop2">
+                <nfs-dropdown [Label]="'Frequency'" [controlPlaceholder]="'Frequency'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="FREQUENCYCDE"
+                  [DataArray]="this._financialClubMasterDataService.Frequencies" [Name]="'FREQUENCYCDE'"
+                  [Component]="'ProposalFinancialDetail'" (selectionChange)="selectionChange_FREQUENCYCDE($event)"
+                  [isControlDisable]="this._generalService.FormMode == 'View'">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15 customTop2">
+                <nfs-dropdown [Label]="'Rental Mode'" [controlPlaceholder]="'Rental Mode'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="RENTALMODETYP"
+                  [DataArray]="this._financialClubMasterDataService.RentalModes" [Name]="'RENTALMODETYP'"
+                  [Component]="'ProposalFinancialDetail'" (selectionChange)="selectionChange_RENTALMODETYP($event)"
+                  [isControlDisable]="this._generalService.FormMode == 'View'">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15 customTop2">
+                <nfs-number [maxLength]="3" [Placeholder]="'Terms(Months)'" [Label]="'Terms(Months)'"
+                  formControlName="CONTRACTTRM" [Name]="'CONTRACTTRM'" [Component]="'ProposalFinancialDetail'"
+                  (Change)="selectionChange_CONTRACTTRM($event)"
+                  [isControlDisable]="this._generalService.FormMode == 'View'">
+                </nfs-number>
+              </div>
+            </ng-container>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Asset Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer">
+            <ng-container [formGroup]="this.PROPOSALASSET">
+              <div class="col-md-2 top15 iconPopup customTop2">
+                <nfs-textbox [ApplyDefaultRegex]='false' [isControlDisable]='true' formControlName="ASSETTYPEDSC"
+                  [Name]="'ASSETTYPEDSC'" [Component]="'ProposalAssetInfo'" [Label]="'Asset Type'">
+                </nfs-textbox>
+                <div class="iconPopupMain"
+                  [ngClass]="{'disabledDiv': (this.PROPOSALASSET.controls.ASSETSUBTYPCDE.value=='')}">
+                  <div class="iconPopupMain">
+                    <p (click)="openAssetType()">More</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 top15 iconPopup customTop2">
+                <nfs-textbox [ApplyDefaultRegex]='false' [isControlDisable]='true' formControlName="ASSETSUBTYPDSC"
+                  [Name]="'ASSETSUBTYPDSC'" [Component]="'ProposalAssetInfo'" [Label]="'Asset Sub Type'">
+                </nfs-textbox>
+                <div class="iconPopupMain">
+                  <div class="iconPopupMain"
+                    [ngClass]="{'disabledDiv': !(this.PROPOSALASSET.controls.ASSETSUBTYPDSC.value == 'Truk')}">
+                    <p (click)="openAssetSubType()">More</p><!-- (click)="openExposure()" -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 top15 customTop2">
+                <nfs-textbox [ApplyDefaultRegex]='false' [isControlDisable]='true' formControlName="MAKEDSC"
+                  [Name]="'MAKEDSC'" [Component]="'ProposalAssetInfo'" [Label]="'Asset Make'">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15 customTop2">
+                <nfs-textbox [ApplyDefaultRegex]='false' [isControlDisable]='true' formControlName="BRANDDSC"
+                  [Name]="'BRANDDSC'" [Component]="'ProposalAssetInfo'" [Label]="'Asset Brand'">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15 iconPopup customTop2">
+                <nfs-textbox class="customWrap" [ApplyDefaultRegex]='false' [isControlDisable]='true' formControlName="MODELDSC"
+                  [Name]="'MODELDSC'" [Component]="'ProposalAssetInfo'" [Label]="'Asset Model'">
+                </nfs-textbox>
+                <div class="iconPopupMain">
+                  <div class="iconPopupMain" [ngClass]="{'disabledDiv': isViewMode || this._dataService.PROPOSAL.controls.MCOMTOPUPIND.value}">
+                    <p (click)="openAssetModel()">More</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 top15 customTop2">
+                <nfs-dropdown [Label]="'Police Category'" [controlPlaceholder]="'Police Category'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="PLICCTGYCODEOTO"
+                  [Name]="'PLICCTGYCODEOTO'" [Component]="'ProposalAssetInfo'" [DataArray]="PoliceDetail()"
+                  [isControlDisable]="this._generalService.FormMode == 'View' || this._dataService.PROPOSAL.controls.MCOMTOPUPIND.value">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15 iconPopup top5">
+                <nfs-textbox class="customWrap" [Placeholder]="'Supplier'" [Label]="'Supplier'" formControlName="SUPPLIERNAME"
+                  [isControlDisable]=true [Name]="'SUPPLIERNAME'" [Component]="'ProposalAssetInfo'">
+                </nfs-textbox>
+                <div class="iconPopupMain"
+                  [ngClass]="{'disabledDiv':  isViewMode ||  isControlDisable('SUPPLIERNAME') || this.PROPOSALASSET.controls.SALESANDLEASEBACKIND.value == true || IsInventoryVehicle}">
+                  <p (click)="openSupplier()">More</p>
+                </div>
+              </div>
+              <div class="col-md-2 top15 top5">
+                <nfs-datepicker matInput [Placeholder]="'Delivery Date'" [Label]="'Delivery Date'"
+                  formControlName="DELIVERYDTE" [Name]="'DELIVERYDTE'" [Component]="'ProposalAssetInfo'"
+                  [isControlDisable]="this._generalService.FormMode == 'View'">
+                </nfs-datepicker>
+              </div>
+              <div class="col-md-2 top15 top5">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Country of Origin'" [Label]="'Country of Origin'"
+                  formControlName="COUNTRYDSC" [Name]="'COUNTRYDSC'" [Component]="'ProposalAssetInfo'"
+                  [isControlDisable]=true>
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15 top5">
+                <nfs-dropdown [Label]="'Asset Usage'" [controlPlaceholder]="'Asset Usage'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="USAGETYPECODE"
+                  [Name]="'USAGETYPECODE'" [Component]="'ProposalAssetInfo'"
+                  [DataArray]="this._assetSearchMasterDataService.ProposalAssetUsage"
+                [isControlDisable]="this._generalService.FormMode == 'View'"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15 top5" *IsControlVisible="'ASSETSELECTIONCDE'">
+                <nfs-dropdown [Label]="'Asset Selection'" [controlPlaceholder]="'Asset Selection'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [AllowUnSelect]="false" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="ASSETSELECTIONCDE"
+                  [Name]="'ASSETSELECTIONCDE'" [Component]="'ProposalAssetInfo'"
+                  [DataArray]="this._assetSearchMasterDataService.AssetSelection"
+                  (selectionChange)="this.assetSelection_OnChange($event)"
+                [isControlDisable]="this._generalService.FormMode == 'View'"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15 top5" *IsControlVisible="'SALESANDLEASEBACKIND'">
+                <section class="example-section">
+                  <nfs-checkbox formControlName="SALESANDLEASEBACKIND" class="example-margin marginTop44"
+                    [Name]="'SALESANDLEASEBACKIND'" [Label]="'Sale And Lease Back (SLB)'"
+                    [isControlDisable]="IsInventoryVehicle" (Change)="SLBClicked($event)">
+                  </nfs-checkbox>
+                </section>
+              </div>
+            </ng-container>
+            @if (this.PROPOSAL.controls.FINANCIALPRODUCTID.value !=13) {
+              <ng-container [formGroup]="this.PROPOSALVEHICLEDETAIL"
+                >
+                <div class="col-md-4 top15">
+                  <nfs-textbox [maxLength]="100" [Placeholder]="'Package Description'" [isControlDisable]='true'
+                    formControlName="PACMASPACKAGEDESCRIPTION" [Name]="'PACMASPACKAGEDESCRIPTION'"
+                    [Component]="'ProposalAssetInfo'" [Label]="'Package Description'">
+                  </nfs-textbox>
+                </div>
+              </ng-container>
+            }
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Financial Plan
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- <asset-details-default *ngIf="this.PROPOSAL.controls.FINANCIALPRODUCTID.value !=13"></asset-details-default> -->
+          <asset-details-common [ComponentName]="'Assets'"></asset-details-common>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true" [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Rental Detail
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="tableMain rentalDetail matSpaceTable">
+            <nfs-static-grid [inputArr]="this._proposalManagerService.CurrentAssetRentalDetail"
+              [isRadioBtnRequired]="false" [IsActionRequired]="false" [ActionLabel]="'Rental Details'"
+              [IsDeleteRequired]="false" [columns]="columns" [Mode]="Mode" [Labels]="labels" [pipes]="Pipes">
+            </nfs-static-grid>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+        <nfs-button [text]="'Calculation'" [color]="'primary'"
+          [disabled]="!this._proposalManagerService.isCalcButtonEnabled || this.isViewMode" [matButton]="false"
+          [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="CalculationTrigger()">
+        </nfs-button>
+      </div>
+    </div>
+  }
+</div>
+@if (this.assetTypeFlag) {
+  <div>
+    <nfs-button (onBtnClick)="this.closeAssetType()" [text]="'Close'" [color]="'primary'">
+    </nfs-button>
+    <app-asset-Type (assetTypeFlagEvent)="childOutput($event)"></app-asset-Type>
+  </div>
+}

@@ -1,0 +1,37 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">mPOS ReSurvey</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" (click)="btnCancel_Click()">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain customAccordianMain">
+        <div class="row interestFieldAdjustBox fieldContainer" [formGroup]="MposSurveyForm">
+          <div class="col-md-3 top10 customTopNegatiiveArea">
+            <nfs-dropdown [Label]="'Re-Survey Reason'"  [Ismultiselect]="false"
+                [EnableFilter]="true" [AllowUnSelect]="false"
+                [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="ResurveyReason" [Name]="'ResurveyReason'" [DataArray]="this.resurveyReasonArray">
+            </nfs-dropdown>
+        </div>
+            <div class="col-md-12 top15">
+                <nfs-textarea class="surveyTextArea" [maxLength]="255" [Placeholder]="'Re-Survey Comments'" [Label]="'Re-Survey Comments'" [ApplyRegex] ="this.pattern"
+                    formControlName="SurveyCOMMENT" [Name]="'SurveyCOMMENT'" [Component]="'MposSurvey'">
+                </nfs-textarea>
+            </div>
+            <div class="col-md-12 searchBtns marginTop15">
+
+                <nfs-button [text]="'Close'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                    [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnCancel_Click()">
+                </nfs-button>
+                <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="this.MposSurveyForm.controls.ResurveyReason.value == '' || this.MposSurveyForm.controls.SurveyCOMMENT.invalid" [matButton]="false"
+                    [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnSubmit_Click()">
+                </nfs-button>
+            </div>
+        </div>
+    </div>
+</div>

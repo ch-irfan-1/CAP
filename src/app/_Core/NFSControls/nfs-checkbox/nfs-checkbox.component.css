@@ -1,0 +1,8 @@
+.disabledDiv {
+    pointer-events: none;
+    opacity: 1.0;
+}
+
+.mandatory {
+    background-color: rgb(183, 214, 183) !important;;
+}

@@ -1,0 +1,43 @@
+@if (error) {
+  <div class="errorPage">
+    <div class="col-md-12" style="margin-bottom: 22px;margin-left: 9px;">
+      <nfs-button [text]="'Back'" [color]="'primary'" [disabled]="false"
+        [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+        (click)="goBack()">
+      </nfs-button>
+    </div>
+    <div class="mt-2 ml-4">
+      <h5 class="text-danger">Code: {{code}}</h5>
+      <h5 class="text-danger">Message: {{message}}</h5>
+      <p class="font-weight-bold">ExceptionMessage: {{error.ExceptionMessage}}</p>
+    </div>
+    <ol>
+      <h1>Details:</h1>
+      <div class="row ml-1 mt-3 mb-3">
+        <button mat-stroked-button color="primary" class="font-weight-bold"
+        (click)="copyToClipboard('response')">{{btnCopyResponse }}</button>
+        <button mat-stroked-button color="primary" class="font-weight-bold ml-3"
+        (click)="downloadFile('response')">Download</button>
+      </div>
+      <code class="mt-5" style="background-color: whitesmoke;">{{error.StackTrace || error}}</code>
+    </ol>
+    <ol>
+      <h1>Request Data:</h1>
+      <div class="row ml-1 mt-3 mb-3">
+        <button mat-stroked-button color="primary" class="font-weight-bold"
+        (click)="copyToClipboard('request')">{{btnCopyRequest}}</button>
+        <button mat-stroked-button color="primary" class="font-weight-bold ml-3"
+        (click)="downloadFile('request')">Download</button>
+      </div>
+      <code class="mt-5" style="background-color: whitesmoke;">{{requestData}}</code>
+    </ol>
+  </div>
+}
+
+@if (!error) {
+  <div class="errorPage">
+    <div class="mt-2 ml-4">
+      <h5 class="text-danger">No Error Found</h5>
+    </div>
+  </div>
+}

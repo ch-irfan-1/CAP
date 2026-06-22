@@ -1,0 +1,55 @@
+import { IBaseEntity } from "@NFS_Entity/Base-Entity/BaseEntity.model";
+import { Control } from "src/Library";
+
+export interface IOTO_PRPL_ASST_BPKB_DETLInfo extends IBaseEntity {
+    PROPOSALID: number;
+    ASSETID: number;
+    OTOBPKBOWNER: string;
+    OTOBPKBNUMBER: string;
+    OTOBPKBOWNERNME: string|null;
+    OTOBPKBHOLDERNME: string;
+    OTOBPKBDTE: Control<Date>;
+    OTOCITYID: number;
+    OTOMARITALSTATUSCDE: string|null;
+    //CODE: string;
+    OTOBPKBOWNERSPOUSENME: string|null;
+    OTOAGMTCDE: string|null;
+    OTOCOUNTRY: number;
+    OTOPROVINCE: number;
+    OTOKOTAMADYA: number;
+    OTOKECAMATAN: number;
+    OTODESA: number;
+    OTORW: string|null;
+    OTORT: string|null;
+    BPKBPLCE: number;
+    ADDSDSC: string|null;
+    DESCRIPTION: string;
+    OTOADDRESSCDE: string;
+    BPKBRECEIVEDSTATUS: string;
+    BPKBRECEIVEDDATE: Control<Date>;
+    BPKBSTATUS: string;
+    POLICENO: string;
+    BPKBEXPECTEDDATE: Control<Date>;
+    BPKBOVERDUEDAYS: number;
+    BPKBOWNERKTPID: string|null;
+    BPKBOWNERSPOUSEADDRESS: string|null;
+    BPKBHOLDERADDRESS: string;
+    BPKBOWNERCATEGORY: string|null;
+    BPKBOWNERDOB: Control<Date>|null;
+    BPKBOWNERKTPIDEXPIRY: Control<Date>|null;
+    RELATIONSHIPCDE: string | null;
+    GENDER: string|null;
+    BPKBOWNERPLACEOFBIRTH: string|null;
+    BPKBOWNERTYPE: string|null;
+    REASON: string;
+    STATUSCHANGEDTE: Control<Date>;
+    EXECUTIONDTE: Control<Date>;
+    BPKBBORROWERAGE: number;
+    BPKBOTHERAGE: number;
+    BPKBOWNERTITLE: string|null;
+    BPKBLOCATION: number;
+    BPKBPOSLOCATION: string;
+    //following properties are from helper class
+    CITYDSC: string;
+    PLACEDSC: string;
+}

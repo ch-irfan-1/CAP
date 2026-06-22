@@ -1,0 +1,36 @@
+<!-- <h3>Nested form array</h3> -->
+<button (click)="addOption()">ADD</button>
+
+<div [formGroup]="fg">
+  @for (item of columns; track item; let i = $index) {
+    <span>
+      <nfs-textbox [Type]="'text'" [Label]="item" [autocomplete]="'off'"></nfs-textbox>
+    </span>
+  }
+  <mat-radio-group>
+    @for (item of genericFormArray.controls; track item; let i = $index) {
+      <div formArrayName="genericFormArray">
+        <div [formGroupName]="i">
+          @for (property of item.value | keyvalue: returnZero; track property) {
+            <span>
+              @if (property.key != checkboxPropertyName) {
+                <nfs-textbox [Type]="'text'" formControlName="{{property.key}}" [autocomplete]="'off'"></nfs-textbox>
+              }
+            </span>
+          }
+          @if (isCheckboxRequired) {
+            <input id="i" type="checkbox" value="{{i}}" formControlName="default" (click)="this.checkValue(i)">
+          }
+          @if (isCheckboxRequired) {
+            <label for="DefaultVal+{{i}}">Default</label>
+          }
+          @if (isRadioBtnRequired) {
+            <input type="radio" id="DefaultVal+{{i}}" name ="DefaultVal-+{{i}}"
+              [checked]='item?.get(radioPropertyName)?.value' (change)="OnDefaultRecordChange(i)">
+          }
+          <button (click)="removeOption(i)">REMOVE</button>
+        </div>
+      </div>
+    }
+  </mat-radio-group>
+</div>

@@ -1,0 +1,61 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Submit Previous BPKB</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer">
+        <div class="col-md-12 noPadding">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Blue Book Limit
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+                        <div class="col-md-4 top15">
+                            <nfs-textbox  [maxLength]="100"
+                            [Placeholder]="'Blue Book Limit'"
+                            [Label]="'Blue Book Limit'" >
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-4 top15">
+                            <nfs-textbox  [maxLength]="100"
+                            [Placeholder]="'Outstanding Blue Books'"
+                            [Label]="'Outstanding Blue Books'" >
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-4 top15">
+                            <nfs-textbox  [maxLength]="100"
+                            [Placeholder]="'Remaining Blue Book Limit'"
+                            [Label]="'Remaining Blue Book Limit'" >
+                            </nfs-textbox>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-md-12 noPadding topMargin20">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Results
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain rentalDetail">
+                        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+                        [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels"></nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+<div>
+  <mat-form-field appearance="fill" class="directive controls-margin"
+    [ngClass]="{'mandatory': IsRequiredField === true}">
+    <mat-label class="customLabel" [matTooltip]="Label">{{Label}}</mat-label>
+    <input class="customInput" [readonly]="isControlDisable" (change)="onValueChanged($event)" (keypress)="onKeypressEvent($event);"
+      type="text" [formControl]="TextBoxControl" maxlength="{{maxLength}}" matInput
+      autocomplete="{{autocomplete}}" (paste)="onPasteEvent($event)" (blur)="onBlurEvent($event)" placeholder="{{Placeholder}}" (keyup)="applyFilter()"
+      (keydown.tab)="onTabPress($event)" [tabIndex]="SetTabIndex()" [matTooltip]="tooltipValue">
+    @if (IsFieldValid() && IsRequiredField === true) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>

@@ -1,0 +1,47 @@
+import { IBaseEntity } from "@NFS_Entity/Base-Entity/BaseEntity.model";
+
+export interface BPSYSUSER extends IBaseEntity{
+    ACTIVATIONDTE: string;
+    ACTIVEDIRECTORYIND: boolean;
+    ACTIVEIND: boolean;
+    APPLICATIONCDE?: any;
+    APPLICATIONDSC?: any;
+    AuthenticationTyp: boolean;
+    BRANCHID: number;
+    BUSINESSPARTNERID: number;
+    CODE?: any;
+    COMPANYID: number;
+    DEPARTMENTCDE?: any;
+    DESIGNATIONCDE?: any;
+    EXECUTIONDTE: string;
+    EXISTINGUSERIND: boolean;
+    EXPIRYDTE: string;
+    FIRSTTIMELOGININD: boolean;
+    ISMACVERIFIEDIND: boolean;
+    LANGUAGECDE: string;
+    LASTINVALIDLOGINDTE: string;
+    LASTPWDEXPIRYDTE: string;
+    LOGINATTEMPTCNT: number;
+    Languageupdatedind: number;
+    MACADDRESS?: any;
+    MENU?: any;
+    Mandatoryupdatedind: number;
+    Menuupdatedind: number;
+    PASSWORDPOLICYID: number;
+    PEPLSOFTEMPLID: string;
+    REASONCDE?: any;
+    REMINDERALERTSIND: boolean;
+    RequestTime: string;
+    SESSIONCDE: string;
+    SESSIONID: number;
+    SYSIND: boolean;
+    Securityupdatedind: number;
+    USERGRUPCDE?: any;
+    USERID: number;
+    USERNME: string;
+    USERPWD: string;
+    UserDepartment?: any;
+    UserDesignation?: any;
+    UserFullName: string;
+    WQALERTSIND: boolean;
+}

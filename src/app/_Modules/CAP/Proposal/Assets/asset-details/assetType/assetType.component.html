@@ -1,0 +1,912 @@
+<!-- <div class="row popupHeader" style="position: inherit;" >
+<div class="col-md-11">
+  <span class="popupMainHeading">Vehicle Detail</span>
+</div>
+<div class="col-md-1" style="text-align: right;">
+  <button mat-icon-button class="close-button" (click)="assetTypeFlag()">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+</div>
+<div class="col-md-1">
+  <button mat-icon-button class="close-button" (click)="Validations()">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+</div>
+</div> -->
+<div class="popupBody" style="width: 100%;margin: 15px 0px;">
+  <div class="row noMargin">
+    <div class="TabInnerMain" style="margin-left: 0px;">
+      <mat-tab-group>
+        <mat-tab label="Vehicle Detail">
+          <div class="row fieldContainer noMargin" [formGroup]="this.PRPLASSETINFO" style="padding-bottom: 0;padding-top: 8px;">
+            <div class="col-md-2 top15 customTop2" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+              <nfs-textbox [ApplyDefaultRegex]='false' [isControlDisable]='true' [maxLength]="100"
+                [Placeholder]="'Asset Name'" [Label]="'Asset Name'" formControlName="ASSETNAME"
+                [Name]="'ASSETNME'" [Component]="'VehicleDetail'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15 customTop2" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+              <!-- <nfs-dropdown [Label]="'Asset Sub Type'" [controlPlaceholder]="'Asset Sub Type'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="ASSETSUBTYPCDE"
+              [Name]="'ASSETSUBTYPCDE'" [Component]="'VehicleDetail'"
+              [DataArray]="this._assetSearchMasterDataService.AssetSubType" [isControlDisable]=true>
+            </nfs-dropdown> -->
+            <nfs-textbox [ApplyDefaultRegex]='false' [maxLength]="100" [Label]="'Asset Sub Type'"
+              [Placeholder]="'Asset Sub Type'" formControlName="ASSETSUBTYPDSC"
+              [Name]="'ASSETSUBTYPCDE'" [Component]="'VehicleDetail'" [isControlDisable]=true>
+            </nfs-textbox>
+          </div>
+
+          <div class="col-md-2 top15 customTop2" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-dropdown [Label]="'Vehicle Condition'" [controlPlaceholder]="'Vehicle Condition'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsCondition" formControlName="CONDITION"
+              [Name]="'CONDITION'" [Component]="'VehicleDetail'"
+              (selectionChange)="selectionChange_CONDITION($event)">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 customTop2" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-currency [Placeholder]="'Asset List Price'" [Label]="'Asset List Price'"
+              formControlName="ASSETAMT" [Name]="'ASSETAMT'" [Component]="'VehicleDetail'" (Change)="assetListPriceUpdate($event)">
+            </nfs-currency>
+          </div>
+        </div>
+        <div class="row fieldContainer noMargin" [formGroup]="this.PRPLVHCLDTL" style="padding-top: 0;">
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Chassis No. (1-100 Char)'"
+              [Label]="'Chassis No. (1-100 Char)'" formControlName="CHASSISNBROTO" [blockSpaces]="true"
+              [Name]="'CHASSISNBROTO'" [Component]="'VehicleDetail'" [isControlDisable]="this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10">
+            <nfs-dropdown [Label]="'Credit Purpose'" formControlName="CRDTPURPCODEOTO"
+              [Name]="'CRDTPURPCODEOTO'" [Component]="'VehicleDetail'" (selectionChange) = "this.creditPurposeOnChange()"
+              [controlPlaceholder]="'Credit Purpose'" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.CrditPurpose">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="7" [Placeholder]="'VIN No.'" [Label]="'VIN No.'"
+              formControlName="VINNUMBER" [Name]="'VINNUMBER'" [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="25" [Placeholder]="'Lic Plate No.'" [Label]="'Lic Plate No.'"
+              formControlName="TRAILERREGISTRATIONNUMBER" [Name]="'TRAILERREGISTRATIONNUMBER'"
+              [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="50" [Placeholder]="'Trailer Lic.Plate No.'"
+              [Label]="'Trailer Lic.Plate No.'" formControlName="TRLLICPLT" [Name]="'TRLLICPLT'"
+              [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-yeardatepicker matInput [Placeholder]="'Manufacturing Year'"
+              [Label]="'Manufacturing Year'" formControlName="RELEASEYEAR" [Name]="'RELEASEYEAR'"
+              [Component]="'VehicleDetail'">
+            </nfs-yeardatepicker>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-number [Placeholder]="'Cylinder Msrt.'" [Label]="'Cylinder Msrt.'"
+              formControlName="CYLINDER" [Name]="'CYLINDER'" [Component]="'VehicleDetail'" [maxLength]="4" (Change) = "removeSpaces($event)">
+            </nfs-number>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="50" [Placeholder]="'Engine Number'" [Label]="'Engine Number'" [blockSpaces]="true"
+              formControlName="ENGINENUMBER" [Name]="'ENGINENUMBER'" [Component]="'VehicleDetail'" [isControlDisable]="this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-dropdown [Label]="'Transmission Type'" [controlPlaceholder]="'Transmission Type'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.TransmissionType"
+              formControlName="TRANSMISSION" [Name]="'TRANSMISSION'" [Component]="'VehicleDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-dropdown [Label]="'Vehicle Color'" [controlPlaceholder]="'Vehicle Color'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetModelColor"
+              formControlName="COLOR" [Name]="'COLOR'" [Component]="'VehicleDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="4" [Placeholder]="'Engine CC'" [Label]="'Engine CC'"
+              formControlName="CC" [Name]="'CC'" [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="30" [Placeholder]="'Body '" [Label]="'Body'"
+              formControlName="BODY" [Name]="'BODY'" [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="40" [Placeholder]="'Series'" [Label]="'Series'"
+              formControlName="SERIES" [Name]="'SERIES'" [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-dropdown [Label]="'Style'" [controlPlaceholder]="'Style'" [Ismultiselect]="false"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.VehicleStyle" formControlName="STYLE"
+              [Name]="'STYLE'" [Component]="'VehicleDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-datepicker matInput [Placeholder]="'Build Date'" [Label]="'Build Date'"
+              formControlName="BUILDDATE" [Name]="'BUILDDATE'" [Component]="'VehicleDetail'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15 top10 control-disabled"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <nfs-textbox [maxLength]="8" [Placeholder]="'Vehicle Age'" [Label]="'Vehicle Age'"
+              formControlName="VEHICLEAGE" [Name]="'VEHICLEAGE'" [Component]="'VehicleDetail'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+            <!-- <mat-form-field appearance="fill">
+            <mat-label>City of Registration</mat-label>
+            <mat-select [formControl]="toppings" multiple>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+          <nfs-dropdown [Label]="'City of Registration'" [controlPlaceholder]="'City of Registration'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.AllKotamadya"
+            formControlName="CITYOFREGISTRATIONOTO" [Name]="'CITYOFREGISTRATIONOTO'"
+            [Component]="'VehicleDetail'" (selectionChange)="cityOfRegistrationChange($event)">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-textbox [maxLength]="50" [Placeholder]="'Vehicle Series Desc.'"
+            [Label]="'Vehicle Series Desc.'" formControlName="VEHICLESERIESDSCOTO"
+            [Name]="'VEHICLESERIESDSCOTO'" [Component]="'VehicleDetail'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-textbox [maxLength]="50" [Placeholder]="'Vehicle Body Desc.'"
+            [Label]="'Vehicle Body Desc.'" formControlName="VEHICLEBODYDSCOTO"
+            [Name]="'VEHICLEBODYDSCOTO'" [Component]="'VehicleDetail'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-dropdown [Label]="'Operator of Vehicle '" [controlPlaceholder]="'Operator of Vehicle '"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.OperatorVehicle"
+            formControlName="OPRTOFVEHICLE" [Name]="'OPRTOFVEHICLE'"
+            [Component]="'VehicleDetail'">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-dropdown [Label]="'Usage area of unit'" [controlPlaceholder]="'Usage area of unit'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.UsageArea"
+            formControlName="USGEAREACDE" [Name]="'USGEAREACDE'" [Component]="'VehicleDetail'">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-dropdown [Label]="'Goods/Services Funds'" [controlPlaceholder]="'Goods/Services Funds'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.GoodServicesFund"
+            formControlName="GOODSSERVICESFUND" [Name]="'GOODSSERVICESFUND'"
+            [Component]="'VehicleDetail'" [isControlDisable]=goodServicesDisable()
+            (selectionChange) = "goodServicesDetilsOnChange($event)">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top10" >
+          <nfs-dropdown [Label]="'Goods/Services Funds Details'" [controlPlaceholder]="'Goods/Services Funds Details'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [DataArray]="this.GoodServicesFundDetails"
+            formControlName="GOODSSERVICESFUNDDETAILS" [Name]="'GOODSSERVICESFUNDDETAILS'"
+            [Component]="'VehicleDetail'"  [isControlDisable]=goodServicesDetilsDisable() [EnableFilter]="true" >
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-textbox [maxLength]="4" [Placeholder]="'No. Of Seats'" [Label]="'No. Of Seats'"
+            formControlName="NOOFSEATS" [Name]="'NOOFSEATS'" [Component]="'VehicleDetail'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-currency [Placeholder]="'Kilometers'" [Label]="'Kilometers'"
+            formControlName="KILOMETERS" [Name]="'KILOMETERS'" [Component]="'VehicleDetail'">
+          </nfs-currency>
+        </div>
+        <div class="col-md-2 top15 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Financing Type'" [Label]="'Financing Type'"
+          formControlName="FINANCINGTYPE" [Name]="'FINANCINGTYPE'" [Component]="'VehicleDetail'">
+        </nfs-textbox> -->
+        <nfs-dropdown [Label]="'Financing Type'" [controlPlaceholder]="'Financing Type'"
+          [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._assetDetailsMasterdataService.FinancingType"
+          formControlName="FINANCINGTYPE" [Name]="'FINANCINGTYPE'" [Component]="'VehicleDetail'"
+          [isControlDisable]=true>
+        </nfs-dropdown>
+      </div>
+      <div class="col-md-2 top10" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+        <section class="example-section" style="margin-top: 10px !important;">
+          <!-- [Name]="'BUYBACKGUARANTEEIND'" [Component]="'VehicleDetail'" -->
+          <nfs-checkbox class="example-margin" formControlName="PRIVACYACTIND"
+            formControlName="BUYBACKGUARANTEEIND" [Label]="'Buy Back Guarantee'">
+          </nfs-checkbox>
+        </section>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="BPKB Detail">
+    <div [formGroup]="PRPLBPKBDETL">
+      <div class="row fieldContainer noMargin" style="padding-top: 8px;padding-bottom: 17px;">
+        <div class="col-md-2 top15 customTop2" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-dropdown [Label]="'BPKB Recieved Status'"
+            [controlPlaceholder]="'BPKB Recieved Status'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.Bpkbreceivedstatus"
+            formControlName="BPKBRECEIVEDSTATUS" [Name]="'BPKBRECEIVEDSTATUS'"
+            [Component]="'BPKBDetail'" [AllowUnSelect]="false"
+            [isControlDisable]=bpkbRecStatusDisable()
+            (selectionChange)="selectionChange_BPKBRECEIVEDSTATUS($event)">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 customTop2" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+          <nfs-datepicker matInput [Placeholder]="'BPKB Recieved Date'"
+            [Label]="'BPKB Recieved Date'" formControlName="BPKBRECEIVEDDATE"
+            [Name]="'BPKBRECEIVEDDATE'" [Component]="'BPKBDetail'"
+            [isControlDisable]="true">
+          </nfs-datepicker>
+        </div>
+        <!-- <div class="col-md-2 top15 iconPopup">
+        <span>Submit Previous BPKB</span>
+        <div class="iconPopupMain">
+          <p (click)="openSubmitPreviousBPKB()">More</p>
+        </div>
+      </div> -->
+    </div>
+    <div>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              BPKB Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer top22" style="padding-bottom: 0;">
+            <div class="col-md-2 top15 top5"
+              [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+              <nfs-dropdown [Label]="'BPKB Status'" [controlPlaceholder]="'BPKB Status'"
+                [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this.BPKBStatusDropdown" formControlName="BPKBSTATUS"
+                [Name]="'BPKBSTATUS'" [Component]="'BPKBDetail'"
+                [AllowUnSelect]="false" [isControlDisable]=bpkbRecievedDateDisable()>
+              </nfs-dropdown>
+              <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'BPKB Status'" [Label]="'BPKB Status'"
+              formControlName="BPKBSTATUS" [Name]="'BPKBSTATUS'" [Component]="'BPKBDetail'">
+            </nfs-textbox> -->
+          </div>
+          <div class="col-md-2 top15 top5"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-datepicker matInput [Placeholder]="'Status Change Date'"
+              [isControlDisable]="true" [Label]="'Status Change Date'"
+              formControlName="STATUSCHANGEDTE" [Name]="'STATUSCHANGEDTE'"
+              [Component]="'BPKBDetail'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15 top5"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-textbox [maxLength]="50" [Placeholder]="'BPKB Number'" [blockSpaces]="true"
+              [Label]="'BPKB Number'" formControlName="OTOBPKBNUMBER"
+              [Name]="'OTOBPKBNUMBER'" [Component]="'BPKBDetail'" (Change)="BPKBNumberChanged($event)" [isControlDisable]="this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top5"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-datepicker matInput [Placeholder]="'BPKB Date'" [Label]="'BPKB Date'"
+              formControlName="OTOBPKBDTE" [Name]="'OTOBPKBDTE'"
+              [Component]="'BPKBDetail'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15 top5"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'BPKB Place'" [controlPlaceholder]="'BPKB Place'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.AllKotamadya"
+              formControlName="BPKBPLCE" [Name]="'BPKBPLCE'"
+              [Component]="'BPKBDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top5"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'City of Registration'"
+              [controlPlaceholder]="'City of Registration'" [Ismultiselect]="false"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.AllKotamadya"
+              formControlName="OTOCITYID" [Name]="'OTOCITYID'"
+              [Component]="'BPKBDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-datepicker matInput [Placeholder]="'BPKB Expected Date'"
+              [isControlDisable]="true" [Label]="'BPKB Expected Date'"
+              formControlName="BPKBEXPECTEDDATE" [Name]="'BPKBEXPECTEDDATE'"
+              [Component]="'BPKBDetail'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-textbox [maxLength]="4" [Placeholder]="'BPKB Overdue Days'"
+              [Label]="'BPKB Overdue Days'" formControlName="BPKBOVERDUEDAYS"
+              [isControlDisable]="true" [Name]="'BPKBOVERDUEDAYS'"
+              [Component]="'BPKBDetail'">
+            </nfs-textbox>
+          </div>
+
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'Owner'" [controlPlaceholder]="'Owner'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.Owner"
+              formControlName="OTOBPKBOWNER" [Name]="'OTOBPKBOWNER'"
+              [Component]="'BPKBDetail'" [AllowUnSelect]="false"
+              (selectionChange)="onBPKBOWNERChange($event)">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'BPKB Owner Category'" (selectionChange) = "BPKBOwnerTypeSelectionChange()"
+              [controlPlaceholder]="'BPKB Owner Category'" [Ismultiselect]="false"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.Bpkbownercategory"
+              formControlName="BPKBOWNERCATEGORY" [Name]="'BPKBOWNERCATEGORY'"
+              [Component]="'BPKBDetail'" (selectionChange)="onBPKBOWNERCategoryChange()"
+              [isControlDisable]=isBPKBOwnerSelected()>
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'control-disabled': this.PRPLBPKBDETL.controls.OTOBPKBOWNER.value == '00001'}"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'BPKB Owner Type'"
+              [controlPlaceholder]="'BPKB Owner Type'" [Ismultiselect]="false"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this.BPKBOWNERTYPESELECTION"
+              formControlName="BPKBOWNERTYPE" [Name]="'BPKBOWNERTYPE'"
+              [isControlDisable]= "isBPKBOwnerSelected() || isBPKBSelected()"
+              [Component]="'BPKBDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'control-disabled': this.PRPLBPKBDETL.controls.OTOBPKBOWNER.value == '00001'}"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'BPKB Owner Title'"
+              [controlPlaceholder]="'BPKB Owner Title'" [Ismultiselect]="false"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.TitleCode"
+              formControlName="BPKBOWNERTITLE" [Name]="'BPKBOWNERTITLE'"
+              [Component]="'BPKBDetail'"  [isControlDisable]= "isBPKBOWNERCOMPANYCATEGORY() || isBPKBOWNERBORROWER">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-textbox [maxLength]="255" [Placeholder]="'BPKB Owner Name'"
+              [Label]="'BPKB Owner Name'" formControlName="OTOBPKBOWNERNME"
+              [Name]="'OTOBPKBOWNERNME'" [Component]="'BPKBDetail'"
+              [isControlDisable]=isBPKBOwnerSelected()>
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-dropdown [Label]="'Gender'" [controlPlaceholder]="'Gender'"
+              [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._assetDetailsMasterdataService.GenderCode"
+              formControlName="GENDER" [Name]="'GENDER'"
+              [Component]="'BPKBDetail'"
+              [isControlDisable]= "isBPKBOwnerSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-textbox [maxLength]="100" [Placeholder]="this.getSIUPIDLabel()"
+              [Label]="this.getSIUPIDLabel()" formControlName="BPKBOWNERKTPID"
+              [Name]="'BPKBOWNERKTPID'" [Component]="'BPKBDetail'"
+              [isControlDisable]=isBPKBOwnerSelected()>
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-datepicker matInput [Placeholder]="'KTPID Expiry Date'"
+              [Label]="'KTPID Expiry Date'" formControlName="BPKBOWNERKTPIDEXPIRY"
+              [Name]="'BPKBOWNERKTPIDEXPIRY'" [Component]="'BPKBDetail'"
+              [isControlDisable]="isBPKBOwnerSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-datepicker matInput [Placeholder]="'BPKB Onwer DOB'"
+              [Label]="'BPKB Onwer DOB'" formControlName="BPKBOWNERDOB"
+              [Name]="'BPKBOWNERDOB'" [Component]="'BPKBDetail'"
+              [isControlDisable]="isBPKBOwnerSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <nfs-textbox [maxLength]="510" [Placeholder]="'Place Of Birth'"
+              [Label]="'Place Of Birth'" formControlName="BPKBOWNERPLACEOFBIRTH"
+              [Name]="'BPKBOWNERPLACEOFBIRTH'" [Component]="'BPKBDetail'"
+              [isControlDisable]="isBPKBOwnerSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top6"
+            [ngClass]="{'control-disabled': this.PRPLBPKBDETL.controls.OTOBPKBOWNER.value == '00001'}"
+            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Relation with Customer'"
+            [Label]="'Relation with Customer'"
+            formControlName="RELATIONSHIPCDE" [Name]="'RELATIONSHIPCDE'" [Component]="'BPKBDetail'">
+          </nfs-textbox> -->
+          <nfs-dropdown [Label]="'Relation with Customer'"
+            [controlPlaceholder]="'Relation with Customer'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]=" this.relationWithCustomerValues"
+            formControlName="RELATIONSHIPCDE" [Name]="'RELATIONSHIPCDE'"
+            [Component]="'BPKBDetail'"
+            [isControlDisable]="isBPKBOwnerSelected() || isBPKBOWNERCATEGORY()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown [Label]="'BPKB Owner Marital Status'"
+            [controlPlaceholder]="'BPKB Owner Marital Status'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.MaritalStatus"
+            formControlName="OTOMARITALSTATUSCDE" [Name]="'OTOMARITALSTATUSCDE'"
+            [Component]="'BPKBDetail'"
+            [isControlDisable]="isBPKBOwnerSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected || IsNotMarried }">
+          <nfs-textbox [maxLength]="255" [Placeholder]="'BPKB Owner Spouse Name'"
+            [Label]="'BPKB Owner Spouse Name'"
+            formControlName="OTOBPKBOWNERSPOUSENME" [Name]="'OTOBPKBOWNERSPOUSENME'"
+            [Component]="'BPKBDetail'"
+            [isControlDisable]="(isBPKBOwnerSelected() && isBPKBOwnerMarried) || isBPKBSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected || IsNotMarried}">
+          <nfs-dropdown [Label]="'Agreement '" [controlPlaceholder]="'Agreement '"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.SpAgreementType"
+            formControlName="OTOAGMTCDE" [Name]="'OTOAGMTCDE'"
+            [Component]="'BPKBDetail'"
+            [isControlDisable]="(isBPKBOwnerSelected() && isBPKBOwnerMarried) || isBPKBSelected() || isBPKBOWNERCOMPANYCATEGORY()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected  || IsNotMarried}">
+          <nfs-textbox [maxLength]="500" [Placeholder]="'BPKB Owner Spouse Address'"
+            [Label]="'BPKB Owner Spouse Address'"
+            formControlName="BPKBOWNERSPOUSEADDRESS"
+            [Name]="'BPKBOWNERSPOUSEADDRESS'" [Component]="'BPKBDetail'"
+
+            [isControlDisable]="(isBPKBOwnerSelected() && isBPKBOwnerMarried) || (isBPKBOWNERCOMPANYCATEGORY())">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-textbox [maxLength]="255" [Placeholder]="'BPKB Holder Name'"
+            [Label]="'BPKB Holder Name'" formControlName="OTOBPKBHOLDERNME"
+            [Name]="'OTOBPKBHOLDERNME'" [Component]="'BPKBDetail'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-textbox [maxLength]="500" [Placeholder]="'BPKB Holder Address'"
+            [Label]="'BPKB Holder Address'" formControlName="BPKBHOLDERADDRESS"
+            [Name]="'BPKBHOLDERADDRESS'" [Component]="'BPKBDetail'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-textbox [maxLength]="200" [Placeholder]="'Reason'" [Label]="'Reason'"
+            [isControlDisable]="true" formControlName="REASON" [Name]="'REASON'"
+            [Component]="'BPKBDetail'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown [Label]="'Owner Address Template'"
+            [controlPlaceholder]="'Owner Address Template'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.CountryList" formControlName="OTOADDRESSCDE"
+            [Name]="'OTOADDRESSCDE'" [Component]="'BPKBDetail'"
+            [AllowUnSelect]="false" [isControlDisable]=true>
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown [Label]="'BPKB Location '"
+            [controlPlaceholder]="'BPKB Location'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.Branches"
+            formControlName="BPKBLOCATION" [Name]="'BPKBLOCATION'" (selectionChange)="selectionChange_BPKBLOCATION($event)"
+            [Component]="'BPKBDetail'">
+          </nfs-dropdown>
+        </div>
+
+        <div class="col-md-2 top15 top6"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected || this.BPKBPOSLocation.length==0}">
+          <nfs-dropdown [Label]="'BPKB POS Location '"[AllowUnSelect]="false"
+            [controlPlaceholder]="'BPKB POS Location'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.BPKBPOSLocation"
+            formControlName="BPKBPOSLOCATION" [Name]="'BPKBPOSLOCATION'"
+            [isControlDisable]="this.BPKBPOSLocation.length==0"
+            [Component]="'BPKBDetail'">
+          </nfs-dropdown>
+        </div>
+
+        <!-- ************************************************************************************************************************** -->
+
+
+        <!-- ************************************************************************************************************************** -->
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<div class="topMargin20">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          BPKB Owner Address
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row top22 fieldContainer">
+        <div class="col-md-10 top15 top5"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-textbox [maxLength]="500" [Placeholder]="'Address'" [Label]="'Address'"
+            formControlName="ADDSDSC" [Name]="'ADDSDSC'"
+            [Component]="'BPKBDetail'"
+            [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 top5"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown [Label]="'Country'" [controlPlaceholder]="'Country'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.OTO_Country" formControlName="OTOCOUNTRY"
+            [Name]="'OTOCOUNTRY'" [Component]="'BPKBDetail'"
+            [AllowUnSelect]="false" [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown [Label]="'Province'" [controlPlaceholder]="'Province'"
+            [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._assetDetailsMasterdataService.AllProvincesByCountryId"
+            formControlName="OTOPROVINCE" [Name]="'OTOPROVINCE'"
+            [Component]="'BPKBDetail'"
+            [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown [Label]="'Kotamadya/Kabupaten'"
+            [controlPlaceholder]="'Kotamadya/Kabupaten'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.AllKotaByProvince" formControlName="OTOKOTAMADYA"
+            [Name]="'OTOKOTAMADYA'" [Component]="'BPKBDetail'"
+            [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <nfs-dropdown formControlName="OTOKECAMATAN" [Name]="'OTOKECAMATAN'"
+            [Component]="'BPKBDetail'" [Label]="'Kecamatan'"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.AllKecamatanByKota"
+            [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 top5"
+          [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+          <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Keturahan/Desa'"
+          [Label]="'Keturahan/Desa'">
+        </nfs-textbox> -->
+        <nfs-dropdown formControlName="OTODESA" [Name]="'OTODESA'"
+          [Component]="'BPKBDetail'" [Label]="'Kelurahan/Desa'"
+          [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this.AllKelurahanByKeca"
+          [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+        </nfs-dropdown>
+      </div>
+      <div class="col-md-2 top15 top5"
+        [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+        <nfs-number [maxLength]="3" [Placeholder]="'RW##'" [Label]="'RW##'"
+          formControlName="OTORW" [Name]="'OTORW'" [Component]="'BPKBDetail'"
+          [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+        </nfs-number>
+      </div>
+      <div class="col-md-2 top15 top5"
+        [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || IsVehicleConditionSelected}">
+        <nfs-number [maxLength]="3" [Placeholder]="'RT##'" [Label]="'RT##'"
+          formControlName="OTORT" [Name]="'OTORT'" [Component]="'BPKBDetail'"
+          [isControlDisable]="isBPKBOwnerSelected() || isBPKBSelected()">
+        </nfs-number>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>
+</div>
+<div class="topMargin20">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Company Representative Information
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="tableMain" [ngClass]="{'disabledDiv': isDeleteNotEnabled || this.representativeDisable}">
+        <div class="col-md-12 noPadding">
+          <div class="TabInnerMainForm" style="padding-left: 0;">
+            <div class="row noMargin ">
+              <div class="tableScroll">
+                <div class="col-md-12 top15 tableMainn top26"
+                  >
+                  <table mat-table [dataSource]="dataSourceRepresentative" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}"
+                    class="mat-elevation-z8">
+                    <ng-container matColumnDef="REPRESENTATIVEKTPID" >
+                      <th mat-header-cell *matHeaderCellDef> Representative
+                        KTP ID
+                      </th>
+                      <td mat-cell *matCellDef="let element">
+                        <mat-form-field placeholder="never">
+                          <input matInput [disabled]="element.ACTIVEIND"
+                            [value]="element.REPRESENTATIVEKTPID"
+                            [(ngModel)]="element.REPRESENTATIVEKTPID">
+                          </mat-form-field>
+                        </td>
+                      </ng-container>
+                      <ng-container matColumnDef="REPRESENTATIVENME">
+                        <th mat-header-cell *matHeaderCellDef> Representative
+                        Name </th>
+                        <td mat-cell *matCellDef="let element">
+                          <mat-form-field placeholder="never">
+                            <input matInput [disabled]="element.ACTIVEIND"
+                              [value]="element.REPRESENTATIVENME"
+                              [(ngModel)]="element.REPRESENTATIVENME">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container matColumnDef="REPRESENTATIVEDESIGNATION">
+                          <th mat-header-cell *matHeaderCellDef> Representative
+                            Position
+                          </th>
+                          <td mat-cell *matCellDef="let element">
+                            <mat-form-field placeholder="never">
+                              <mat-select [disabled]="element.ACTIVEIND"
+                                [(value)]="element.REPRESENTATIVEDESIGNATION">
+                                @for (data of this._assetDetailsMasterdataService.Designation; track data) {
+                                  <mat-option
+                                    [value]="data.code || data.id"> {{
+                                  data.TextValue }}</mat-option>
+                                }
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container matColumnDef="REPRESENTATIVEADDRESS">
+                          <th mat-header-cell *matHeaderCellDef> Representative
+                            Address
+                          </th>
+                          <td mat-cell *matCellDef="let element">
+                            <mat-form-field placeholder="never">
+                              <input matInput [disabled]="element.ACTIVEIND"
+                                [value]="element.REPRESENTATIVEADDRESS"
+                                [(ngModel)]="element.REPRESENTATIVEADDRESS">
+                              </mat-form-field>
+                            </td>
+                          </ng-container>
+                          <ng-container matColumnDef="delete">
+                            <th mat-header-cell *matHeaderCellDef> Action </th>
+                            <td mat-cell *matCellDef="let element let j = index;">
+                              <button mat-button [disabled]="element.ACTIVEIND"
+                                (click)="RemoveRepresentative(element)">
+                                <mat-icon>delete</mat-icon>
+                              </button>
+                            </td>
+                          </ng-container>
+
+
+                          <tr mat-header-row
+                          *matHeaderRowDef="displayedColumnsRepresentative"></tr>
+                          <tr mat-row
+                            *matRowDef="let row; columns: displayedColumnsRepresentative;">
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row accessoryFieldBox">
+                    <div class="col-md-2 top15"></div>
+                    <div class="col-md-2 top15"></div>
+                  </div>
+                  <div class="row noMargin " style="margin-top: 8px !important;">
+                    <div class="col-md-12 searchBtns row justify-content-end noPadding"
+                      [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}" >
+                      <nfs-button [text]="'Add'" [color]="'primary'" [disabled]="false"
+                        [matButton]="false" [matRaisedButton]="false"
+                        [matRaisedButtonIcon]="true"
+                        (onBtnClick)="AddRepresentative($event)">
+                      </nfs-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="topMargin20 bpkbGuarantorInfo">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                BPKB Guarantor Information
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tableMain GuranterTable" [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled || this.guarantorDisable || isDeleteNotEnabled}">
+              <div class="col-md-12 noPadding">
+                <div class="TabInnerMainForm" style="padding-left: 0;">
+                  <div class="row noMargin ">
+                    <div class="tableScroll">
+                      <div class="col-md-12 top15 tableMain top26">
+                        <table mat-table [dataSource]="dataSourceGuarantor"
+                          class="mat-elevation-z8">
+                          <ng-container matColumnDef="GUARANTORKTPID">
+                            <th mat-header-cell *matHeaderCellDef> BPKB Owner Guarantor
+                              KTP
+                            ID</th>
+                            <td mat-cell *matCellDef="let element">
+                              <mat-form-field placeholder="never">
+                                <input matInput [value]="element.GUARANTORKTPID"
+                                  [(ngModel)]="element.GUARANTORKTPID"
+                                  (change)="updateGuarantor(element)">
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+                            <ng-container matColumnDef="GUARANTORNME">
+                              <th mat-header-cell *matHeaderCellDef>BPKB Owner Guarantor
+                                Name
+                              </th>
+                              <td mat-cell *matCellDef="let element">
+                                <mat-form-field placeholder="never">
+                                  <input matInput [value]="element.GUARANTORNME"
+                                    [(ngModel)]="element.GUARANTORNME"
+                                    (change)="updateGuarantor(element)">
+                                  </mat-form-field>
+                                </td>
+                              </ng-container>
+                              <ng-container matColumnDef="GUARANTORADDRESS">
+                                <th mat-header-cell *matHeaderCellDef> BPKB Owner Guarantor
+                                Address </th>
+                                <td mat-cell *matCellDef="let element">
+                                  <mat-form-field placeholder="never">
+                                    <input matInput [value]="element.GUARANTORADDRESS"
+                                      [(ngModel)]="element.GUARANTORADDRESS"
+                                      (change)="updateGuarantor(element)">
+                                    </mat-form-field>
+                                  </td>
+                                </ng-container>
+                                <ng-container matColumnDef="delete">
+                                  <th mat-header-cell *matHeaderCellDef> Action </th>
+                                  <td mat-cell *matCellDef="let element let j = index;">
+                                    <button mat-button (click)="RemoveGuarantor(element)">
+                                      <mat-icon>delete</mat-icon>
+                                    </button>
+                                  </td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumnsGuarantor">
+                                </tr>
+                                <tr mat-row
+                                  *matRowDef="let row; columns: displayedColumnsGuarantor;">
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="row accessoryFieldBox">
+                          <div class="col-md-2 top15"></div>
+                          <div class="col-md-2 top15"></div>
+                        </div>
+                        <div class="row noMargin " style="margin-top: 8px !important;">
+                          <div class="col-md-12 searchBtns row justify-content-end noPadding"
+                            [ngClass]="{'disabledDiv': IsInventoryVehicleDetailDiabled}">
+                            <nfs-button [text]="'Add'" [color]="'primary'" [disabled]="false"
+                              [matButton]="false" [matRaisedButton]="false"
+                              [matRaisedButtonIcon]="true"
+                              (onBtnClick)="AddGuarantor($event)">
+                            </nfs-button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+        <div class="col-md-12 searchBtns">
+          <nfs-button [text]="'Back'" [color]="'primary'" [disabled]="false" [alwaysEnable] = "true" [matButton]="false"
+          [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="Validations()"></nfs-button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="row popupFooter" style="position: inherit;padding-left: 15px;">
+  <div mat-dialog-actions class="d-flex justify-content-end" style="margin: 0;">
+    <div class="">
+      <nfs-button [text]="'Back'" [color]="'primary'" [disabled]="false" [alwaysEnable] = "true" [matButton]="false"
+      [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="Validations()"></nfs-button>
+    </div>
+
+  </div>
+</div> -->

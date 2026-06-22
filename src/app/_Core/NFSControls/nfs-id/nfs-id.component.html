@@ -1,0 +1,7 @@
+<mat-form-field  appearance="fill" class="directive controls-margin" [ngClass]="{'mandatory-color': IsRequiredField === true}">
+  <mat-label>{{Label}}</mat-label>
+  <input type="text" [formControl]="TextBoxControl" matInput autocomplete="{{autocomplete}}" placeholder="{{Placeholder}}" [specialCharacters]="allowedSpecialCharacters" [dropSpecialCharacters]="includeSpecialCharacters" mask="{{format}}">
+  @if (IsFieldValid()) {
+    <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+  }
+</mat-form-field>

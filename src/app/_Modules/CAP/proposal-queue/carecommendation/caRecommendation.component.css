@@ -1,0 +1,24 @@
+textarea.mat-mdc-input-element.cdk-textarea-autosize {
+  min-height: 206px !important;
+}
+.recTable {
+  overflow-x: scroll !important;
+  width: 100% !important;
+}
+.popupBody .bodyContainer,
+.mat-mdc-dialog-container {
+  overflow-x: hidden;
+}
+
+.cnclTable {
+  overflow-x: hidden;
+  width: 100% !important;
+  overflow-y: scroll;
+  max-height: 270px;
+}
+
+.horizontal-scroll-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  /* width: 100%; */
+}

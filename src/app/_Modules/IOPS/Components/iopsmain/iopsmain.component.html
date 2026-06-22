@@ -1,0 +1,516 @@
+<ng-container>
+  <div class="main-content">
+    <div class="proposalTabsInner">
+      <div class="mainContainer IOPSTABs noMargin">
+        <form [formGroup]="QUOTINFO">
+
+          <div class="row" style="background-color: #f7f7f7 !important;">
+            <div class="col-md-12 headerContainer">
+              <div class="col-md-12 backIcon">
+                @if ((this.LoggedinUserRole == '00105' || this.LoggedinUserRole == '00108')) {
+                  <p (click)="goBack()"
+                    routerLinkActive="active">
+                    @if (this.appConfig.CompanyCode === '001') {
+                      <img src="assets/Images/arrowBack.png" />
+                    }
+                    @if (this.appConfig.CompanyCode === '002') {
+                      <img src="assets/Images/backBlue.png" />
+                    }
+                    Back
+                  </p>
+                }
+              </div>
+
+              @if (this.QUOT.controls.QUOT.controls.QUOTATIONNBR.value) {
+                <div class="col-md-12 editModeContailner">
+                  <div class="col-md-6">
+                    <p class="leadnumberHeading">{{this.QUOT.controls.QUOT.controls.QUOTATIONNBR.value}}</p>
+                  </div>
+                  <!-- <div class="col-md-6 btn-right saveBtns noPaddingRight">
+                  <div *ngIf="applicantEditPanel===!true">
+                    <nfs-button [text]="'Document View'" [color]="'primary'" [matButton]="false"
+                      [matRaisedButton]="false" [matRaisedButtonIcon]="true" [iconPng]="'assets/Images/submitBtn.png'"
+                    (click)="openDocumentView();"></nfs-button>
+                  </div>
+                </div> -->
+              </div>
+            }
+
+            <div>
+              <div class="col-md-12 iopsTopAppType">
+                <p>Applicant Type</p>
+              </div>
+
+              <div class="col-md-12 ApplicantType">
+                <mat-radio-group disabled="true">
+                  <div class="col-md-3 selectionBtn" [ngClass]="{'borderGreen' : !this.isIndividualChecked}">
+                    <div>
+                      <mat-radio-button value="Company" [checked]="!this.isIndividualChecked"
+                      (change)="onChange('Company')">Company</mat-radio-button>
+                    </div>
+                  </div>
+                  <div class="col-md-3 selectionBtn" [ngClass]="{'borderGreen' : this.isIndividualChecked}">
+                    <div>
+                      <mat-radio-button value="Individual" [checked]="this.isIndividualChecked"
+                        (change)="onChange('Individual')">Individual
+                      </mat-radio-button>
+                    </div>
+                  </div>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="applicantMainTabs">
+
+      <!------ New design  ------->
+
+      <div class="row">
+        <!-- <div class="col-md-2 proposalTabTOpMain">
+        <div class="proposalTabMain" (click)="proposalActive()" [class.activeTabApplicant]="applicantTab">
+          <img src="../../../../assets/Images/applicantsIcon.png" />
+          <img src="../../../../assets/Images/applicantIconWhite.png" />
+          <img src="../../../../assets/Images/selectTab.png" />
+          <p>Company</p>
+        </div>
+        <div class="proposalTabMain" (click)="AssetsActive()" [class.activeTabAsset]="assetTab">
+          <img src="../../../../assets/Images/AssetIcon.png" />
+          <img src="../../../../assets/Images/AssetsIconWhite.png" />
+          <img src="../../../../assets/Images/selectTab.png" />
+          <p>Individual</p>
+        </div>
+      </div> -->
+      <div class="col-md-12 proposalTabTOpMainContant">
+        <!-- <div class="row">
+        <div class="col-md-12 documentBtn">
+          <nfs-button [text]="'Documents'" [matButton]="false"
+            [matRaisedButton]="true" [matRaisedButtonIcon]="false" [iconPngHover]="'assets/Images/copyGreen.png'" [iconPng]="'assets/Images/copyGray.png'"
+            (click)="openDocumentView();">
+          </nfs-button>
+        </div>
+      </div> -->
+      <div>
+        <form [formGroup]="QUOT">
+          <div [class.ApplicantEditPanel]="applicantEditPanel">
+            <div class="iopsScreen documentBtn">
+              <nfs-button [text]="'Documents'" [matButton]="false" [matRaisedButton]="true"
+                [matRaisedButtonIcon]="false" [iconPngHover]="'assets/Images/copyGreen.png'"
+                [iconPng]="'assets/Images/copyGray.png'" (onBtnClick)="openDocumentView();">
+              </nfs-button>
+            </div>
+            <mat-tab-group [selectedIndex]="selected.value" disableRipple
+              (selectedIndexChange)="selected.setValue($event)" (selectedTabChange)="tabChange()">
+
+              @for (tab of tabs; track tab; let index = $index) {
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <span>
+                      {{tab}}
+                    </span>
+                  </ng-template>
+                  @if (tab==='Applicant Information') {
+                    <div>
+                      @for (applicant of QUOTAPPLICANTS.controls; track applicant; let i = $index) {
+                        <span>
+                          @if (applicant.controls.RowState.value != 4) {
+                            <app-iopscustomer-info
+                              [QuotApplicants]="applicant" [MainQuotEntity]="this.QUOT"
+                              (LoadExistingBPtData)="LoadExistingBPchildOutput($event)" [Mode]="Mode">
+                            </app-iopscustomer-info>
+                          }
+                        </span>
+                      }
+                      @if (false) {
+                        <mat-action-row>
+                          <a class="posBtn" (click)="prevTab()">Previous</a>
+                          <a class="posBtn" (click)="btnSave()">Save</a>
+                          <a class="posBtn" (click)="btnSave()">Submit</a>
+                          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+                          <a class="posBtn" (click)="btnAssign()">Assign</a>
+                        </mat-action-row>
+                      }
+                    </div>
+                  }
+                  @if (tab==='Address Details') {
+                    <div>
+                      @for (applicant of QUOTAPPLICANTS.controls; track applicant; let i = $index) {
+                        <span>
+                          <app-address-info [Addresses]="applicant.controls.QUOTAPPLICANTADDRESS" [Mode]="Mode">
+                          </app-address-info>
+                        </span>
+                      }
+                      @if (false) {
+                        <mat-action-row>
+                          <a class="posBtn" (click)="prevTab()">Previous</a>
+                          <a class="posBtn" (click)="btnSave()">Save</a>
+                          <a class="posBtn" (click)="btnSave()">Submit</a>
+                          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+                          <a class="posBtn" (click)="btnAssign()">Assign</a>
+                        </mat-action-row>
+                      }
+                    </div>
+                  }
+                  @if (tab==='General Information') {
+                    <div label="General Information">
+                      <app-general-info [QoutMain]="this.QUOT.controls.QUOT" [MainQuotEntity]="this.QUOT"
+                        [Mode]="Mode">
+                      </app-general-info>
+                      @if (false) {
+                        <mat-action-row>
+                          <a class="posBtn" (click)="prevTab()">Previous</a>
+                          <a class="posBtn" (click)="btnSave()">Save</a>
+                          <a class="posBtn" (click)="btnSave()">Submit</a>
+                          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+                          <a class="posBtn" (click)="btnAssign()">Assign</a>
+                        </mat-action-row>
+                      }
+                    </div>
+                  }
+                  @if (tab==='Documents') {
+                    <div label="General Information">
+                      <app-documents-info [QUOTEntity]="this.QUOT" [Mode]="Mode"> </app-documents-info>
+                      @if (false) {
+                        <mat-action-row>
+                          <a class="posBtn" (click)="prevTab()">Previous</a>
+                          <a class="posBtn" (click)="btnSave()">Save</a>
+                          <a class="posBtn" (click)="btnSave()">Submit</a>
+                          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+                          <a class="posBtn" (click)="btnAssign()">Assign</a>
+                        </mat-action-row>
+                      }
+                    </div>
+                  }
+                </mat-tab>
+              }
+            </mat-tab-group>
+          </div>
+
+          @if (applicantEditPanel===true) {
+            <div class="iopsSplitScreen"
+              [class.DocumentViewModePanel]="applicantEditPanel">
+              <app-documents-view (cancleButtonClick)="openDocumentView();" [QUOTEntity]="this.QUOT" [Mode]="Mode">
+              </app-documents-view>
+            </div>
+          }
+
+          <div>
+            @if (this.appConfig.CompanyCode === '001') {
+              <div class="row">
+                <div class="col-md-12 applicationActionButtons">
+                  <div class="row fieldContainer">
+                    <div class="col-md-12 btn-right saveBtns noPaddingRight">
+                      <!-- *ngIf="this.LoggedinUserRole == '00107' && this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'" -->
+                      @if (this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New') {
+                        <div>
+                          <div *hasClaim="'CanCancelLead'">
+                            <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                              [iconPng]="'assets/Images/closeGreen1.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnCancel()" [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                      <!-- *ngIf="this.LoggedinUserRole == '00107' && this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'" -->
+                      @if (this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New') {
+                        <div>
+                          <div *hasClaim="'CanAssignLead'">
+                            <nfs-button [text]="'Assign'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                              [iconPng]="'assets/Images/assignGreen1.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnAssign()" [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                          <!-- *ngIf="this.LoggedinUserRole == '00105' && !IsLeadInReadonlyMode-->
+                          @if (!IsLeadInReadonlyMode) {
+<div>
+                            <div *hasClaim="'CanCreateLead'" class="saveBtnTheme">
+                              <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                                [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                              [iconPng]="'assets/Images/saveWhite.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnSave(false)" [type]="'submit'"
+                              [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                      <!-- *ngIf="this.LoggedinUserRole == '00105' && !IsLeadInReadonlyMode" -->
+                      @if (!IsLeadInReadonlyMode) {
+                        <div>
+                          <div *hasClaim="'CanSubmitLead'">
+                            <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                              [iconPng]="'assets/Images/submitBtn.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnSave(true)" [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+            @if (this.appConfig.CompanyCode === '002') {
+              <div class="row">
+                <div class="col-md-12 applicationActionButtons">
+                  <div class="row fieldContainer">
+                    <div class="col-md-12 btn-right saveBtns noPaddingRight">
+                      <!-- *ngIf="this.LoggedinUserRole == '00107' && this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'" -->
+                      @if (this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New') {
+                        <div>
+                          <div *hasClaim="'CanCancelLead'">
+                            <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                              [iconPng]="'assets/Images/closeBlue1.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnCancel()" [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                      <!-- *ngIf="this.LoggedinUserRole == '00107' && this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'" -->
+                      @if (this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New') {
+                        <div>
+                          <div *hasClaim="'CanAssignLead'">
+                            <nfs-button [text]="'Assign'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                              [iconPng]="'assets/Images/assignBlue1.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnAssign()" [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                      <!-- *ngIf="this.LoggedinUserRole == '00105' && !IsLeadInReadonlyMode" -->
+                      @if (!IsLeadInReadonlyMode) {
+                        <div>
+                          <div *hasClaim="'CanCreateLead'">
+                            <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                              [iconPng]="'assets/Images/saveWhite.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnSave(false)" [type]="'submit'"
+                              [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                      <!-- *ngIf="this.LoggedinUserRole == '00105' && !IsLeadInReadonlyMode" -->
+                      @if (!IsLeadInReadonlyMode) {
+                        <div>
+                          <div *hasClaim="'CanSubmitLead'">
+                            <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                              [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                              [iconPng]="'assets/Images/submitBtn.png'"
+                              (onBtnClick)="!this.isSubmitclicked && btnSave(true)" [disabled]='this.isSubmitclicked'>
+                            </nfs-button>
+                          </div>
+                        </div>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!------ New design  ------->
+
+  <!-- <form [formGroup]="QUOT">
+
+  <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)"
+    (selectedTabChange)="tabChange()">
+
+    <mat-tab *ngFor="let tab of tabs; let index = index">
+
+      <ng-template mat-tab-label>
+        <span>
+          <p *ngIf="tab==='Applicant Information'" class="profileIcon"></p>
+          <p *ngIf="tab==='Address Details'" class="homeIcon"></p>
+          <p *ngIf="tab==='General Information'" class="genInfoIcon"></p>
+          <p *ngIf="tab==='Documents'" class="documentIcon"></p>
+          {{tab}}
+        </span>
+      </ng-template>
+
+      <div *ngIf="tab==='Applicant Information'">
+        <span *ngFor="let applicant of QUOTAPPLICANTS.controls; let i = index;">
+          <app-iopscustomer-info [QuotApplicants]="applicant" [MainQuotEntity]="this.QUOT"
+            (LoadExistingBPtData)="LoadExistingBPchildOutput($event)" [Mode]="Mode">
+          </app-iopscustomer-info>
+        </span>
+
+        <mat-action-row *ngIf="false">
+          <a class="posBtn" (click)="prevTab()">Previous</a>
+          <a class="posBtn" (click)="btnSave()">Save</a>
+          <a class="posBtn" (click)="btnSave()">Submit</a>
+          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+          <a class="posBtn" (click)="btnAssign()">Assign</a>
+        </mat-action-row>
+      </div>
+
+      <div *ngIf="tab==='Address Details'">
+        <span *ngFor="let applicant of QUOTAPPLICANTS.controls; let i = index;">
+          <app-address-info [Addresses]="applicant.controls.QUOTAPPLICANTADDRESS" [Mode]="Mode">
+          </app-address-info>
+        </span>
+
+        <mat-action-row *ngIf="false">
+          <a class="posBtn" (click)="prevTab()">Previous</a>
+          <a class="posBtn" (click)="btnSave()">Save</a>
+          <a class="posBtn" (click)="btnSave()">Submit</a>
+          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+          <a class="posBtn" (click)="btnAssign()">Assign</a>
+        </mat-action-row>
+      </div>
+
+      <div *ngIf="tab==='General Information'" label="General Information">
+
+        <app-general-info [QoutMain]="this.QUOT.controls.QUOT" [MainQuotEntity]="this.QUOT" [Mode]="Mode">
+        </app-general-info>
+
+        <mat-action-row *ngIf="false">
+          <a class="posBtn" (click)="prevTab()">Previous</a>
+          <a class="posBtn" (click)="btnSave()">Save</a>
+          <a class="posBtn" (click)="btnSave()">Submit</a>
+          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+          <a class="posBtn" (click)="btnAssign()">Assign</a>
+        </mat-action-row>
+      </div>
+
+      <div *ngIf="tab==='Documents'" label="General Information">
+
+        <app-documents-info [QUOTEntity]="this.QUOT" [Mode]="Mode"> </app-documents-info>
+
+        <mat-action-row *ngIf="false">
+          <a class="posBtn" (click)="prevTab()">Previous</a>
+          <a class="posBtn" (click)="btnSave()">Save</a>
+          <a class="posBtn" (click)="btnSave()">Submit</a>
+          <a class="posBtn" (click)="btnCancel()">Cancel</a>
+          <a class="posBtn" (click)="btnAssign()">Assign</a>
+        </mat-action-row>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <div>
+    <div class="row" *ngIf="this.appConfig.CompanyCode === '001'">
+      <div class="col-md-12 applicationActionButtons">
+        <div class="row fieldContainer">
+          <div class="col-md-12 btn-right saveBtns noPaddingRight">
+            <div *ngIf="this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'">
+              <div *hasClaim="'CanCancelLead'">
+                <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                  [iconPng]="'assets/Images/closeGreen1.png'" (click)="!this.isSubmitclicked && btnCancel()"
+                  [disabled]='this.isSubmitclicked'>
+                </nfs-button>
+              </div>
+            </div>
+            <div *ngIf="this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'">
+              <div *hasClaim="'CanAssignLead'">
+                <nfs-button [text]="'Assign'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                  [iconPng]="'assets/Images/assignGreen1.png'" (click)="!this.isSubmitclicked && btnAssign()"
+                  [disabled]='this.isSubmitclicked'>
+                </nfs-button>
+              </div>
+            </div>
+            <div *ngIf="!IsLeadInReadonlyMode">
+              <div *hasClaim="'CanCreateLead'" class="saveBtnTheme">
+                <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                  [iconPng]="'assets/Images/saveWhite.png'" (click)="!this.isSubmitclicked && btnSave(false)"
+                  [type]="'submit'" [disabled]='this.isSubmitclicked'>
+                </nfs-button>
+              </div>
+            </div>
+            <div *ngIf="!IsLeadInReadonlyMode">
+              <div *hasClaim="'CanSubmitLead'">
+                <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                  [iconPng]="'assets/Images/submitBtn.png'" (click)="!this.isSubmitclicked && btnSave(true)"
+                [disabled]='this.isSubmitclicked'></nfs-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="this.appConfig.CompanyCode === '002'">
+      <div class="col-md-12 applicationActionButtons">
+        <div class="row fieldContainer">
+          <div class="col-md-12 btn-right saveBtns noPaddingRight">
+            <div *ngIf="this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'">
+              <div *hasClaim="'CanCancelLead'">
+                <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                  [iconPng]="'assets/Images/closeBlue1.png'" (click)="!this.isSubmitclicked && btnCancel()"
+                  [disabled]='this.isSubmitclicked'>
+                </nfs-button>
+              </div>
+            </div>
+            <div *ngIf="this.QUOT.controls.QUOT.controls.APCSTATUSDSC.value == 'New'">
+              <div *hasClaim="'CanAssignLead'">
+                <nfs-button [text]="'Assign'" [color]="'primary'" [disabled]="false" [matButton]="true"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="false"
+                  [iconPng]="'assets/Images/assignBlue1.png'" (click)="!this.isSubmitclicked && btnAssign()"
+                  [disabled]='this.isSubmitclicked'>
+                </nfs-button>
+              </div>
+            </div>
+            <div *ngIf="!IsLeadInReadonlyMode">
+              <div *hasClaim="'CanCreateLead'">
+                <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="true" [iconPng]="'assets/Images/saveWhite.png'"
+                  (click)="!this.isSubmitclicked && btnSave(false)" [type]="'submit'"
+                  [disabled]='this.isSubmitclicked'>
+                </nfs-button>
+              </div>
+            </div>
+            <div *ngIf="!IsLeadInReadonlyMode">
+              <div *hasClaim="'CanSubmitLead'">
+                <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                  [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+                  [iconPng]="'assets/Images/submitBtn.png'" (click)="!this.isSubmitclicked && btnSave(true)"
+                [disabled]='this.isSubmitclicked'></nfs-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form> -->
+</div>
+<div class="col-md-12 bottomBtnSaveMain searchBtns">
+
+  <nfs-button [text]="'Save'" [color]="'primary'" (onBtnClick)="btnSave()"  [matButton]="false" [matRaisedButton]="false"
+    [matRaisedButtonIcon]="true">
+  </nfs-button>
+  <nfs-button [text]="'Submit'" [color]="'primary'" [matButton]="false" [matRaisedButton]="false" (onBtnClick)="btnSave(true)"
+    [matRaisedButtonIcon]="true">
+  </nfs-button>
+</div>
+</div>
+
+@if (applicantEditPanel===true) {
+  <div [class.DocumentViewModePanel]="applicantEditPanel">
+    <app-documents-view (cancleButtonClick)="openDocumentView();" [QUOTEntity]="this.QUOT" [Mode]="Mode">
+    </app-documents-view>
+  </div>
+}
+
+<!-- </ng-container> -->

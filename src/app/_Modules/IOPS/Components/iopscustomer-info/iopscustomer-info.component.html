@@ -1,0 +1,486 @@
+<div class="customerInfo TabInnerMain ">
+  <div [formGroup]="IdDetailForm">
+    <div>
+      <div class="row">
+        <div class="col-md-12 topMargin30">
+          <div class="row fieldContainer">
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="IDTYPECDE" [Label]="'ID Type *'" [Name]="'IDTYPECDE'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.ApplicantIdTypesSetup" [Component]="'ApplicantInfo'">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-textbox formControlName="IDTYPENBR" name="IDTYPENBR" [maxLength]="100" [Placeholder]="'ID Number *'"
+                [Label]="'ID Number *'" [Name]="'IDTYPENBR'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-datepicker matInput readonly formControlName="ISSUEDTE" name="ISSUEDTE" [Placeholder]="'Issue Date'"
+                [Label]="'Issue Date'" [Max]="this.toDate">
+              </nfs-datepicker>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-datepicker formControlName="EXPIRYDTE" readonly name="EXPIRYDTE" matInput
+                [Placeholder]="'Expiry Date'" [Label]="'Expiry Date'" [Min]="toDate" [Component]="'ApplicantInfo'">
+              </nfs-datepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          <div class="col-md-12 btn-right IconBtnCircle">
+            <div>
+              <nfs-button [text]="''" (onBtnClick)="addIdDetail()" [color]="'primary'" [disabled]="false"
+                [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true" [icon]="'add'" [Mode]="Mode">
+              </nfs-button>
+            </div>
+            <div>
+              <nfs-button (onBtnClick)="openBPSearchDialog()" class="ml-1" [text]="''" [color]="'primary'"
+                [disabled]="false" [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+              [icon]="'search'" [Mode]="Mode"></nfs-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          @if (this.QuotApplicants.controls.QUOTAPLTIDDETL && this.QuotApplicants.controls.QUOTAPLTIDDETL.length > 0) {
+            <div class="col-md-12 botmMargin30 noPaddingRight"
+              >
+              <nfs-static-grid [inputArr]="this.QuotApplicants.controls.QUOTAPLTIDDETL" [isRadioBtnRequired]="false"
+                [radioPropertyName]="'DEFAULTIND'" [columns]="columns" (ItemRemoved)="childOutput($event)" [pipes]="pipes"
+              (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="labels"></nfs-static-grid>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [formGroup]="this.QuotApplicants.controls.QUOTAPLT">
+    <div>
+      <div class="row">
+        <div class="col-md-12 createLeadHeading">
+          <p>Applicant Information</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer">
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="FIRSTNME" [maxLength]="50" matInput name="First Name"
+                  [ngClass]="{'exisitingBP-disabled': isBPSearched === true}" [Placeholder]="'First Name *'"
+                [Label]="'First Name *'" [Name]="'FIRSTNME'" [Component]="'ApplicantInfo'"></nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="MIDDLENME" [maxLength]="50" matInput name="Middle Name *"
+                  [ngClass]="{'exisitingBP-disabled': isBPSearched === true}" [Placeholder]="'Middle Name'"
+                [Label]="'Middle Name'" [Name]="'MIDDLENME'"></nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="LASTNME" matInput name="Last Name *" [Name]="'LASTNME'"
+                  [Placeholder]="'Last Name'" [ngClass]="{'exisitingBP-disabled': isBPSearched === true}" [maxLength]="50"
+                [Label]="'Last Name'" [Component]="'ApplicantInfo'"></nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-datepicker formControlName="DATEOFBIRTH" name="DATEOFBIRTH" matInput [Placeholder]="'Date of Birth'"
+                  [ngClass]="{'exisitingBP-disabled': isBPSearched === true}" [Label]="'Date of Birth'"
+                  [Max]="this.toDate">
+                </nfs-datepicker>
+              </div>
+            }
+
+            @if (!this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="COMPANYNAME" [maxLength]="255" matInput name="Company Name"
+                  [ngClass]="{'exisitingBP-disabled': isBPSearched === true}" [Placeholder]="'Company Name *'"
+                [Label]="'Company Name *'" [Name]="'COMPANYNAME'"></nfs-textbox>
+              </div>
+            }
+            @if (!this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="CONTACTNME" [maxLength]="20" matInput name="Contact Name"
+                [Placeholder]="'Contact Name'" [Label]="'Contact Name *'" [Name]="'CONTACTNME'"></nfs-textbox>
+              </div>
+            }
+
+            <div class="col-md-2 top15">
+              <nfs-email [type]="'email'" formControlName="EMAILADDRESS" [Name]="'EMAILADDRESS'" [label]="'Email'"
+                [placeholder]="'Email ID'" [autoComplete]="'off'" [maxLength]="65" [Component]="'ApplicantInfo'">
+              </nfs-email>
+            </div>
+
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="PLACEOFBIRTH" [maxLength]="255" [Name]="'PLACEOFBIRTH'" matInput
+                  [ngClass]="{'exisitingBP-disabled': isBPSearched === true}" [Placeholder]="'Place of Birth'"
+                  [Label]="'Place of Birth'">
+                </nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="MOTHERMDNNME" [maxLength]="255" [Name]="'MOTHERMDNNME'" matInput
+                  [Placeholder]="'Mother Maiden Name'" [Label]="'Mother Maiden Name'">
+                </nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <!-- <nfs-currency [type]="'text'" class="form-control" [label]="'Salary Income'" [placeholder]="'Salary Income'" formControlName="age" autocomplete="off"
+              currencyInput maxDigits="9" [mask]="'9999999999999.99'"></nfs-currency> -->
+              <!-- <nfs-number formControlName="SALARY" [Regex]="'^\d*(\.\d{0,2})?$'" [Name]="'SALARY'" matInput
+              [Placeholder]="'Salary Income'" [Label]="'Salary Income'" [MinNo]="0" [MaxNo]="9999999999999" >
+            </nfs-number> -->
+            <nfs-currency formControlName="SALARY" [Name]="'SALARY'" matInput [Placeholder]="'Salary Income'"
+              [Label]="'Salary Income'" [Component]="'ApplicantInfo'">
+            </nfs-currency>
+          </div>
+        }
+        <div class="col-md-2 top15">
+          <nfs-currency formControlName="MONTHLYINSTALLMENT" [Name]="'MONTHLYINSTALLMENT'" matInput
+            [Placeholder]="'Monthly Installment'" [Label]="'Monthly Installment'">
+          </nfs-currency>
+          <!-- <nfs-number formControlName="MONTHLYINSTALLMENT" [Name]="'MONTHLYINSTALLMENT'"  matInput   [Placeholder]="'Monthly Installment'" [Regex]="'^\d*(\.\d{0,2})?$'"
+        [MinNo]="0" [MaxNo]="999999999999" [Label]="'Monthly Installment'"></nfs-number> -->
+      </div>
+      @if (this.isIndividualSelected) {
+        <div class="col-md-2 top15">
+          <nfs-dropdown formControlName="OCCUPATIONCDE" [Name]="'OCCUPATIONCDE'" [Label]="'Occupation'"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.OccupationsTypes">
+          </nfs-dropdown>
+        </div>
+      }
+      @if (this.isIndividualSelected) {
+        <div class="col-md-2 top15">
+          <nfs-dropdown (selectionChange)="ResetSpouseDetail()" formControlName="MARITALSTATUSCDE"
+            NAME="MARITALSTATUSCDE" [Label]="'Marital Status'" [controlPlaceholder]="'Select Some Values'"
+            [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.MaritalStatusTypes">
+          </nfs-dropdown>
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+@if (this.QuotApplicants.controls.QUOTAPLT.controls.MARITALSTATUSCDE.value=='00001' || '') {
+  <div [formGroup]="this.QuotApplicants.controls.QUOTAPLTSPUSDETL"
+    >
+    <div>
+      <div class="row">
+        @if (this.isIndividualSelected) {
+          <div class="col-md-12 createLeadHeading ">
+            <p>Spouse Information</p>
+          </div>
+        }
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer">
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="FIRSTNME" [Name]="'SPOUSEFIRSTNME'" [maxLength]="30" matInput
+                [Placeholder]="'First Name *'" [Label]="'First Name *'"></nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="MIDDLENME" [Name]="'SPOUSEMIDDLENME'" [maxLength]="30" matInput
+                [Placeholder]="'Middle Name'" [Label]="'Middle Name'"></nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="LASTNME" [Name]="'SPOUSELASTNME'" matInput [Placeholder]="'Last Name'"
+                  [maxLength]="30" [Label]="'Last Name'">
+                </nfs-textbox>
+              </div>
+            }
+            @if (this.isIndividualSelected) {
+              <div class="col-md-2 top15">
+                <nfs-textbox formControlName="IDTYPENBR" [Name]="'SPOUSEIDTYPENBR'" [maxLength]="25"
+                  [Placeholder]="'ID Number *'" [Label]="'ID Number *'">
+                </nfs-textbox>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<div [formGroup]="this.MainQuotEntity.controls.QUOTADDLINFO">
+  <div class="row">
+    <div class="col-md-12 createLeadHeading">
+      <p>Asset Information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row fieldContainer">
+        <div class="col-md-2 top15">
+
+          <nfs-dropdown formControlName="ASSETCONDITION" [Name]="'ASSETCONDITION'" [Label]="'Asset Condition'"
+            [ngClass]="{'assetCond-disabled': this.isAssetCondData === true}"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AssetConditionTypes">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-dropdown formControlName="ASSETUSAGECODE" [Name]="'ASSETUSAGECODE'" [Label]="'Asset Usage'"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AssetUsageTypes">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-dropdown formControlName="ASSETMAKE" [Name]="'ASSETMAKE'" [Label]="'Asset Make'"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AssetMakeTypes">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-3">
+          <nfs-dropdown formControlName="ASSETBRAND" [Name]="'ASSETBRAND'" [Label]="'Asset Brand'"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AssetBrandTypes">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-3">
+          <nfs-dropdown formControlName="ASSETMODEL" [Name]="'ASSETMODEL'" [Label]="'Asset Model'"
+            [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AssetModelTypes">
+          </nfs-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div [formGroup]="this.MainQuotEntity.controls.QUOTFINL">
+  <div class="row">
+    <div class="col-md-12 createLeadHeading">
+      <p>Financial Information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row fieldContainer">
+        <div class="col-md-3">
+          <nfs-currency formControlName="ASSETCOST" [Name]="'ASSETCOST'" matInput [Placeholder]="'OTO/Asset Cost'"
+            [Label]="'OTO/Asset Cost'" (Change)="this.calculateDownPayment($event, 'AssetCost')">
+          </nfs-currency>
+        </div>
+        <div class="col-md-3">
+          <nfs-currency formControlName="DOWNPAYMENTAMNT" [Name]="'DOWNPAYMENTAMNT'" matInput
+            [Placeholder]="'DP Amount'" [Label]="'DP Amount'" (Change)="this.calculateDownPayment($event, 'Amount')">
+          </nfs-currency>
+        </div>
+        <div class="col-md-3">
+          <nfs-currency formControlName="DOWNPAYMENTPCT" [Name]="'DOWNPAYMENTPCT'" matInput [Placeholder]="'DP %'"
+            [Label]="'DP %'" (Change)="this.calculateDownPayment($event, 'Percentage')">
+          </nfs-currency>
+        </div>
+        <div class="col-md-3">
+          <nfs-currency formControlName="FLATINTERESTRTE" [Name]="'FLATINTERESTRTE'" matInput
+            [Placeholder]="'Flat Interest Rate'" [Label]="'Flat Interest Rate'">
+          </nfs-currency>
+        </div>
+        <div class="col-md-3">
+          <nfs-currency formControlName="CONTRACTTERMS" [Name]="'CONTRACTTERMS'" matInput [Placeholder]="'Tenor'"
+            [Label]="'Tenor'">
+          </nfs-currency>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@if (this.contractInfoDataset && this.contractInfoDataset.length > 0 && this.contractInfoDataset.controls[0].controls.CONTRACTNBR.value) {
+  <div class="row"
+    >
+    <div class="col-md-12 createLeadHeading">
+      <p>Contract Information</p>
+    </div>
+    <div class="col-md-12">
+      <div class="row fieldContainer">
+        <div class="col-md-12 botmMargin30 noPaddingRight">
+          <nfs-static-grid [inputArr]="this.contractInfoDataset" [isRadioBtnRequired]="false"
+            [radioPropertyName]="'DEFAULTIND'" [columns]="ContractInfocolumns" (SelectionChange)="childOutput($event)"
+            [Mode]="Mode" [Labels]="ContractInfolabels" [IsActionRequired]="false" [IsDeleteRequired]="false">
+          </nfs-static-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- EKYC Section -->
+@if (this.isIndividualSelected && this.IsAPCuserLoggedin) {
+  <div>
+    <app-ekyc-info [MainQuotEntity]="MainQuotEntity"></app-ekyc-info>
+  </div>
+}
+
+</div>
+
+<!-- <div class="row ml-2 mt-4">
+<div class="col-lg-2 col-md-6">
+  <nfs-dropdown formControlName="CODE" [Label]="'ID Type *'" [controlPlaceholder]="'Select Some Values'"
+    [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+    [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.ApplicantIdTypesSetup">
+  </nfs-dropdown>
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="IDTYPENBR" name="IDTYPENBR" maxlength="100" [Placeholder]="'ID Number *'"
+    [Label]="'ID Number *'">
+  </nfs-textbox>
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-datepicker matInput readonly formControlName="ISSUEDTE" name="ISSUEDTE" [Placeholder]="'Issue Date'"
+    [Label]="'Issue Date'">
+  </nfs-datepicker>
+</div>
+
+<div class="col-lg-2 col-md-6">
+
+  <nfs-datepicker formControlName="EXPIRYDTE" readonly name="EXPIRYDTE" matInput [Placeholder]="'Expiry Date'"
+    [Label]="'Expiry Date'">
+  </nfs-datepicker>
+</div>
+</div> -->
+
+
+
+<!-- <div class="applicant-sec ml-2">
+<div class="btn-right">
+  <span class=validation-messages> &nbsp;</span>
+  <nfs-button [text]="'Add'" (click)="addIdDetail()" [color]="'primary'" [disabled]="false" [matButton]="false"
+  [matRaisedButton]="false" [matRaisedButtonIcon]="true" [icon]="'add'" [Mode]="Mode"></nfs-button>
+
+  <nfs-button class="ml-1" [text]="'Search'" [color]="'primary'" [disabled]="false" [matButton]="false"
+  [matRaisedButton]="false" [matRaisedButtonIcon]="true" [icon]="'search'" [Mode]="Mode"></nfs-button>
+</div>
+</div> -->
+
+
+
+
+
+
+
+<!-- <h4>Applicant Information</h4> -->
+
+<!-- <div class="row ml-2">
+
+
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="FIRSTNME" maxlength="50" matInput name="First Name" [Placeholder]="'First Name *'"
+    [Label]="'First Name *'" [Name]="'FIRSTNME'">
+
+
+
+  </nfs-textbox>
+</div>
+
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="MIDDLENME" maxlength="50" matInput name="Middle Name *"
+    [Placeholder]="'Middle Name'" [Label]="'Middle Name'" [Name]="'MIDDLENME'">
+
+
+  </nfs-textbox>
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="COMPANYNAME" maxlength="255" matInput name="Company Name *"
+    [Placeholder]="'Company Name *'" [Label]="'Company Name *'">
+
+
+  </nfs-textbox>
+</div>
+
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="LASTNME" matInput name="Last Name *" [Placeholder]="'Last Name'" maxlength="50"
+    [Label]="'Last Name'">
+
+
+  </nfs-textbox>
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="CONTACTNME" matInput name="Contact Name" [Placeholder]="'Contact Name *'"
+    maxlength="20" [Label]="'Contact Name *'">
+
+
+  </nfs-textbox>
+</div>
+
+<div class="col-lg-2 col-md-6">
+
+  <nfs-datepicker formControlName="DATEOFBIRTH" name="DATEOFBIRTH" matInput [Placeholder]="'Date of Birth'"
+    [Label]="'Date of Birth'">
+
+
+  </nfs-datepicker>
+</div>
+
+<div class="col-lg-2 col-md-6">
+  <nfs-email [type]="'email'" formControlName="EMAILADDRESS" [label]="'Email'" [placeholder]="'Email'"
+  [autoComplete]="'off'"></nfs-email>
+
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="PLACEOFBIRTH" maxlength="255" name="PLACEOFBIRTH" matInput
+    [Placeholder]="'Place of Birth'" [Label]="'Place of Birth'">
+  </nfs-textbox>
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="MOTHERMDNNME" maxlength="255" name="MOTHERMDNNME" matInput
+    [Placeholder]="'Mother Maiden Name'" [Label]="'Mother Maiden Name'">
+  </nfs-textbox>
+
+</div>
+<div class="col-lg-2 col-md-6">
+
+  <nfs-textbox formControlName="SALARY" pattern="^\d*(\.\d{0,2})?$" type="number" name="SALARY" matInput
+    [Placeholder]="'Salary Income'" [Label]="'Salary Income'">
+  </nfs-textbox>
+</div>
+</div> -->

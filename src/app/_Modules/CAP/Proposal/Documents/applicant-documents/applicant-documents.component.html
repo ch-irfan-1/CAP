@@ -1,0 +1,165 @@
+<div class="row TabInnerMain">
+    <div class="col-md-12">
+        <span class="mainHeading">
+            <p>Document Details</p>
+        </span>
+    </div>
+    <div class="col-md-12 DocumentExpansionPanel">
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        iSURE Documents
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="TabInnerMainForm">
+                    <div class="row fieldContainer">
+                        <div class="col-md-12">
+                            <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+                                [ActionLabel]="'Load Contract'" [radioPropertyName]="'DEFAULTIND'" [columns]="columns"
+                                [Labels]="Labels"></nfs-static-grid>
+                        </div>
+                        <div class="col-md-12">
+                            <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                                [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+                            </mat-paginator>
+                        </div>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="col-md-12 DocumentExpansionPanel">
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        mPOS Documents
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="TabInnerMainForm">
+                    <div class="row fieldContainer">
+                        <div class="col-md-12">
+                            <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+                                [ActionLabel]="'Load Contract'" [radioPropertyName]="'DEFAULTIND'" [columns]="columns"
+                                [Labels]="Labels"></nfs-static-grid>
+                        </div>
+                        <div class="col-md-12">
+                            <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                                [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+                            </mat-paginator>
+                        </div>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="col-md-12 DocumentExpansionPanel borrowerAccordian">
+        <mat-accordion>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Borrower
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="TabInnerMainForm" style="padding-top: 15px;">
+                    <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+                        <mat-accordion>
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Wendy Ferdyanto
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="TabInnerMainForm">
+                                    <div class="row">
+                                        <div class="col-md-12 noPadding">
+                                            <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+                                                [columns]="columns" [pipes]="pipes" [contextMenu]="ContextMenu"
+                                                [Labels]="Labels" [DisableSorting]="false"></nfs-static-grid>
+                                        </div>
+                                        <div class="col-md-12 noPadding">
+                                            <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                                                [pageSizeOptions]="pageSizeOptions"
+                                                (page)="PageSelectionChanged($event)">
+                                            </mat-paginator>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                    <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+                        <mat-accordion>
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Wendy Ferdyanto
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="TabInnerMainForm">
+                                    <div class="row">
+                                        <div class="col-md-12 noPadding">
+                                            <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+                                                [columns]="columns" [pipes]="pipes" [contextMenu]="ContextMenu"
+                                                [Labels]="Labels" [DisableSorting]="false"></nfs-static-grid>
+                                        </div>
+                                        <div class="col-md-12 noPadding">
+                                            <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                                                [pageSizeOptions]="pageSizeOptions"
+                                                (page)="PageSelectionChanged($event)">
+                                            </mat-paginator>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="TabInnerMain">
+    <mat-tab-group animationDuration="500ms" dynamicHeight>
+        <mat-tab label="Applicant">
+            <ng-template matTabContent>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Applicant Information
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="TabInnerMainForm">
+                            <div class="row fieldContainer">
+
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Spouse Detail
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <div class="TabInnerMainForm">
+                            <div class="row fieldContainer">
+
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+ -->

@@ -1,0 +1,230 @@
+<div class="row fieldContainer" [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+
+  <!-- <div class="col-md-2 top15">
+        <nfs-datepicker matInput readonly
+            formControlName="creationDate" name="creationDate"
+            [Placeholder]="'Creation Date'" [Label]="'Creation Date'">
+        </nfs-datepicker>
+    </div>
+    <div class="col-md-2 top15">
+        <nfs-dropdown formControlName="companyId" [Label]="'Company *'" [Name]="'companyId'"
+        [controlPlaceholder]="'Company'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.AllCompanies"></nfs-dropdown>
+    </div> -->
+  <ng-container class="row fieldContainer" [formGroup]="this.PROPOSALINFO">
+    <div class="col-md-2 top15 iconPopup">
+      <nfs-textbox formControlName="BPINTRODUCERNME" name="BPINTRODUCERNME" [Placeholder]="this.getDealerName()"
+        [Label]="this.getDealerName()" [Name]="'BPINTRODUCERNME'" [isControlDisable]=true [Component]="'GeneralHeader'">
+      </nfs-textbox>
+      <div class="iconPopupMain">
+        <p class="moreDisableOn" (click)="openDealerSearch()" [ngClass]="{'disabledDiv': this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value}">More</p>
+      </div>
+
+      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="BPINTRODUCERBRANCHID" [Label]="this.getDealerName()+' Branch *'"
+        [Name]="'BPINTRODUCERBRANCHID'" [controlPlaceholder]="this.getDealerName()+' Branch'" [Ismultiselect]="false"
+        [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.DealerByBranch"
+        [Component]="'GeneralHeader'" [AllowUnSelect]="false"
+        [isControlDisable]="this._generalService.FormMode == 'View' || this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value"></nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="CURRENCYCDE" [Label]="'Application Currency *'" [Name]="'CURRENCYCDE'"
+        [controlPlaceholder]="'Application Currency'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.CurrencyType" [Component]="'GeneralHeader'"
+        [isControlDisable]="this._generalService.FormMode == 'View'"></nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="FPGROUPID" [Label]="'FP Group *'" [Name]="'FPGROUPID'"
+        [controlPlaceholder]="'FP Group'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this.FPGroupArray" [Component]="'GeneralHeader'" [AllowUnSelect]="false"
+        (selectionChange)="this.FPGroupOnChange($event)" [isControlDisable]="this._generalService.FormMode == 'View' || this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="FINANCIALPRODUCTID" [Label]="'FP Campaign *'" [Name]="'FINANCIALPRODUCTID'"
+        [controlPlaceholder]="'FP Campaign'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [Component]="'GeneralHeader'" [DataArray]="this._proposalmanagerService.getFPCampaignArray"
+        [AllowUnSelect]="false" (selectionChange)="this.FPCampaignChange($event)"
+        [isControlDisable]="this._generalService.FormMode == 'View' || this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value"></nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15 iconPopup control-disabled">
+      <nfs-textbox formControlName="PACKAGECDE" name="PACKAGECDE" [maxLength]="100" [isControlDisable]=true
+        [Placeholder]="'Package Code *'" [Label]="'Package Code *'" [Name]="'PACKAGECDE'" [Component]="'GeneralHeader'">
+      </nfs-textbox>
+      <div class="iconPopupMain">
+        <p class="moreDisableOn" (click)="openPackageSearch()">More</p>
+      </div>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="MARKETINGOFFICERID" [Label]="'Marketing Officer *'" [Name]="'MARKETINGOFFICERID'"
+        [controlPlaceholder]="'Marketing Officer'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.MarketingOfficerByBranch[this.PROPOSALINFO.controls.BPCOMPANYBRANCHID.value]"
+        [Component]="'GeneralHeader'" [AllowUnSelect]="false"
+        [isControlDisable]="this._generalService.FormMode == 'View'"></nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="POSLOCATION" name="POSLOCATION" [maxLength]="100" [isControlDisable]=true
+        [Component]="'GeneralHeader'" [Placeholder]="'Point Of Sale Location *'" [Label]="'Point Of Sale Location *'"
+        [Name]="'POSLOCATION'">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="OTOAPLTCTGYCDE" [Label]="this.ApplicantCategoryLabel()" [Name]="'OTOAPLTCTGYCDEAC'"
+        [controlPlaceholder]="this.ApplicantCategoryLabel()" [Ismultiselect]="false" [EnableFilter]="true"
+        [ApplyLocalLabel]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.ApplicantCategory"
+        [Component]="'GeneralHeader'" [isControlDisable]="this._generalService.FormMode == 'View'"></nfs-dropdown>
+    </div>
+    <!-- <div class="col-md-2 top15" *ngIf="this.appTypeService.isControlVisible('OTOAPLTCTGYCDECT')">
+            <nfs-dropdown formControlName="OTOAPLTCTGYCDE" [Label]="'Customer Type'" [Name]="'OTOAPLTCTGYCDECT'"
+                [controlPlaceholder]="'Customer Type'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this.ApplicantCategory" [Component]="'GeneralHeader'"></nfs-dropdown>
+        </div> -->
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="MPOSAPPLICATIONNBR" name="MPOSAPPLICATIONNBR" [maxLength]="100"
+        [isControlDisable]=true [Placeholder]="'MPOS Reference Number *'" [Label]="'MPOS Reference Number *'"
+        [Name]="'MPOSAPPLICATIONNBR'" [Component]="'GeneralHeader'">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="OLRCPTNGBNK" [Label]="'OL Receipting Bank *'" [Name]="'OLRCPTNGBNK'"
+        [controlPlaceholder]="'OL Receipting Bank'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.OLReceiptingBank" [Component]="'GeneralHeader'"
+        [isControlDisable]="this._generalService.FormMode == 'View' || this._proposaldataService.PROPOSAL.value.FINANCETYP !== '00004'"></nfs-dropdown>
+      <!-- <nfs-textbox formControlName="OLRCPTNGBNK" name="OLRCPTNGBNK" [maxLength]="100"
+                [Placeholder]="'OL Receipting Bank *'" [Label]="'OL Receipting Bank *'" [Name]="'OLRCPTNGBNK'"
+                [Component]="'GeneralHeader'">
+            </nfs-textbox> -->
+    </div>
+  </ng-container>
+  <ng-container class="row fieldContainer" [formGroup]="this.PROPOSALUSER">
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="LEADNUMBER" name="LEADNUMBER" [maxLength]="100" [isControlDisable]=true
+        [Placeholder]="'iOPS Reference Number *'" [Label]="'iOPS Reference Number *'" [Name]="'LEADNUMBER'"
+        [Component]="'GeneralHeader'">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15 disableDate">
+      <nfs-datepicker formControlName="LEADCREATIONDTE" name="LEADCREATIONDTE" [isControlDisable]="true"
+        [Placeholder]="'iOPS Application Date'" [Label]="'iOPS Application Date'" [Component]="'GeneralHeader'"
+        [Name]="'LEADCREATIONDTE'">
+      </nfs-datepicker>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="APPLICATIONCENTERUSERNME" name="APPLICATIONCENTERUSERNME" [maxLength]="100"
+        [isControlDisable]=true [Placeholder]="'Application Center User *'" [Label]="'Application Center User *'"
+        [Name]="'APPLICATIONCENTERUSERNME'" [Component]="'GeneralHeader'">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="VONME" name="VONME" [maxLength]="100" [Placeholder]="'Verification Officer *'"
+        [isControlDisable]=true [Label]="'Verification Officer *'" [Name]="'VONME'" [Component]="'GeneralHeader'">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="LEADCREATEDBY" name="LEADCREATEDBY" [maxLength]="100" [isControlDisable]=true
+        [Placeholder]="'MO/TMO Name *'" [Label]="'MO/TMO Name *'" [Name]="'LEADCREATEDBY'"
+        [Component]="'GeneralHeader'">
+      </nfs-textbox>
+    </div>
+    <!--dealer api fields-->
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="APPLICATIONSOURCE" [Label]="'Application Source *'"
+        [controlPlaceholder]="'Application Source'" [Ismultiselect]="false" [EnableFilter]="true"
+        [ApplyLocalLabel]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [isControlDisable]="PROPOSALINFO.controls.ISFROMMPOS.value || this._generalService.FormMode == 'View'"
+        [Component]="'GeneralHeader'" [Name]="'APPLICATIONSOURCE'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.ApplicationSource">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15 disableDate">
+      <nfs-number formControlName="DEALERAPPNUMBER" name="DEALERAPPNUMBER" [maxLength]="100"
+        [Placeholder]="'Dealer App Number'" [isControlDisable]=true [Label]="'Dealer App Number'"
+        [Name]="'DEALERAPPNUMBER'" [Component]="'GeneralHeader'">
+      </nfs-number>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-textbox formControlName="SPKNUMBER" name="SPKNUMBER" [maxLength]="100" [Placeholder]="'SPK Number'"
+        [isControlDisable]=true [Label]="'SPK Number'" [Name]="'SPKNUMBER'" [Component]="'GeneralHeader'">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15 disableDate">
+      <nfs-dropdown formControlName="OVPSTATUS" [Label]="'OVP Status'" [Name]="'OVPSTATUS'"
+        [Component]="'GeneralHeader'" [controlPlaceholder]="'OVP Status'" [Ismultiselect]="false"
+        [FilterControlPlaceholder]="'Find Some Values...'" [isControlDisable]=true
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.OVPStatusList">
+      </nfs-dropdown>
+    </div>
+  </ng-container>
+  <ng-container class="row fieldContainer" [formGroup]="this.PROPOSALINFO">
+    <div class="col-md-2 top15 disableDate"
+    [ngClass]="{'control-disabled': this.companyCode == '002' || this._proposaldataService.PROPOSAL.value.FINANCETYP !== '00005' }">
+      <nfs-dropdown formControlName="COMMAPPLICABLECDE" [AllowUnSelect]="false" [Label]="'Commission Applicable'" [Name]="'COMMAPPLICABLECDE'"
+        [Component]="'GeneralHeader'" [controlPlaceholder]="'Commission Applicable'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [isControlDisable]="this.isCommissionApplicable || this.companyCode == '002' || this._proposaldataService.PROPOSAL.value.FINANCETYP !== '00005'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.CommissionApplicableList">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="SALESMANID" [AllowUnSelect]="false" [Label]="'Salesman'" [Name]="'SALESMANID'"
+        [Component]="'GeneralHeader'" [controlPlaceholder]="'Salesman'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [isControlDisable]="!this._proposaldataService.PROPOSAL.controls.SALESMANENABLE.value"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.SalesmanByDealer">
+      </nfs-dropdown>
+    </div>
+  </ng-container>
+    <div class="col-md-4 top15"></div>
+    <!--end-->
+    <ng-container class="row fieldContainer" [formGroup]="this.PROPOSALUSER">
+    <div class="col-md-4 top15 customDisable" style="margin-top: 2rem;">
+      <nfs-textarea class="customLengthUpload" matInput formControlName="COMMENTS" [maxLength]="1000" matInput name="APPLICATIONCENTERCOMMENTS"
+        [isControlDisable]=true [Placeholder]="'Application Center Comments'" [Label]="'Application Center Comments'"
+        readonly [Component]="'GeneralHeader'" [Name]="'APPLICATIONCENTERCOMMENTS'">
+      </nfs-textarea>
+    </div>
+    <div class="col-md-4 top15 customDisable"  style="margin-top: 2rem;">
+      <nfs-textarea class="customLengthUpload" matInput formControlName="LEADNOTES" [maxLength]="1000" matInput name="LEADNOTES"
+        [isControlDisable]=true [Placeholder]="'Lead Notes'" [Label]="'Lead Notes'" readonly
+        [Component]="'GeneralHeader'" [Name]="'LEADNOTES'">
+      </nfs-textarea>
+    </div>
+  </ng-container>
+  <ng-container class="row fieldContainer" [formGroup]="this.PROPOSALINFO">
+    <div class="col-md-4 top15 customDisable"  style="margin-top: 2rem;">
+      <nfs-textarea class="customLengthUpload" formControlName="COMMENTS" [maxLength]="1000" name="MHCOMMENTS" [Placeholder]="'Loan Purpose'"
+        [Label]="'Loan Purpose'" [Component]="'GeneralHeader'" [Name]="'COMMENTS'"
+        [isControlDisable]="this._generalService.FormMode == 'View'">
+      </nfs-textarea>
+    </div>
+  </ng-container>
+  <ng-container class="row fieldContainer" [formGroup]="this.PROPOSALINFO">
+      <div class="noPadding topMargin20 col-md-12 overflow">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Deviation Information
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tableMain eApprovalTable dvtnTable">
+              <div class="deviationGrid">
+                <nfs-static-grid [isRadioBtnRequired]="false" [radioPropertyName]="'DEFAULTIND'"
+                  [columns]="columnsDeviationInfo" [inputArr]="this.DvtnTrckInformation" [Labels]="LabelsDeviationInfo"
+                  [IsActionRequired]="false" [IsDeleteRequired]="false" [showTooTip]="EnableTooltip"></nfs-static-grid>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+   </ng-container>
+</div>

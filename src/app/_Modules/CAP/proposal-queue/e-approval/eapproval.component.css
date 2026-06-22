@@ -1,0 +1,27 @@
+.disabledDiv {
+    pointer-events: none;
+    opacity: 1;
+  }
+  .recTable {
+    width: 100% !important;
+  }
+  .cnclTable{
+    overflow-x: hidden;
+    width: 100% !important;
+    overflow-y: scroll;
+    max-height: 270px;
+}
+.horizontal-scroll-wrapper {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.distanceInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.overrideWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

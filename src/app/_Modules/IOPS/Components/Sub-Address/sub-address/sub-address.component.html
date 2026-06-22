@@ -1,0 +1,256 @@
+<div class="addressInfo" [formGroup]="address">
+  <div formGroupName="QUOTAPLTADDS">
+    <div>
+      <div class="row">
+        <div class="col-md-12 createLeadHeading topMargin30">
+          <p>Please fill in your Information</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer">
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="ADDRESSSTATUSCDE" [Label]="'Address Status'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AddressStatusesSetup">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="RESIDENCETYPECDE" [Label]="'Residence Type'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.ResidenceTypeSetup">
+              </nfs-dropdown>
+            </div>
+            @if (false) {
+              <div class="col-md-2 top15">
+                <nfs-textbox name="RESIDENCECOMLEX" maxlength="100" [Placeholder]="'RESIDENCE COMPLEX'"
+                  [Label]="'RESIDENCE COMPLEX'">
+                </nfs-textbox>
+              </div>
+            }
+            <div class="col-md-2 top15">
+              <nfs-number matInput formControlName="TIMEINYEAR" [maxLength]="4" [Name]="'TIMEINYEAR'"
+                [Placeholder]="'Stay In years (yy)'" [Label]="'Stay In years (yy)'">
+              </nfs-number>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-number matInput formControlName="TIMEINMONTH" [maxLength]="2" [Name]="'TIMEINMONTH'"
+                [Placeholder]="'Stay In months (mm)'" [Label]="'Stay In months (mm)'">
+              </nfs-number>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="PROPERTYLOCATIONCDE" [Label]="'Location'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.LocationDetails">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="HOUSINGOWNERSHIPCDE" [Label]="'Housing Ownership'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.HousingOwnerShipTypeSetup">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15 address-disabled">
+              <nfs-dropdown formControlName="COUNTRYID" [Label]="'Country'" [controlPlaceholder]="'Select Some Values'"
+                [Ismultiselect]="false" [EnableFilter]="false" [FilterControlPlaceholder]="'Find Country...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.CountryList">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="PROVINCEID" [Label]="'Province'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AllProvinceData">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="KOTAMADYAID" [Label]="'Kotamadya/Kabupaten'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this.AllKotaByProvince">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="KECAMATANID" [Label]="'Kecamatan'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this.AllKecamatanByKota">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="KELURAHANID" [Label]="'Kelurahan/Desa'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this.AllKelurahanByKeca">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-number formControlName="RWNBR" matInput [Name]="'RWNBR'" [Placeholder]="'RW###'" [Label]="'RW###'"
+                [maxLength]="3">
+              </nfs-number>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-number formControlName="RTNBR" matInput [Name]="'RTNBR'" [Placeholder]="'RT###'" [Label]="'RT###'"
+                [maxLength]="3">
+              </nfs-number>
+            </div>
+            <div class="col-md-6 top15">
+              <nfs-textbox formControlName="ADDRESSDETAIL" [maxLength]="500" matInput name="ADDRESSDETAIL"
+                [Placeholder]="'Address'" [Label]="'Address'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-number formControlName="POSTALCODE" matInput name="POSTALCODE" [Placeholder]="'Postal/ZIP Code'"
+                [Label]="'Postal/ZIP Code'" [maxLength]="10">
+              </nfs-number>
+            </div>
+            @if (false) {
+              <div class="col-md-2 top15">
+                <nfs-number formControlName="AREACDE" matInput name="AREACDE" [Placeholder]="'Area Code'"
+                  [Label]="'Area Code'" [maxLength]="10">
+                </nfs-number>
+              </div>
+            }
+            <div class="col-md-2 top15">
+
+              <nfs-dropdown formControlName="ADDRESSTYPE" multiple name="'AddressType'" [Label]="'Address type'"
+                [Ismultiselect]=true placeholder="'Select Some Values'" [disabled]="this.Mode==='View'"
+                [DataArray]="this._masterDataService.AddressTypeSetup"
+                (selectionChange)="addressTypeChange($event,address)">
+              </nfs-dropdown>
+              <!-- <nfs-dropdown [Label]="'Address Type'"
+              [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="true" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._masterDataService.AddressTypeSetup"
+              (selectionChange)="addressTypeChange($event,this.address.controls.QUOTAPLTADDS.controls.ADDRESSID.value)">
+            </nfs-dropdown> -->
+          </div>
+          @if (address.value.QUOTAPLTADDS.ADDRESSTYPE.includes('00007')) {
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="RLSPWITHCONTACTPERSON" [Label]="'Relationship'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AllEmergencyContactRelationTypes">
+              </nfs-dropdown>
+            </div>
+          }
+          @if (address.value.QUOTAPLTADDS.ADDRESSTYPE.includes('00007')) {
+            <div class="col-md-2 top15">
+              <nfs-textbox formControlName="CONTACTPERSON" [maxLength]="50" matInput [Name]="'CONTACTPERSON'"
+                [Placeholder]="'Emergency Contact Person'" [Label]="'Emergency Contact Person'">
+              </nfs-textbox>
+            </div>
+          }
+          <div class="col-md-2 top15">
+            <nfs-dropdown formControlName="DEFAULTADDRESS" name="'DefaultAddress'"
+              [DataArray]="this.defaultAddressData[address.value.QUOTAPLTADDS.ADDRESSID]"
+              placeholder="'Default Address'" (selectionChange)="defaultAddressChange($event,address)"
+              [Label]="'Default Address *'">
+
+            </nfs-dropdown>
+
+            <!--<nfs-dropdown [Label]="'Default Address'" [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.AddressTypeSetup">
+          </nfs-dropdown> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="row">
+    <div class="col-md-12 createLeadHeading">
+      <p>Contact Information</p>
+    </div>
+  </div>
+  <!-- <div class="row">
+  <div class="col-md-12">
+    <div class="row fieldContainer">
+      <div class="col-md-3">
+        <nfs-textbox matInput name="MOBILENUMBER" [Placeholder]="'Mobile Number *'"
+          [Label]="'Mobile Number *'" maxlength="17">
+        </nfs-textbox>
+      </div>
+      <div class="col-md-3">
+        <nfs-textbox matInput name="FIXEDLINENUMBER" [Placeholder]="'Fixed Line Number *'"
+          [Label]="'Fixed Line Number *'" maxlength="17">
+        </nfs-textbox>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>
+</div>
+
+</div>
+<div [formGroup]="PhoneForm">
+  <div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          <div class="col-md-2 top15">
+            <nfs-dropdown formControlName="PHONETYPECDE" [Name]="'PHONETYPECDE'" [Label]="'Phone Type'"
+              [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AllPhoneTypes"></nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-number formControlName="COUNTRYCODE" matInput [Name]="'COUNTRYCODE'" [Placeholder]="'Country Code'"
+              [maxLength]="4" [Label]="'Country Code'">
+            </nfs-number>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-number formControlName="NUMBER" matInput [Name]="'NUMBER'" [Placeholder]="'Phone No. '"
+              [Label]="'Phone No. '" [maxLength]="17">
+            </nfs-number>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-textbox formControlName="EXTENSIONNBR" matInput [Name]="'EXTENSIONNBR'" [Placeholder]="'Extension'"
+              [Label]="'Extension'" [maxLength]="5">
+            </nfs-textbox>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row fieldContainer">
+        <div class="col-md-12 btn-right IconBtnCircle">
+          <div>
+            <nfs-button [text]="''" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+              [matRaisedButtonIcon]="true" [icon]="'add'"
+              (onBtnClick)="addPhone(this.address.controls.QUOTAPLTPHNEFAX ,this.address.controls.QUOTAPLTADDS.controls.ADDRESSID.value)"
+            [Mode]="Mode"></nfs-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row fieldContainer">
+        @if (this.address.controls.QUOTAPLTPHNEFAX && this.address.controls.QUOTAPLTPHNEFAX.length > 0) {
+          <div class="col-md-12 botmMargin30 noPaddingRight"
+            >
+            <nfs-static-grid [inputArr]="this.address.controls.QUOTAPLTPHNEFAX" [isRadioBtnRequired]="false"
+              [radioPropertyName]="'DEFAULTIND'" [columns]="columns" (ItemRemoved)="childOutput($event)"
+            (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="labels"></nfs-static-grid>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

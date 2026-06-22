@@ -1,0 +1,6 @@
+.tableConfige  tr{
+    height: auto !important;
+}
+.tableConfige  tr > th{
+    height: 48px !important;
+}

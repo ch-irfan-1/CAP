@@ -1,0 +1,144 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <h3 mat-dialog-title>Dealer Search</h3>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="customAccordianMain">
+    <div class="row">
+      <div mat-dialog-content>
+        <h4>Search Criteria</h4>
+        <div class="row fieldContainer noMargin" [formGroup]="this.DealerSearchForm">
+          <div class="col-md-3 top15 topNeg10">
+            <nfs-dropdown formControlName="searchBy" [Label]="'Search By *'" [Name]="'searchBy'"
+              [controlPlaceholder]="'Search By'" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'" [AllowUnSelect]="false"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="dealerSearchCriteria"
+              (selectionChange)="dealerSearchCriteriaChange($event)">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-9 top15 topNeg10">
+            <nfs-textbox formControlName="searchtxt" name="searchtxt" [maxLength]="100"
+              [Placeholder]="searchByPlaceHolder" [Label]=" searchByPlaceHolder" [Name]="'searchtxt'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 top2r">
+            <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false"
+              [iconPng]="'assets/Images/searchwhite.png'" [matButton]="false" [matRaisedButton]="false"
+              [matRaisedButtonIcon]="true" (onBtnClick)='SearchDealer()'>
+            </nfs-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="customAccordianMain">
+    <div class="row searchResult">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="this.resultsExpanded" (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Results
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="row">
+            <div class="col-md-12 tableMain rentalDetail resizeTableMain">
+              @if (resizeResetGrid) {
+                <nfs-static-grid [inputArr]="dealerSearchData" [isRadioBtnRequired]="false"
+                  [IsActionRequired]="true" [columns]="dealerResultColumns" [pipes]="pipes" [ActionLabel]="'Load Dealer'"
+                  [IsDeleteRequired]="false" (SelectionChange)="DelaerLoadchildOutput($event)" [Labels]="Labels"
+                  [DisableSorting]="false" [IsResizable]="true">
+                </nfs-static-grid>
+              }
+            </div>
+
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+  </div>
+  <div class="customAccordianMain">
+    <div class="row searchResult">
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="dealerLoad === true"
+          (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Selected Dealer
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row bodyContainer fieldContainer dealerSpace" [formGroup]="this.DealerLoad">
+            <div class="col-md-12 noPadding">
+              <div class="TabInnerMainForm">
+                <div class="row">
+                  <div class="col-md-3 top15">
+                    <nfs-textbox formControlName="Name" name="Name" [Placeholder]="'Dealer Name'"
+                      [Label]="'Dealer Name'" [Name]="'Name'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox formControlName="CODENUMBER" name="CODENUMBER" [maxLength]="100"
+                      [Placeholder]="'Dealer Code'" [Label]="'Dealer Code'" [Name]="'CODENUMBER'"
+                      [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox formControlName="COUNTRYDSC" name="COUNTRYDSC" [maxLength]="100"
+                      [Placeholder]="'Country'" [Label]="'Country'" [Name]="'COUNTRYDSC'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox formControlName="PROVINCE" name="PROVINCE" [maxLength]="100" [Placeholder]="'Province'"
+                      [Label]="'Province'" [Name]="'PROVINCE'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox formControlName="KOTAMADYA" name="KOTAMADYA" [maxLength]="100"
+                      [Placeholder]="'Kotamadya'" [Label]="'Kotamadya '" [Name]="'KOTAMADYA'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox formControlName="KECAMATAN" name="KECAMATAN" [maxLength]="100"
+                      [Placeholder]="'Kecamatan'" [Label]="'Kecamatan '" [Name]="'KECAMATAN'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-6 top15">
+                    <nfs-textbox formControlName="KELURAHAN" name="KELURAHAN" [maxLength]="100"
+                      [Placeholder]="'Kelurehan'" [Label]="'Kelurehan '" [Name]="'KELURAHAN'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-6 top15">
+                    <nfs-textbox formControlName="ADDRESSOTO" name="ADDRESSOTO" [maxLength]="500"
+                      [Placeholder]="'Address'" [Label]="'Address '" [Name]="'ADDRESSOTO'" [isControlDisable]="true">
+                    </nfs-textbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="row popupFooter">
+  <div mat-dialog-actions class="d-flex justify-content-end">
+    <div class="">
+      <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+      [matRaisedButtonIcon]="true" (onBtnClick)="SelectAndClose()"></nfs-button>
+    </div>
+
+  </div>
+</div>

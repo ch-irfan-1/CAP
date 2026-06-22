@@ -1,0 +1,110 @@
+@if (false) {
+  <div>
+    <div class="row">
+      <div class="col-md-12 tableHeading">
+        <p>Bad Customer Information</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          <div class="col-md-12 botmMargin30 noPaddingRight">
+            <nfs-static-grid [inputArr]="this.EKYCBadCustomerData" [isRadioBtnRequired]="false"
+              [radioPropertyName]="'DEFAULTIND'" [columns]="BCcolumns" (ItemRemoved)="childOutput($event)"
+            (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="BClabels"></nfs-static-grid>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="btn-right">
+          <nfs-button class="ml-1" [text]="'Check'" [color]="'primary'" [disabled]="false" [matButton]="false"
+          [matRaisedButton]="true" [matRaisedButtonIcon]="false" [icon]="''" [Mode]="Mode"></nfs-button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<div>
+  <div class="row">
+    <div class="col-md-12 tableHeading">
+      <p>Eagle Score</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row fieldContainer">
+        <div class="col-md-12 botmMargin30 noPaddingRight">
+          <nfs-static-grid [inputArr]="EagleScoreData" [isRadioBtnRequired]="false"
+            [radioPropertyName]="'DEFAULTIND'" [columns]="ESRcolumns" (ItemRemoved)="childOutput($event)"
+            (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="ESRlabels"
+          [IsActionRequired]="false" [pipes]="ESpipes"></nfs-static-grid>
+        </div>
+      </div>
+    </div>
+    @if (this.MainQuotEntity.controls.QUOT.controls.APCSTATUSDSC.value == 'New' && this.RecalcESR2) {
+      <div class="col-md-12"
+        >
+        <div class="btn-right">
+          <nfs-button class="ml-1" [text]="'Re-Score'" [color]="'primary'" [disabled]="false" [matButton]="false"
+            [matRaisedButton]="true" [matRaisedButtonIcon]="false" [icon]="''" [Mode]="Mode"
+          (onBtnClick)="GetEagleScore2()"></nfs-button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+@if (false) {
+  <div>
+    <div class="row">
+      <div class="col-md-12 tableHeading">
+        <p>EKYC Professional +</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          <div class="col-md-12 botmMargin30 noPaddingRight">
+            <nfs-static-grid [inputArr]="EKYCProPData" [isRadioBtnRequired]="false"
+              [radioPropertyName]="'DEFAULTIND'" [columns]="PPcolumns" (ItemRemoved)="childOutput($event)"
+            (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="PPlabels"></nfs-static-grid>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="btn-right">
+          <nfs-button class="ml-1" [text]="'Check'" [color]="'primary'" [disabled]="false" [matButton]="false"
+          [matRaisedButton]="true" [matRaisedButtonIcon]="false" [icon]="''" [Mode]="Mode"></nfs-button>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+@if (false) {
+  <div>
+    <div class="row">
+      <div class="col-md-12 tableHeading">
+        <p>NPWP Tax</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          <div class="col-md-12 botmMargin30 noPaddingRight">
+            <nfs-static-grid [inputArr]="NPWPTaxData" [isRadioBtnRequired]="false"
+              [radioPropertyName]="'DEFAULTIND'" [columns]="NPWPcolumns" (ItemRemoved)="childOutput($event)"
+            (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="NPWPlabels"></nfs-static-grid>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="btn-right">
+          <nfs-button class="ml-1" [text]="'Check'" [color]="'primary'" [disabled]="false" [matButton]="false"
+          [matRaisedButton]="true" [matRaisedButtonIcon]="false" [icon]="''" [Mode]="Mode"></nfs-button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,55 @@
+<div class="cancelLeadPage">
+
+  <div class="row">
+    <div class="col-md-10">
+      <h2 mat-dialog-title>Confirmation</h2>
+    </div>
+    <!-- <div class="col-md-2 btn-right closeWhiteBtn">
+    <span (click)="cancel()"><img src="assets/Images/closeWhite.png"></span>
+  </div> -->
+</div>
+
+<form [formGroup]="cancellationForm">
+  <div class="row">
+    <div class="col-md-6">
+      <nfs-dropdown formControlName="RejectionReason" [Name]="'RejectionReason'" [Label]="'Rejection Reason'"
+        [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Rejection Reason...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.CancellationTypes">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-12 textArea noPadding">
+        <nfs-textarea formControlName="Comments" matInput [Name]="'Comments'" [Placeholder]="'Comments'"
+          [Label]="'Comments'" [maxLength]="500">
+        </nfs-textarea>
+      </div>
+    </div>
+  </div>
+</form>
+
+<mat-dialog-actions align="end" class="cancleLeadBtns">
+  <!-- <button class="mat-raised-button mat-primary" (click)="cancelLead()">Submit</button>
+  <button class="mat-raised-button mat-primary" (click)="cancel()">Cancel</button> -->
+
+  <div>
+    <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+    [matRaisedButtonIcon]="true" (onBtnClick)="cancelLead()"></nfs-button>
+  </div>
+  @if (this.appConfig.CompanyCode === '001') {
+    <div>
+      <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true" [matRaisedButton]="false"
+        [matRaisedButtonIcon]="false" (onBtnClick)="cancel()">
+      </nfs-button>
+    </div>
+  }
+  @if (this.appConfig.CompanyCode === '002') {
+    <div>
+      <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="true" [matRaisedButton]="false"
+        [matRaisedButtonIcon]="false" (onBtnClick)="cancel()">
+      </nfs-button>
+    </div>
+  }
+
+</mat-dialog-actions>
+</div>

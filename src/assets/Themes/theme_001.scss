@@ -1,0 +1,104 @@
+@use '@angular/material' as mat;
+@use "sass:map";
+@import '@angular/material/core/m2/theming';
+@import '@angular/material/core/m2/_palette';
+
+
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+/* TODO(mdc-migration): Remove all-legacy-component-typographies once all legacy components are migrated*/
+// @include mat.all-legacy-component-typographies();
+// @include mat.all-component-typographies();
+/* TODO(mdc-migration): Remove legacy-core once all legacy components are migrated*/
+
+@include mat.elevation-classes();
+@include mat.app-background();
+
+$custom-color: (
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$my-app-custom: mat.m2-define-palette(mat.$m2-green-palette);
+
+$primary: mat.m2-define-palette(mat.$m2-green-palette);
+$accent:  mat.m2-define-palette($custom-color, A400, A100, A400);
+$accent2:  mat.m2-define-palette($custom-color, A400, A100, A700);
+// The warn palette is optional (defaults to red).
+$warn:    mat.m2-define-palette(mat.$m2-red-palette);
+
+
+$theme1: mat.m2-define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    
+  ),
+  typography: mat.m2-define-typography-config(),
+  density:0,
+)); 
+
+$theme1: map.deep-merge(
+  $theme1, 
+  (
+    custom: $my-app-custom,
+    color: (
+      custom: $my-app-custom  
+    )
+  )
+);
+ $custom: map-get($theme1, custom);
+
+//   $theme1: mat-light-theme((
+//   color: (
+//     primary: $primary,
+//     accent: $accent,
+//     warn: $warn
+//   )
+// )); 
+
+// $candy-app-theme: mat-light-theme((
+//   color: (
+//     primary: $candy-app-primary,
+//     accent: $candy-app-accent,
+//     warn: $candy-app-warn,  
+//   )
+// )); 
+
+
+// @include angular-material-theme($candy-app-theme);

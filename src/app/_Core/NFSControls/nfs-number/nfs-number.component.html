@@ -1,0 +1,13 @@
+<div>
+  <mat-form-field appearance="fill" class="directive controls-margin" [ngClass]="{'mandatory': isRequired}">
+    <mat-label [matTooltip]="Label">{{Label}}</mat-label>
+    <input class="customNumber" [formControl]="numberControl" type="text" maxlength="{{maxLength}}" matInput placeholder="{{Placeholder}}"
+      autocomplete="{{autoComplete}}"
+      onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+      (change)="onValueChanged($event)" [readonly]="isControlDisable" [tabIndex]="SetTabIndex()"
+      [matTooltip]="tooltipValue">
+    @if (isFieldNotValid()) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>

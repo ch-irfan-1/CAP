@@ -1,0 +1,84 @@
+<div class="row fieldContainer">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="tableMain">
+        <div class="col-md-12 botmMargin30 top22">
+          <table mat-table [dataSource]="assetDataSource" class="mat-elevation-z8">
+            Position Column
+            <ng-container matColumnDef="Asset Description">
+              <th mat-header-cell *matHeaderCellDef> {{this.AssetLabel[0]}} </th>
+              <td mat-cell *matCellDef="let element"> {{element.CSFLDSC}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Value">
+              <th mat-header-cell *matHeaderCellDef> {{this.AssetLabel[1]}} </th>
+              <td mat-cell *matCellDef="let element; let i = index">
+                <mat-form-field appearance="fill" class="directive controls-margin">
+                  <input class="customInput" [maxlength]="20" mask="{{mask}}" [(ngModel)]="element.CSFLITEMVALUE" value="element.CSFLITEMVALUE" [readonly]="isControlDisable" maxLength="20" thousandSeparator="," step="0.01" matInput (change)="onAssetUpdate($event, element, i, element.CSFLITEMCDE)" onClick="this.select();">
+                  @if (checkLength(element.CSFLITEMVALUE)) {
+                    <label class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label>
+                  }
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="AssetLabel"></tr>
+            <tr mat-row *matRowDef="let row; columns: AssetLabel;"></tr>
+          </table>
+
+          <div class="totalMain assetLiabilityTbl">
+            <p>Total: </p><span>{{totalAsset | currency:'':''}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="tableMain">
+        <div class="col-md-12 botmMargin30 top22">
+          <table mat-table [dataSource]="liabitityDataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="Liabilty Description">
+              <th mat-header-cell *matHeaderCellDef> {{this.LiabiltyLabel[0]}} </th>
+              <td mat-cell *matCellDef="let element"> {{element.CSFLDSC}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Value">
+              <th mat-header-cell *matHeaderCellDef> {{this.LiabiltyLabel[1]}} </th>
+              <td mat-cell *matCellDef="let element; let i = index">
+                <mat-form-field appearance="fill" class="directive controls-margin">
+                  <input class="customInput" [maxlength]="20" mask="{{mask}}"[readonly]="isControlDisable" [(ngModel)]="element.CSFLITEMVALUE" value="element.CSFLITEMVALUE" maxLength="20" thousandSeparator="," step="0.01" matInput (change)="onLiablityUpdate($event, element, i, element.CSFLITEMCDE)"  onClick="this.select();">
+                  @if (checkLength(element.CSFLITEMVALUE)) {
+                    <label class="text-danger" style="margin-left: -300px; margin-top: 22px;">Enter 13 DIGIT and 2 decimal place value</label>
+                  }
+                </mat-form-field>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="LiabiltyLabel"></tr>
+            <tr mat-row *matRowDef="let row; columns: LiabiltyLabel;"></tr>
+          </table>
+
+          <div class="totalMain assetLiabilityTblM">
+            <p>Total: </p> <span>{{totalLiabiliies | currency:'':''}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 customTop15 customTop2" style="   margin-top: 10px !important; margin-bottom: 17px !important; padding: 17px;">
+    <mat-form-field appearance="fill">
+      <mat-label style="font-weight: bold; margin: 40% !important;">{{comment}}</mat-label>
+      <input class="customInput" readonly matInput [value]="AssetLiabilityDiff | currency:'':'' " style="font-weight: bold;">
+    </mat-form-field>
+  </div>
+
+</div>
+
+<style>
+  mat-form-field.mat-form-field.mat-label {
+  display: flex;
+  flex: auto;
+}
+</style>

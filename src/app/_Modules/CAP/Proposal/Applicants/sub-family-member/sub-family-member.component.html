@@ -1,0 +1,55 @@
+<div class="FormMain">
+
+    <div class="row fieldContainer padding15 paddingTop paddingBottom" [formGroup]="FamilyMember">
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" formControlName="NAME" [Name]="'NAME'" [Component]="this.ComponentName"
+                [Placeholder]="'Name'" [Label]="'Name'" [Index] = "Index">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="50" formControlName="FAMCRDNUM" [Name]="'FAMCRDNUM'"
+                [Component]="this.ComponentName" [Placeholder]="'Family Card Number'" [Label]="'Family Card Number'" [Index] = "Index">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Gender'" formControlName="GENDER" [Name]="'GENDER'" [Component]="this.ComponentName"
+                [controlPlaceholder]="'Gender'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.GenderCode" 
+                [Index] = "Index">
+            </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-datepicker [Max]="this.max" matInput formControlName="DATEOFBIRTH" [Name]="'DATEOFBIRTH'"
+                [Component]="this.ComponentName" [Placeholder]="'Enter Date'" [Label]="'Date Of Birth'" [Index] = "Index">
+            </nfs-datepicker>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Relationship'" formControlName="RELATIONSHIPCDE" [Name]="'RELATIONSHIPCDE'"
+                [Component]="this.ComponentName" [controlPlaceholder]="'Relationship'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AllEmergencyContactRelationTypes" 
+                [Index] = "Index"></nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Occupation'" formControlName="OCCUPATIONCDE" [Name]="'OCCUPATIONCDE'"
+                [Component]="this.ComponentName" [controlPlaceholder]="'Occupation'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.OccupationsTypes" 
+                [Index] = "Index"></nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 iconPopup wrapText">
+            <nfs-dropdown class="customArrowFamily" [Label]="'Exposure'" [controlPlaceholder]="'Exposure'" [Ismultiselect]="false"
+                [EnableFilter]="true" formControlName="FAMLIYSEARCHCRITERIA" [Name]="'FAMLIYSEARCHCRITERIA'"
+                [Component]="this.ComponentName" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.FamilySearchCriteria"
+                [Index] = "Index"></nfs-dropdown>
+            <div class="iconPopupMain">
+                <p (click)="openExposure()">More</p>
+            </div>
+        </div>
+    </div>
+</div>

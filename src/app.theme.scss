@@ -1,0 +1,76 @@
+// Include material themeing functions.
+@use '@angular/material' as mat;
+@import '@angular/material/core/m2/theming';
+
+// Include non-theme styles for core.
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+/* TODO(mdc-migration): Remove all-legacy-component-typographies once all legacy components are migrated*/
+//@include mat.m2-all-legacy-component-typographies();
+// @include mat.all-component-typographies();
+/* TODO(mdc-migration): Remove legacy-core once all legacy components are migrated*/
+
+@include mat.elevation-classes();
+@include mat.app-background();
+
+// Import the custom themes.
+@import "./assets/themes/theme_001.scss";
+@import "./assets/themes/theme_002.scss";
+
+$my-theme: mat.define-theme((
+ color: (
+    theme-type: light,
+    primary: mat.$green-palette,
+  ),
+));
+html {
+  @include mat.all-component-themes($theme1);
+  @include mat.strong-focus-indicators-theme($theme1);
+  @include mat.form-field-theme($theme1);
+  @include mat.form-field-theme($theme1);
+  @include mat.input-theme($theme1);
+  @include mat.select-theme($theme1);
+  @include mat.button-theme($theme1);
+}
+//@include mat.all-component-themes($my-theme);
+
+.theme1.light {
+  // Call the main material theme mixin to create all the default theming styles.
+  /* TODO(mdc-migration): Remove all-legacy-component-themes once all legacy components are migrated*/
+  @include mat.all-component-themes($theme1);
+   @include mat.strong-focus-indicators-theme($theme1);
+  @include mat.all-component-themes($theme1);
+  @include mat.elevation-classes();
+  @include mat.app-background();
+  @include mat.form-field-theme($theme1);
+  @include mat.form-field-theme($theme1);
+  @include mat.input-theme($theme1);
+  @include mat.select-theme($theme1);
+  @include mat.button-theme($theme1);
+
+  
+}
+
+.theme2.light {
+    // Call the main material theme mixin to create all the default theming styles.
+    /* TODO(mdc-migration): Remove all-legacy-component-themes once all legacy components are migrated*/
+    //@include mat.all-legacy-component-themes($theme2);
+  @include mat.form-field-theme($theme2);
+  @include mat.form-field-theme($theme2);
+  @include mat.input-theme($theme2);
+  @include mat.select-theme($theme2);
+  }
+
+// .theme2.light {
+//   // Call the main material theme mixin to create all the default theming styles.
+//   @include angular-material-theme($theme2);
+// }
+.theme1.light .mat-drawer-container {
+  background-color: #fff;
+}

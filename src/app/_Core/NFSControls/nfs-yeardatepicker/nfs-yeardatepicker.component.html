@@ -1,0 +1,15 @@
+<div [ngClass]="{'custom-disabled': isControlDisable}">
+  <mat-form-field appearance="fill" class="directive controls-margin"
+    [ngClass]="{'mandatory': IsRequiredField === true}">
+    <mat-label>{{Label}}</mat-label>
+    <input class="customDatePicker" readonly matInput [formControl]=DatePickerControl [max]="Max" [min]="Min" [matDatepicker]="Datepicker"
+      (dateChange)="Datepicker.close()" placeholder="{{Placeholder}}">
+    <mat-datepicker-toggle matSuffix [for]="Datepicker" [disabled]="isControlDisable">
+    </mat-datepicker-toggle>
+    <mat-datepicker #Datepicker startView="multi-year" panelClass="jp-year-picker"
+    (yearSelected)="_yearSelectedHandler($event,Datepicker)"></mat-datepicker>
+    @if (DatePickerControl.invalid) {
+      <mat-error>Invalid date picked</mat-error>
+    }
+  </mat-form-field>
+</div>

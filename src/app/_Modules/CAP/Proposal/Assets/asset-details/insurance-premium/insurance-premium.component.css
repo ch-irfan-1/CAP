@@ -1,0 +1,22 @@
+/* .md-datepicker-button.md-icon-button {
+    display: none;
+  } */
+
+.disabledDiv {
+    pointer-events: none;
+    opacity: 1.0;
+}
+
+.disabledDiv {
+  pointer-events: none;
+  opacity: 1.0;
+}
+.demoTable tr.example-detail-row {
+height: 0 !important;
+}
+.demoTable .mat-mdc-row .mat-column-expandedDetail {
+height: 0 !important;
+}
+.demoTable .mat-column-expandedDetail {
+  padding-top: 0px;
+}

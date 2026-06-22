@@ -1,0 +1,70 @@
+.disable{
+    pointer-events:none;
+    opacity: 0.2;
+}
+.container {
+    display: flex;
+    background-color:#92D050; /* Set background color for the entire horizontal area */
+    color: #000000; /* Set font color for the entire horizontal area */
+    padding: 2px; /* Add padding to the container */
+    margin-top: 0px;
+    text-transform: none;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .geoColumn
+  {
+    text-align: right !important;
+  }
+  .column {
+    flex: 1; /* Equal width columns */
+    padding: 2px;
+    border: 0px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 20px; /* Adjust spacing between columns */
+    width: 49%;
+  }
+  
+  .column:first-child {
+    margin-left: 0; /* Remove margin for the first column */
+  }
+  
+  .column h2 {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    text-transform: none;
+  }
+  
+  .column p {
+    margin: 2px 0;
+    font-size: 0.6rem;
+    line-height: 12px !important;
+    text-transform: none;
+  }
+  .clickable {
+    margin-left: 5px;
+    text-align: center;
+    cursor: pointer !important;
+    color:#000000 !important; /* Optionally change color to indicate it's clickable */
+    text-decoration: underline !important; /* Optionally underline text to indicate it's a link */
+  }
+  .text-with-icon {
+    display: flex; /* Use flexbox for aligning icon and text */
+    align-items: center; /* Center items vertically */
+  }
+
+  .text-content {
+    margin-left: 5px; /* Remove default margin for the paragraph */
+    cursor: pointer !important;
+    font-size: 0.6rem
+  }
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 20px; /* Padding inside the overlay */
+  }

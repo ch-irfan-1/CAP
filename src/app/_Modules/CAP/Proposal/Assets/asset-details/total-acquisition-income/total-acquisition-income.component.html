@@ -1,0 +1,46 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Total Acquisition Income Components</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain">
+        <div class="col-md-6 noPadding">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Components Added
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain rentalDetail"  style="margin-top: 10px;">
+                        <nfs-static-grid [inputArr]="AddedComponents" [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                        [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels"[pipes]="pipes"></nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+
+        <div class="col-md-6 noPadding">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Components Deducted
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain rentalDetail"  style="margin-top: 10px;">
+                        <nfs-static-grid [inputArr]="DeductedComponents" [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                        [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels" [pipes]="pipes"></nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
+

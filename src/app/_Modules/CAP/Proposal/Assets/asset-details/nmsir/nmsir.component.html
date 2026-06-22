@@ -1,0 +1,64 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">NMSIR</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain">
+        <div class="col-md-6 noPadding">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Outflows
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain rentalDetail"  style="margin-top: 10px;">
+                        <nfs-static-grid [inputArr]="OutflowComponents" [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                         [columns]="columns" [Labels]="Labels"[pipes]="pipes"></nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <!-- <span class="SubHeading">Outflows</span>
+            <div class="TabInnerMainForm">
+                <div class="row fieldContainer popupGridAdjusment">
+                    <div class="col-md-12">
+                        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+                            [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels"></nfs-static-grid>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="col-md-6 noPadding">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Inflows
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain rentalDetail" style="margin-top: 10px;">
+                        <nfs-static-grid [inputArr]="InflowComponents" [isRadioBtnRequired]="false" [IsActionRequired]="false"
+                        [columns]="columns" [Labels]="Labels"[pipes]="pipes"></nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <!-- <span class="SubHeading">Inflows</span>
+            <div class="TabInnerMainForm">
+                <div class="row fieldContainer popupGridAdjusment">
+                    <div class="col-md-12">
+                        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+                            [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels"></nfs-static-grid>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+

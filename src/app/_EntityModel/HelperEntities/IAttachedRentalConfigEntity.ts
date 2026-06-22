@@ -1,0 +1,17 @@
+import { ITPLE_CHRT_ATCHInfo } from "./ITPLE_CHRT_ATCHInfo";
+import { ITPLE_COMM_CNFG_ATCHInfo } from "./ITPLE_COMM_CNFG_ATCHInfo";
+import { ITPLE_INCM_CNFG_ATCHInfo } from "./ITPLE_INCM_CNFG_ATCHInfo";
+import { ITPLE_MAINInfo } from "./ITPLE_MAINInfo";
+import { ITPLE_RNTL_CMPT_ATCHInfo } from "./ITPLE_RNTL_CMPT_ATCHInfo";
+import { ITPLE_RNTL_INTR_ATCHInfo } from "./ITPLE_RNTL_INTR_ATCHInfo";
+import { ITPLE_RNTL_RATE_RVSN_ATCHInfo } from "./ITPLE_RNTL_RATE_RVSN_ATCHInfo";
+
+export interface IAttachedRentalConfigEntity{
+        TPLERNTLINTR: ITPLE_RNTL_INTR_ATCHInfo ;
+        TPLECHRT: Array<ITPLE_CHRT_ATCHInfo>;
+        TPLERNTLCMPTCNFG: Array<ITPLE_RNTL_CMPT_ATCHInfo>;
+        TPLEMAIN: ITPLE_MAINInfo;
+        TPLERNTLRATERVSN: Array<ITPLE_RNTL_RATE_RVSN_ATCHInfo>;
+        TPLECOMMCNFG: Array<ITPLE_COMM_CNFG_ATCHInfo>;
+        TPLEINCMCNFG: Array<ITPLE_INCM_CNFG_ATCHInfo>;
+}

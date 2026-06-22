@@ -1,0 +1,137 @@
+{
+  "ApplicantInfo": {
+      "FIRSTNME": {
+        "isEnabled": true
+      },
+      "MIDDLENME": {
+        "isEnabled": true
+      },
+      "LASTNME": {
+        "isEnabled": true
+      },
+      "EMAILADDRESS": {
+        "isEnabled": true
+      },
+      "IDTYPENBR": {
+        "isEnabled": true
+      },
+      "IDTYPECDE": {
+        "isEnabled": true
+      },
+      "COUNTRYCODE": {
+        "isEnabled": true
+      },
+      "COMPANYNAME": {
+        "isEnabled": true
+      },
+      "CONTACTNME": {
+        "isEnabled": true
+      },
+      "SALARY": {
+        "isEnabled": true
+      },
+      "MONTHLYINSTALLMENT": {
+        "isEnabled": true
+      },
+      "PLACEOFBIRTH": {
+        "isEnabled": true
+      },
+      "MOTHERMDNNME": {
+        "isEnabled": true
+      },
+      "SPOUSEFIRSTNME": {
+        "isEnabled": true
+      },
+      "SPOUSEMIDDLENME": {
+        "isEnabled": true
+      },
+      "SPOUSELASTNME": {
+        "isEnabled": true
+      },
+      "SPOUSEIDTYPENBR": {
+        "isEnabled": true
+      }
+  },
+  "AddressInfo": {
+      "ADDRESSTYPECDE": {
+        "isEnabled": true
+      },
+      "COUNTRYCODE": {
+        "isEnabled": true
+      },
+      "TIMEINYEAR": {
+        "isEnabled": true
+      },
+      "TIMEINMONTH": {
+        "isEnabled": true
+      },
+      "RWNBR": {
+        "isEnabled": true
+      },
+      "RTNBR": {
+        "isEnabled": true
+      },
+      "POSTALCODE": {
+        "isEnabled": true
+      },
+      "CONTACTPERSON": {
+        "isEnabled": true
+      }
+},
+  "GeneralInfo": {
+      "BPBRANCHID": {
+        "isEnabled": true
+   },
+      "BPINTRODUCERID": {
+        "isEnabled": true
+    },
+      "FPGROUPID": {
+        "isEnabled": true
+    },
+      "FINANCIALPRODUCTID": {
+        "isEnabled": true
+    },
+      "COMMENTS": {
+        "isEnabled": true
+      }
+  },
+  "ContactInformation": {
+      "PHONETYPECDE": {
+        "isEnabled": true
+    },
+      "COUNTRYCODE": {
+        "isEnabled": true
+      },
+      "NUMBER": {
+        "isEnabled": true
+},
+      "EXTENSIONNBR": {
+        "isEnabled": true
+      }
+    
+  }  ,
+  "AssignToVO": {
+      "VOList": {
+        "isEnabled": true
+    },
+      "ApprovalTypeList": {
+        "isEnabled": true
+    },
+      "Comments": {
+        "isEnabled": true
+      }
+  },
+  "Cancelled": {
+      "RejectionReason": {
+        "isEnabled": true
+    },
+      "Comments": {
+        "isEnabled": true
+      }
+  },
+  "ABC": {
+    "XYZ": {
+      "isEnabled": true
+    }
+  }
+}

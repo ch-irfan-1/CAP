@@ -1,0 +1,219 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Interest Rate Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain customAccordianMain">
+        <div class="">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Chart Detail
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer" style="padding-bottom: 0;">
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Chart Name'" [Label]="'Chart Name'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Chart Name</mat-label>
+                                <input class="customInput" type="text" value={{this.chartName}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Chart Criteria'" [Label]="'Chart Criteria'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Chart Criteria</mat-label>
+                                <input  class="customInput" type="text" value={{this.chartCriteria}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <!-- <div class="col-md-3 top15">
+                            <nfs-dropdown [Label]="'Chart Criteria'" [controlPlaceholder]="'Chart Criteria'"
+                                [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown>
+                        </div> -->
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="topMargin20">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Rates Detail
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Base Rate Source'" [Label]="'Base Rate Source'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Base Rate Source</mat-label>
+                                <input  class="customInput" type="text" value={{getBaseCodeDescription(this._dataService.PROPOSALTEMPLATERENTALINT.controls.BASERATESOURCECDE.value)}} matInput>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-3 top15 iconPopup customTop8" >
+                            <mat-form-field appearance="fill" [ngClass]="{'disabledDiv': true}" class="directive controls-margin">
+                                <mat-label>Base Rate</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.BASERTE}} matInput>
+                            </mat-form-field>
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Base Rate'" [Label]="'Base Rate'">
+                            </nfs-textbox> -->
+                            <div class="iconPopupMain">
+                                <p (click)="openBaseRate()">More</p><!-- (click)="openBaseRate()" -->
+                            </div>
+                        </div>
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Margin Type'" [Label]="'Margin Type'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Margin Type</mat-label>
+                                <input  class="customInput" type="text" value={{getMarginCodeDescription(this.proposalFinancialAgrmnt.MARGINTYPCDE)}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Financer Margin %'" [Label]="'Financer Margin %'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Financer Margin %</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.FINANCIERMARGINPCT}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3 top15" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Customer Margin %'" [Label]="'Customer Margin %'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Customer Margin %</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.CUSTOMERMARGINPCT}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3 top15" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Financer Margin rate'" [Label]="'Financer Margin rate'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Financer Margin rate</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.FINANCIERMARGINRTE}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3 top15" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Customer Margin rate'" [Label]="'Customer Margin rate'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Customer Margin rate</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.CUSTOMERMARGINRTE}} matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="topMargin20">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           Final Rates Detail
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Calculated Customer Rate'" [Label]="'Calculated Customer Rate'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Calculated Customer Rate</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.INTERESTRTE}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3" [ngClass]="{'disabledDivCheckbox': true}">
+                            <section class="example-section" style="margin-top: -8px;">
+                                <mat-checkbox class="example-margin" [checked]=this.overrideInd>Override Interest Rate</mat-checkbox>
+                                <!-- <mat-form-field appearance="fill" class="directive controls-margin">
+                                    <mat-label>Override Interest Rate</mat-label>
+                                    <input type="checkbox" value="false">
+                                </mat-form-field> -->
+                            </section>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="topMargin20">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           Customer Rate Range
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+                        <div class="col-md-3 top15 customTop8"[ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Max Customer Rate'" [Label]="'Max Customer Rate'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Max Customer Rate</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.MAXCUSTOMERRTE}} matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-3 top15 customTop8" [ngClass]="{'disabledDiv': true}">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Min Customer Rate'" [Label]="'Min Customer Rate'">
+                            </nfs-textbox> -->
+                            <mat-form-field appearance="fill" class="directive controls-margin">
+                                <mat-label>Min Customer Rate</mat-label>
+                                <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.MINCUSTOMERRTE}} matInput>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="row interestFieldAdjustBox fieldContainer topBottom" style="margin-top: 5px !important;">
+            <div class="col-md-3 top15" [ngClass]="{'disabledDiv': this.isEffectiveDisable}">
+                <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Financer Rate - Effective'" [Label]="'Financer Rate - Effective'">
+                </nfs-textbox> -->
+                <mat-form-field appearance="fill" class="directive controls-margin">
+                    <mat-label>Financer Rate - Effective</mat-label>
+                    <input  class="customInput" mask="{{mask}}" [value]="this.proposalFinancialAgrmnt.FINANCERRTEEFFECTIVE"  onClick="this.select();"
+                    [(ngModel)]="this.proposalFinancialAgrmnt.FINANCERRTEEFFECTIVE" matInput
+                    (ngModelChange)="onFinancerRateEffective($event)">
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 top15" [ngClass]="{'disabledDiv': true}">
+                <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Applied Customer Rate - Effective'" [Label]="'Applied Customer Rate - Effective'">
+                </nfs-textbox> -->
+                <mat-form-field appearance="fill" class="directive controls-margin">
+                    <mat-label matTooltip="Applied Customer Rate - Effective">Applied Customer Rate - Effective</mat-label>
+                    <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.APPLIEDCUSTOMERRTE}} matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 top15" [ngClass]="{'disabledDiv': this.isFlatDisable}">
+                <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Financer Rate - Flat'" [Label]="'Financer Rate - Flat'">
+                </nfs-textbox> -->
+                <mat-form-field appearance="fill" class="directive controls-margin">
+                    <mat-label>Financer Rate - Flat</mat-label>
+                    <input  class="customInput" mask="{{mask}}" [value]="this.proposalFinancialAgrmnt.FINANCERRTEFLAT" onClick="this.select();"
+                    [(ngModel)]="this.proposalFinancialAgrmnt.FINANCERRTEFLAT" matInput
+                    (ngModelChange)="onFinancerRateFlat($event)" >
+                </mat-form-field>
+            </div>
+            <div class="col-md-3 top15" [ngClass]="{'disabledDiv': true}">
+                <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Applied Customer Rate - Flat'" [Label]="'Applied Customer Rate - Flat'">
+                </nfs-textbox> -->
+                <mat-form-field appearance="fill" class="directive controls-margin">
+                    <mat-label>Applied Customer Rate - Flat</mat-label>
+                    <input  class="customInput" type="text" value={{this.proposalFinancialAgrmnt.APPLIEDCUSTOMERRTECALCULATED}} matInput>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,118 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Admin Fee Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain" [formGroup]="this._proposaldataService.PROPOSALADMINFEEDETAIL">
+        <div class="col-md-12 noPadding">
+            <div class="">
+                <div class="row noMargin ">
+                    <div class="col-md-3 top15 control-disabled customTop8">
+                        <nfs-currency [Placeholder]="'Standard Admin Fee'" [Label]="'Standard Admin Fee'"
+                            formControlName="STANDARDADMINFEE" [Name]="'STANDARDADMINFEE'" [Component]="'AdminFee'">
+                        </nfs-currency>
+                    </div>
+                    <div class="col-md-3 top15 customTop8">
+                        <nfs-currency [Placeholder]="'Additional Admin Fee'" [Label]="'Additional Admin Fee'"
+                            formControlName="ADDITIONALADMINFEE" [Name]="'ADDITIONALADMINFEE'" [Component]="'AdminFee'">
+                        </nfs-currency>
+                    </div>
+                    <div class="col-md-3 top15 customTop8">
+                        <nfs-currency [Placeholder]="'Discount'" [Label]="'Discount'" formControlName="ADMINFEEDISCOUNT"
+                            [Name]="'ADMINFEEDISCOUNT'" [Component]="'AdminFee'">
+                        </nfs-currency>
+                    </div>
+                </div>
+                <div class="row noMargin ">
+                    <div class="col-md-3" style="padding-left: 8px;">
+                        <nfs-currency [Placeholder]="'Subsidy'" [Label]="'Subsidy'" formControlName="ADMINFEESUBSIDY"
+                            [Name]="'ADMINFEESUBSIDY'" [Component]="'AdminFee'">
+                        </nfs-currency>
+                    </div>
+                    <div class="col-md-3" style="padding-left: 8px;margin-top: -4px;"
+                            [ngClass]="{'disabledDiv': isControlDisable('DEALERNETOFFIND')}">
+                        <section class="example-section">
+                            <nfs-checkbox class="example-margin marginTop45" formControlName="DEALERNETOFFIND" [Name]="'DEALERNETOFFIND'"
+                                [Label]="'Net Off'" [isControlDisable]="this.isCF"
+                                (Change)="NetOffChanged($event)">
+                            </nfs-checkbox>
+                            <!-- <mat-checkbox formControlName="DEALERNETOFFIND" class="example-margin"
+                                (change)="NetOffChanged($event)" [disabled]="this.isCF">Net Off</mat-checkbox> -->
+                        </section>
+                    </div>
+                </div>
+                <div class="row noMargin ">
+                    <div class="col-md-3" style="padding-left: 8px;">
+                        <!-- [ngClass]="{'control-disabled': this._proposaldataService.PROPOSALADMINFEEDETAIL.controls.ADMINFEEFINANCEIND.value !== true}"> -->
+                        <nfs-currency [Placeholder]="'Financed'" [Label]="'Financed'" formControlName="FINANCEDADMINFEE"
+                        [isControlDisable]="this._proposaldataService.PROPOSALADMINFEEDETAIL.controls.ADMINFEEFINANCEIND.value !== true"
+                            [Name]="'FINANCEDADMINFEE'" [Component]="'AdminFee'">
+                        </nfs-currency>
+                    </div>
+                    <div class="col-md-3" style="padding-left: 8px;margin-top: -4px;">
+                        <section class="example-section">
+                            <nfs-checkbox class="example-margin marginTop45" formControlName="ADMINFEEFINANCEIND" [Name]="'ADMINFEEFINANCEIND'"
+                                [Label]="'Financed'" (Change)="FinancedChanged($event)">
+                            </nfs-checkbox>
+                            <!-- <mat-checkbox formControlName="ADMINFEEFINANCEIND" class="example-margin"
+                                (change)="FinancedChanged($event)">Financed
+                            </mat-checkbox> -->
+                        </section>
+                    </div>
+
+                </div>
+                <div class="row noMargin ">
+                    <div class="col-md-3 control-disabled" style="padding-left: 8px;">
+                        <nfs-currency [Placeholder]="'Upfront'" [Label]="'Upfront'" formControlName="UPFRONTADMINFEE"
+                            [Name]="'UPFRONTADMINFEE'" [Component]="'AdminFee'">
+                        </nfs-currency>
+                    </div>
+                    <div class="col-md-3" style="padding-left: 8px;margin-top: -4px;"
+                            [ngClass]="{'disabledDiv': isControlDisable('RECEIVEDBYDEALERIND')}">
+                        <section class="example-section">
+                            <nfs-checkbox class="example-margin marginTop45" formControlName="RECEIVEDBYDEALERIND" [Name]="'RECEIVEDBYDEALERIND'"
+                                [Label]="'Received By Dealer'"  [isControlDisable]="this.isCF" (Change)="ReceivedByDealerChanged($event)">
+                            </nfs-checkbox>
+                            <!-- <mat-checkbox formControlName="RECEIVEDBYDEALERIND" class="example-margin"
+                                (change)="ReceivedByDealerChanged($event)" [disabled]="this.isCF">Received By Dealer
+                            </mat-checkbox> -->
+                        </section>
+                    </div>
+
+                </div>
+                <div class="row noMargin fieldContainer ">
+                    <div class="col-md-3 iconPopup" style="padding-left: 8px;">
+                        <nfs-currency [Placeholder]="'Total Admin Fee'" [Label]="'Total Admin Fee'"
+                            [isControlDisable]="true" formControlName="TOTALADMINFEE" [Name]="'TOTALADMINFEE'"
+                            [Component]="'AdminFee'">
+                        </nfs-currency>
+                        <div class="iconPopupMain">
+                            <p (click)="openTotalAdminiFeeAmount()">More</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 iconPopup control-disabled" style="padding-left: 8px;">
+                        <nfs-currency [Placeholder]="'Admin Fee Commission'" [Label]="'Admin Fee Commission'"
+                            formControlName="DEALERADMINFEECOMMISSION" [Name]="'DEALERADMINFEECOMMISSION'"
+                            [Component]="'AdminFee'">
+                        </nfs-currency>
+                        <div class="iconPopupMain">
+                            <p (click)="openAdminFeeCommission()">More</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div mat-dialog-actions class="d-flex justify-content-end">
+            <div class="">
+                <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [alwaysEnable] = "true" [matButton]="false" [matRaisedButton]="false"
+                [matRaisedButtonIcon]="true" (onBtnClick)="OK_clicked()"></nfs-button>
+            </div>
+        </div>
+    </div>
+</div>

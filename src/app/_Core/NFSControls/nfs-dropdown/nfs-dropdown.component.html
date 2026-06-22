@@ -1,0 +1,29 @@
+<div>
+  <mat-form-field appearance="fill" class="directive controls-margin"
+    [ngClass]="{'mandatory': IsRequiredField === true}">
+    <mat-label [matTooltip]="Label">{{Label}}</mat-label>
+    <mat-select class="customDropdown" (keydown.tab)="onTabPress($event)" [tabIndex]="SetTabIndex()" [formControl]="DropDownControl"
+      attr.name="{{controlName}}" placeholder="{{controlPlaceholder}}" multiple="{{Ismultiselect}}"
+      (selectionChange)="DropDownSelectionChange($event)" [matTooltip]="tooltipValue || ''"
+      [disabled]="isControlDisable" panelClass="{{customClass}}">
+      @if (EnableFilter) {
+        <mat-option>
+          <ngx-mat-select-search [formControl]="FilterControl" attr.name="{{controlName}}Search"
+            [placeholderLabel]="FilterControlPlaceholder" [noEntriesFoundLabel]="noSearchEntriesFoundLabel">
+          </ngx-mat-select-search>
+        </mat-option>
+      }
+      @if (AllowUnSelect && !Ismultiselect) {
+        <mat-option [value]="valueForUnselectOpt">{{TextForUnselectOpt}}
+        </mat-option>
+      }
+      @for (data of this.FilteredData; track data) {
+        <mat-option [value]="data.code || data.id"> {{ data.TextValue }}
+        </mat-option>
+      }
+    </mat-select>
+    @if (IsFieldValid()) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>

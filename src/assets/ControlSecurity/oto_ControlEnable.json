@@ -1,0 +1,305 @@
+[
+  {
+    "Name": "ACCESSORYAMT",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "ACCYWITHOUTVAT",
+    "Financetype": [
+      {
+        "FINETYPE": "00004",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "RESIDUALAMT",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "RESIDUALPCT",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "TRADEINAMT",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "TOTALSUBSIDYAMT",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      },
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "ETAMNTOTO",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "GPALLOWEDIND",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "FIDUCIAFEE",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "LASTPAYMENTDTE",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "MONTHLYLEASECOSTWITHOUTMAINTENANCE",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "SALESMARGINRTE",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "SALESMARGINAMT",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "POLICYFEE",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00004",
+        "ISMCOMM": "false"
+      }
+    ]
+  },
+  {
+    "Name": "BBNCHARGES",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00004",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "SUPPLIERNAME",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "PROVISIONFEE",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "TOTALADMINFEE",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "FIRSTPAYMENTPOPUP",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "RECEIVEDBYDEALERIND",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "DEALERNETOFFIND",
+    "Financetype": [
+      {
+        "FINETYPE": "00005",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name": "COMMFIXAMT",
+    "Financetype": [
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  },
+  {
+    "Name":"COMMSCHEMPOPUP",
+    "Financetype":[
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "false"
+      },
+      {
+        "FINETYPE": "00014",
+        "ISMCOMM": "true"
+      }
+    ]
+  }
+]

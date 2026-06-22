@@ -1,0 +1,38 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Cancellation Request</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" (click)="btnCancel_Click()">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain customAccordianMain">
+        <div class="row interestFieldAdjustBox fieldContainer" [formGroup]="CancelRequestForm">
+            <div class="col-md-3 top15 customTopNegatiiveArea">
+                <nfs-dropdown class="CustomWidth" [Label]="'Cancellation Reason'"  [Ismultiselect]="false"
+                    [EnableFilter]="true" [AllowUnSelect]="false"
+                    [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="REASONCODE" [Name]="'USERID'"
+                    [DataArray]="this.cancelReasonArray" >
+                </nfs-dropdown>
+            </div>
+            <div class="col-md-12 top15 top30">
+                <nfs-textarea class="cancelTextArea" [maxLength]="1500" [Placeholder]="'Cancellation Comments'" [Label]="'Cancellation Comments'"
+                formControlName="CANCELLATIONCOMMENT">
+                </nfs-textarea>
+            </div>
+            <div class="col-md-12 searchBtns top10 top25">
+                                        
+                <nfs-button [text]="'Close'" [color]="'primary'" [disabled]="false" [matButton]="false"
+                    [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnCancel_Click()">
+                </nfs-button>
+                <nfs-button [text]="'Submit'" [color]="'primary'" [disabled]="!this.enableButton" [matButton]="false"
+                    [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnSubmit_Click()">
+                </nfs-button>
+            </div>
+        </div>
+    </div>
+</div>

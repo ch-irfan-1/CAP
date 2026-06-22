@@ -1,0 +1,152 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Structured Rental</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" (click)="btnOk_Click()">
+      <mat-icon class="close-icon" color="warn" >close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="row bodyContainer fieldContainer">
+    <div class="row" [formGroup]="this._dataService.PROPOSALFINANCIALAGREEMENT">
+      <div class="col-md-3 top15 customTop8">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Terms (Months)'" [Label]="'Terms (Months)'" [isControlDisable]="true" formControlName="CONTRACTTRM">
+        </nfs-textbox>
+      </div>
+      <div class="col-md-3 top15 customTop8">
+        <nfs-currency [mask]="'separator.5'" [maxNumberLength]="2" [maxLength]="100" [Placeholder]="'Interest Rate'" [Label]="'Interest Rate'"
+          [isControlDisable]="true" formControlName="APPLIEDCUSTOMERRTE">
+        </nfs-currency>
+      </div>
+      <div class="col-md-3 top15 customTop8">
+        <nfs-currency [mask]="'separator.5'" [maxLength]="100" [Placeholder]="'Financed Amount'" [Label]="'Financed Amount'"
+          [isControlDisable]="true" formControlName="ADJUSTEDFINANCEDAMT">
+        </nfs-currency>
+      </div>
+      <!-- <div class="col-md-3 top15">
+      <nfs-textbox [maxLength]="100" [Placeholder]="'Frequency'" [Label]="'Frequency'"[isControlDisable]="true" formControlName="FREQUENCYCDE">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-3 top15">
+      <nfs-textbox [maxLength]="100" [Placeholder]="'Rental Mode'" [Label]="'Rental Mode'"[isControlDisable]="true" formControlName="RENTALMODETYP">
+      </nfs-textbox>
+    </div> -->
+
+    <div class="col-md-3 top15 customTop8">
+      <nfs-dropdown [Label]="'Frequency'" [controlPlaceholder]="'Frequency'" [Ismultiselect]="false"
+        [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="FREQUENCYCDE"
+        [DataArray]="this._financialClubMasterDataService.Frequencies" [isControlDisable]="true">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-3 top15">
+      <nfs-dropdown [Label]="'Rental Mode'" [controlPlaceholder]="'Rental Mode'" [Ismultiselect]="false"
+        [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="RENTALMODETYP"
+        [DataArray]="this._financialClubMasterDataService.RentalModes" [isControlDisable]="true">
+      </nfs-dropdown>
+    </div>
+
+
+    <div class="col-md-3 top15">
+      <nfs-currency [mask]="'separator.5'" [maxLength]="100" [Placeholder]="'RV/Balloon Amount'" [Label]="'RV/Balloon Amount'"[isControlDisable]="true" formControlName="RESIDUALAMT">
+      </nfs-currency>
+    </div>
+  </div>
+
+  <!-- <div class="col-md-12">
+  <div class="TabInnerMainForm">
+    <div class="row tableMain rentalDetail">
+      <div class="col-md-12">
+        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+        [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels" [pipes]="structuredRentalPipe" [IsActionRequired]="false" ></nfs-static-grid>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="col-md-12 marginTop17">
+  <div mat-dialog-content>
+    <h4>Structured Rentals</h4>
+    <div class="row noMargin ">
+      <div class="col-md-12 top15 tableMain">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" [ngClass]="{'disabledDiv': this.isViewMode}">
+
+          <ng-container matColumnDef="StartTerm">
+            <th mat-header-cell *matHeaderCellDef> Start Term </th>
+            <td mat-cell *matCellDef="let element" class="customTableColWidth1">
+              <mat-form-field placeholder="never">
+                <input mask="{{mask}}" step="1" thousandSeparator=","  matInput  onClick="this.select();"
+                  value="element.StartTerm" [(ngModel)]="element.StartTerm" disabled
+                  >
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="EndTerm">
+            <th mat-header-cell *matHeaderCellDef> End Term </th>
+            <td mat-cell *matCellDef="let element; let i = index" class="customTableColWidth2">
+              <mat-form-field placeholder="never">
+                <input  mask="{{mask}}" step="1" thousandSeparator="," matInput  onClick="this.select();"
+                  value="element.EndTerm" [disabled]="element.isGPRental"
+                  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                  [(ngModel)]="element.EndTerm" (change)="dgRentalStructure_RowEditEnded(element,i)">
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="RentalTypeValue" class="Accessories">
+            <th mat-header-cell *matHeaderCellDef> Rental Type</th>
+            <td mat-cell *matCellDef="let element; let i = index" class="customTableColWidth3">
+              <mat-form-field placeholder="never" class="AccessoriesBox">
+                <mat-select [(value)]="element.RentalTypeValue"
+                  (selectionChange)="dgRentalStructure_RowEditEnded(element,i)">
+                  @for (data of this.getRentalTypeMasterData(element,i); track data) {
+                    <mat-option
+                      [value]="data.code">
+                      <div></div>
+                    {{  data.TextValue }}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="RentalAmount">
+            <th mat-header-cell *matHeaderCellDef> Rental Amount </th>
+            <td mat-cell *matCellDef="let element;let i = index">
+              <mat-form-field placeholder="never">
+                <input matInput value="element.RentalAmount"separatorLimit="{{separatorLimit}}" onClick="this.select();"
+                  [disabled]="element.RentalTypeValue=='AUT' || element.RentalTypeValue=='INT'"
+                  [(ngModel)]="element.RentalAmount" mask="{{mask}}" step="1" thousandSeparator="," matInput
+                  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                  (change)="dgRentalStructure_RowEditEnded(element,i)">
+              </mat-form-field>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12 searchBtns topMargin20">
+  <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" (onBtnClick)='btnOk_Click()'
+    [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+  </nfs-button>
+
+  <nfs-button [text]="'Calculate'" [color]="'primary'" [disabled]="false" (onBtnClick)='btnCalculate_Click()'
+    [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+  </nfs-button>
+
+</div>
+</div>
+</div>
+

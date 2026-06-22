@@ -1,0 +1,28 @@
+
+.demoTable tr.example-detail-row {
+    height: 0 !important;
+}
+.demoTable .mat-mdc-row .mat-column-expandedDetail {
+    height: 0 !important;
+    padding: 0px;
+}
+.appChangres.tableMainStanderdInsurance {
+    width: auto;
+    max-width: 100%;
+    overflow: auto;
+}
+.tableMain table th:first-child {
+    width: 20px;
+}
+.tableMain table td:first-child {
+    width: 20px;
+}
+.popupBody .bodyContainer {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    /* border: 1px solid #d0cccc; */
+}
+.additionalInsuranceTabMain {
+width: 100%;
+padding-top: 12px;
+}

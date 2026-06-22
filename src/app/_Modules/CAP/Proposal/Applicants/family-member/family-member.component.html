@@ -1,0 +1,91 @@
+<mat-tab-group #tabRef disableRipple (selectedIndexChange)="tabSelectionChange(tabRef.selectedIndex)">
+  @for (familymember of (this.ApplicantFamilyMembers.controls); track familymember; let FamilymemberIndex = $index) {
+    <div
+      >
+      @if (familymember.controls.RowState.value != dataRowState.Removed) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Family Member - {{getIndex(familymember)+1}}
+            @if (!isViewMode) {
+              <button disableRipple class="tabsIconsAdjustment"
+                (click)="removeFamilyMember(familymember, FamilymemberIndex)" mat-icon-button aria-label="remove tab">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </ng-template>
+          <ng-template matTabContent>
+            <app-sub-family-member [FamilyMember]="familymember" [ApplicantInfo]="ApplicantInfo" [ComponentName]="this.getComponentName()" [Index]= "familymember.value.VLDMSGIND + 1">
+            </app-sub-family-member>
+          </ng-template>
+        </mat-tab>
+      }
+      <!-- <mat-tab label="Family Member {{FamilymemberIndex+1}}" >
+      <div class="FormMain">
+        <div class="row fieldContainer" [formGroup]="familymember">
+          <div class="col-md-2 top15">
+            <nfs-textbox  [maxLength]="100" formControlName="NAME" [Name]="'NAME'" [Component] = "'FamilyMemberComponent'"
+              [Placeholder]="'Name'"
+              [Label]="'Name'" >
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-textbox  [maxLength]="100" formControlName="FAMCRDNUM" [Name]="'FAMCRDNUM'" [Component] = "'FamilyMemberComponent'"
+              [Placeholder]="'Family Card Number'"
+              [Label]="'Family Card Number'" >
+            </nfs-textbox>
+          </div>
+          <div class="col-md-2 top15 iconPopup">
+            <nfs-dropdown  [Label]="'Exposure'"
+              [controlPlaceholder]="'Exposure'" [Ismultiselect]="false" [EnableFilter]="true"
+              formControlName="FAMLIYSEARCHCRITERIA" [Name]="'FAMLIYSEARCHCRITERIA'" [Component] = "'FamilyMemberComponent'"
+              [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown>
+            <div class="iconPopupMain">
+              <p (click)="openExposure()" >More</p>
+            </div>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-dropdown  [Label]="'Gender'"  formControlName="GENDER" [Name]="'GENDER'" [Component] = "'FamilyMemberComponent'"
+              [controlPlaceholder]="'Gender'" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.GenderCode"></nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-datepicker
+              matInput
+              formControlName="DATEOFBIRTH" [Name]="'DATEOFBIRTH'" [Component] = "'FamilyMemberComponent'"
+              [Placeholder]="'Enter Date'"
+              [Label]="'Date Of Birth'">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-dropdown  [Label]="'Relationship'"  formControlName="RELATIONSHIPCDE" [Name]="'RELATIONSHIPCDE'" [Component] = "'FamilyMemberComponent'"
+              [controlPlaceholder]="'Relationship'" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.AllEmergencyContactRelationTypes"></nfs-dropdown>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-dropdown  [Label]="'Occupation'"  formControlName="OCCUPATIONCDE" [Name]="'OCCUPATIONCDE'" [Component] = "'FamilyMemberComponent'"
+              [controlPlaceholder]="'Occupation'" [Ismultiselect]="false" [EnableFilter]="true"
+              [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.OccupationsTypes"></nfs-dropdown>
+          </div>
+        </div>
+      </div>
+    </mat-tab> -->
+  </div>
+}
+@if (!isViewMode) {
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <button class="addTab" (click)="AddFamilyMember()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      </button>
+    </ng-template>
+  </mat-tab>
+}
+@if (isViewMode && this.ApplicantFamilyMembers.controls.length > 0) {
+  <mat-tab>
+  </mat-tab>
+}
+</mat-tab-group>

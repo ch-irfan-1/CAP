@@ -1,0 +1,901 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Start of 1920px screen */
+@media all and (min-width: 1920px) {
+
+    header {
+        padding: 14px 20px 0px 85px;
+        width: 99vw;
+    }
+    header.active1 {
+        width: 99vw !important;
+    }
+    .leftNav.active1 .collapseClose {
+        margin-right: unset;
+    }
+
+    .leftNav.active1 ul li a {
+        float: left;
+        width: 85%;
+    }
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 14px;
+    }
+
+
+ }
+/* End of 1920px screen */
+
+
+
+/* Start of 1680px screen */
+@media all and (max-width: 1680px) {
+    header {
+        padding: 20px 20px 0px 85px;
+        width: 99vw;
+    }
+    header.active1 {
+        width: 99vw !important;
+    }
+    .leftNav.active1 .collapseClose {
+        margin-right: unset;
+    }
+    .leftNav.active1 ul li a {
+        float: left;
+        width: 85%;
+    }
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+    }
+    .documentName {
+        width: 40%;
+        float: left;
+        font-size: 14px;
+    }
+    .documentTypeDesc {
+        width: 30%;
+        float: left;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .documentIcons {
+        width: 15%;
+        float: left;
+        text-align: right;
+        font-size: 14px;
+    }
+    .documentSize {
+        width: 15%;
+        float: left;
+        text-align: left;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .documentNamHeading {
+        width: 40%;
+        float: left;
+        font-size: 14px;
+        padding-left: 15px;
+      }
+      .documentIconsHeading {
+        width: 15%;
+        float: left;
+        text-align: right;
+        font-size: 14px;
+        padding-right: 15px;
+      }
+      .documentTypeHeading {
+        width: 30%;
+        float: left;
+        font-size: 14px;
+      }
+      .documentSizeHeading {
+        width: 15%;
+        float: left;
+        text-align: left;
+        font-size: 14px;
+      }
+
+ }
+/* End of 1680px screen */
+
+/* Start of 1600px screen */
+@media all and (max-width: 1600px) {
+
+    header {
+        width: 98.5vw !important;
+    }
+    header.active1 {
+        width: 98.5vw !important;
+    }
+ }
+/* End of 1600px screen */
+
+/* Start of 1536px screen */
+@media all and (max-width: 1536px) { }
+/* End of 1536px screen */
+
+/* Start of 1440px screen */
+@media all and (max-width: 1440px) {
+    .topSellingAsset.col-md-4 {
+        max-width: 31%;
+        flex: 0 0 31%;
+    }
+    .topFinanceProducts.col-md-4 {
+        max-width: 31%;
+        flex: 0 0 31%;
+    }
+    header.active1 {
+        width: 98.6vw !important;
+    }
+    .documentName {
+        width: 35%;
+        float: left;
+        font-size: 12px;
+    }
+    .documentNamHeading {
+        width: 35%;
+        float: left;
+        font-size: 12px;
+        padding-left: 15px;
+    }
+    .documentTypeDesc {
+        width: 30%;
+        float: left;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .documentTypeHeading {
+        width: 30%;
+        float: left;
+        font-size: 12px;
+    }
+    .documentSize {
+        width: 15%;
+        float: left;
+        text-align: left;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .documentSizeHeading {
+        width: 15%;
+        float: left;
+        text-align: left;
+        font-size: 12px;
+    }
+    .documentIcons {
+        width: 20%;
+        float: left;
+        text-align: right;
+        font-size: 12px;
+    }
+    .documentIconsHeading {
+        width: 20%;
+        float: left;
+        text-align: right;
+        font-size: 12px;
+        padding-right: 15px;
+    }
+    .uploadDivContainer p{
+        font-size: 12px;
+      }
+      /* .DocumentExpansionPanel th.mat-header-cell:nth-child(1) {
+        width: 76% !important;
+        float: left;
+        padding: 0 !important;
+    }
+    .DocumentExpansionPanel th.mat-header-cell:nth-child(2) {
+        float: left;
+        padding-right: 0 !important;
+        width: 8%;
+    } */
+    .DocumentExpansionPane td:nth-child(1) {
+        padding: 0 !important;
+        font-size: 12px !important;
+    }
+    .addressTypeDtl {
+        /* padding: 0; */
+    }
+    .mat-select-search-inside-mat-option .mat-select-search-input {
+        padding-left: 8px;
+        font-size: 12px !important;
+        width: auto !important;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .someClass ~ app-proposal-main .main-content asset-details-common .fieldContainer span.mat-form-field-label-wrapper {
+        width: 133% !important;
+    }
+    .someClass ~ app-proposal-main .main-content .proposalEditPanel {
+        width: 63% !important;
+    }
+    .someClass ~ app-proposal-main .main-content .DocumentViewPanel {
+        width: 37% !important;
+    }
+    .active1 {
+        width: 246px !important;
+    }
+    .leftNav.active1 .menuLogo {
+        height: 54px;
+    }
+    .mobile-menu {
+        float: right;
+        margin-right: 2px;
+        width: 60px
+    }
+    .someClass ~ app-proposal-main .main-content {
+        padding: 80px 15px 20px 246px;
+    }
+    .leftNav.active1 .collapseClose {
+        margin: 0;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of select that may no longer apply for the MDC version. */
+    .mat-select-search-inner {
+        width: 100% !important;
+    }
+    .proposalTabTOpMainContant {
+      max-width: 92% !important;
+      min-width: 92%;
+      width: 92%;
+  }
+  .proposalTabTOpMain {
+    max-width: 8% !important;
+    min-width: 8%;
+    width: 8%;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+  /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+  .fieldContainer nfs-datepicker .mat-form-field-label-wrapper {
+    width: 188% !important;
+  }
+  .someClass ~ app-proposal-main .main-content .DocumentExpansionPanel .mat-expansion-panel-body {
+    width: 92%;
+    overflow-x: scroll;
+  }
+  .someClass ~ app-proposal-main .main-content .DocumentExpansionPanel .mat-expansion-panel-body button {
+    width: 100px;
+  }
+  .someClass ~ app-welcome {
+    padding: 82px 18px 20px 290px;
+  }
+  
+    side-nav.someClass ~ app-proposal-main .proposalTabsInner .addressTabOne {
+        flex: 100%;
+        max-width: 100%;
+    }
+    side-nav.someClass ~ app-proposal-main .proposalTabsInner .addressTabTwo {
+        flex: 100%;
+        max-width: 100%;
+    }
+    app-proposal-main .proposalTabsInner .addressTabOne {
+        flex: 100%;
+        max-width: 100%;
+    }
+    app-proposal-main .proposalTabsInner .addressTabTwo {
+        flex: 100%;
+        max-width: 100%;
+    }
+ }
+/* End of 1440px screen */
+
+/* Start of 1366px screen */
+@media all and (max-width: 1366px){
+    .radioGroupBtn {
+        margin: 0px 25px;
+    }
+    .radioGroupBtn {
+        margin: 0px 25px 25px 0px;
+    }
+    .borrowerInnerAccordian .mat-expansion-panel-body span {
+        font-size: 10px;
+    }
+    .workQueueTop .col-md-6:nth-child(1) {
+        flex: 0 0 39%;
+        max-width: 39%;
+    }
+    .workQueueTop .col-md-6:nth-child(2) {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .main-content .row.dashboardMainTop {
+        margin-bottom: 20px !important;
+    }
+    .topFinanceProducts {
+        padding: 15px 15px;
+    }
+    .topSellingAsset {
+        padding: 15px 15px;
+    }
+    .mat-mdc-form-field-error {
+        /* margin-top: 14px; */
+        font-size: 10px !important;
+    }
+
+}
+/* End of 1366px screen */
+
+/* Start of 1360px screen */
+@media all and (max-width: 1360px){ }
+/* End of 1360px screen */
+
+/* Start of 1280px screen */
+@media all and (max-width: 1280px){
+    .dataBars {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+    .searchsection {
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+    .loginRightArea {
+        margin-top: 10vh;
+    }
+    .nav > li > a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+    }
+    .leftNav.active1 li.active p {
+        margin-left: 0px;
+    }
+    .active1 {
+        width: 20%;
+        transition: 0.3s;
+    }
+    .topSellingAsset.col-md-4 {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .topFinanceProducts.col-md-4 {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .radioGroupBtn p {
+        margin: 0px 0px 20px 0px;
+    }
+    .radioGroupBtn mat-radio-button {
+        padding: 15px 15px !important;
+    }
+    .applicationType .col-md-12 {
+        margin: 15px 0px 7px 0px;
+    }
+    .radioGroupBtn {
+        margin: 0px 25px 18px 0px;
+    }
+    .workQueueListSelection button.inProgress:nth-child(1) {
+        background: url('../../assets/Images/FileAddWhite.png') 10% 52% no-repeat;
+    }
+    .workQueueListSelection button:nth-child(1) {
+        background: url('../../assets/Images/FileAdd.png') 10% 52% no-repeat;
+    }
+    .documentName {
+        width: 40%;
+        float: left;
+        font-size: 12px;
+    }
+    .documentNamHeading {
+        width: 40%;
+        float: left;
+        font-size: 12px;
+        padding-left: 15px;
+    }
+    .documentTypeDesc {
+        width: 30%;
+        float: left;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .documentTypeHeading {
+        width: 30%;
+        float: left;
+        font-size: 12px;
+    }
+    .documentSize {
+        width: 10%;
+        float: left;
+        text-align: left;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .documentSizeHeading {
+        width: 10%;
+        float: left;
+        text-align: left;
+        font-size: 12px;
+    }
+    .documentIcons {
+        width: 20%;
+        float: left;
+        text-align: right;
+        font-size: 12px;
+    }
+    .documentIconsHeading {
+        width: 20%;
+        float: left;
+        text-align: right;
+        font-size: 12px;
+        padding-right: 15px;
+    }
+      .main-content .row.dashboardMainTop {
+        margin-bottom: 20px !important;
+    }
+    .topFinanceProducts {
+        padding: 15px 15px;
+    }
+    .topSellingAsset {
+        padding: 15px 15px;
+    }
+    .active1 {
+        width: 210px !important;
+    }
+    .leftNav.active1 li.active h4 {
+        font-size: 13px;
+    }
+    .leftNav.active1 ul li p {
+        margin-right: 12px;
+      }
+      .leftNav.active1 .collapseClose {
+        margin: 0 0 0 6px;
+      }
+      .leftNav.active1 ul li h4 {
+        font-size: 13px;
+      }
+      .someClass ~ app-proposal-main .main-content {
+        padding: 80px 15px 20px 208px;
+      }
+      .proposalTabTOpMainContant {
+        max-width: 91% !important;
+        min-width: 91%;
+        width: 91%;
+      }
+      .proposalTabTOpMain {
+        max-width: 9% !important;
+        min-width: 9%;
+        width: 9%;
+      }
+
+ }
+/* End of 1280px screen */
+
+/* Start of 1024px screen */
+@media all and (max-width:1024px) {
+    .docView {
+        overflow: scroll;
+        height: 450px !important;
+        width: 100% !important;
+    }
+    .desktopView {
+        display: none;
+    }
+    .tabView {
+        display: block;
+    }
+    .nav > li > a {
+        padding: 10px 20px;
+    }
+
+    .workQueueTop .col-md-6:nth-child(2) {
+        flex: 0 0 65%;
+        max-width: 65%;
+    }
+    .workQueueTop .col-md-6:nth-child(1) {
+        flex: 0 0 35%;
+        max-width: 35%;
+    }
+    .ApplicantEditPanel .fieldContainer .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .fieldContainer .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    header {
+        width: 98vw;
+    }
+    .documentForm .col-md-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .documentName {
+        width: 32%;
+        float: left;
+        font-size: 12px;
+    }
+    .documentNamHeading {
+        width: 40%;
+        float: left;
+        font-size: 12px;
+        padding-left: 15px;
+    }
+    .documentTypeDesc {
+        width: 30%;
+        float: left;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .documentTypeHeading {
+        width: 30%;
+        float: left;
+        font-size: 12px;
+    }
+    .documentSize {
+        width: 10%;
+        float: left;
+        text-align: left;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .documentSizeHeading {
+        width: 10%;
+        float: left;
+        text-align: left;
+        font-size: 12px;
+    }
+    .documentIcons {
+        width: 28%;
+        float: left;
+        text-align: right;
+        font-size: 12px;
+    }
+    .documentIconsHeading {
+        width: 20%;
+        float: left;
+        text-align: right;
+        font-size: 12px;
+        padding-right: 15px;
+    }
+      .login-form {
+        width: 85%;
+        margin: 0 auto;
+    }
+    .loginLeftArea.col-md-5 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .loginRightArea.col-md-7 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    div.scrollFiles {
+        overflow: auto;
+        white-space: nowrap;
+        margin-top: 10px;
+    }
+    .ApplicantEditPanel {
+        width: 100% !important;
+        float: left;
+    }
+    .DocumentViewModePanel {
+        width: 100% !important;
+        float: left;
+    }
+    .docView {
+        /* overflow: hidden; */
+        text-align: center;
+    }
+    .headerHight {
+        height: 255px !important;
+        border-bottom: 1px solid #d9d9d9;
+        padding: 0px 15px;
+    }
+    div.scrollFiles .fileDiv {
+        display: inline-block;
+        width: 115px;
+        text-align: center;
+        margin: 0px 5px 40px 5px;
+        cursor: pointer;
+        padding: 15px 10px;
+        border-bottom: 3px solid #fff;
+    }
+    .workQueueTop .dataBars{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .workQueueTop .searchsection{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 15px;
+    }
+    th.mat-mdc-header-cell, td.mat-mdc-cell, td.mat-mdc-footer-cell {
+        min-width: 50px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 250px;
+        padding-right: 10px !important;
+    }
+    app-work-queue .main-content {
+        padding: 120px 15px 20px 98px;
+        transition: 0.3s;
+    }
+    .topFinanceProducts.col-md-4 {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+    .topSellingAsset.col-md-4 {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+ }
+/* End of 1024px screen */
+
+/* Start of 800px screen */
+@media all and (max-width: 800px) {
+    header {
+        width: 97vw;
+    }
+    th.mat-mdc-header-cell, td.mat-mdc-cell, td.mat-mdc-footer-cell {
+        min-width: 50px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 111px;
+        padding-right: 10px !important;
+    }
+    .workQueueTop .searchsection .row .col-md-3{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+}
+/* End of 800px screen */
+
+/* Start of 768px screen */
+@media all and (max-width: 768px) {
+    /* .mainContainer{max-width:720px,} */
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-label {
+        min-width: 185px;
+    }
+    .topSellingAsset.col-md-4 {
+        flex: 0 0 70%;
+        max-width: 70%;
+        margin: 0px 16px 10px 0px;
+    }
+    .topFinanceProducts.col-md-4 {
+        flex: 0 0 70%;
+        max-width: 70%;
+        margin: 10px 16px 10px 0px;
+    }
+    .workQueueTop .col-md-6:nth-child(1) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .workQueueTop .col-md-6:nth-child(2) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .radioGroupBtn {
+        margin: 0px 15px 40px 0px;
+        width: 45%;
+    }
+    .radioGroupBtn img {
+        margin: 0px 32px !important;
+    }
+    .leadnumberHeading {
+    font-size: 25px !important;
+    }
+    .documentIcons {
+        width: 32%;
+        float: left;
+        text-align: right;
+        font-size: 14px;
+    }
+    .documentTypeDesc {
+        width: 22%;
+        float: left;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .documentName {
+        width: 35%;
+        float: left;
+        font-size: 14px;
+    }
+    .documentIconsHeading {
+        width: 32%;
+    }
+    .documentSize {
+        width: 10%;
+        float: left;
+        margin-top: 15px;
+        text-align: left;
+        font-size: 14px;
+    }
+    .documentNamHeading {
+        width: 35%;
+        float: left;
+        font-size: 14px;
+        padding-left: 15px;
+      }
+      .documentIconsHeading {
+        width: 32%;
+        float: left;
+        text-align: right;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      .documentTypeHeading {
+        width: 22%;
+        float: left;
+        font-size: 14px;
+      }
+      .documentSizeHeading {
+        width: 10%;
+        float: left;
+        text-align: left;
+        font-size: 14px;
+      }
+      .login-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .loginLeftArea.col-md-5 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .loginRightArea.col-md-7 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .main-content .row.dashboardMainTop {
+        margin-bottom: 15px !important;
+    }
+    .topFinanceProducts {
+        padding: 15px 15px;
+    }
+    .topSellingAsset {
+        padding: 15px 15px;
+    }
+    div.scrollFiles {
+        overflow: auto;
+        white-space: nowrap;
+        margin-top: 10px;
+    }
+    .ApplicantEditPanel {
+        width: 100% !important;
+        float: left;
+    }
+    .DocumentViewModePanel {
+        width: 100% !important;
+        float: left;
+    }
+    .docView {
+        /* overflow: hidden; */
+        text-align: center;
+    }
+    .headerHight {
+        height: 255px !important;
+        border-bottom: 1px solid #d9d9d9;
+        padding: 0px 15px;
+    }
+    div.scrollFiles .fileDiv {
+        display: inline-block;
+        width: 115px;
+        text-align: center;
+        margin: 0px 5px 40px 5px;
+        cursor: pointer;
+        padding: 15px 10px;
+        border-bottom: 3px solid #fff;
+    }
+    .workQueueTop .dataBars{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .workQueueTop .searchsection{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 15px;
+    }
+    header {
+        width: 97vw;
+    }
+    th.mat-mdc-header-cell, td.mat-mdc-cell, td.mat-mdc-footer-cell {
+        min-width: 50px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 111px;
+        padding-right: 10px !important;
+    }
+    .workQueueTop .searchsection .row .col-md-3{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-label-content span {
+        font-size: 14px;
+    }.loginLogo {
+        left: 16vw;
+        height: 100px !important;
+        width: 150px !important;
+    }
+
+ }
+/* End of 768px screen */
+
+/*********** Start of 600px ********/
+@media all and (max-width: 700px) {
+    .userloginMain img:nth-child(1) {
+        height: 20px;
+    }
+    .captureImg img {
+        width: 13px;
+        height: 13px;
+        margin-left: 4px;
+    }
+    .documentIcons button {
+        min-width: 40px;
+        padding: 0 9px;
+    }
+    .radioGroupBtn img {
+        margin: 0px 0px;
+    }
+    app-capture-image button {
+        width: 105px;
+        margin-right: 10px !important;
+        text-align: left !important;
+        padding-left: 22px !important;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-label-content span {
+        font-size: 13px;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version. */
+    .mat-tab-label .mat-tab-label-content {
+        padding: 0px 18px !important;
+    }
+    .ApplicantType .selectionBtn {
+        width: 36%;
+    }
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    /* TODO(mdc-migration): The following rule targets internal classes of form-field that may no longer apply for the MDC version. */
+    .mat-form-field-subscript-wrapper {
+        margin-top: 0px !important;
+    }
+    .radioGroupBtn img {
+        margin: 0px 0px !important;
+    }
+    .imageControl .imgCntrlInner {
+        width: 25%;
+    }
+    .loginLogo {
+        left: 14vw;
+        width: 150px !important;
+        height: 100px !important;
+    }
+    .captureImg.again img {
+        margin-left: 2px;
+        margin-right: 2px !important;
+    }
+    .userloginMain {
+        margin-top: -25px;
+    }
+    .headerMenuMain.active2 {
+        top: 0;
+    }
+    div.scrollFiles .fileDiv {
+        display: inline-block;
+        width: 115px;
+        text-align: center;
+        margin: 0px 5px 0px 5px;
+        cursor: pointer;
+        padding: 0px 10px;
+        border-bottom: 3px solid #fff;
+    }
+}
+/********************/
+
+
+
+
+

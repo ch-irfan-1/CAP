@@ -1,0 +1,89 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Finance Component</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="row bodyContainer FormMain customAccordianMain" style="margin-bottom: 15px;">
+    
+    <div class="col-md-6 noPadding topMargin20">
+      <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Components Added
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="tableMain top10 rentalDetail" style="padding: 0;">
+                <nfs-static-grid [inputArr]="this.addedComponent" [isRadioBtnRequired]="false"
+                [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Mode]="Mode" [Labels]="labels" [pipes]="pipes"
+                [IsActionRequired]="false"></nfs-static-grid>
+              </div>
+          </mat-expansion-panel>
+      </mat-accordion>
+  </div>
+
+  <div class="col-md-6 noPadding topMargin20">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Components Deducted
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tableMain top10 rentalDetail" style="padding: 0;">
+              <nfs-static-grid [inputArr]="this.deductedComponent" [isRadioBtnRequired]="false"
+            [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Mode]="Mode" [Labels]="labels" [pipes]="pipes"
+            [IsActionRequired]="false"></nfs-static-grid>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+  </div>
+  <!-- <div class="fieldContainer leftMargin15">
+    <div class="col-md-4 top15">
+      <nfs-textbox
+        [maxLength]="100"
+        [Placeholder]="'Net Finance Amount'"
+        [Label]="'Net Finance Amount'"
+        formControlName = "NFAAMT"
+      >
+      </nfs-textbox>
+    </div>
+  </div> -->
+
+
+  <ng-container class="row fieldContainer customAccordianMain" [formGroup]="this._dataService.PROPOSALFINANCIALAGREEMENT">
+    <!-- <div class="row fieldContainer">
+      <div class="col-md-3 disable">
+        <nfs-currency formControlName="ADJUSTEDFINANCEDAMT" name="ADJUSTEDFINANCEDAMT"
+          [Placeholder]="'Net Finance Amount'" [Label]="'Net Finance Amount'" [Name]="'ADJUSTEDFINANCEDAMT'"
+          [Component]="'GeneralHeader'" [isControlDisable]="true">
+        </nfs-currency>
+  
+      </div>
+    </div> -->
+    <div class="row bodyContainer fieldContainer" [formGroup]="this._dataService.PROPOSALFINANCIALAGREEMENT">
+      <div class="col-md-12 noPadding">
+        <div class="TabInnerMainForm">
+          <div class="row noMargin btn-right financePadding">
+            <div class="col-md-3 disable noPadding">
+              <nfs-currency formControlName="ADJUSTEDFINANCEDAMT" name="ADJUSTEDFINANCEDAMT"
+                [Placeholder]="'Net Finance Amount'" [Label]="'Net Finance Amount'" [Name]="'ADJUSTEDFINANCEDAMT'"
+                [Component]="'GeneralHeader'" [isControlDisable]="true">
+              </nfs-currency>
+
+              <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

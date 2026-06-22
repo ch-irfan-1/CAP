@@ -1,0 +1,28 @@
+<!-- CROPPER WRAPPER -->
+<div class="cropper-wrapper">
+  <!-- LOADING -->
+  @if (isLoading) {
+    <div class="loading-block">
+      <div class="spinner"></div>
+    </div>
+  }
+
+  <!-- CROPPER -->
+  <div class="cropper">
+    <img
+      #image
+      alt="image"
+      [src]="imageUrl"
+      (load)="imageLoaded($event)"
+      (error)="imageLoadError($event)"
+      />
+    <!-- <div id="button" class="corner-right-button">
+    <a href="#" (click)="rotateImage()" data-role="button">ClockWise</a>
+  </div>
+  <div id="button" class="corner-left-button">
+    <a href="#" (click)="rotateImage(true)" data-role="button"
+      >AntiClockWise</a
+      >
+    </div> -->
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="FormMain">
+
+    <div class="row fieldContainer padding15 paddingTop paddingBottom" [formGroup]="Bank">
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Bank Name'" formControlName="BANKBPID" [Name]="'BANKBPID'"
+                [Component]="this.ComponentName" [controlPlaceholder]="'Bank Name'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._bankMasterDataService.Banks"
+                [Index] = "Index">
+            </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+            <div [ngClass]="{'control-disabled': this.Bank.controls.OTHERBRANCHIND.value==true}">
+            	<nfs-dropdown [Label]="'Branch Name'" formControlName="BANKBRANCHBPID" [Name]="'BANKBRANCHBPID'"
+	                [Component]="this.ComponentName" [controlPlaceholder]="'Branch Name'" [Ismultiselect]="false"
+	                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+	                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.BankBranches"
+                    [isControlDisable]="this.Bank.controls.OTHERBRANCHIND.value==true"
+	                [Index] = "Index">
+                </nfs-dropdown>
+            </div>
+        </div>
+        <div class="col-md-2 top15 top7 otherSection">
+            <!-- <div class="col-md-1"> -->
+                <nfs-checkbox class="example-margin" formControlName="OTHERBRANCHIND" [Name]="'OTHERBRANCHIND'">
+                </nfs-checkbox>
+                <!-- <mat-checkbox class="example-margin" formControlName="OTHERBRANCHIND"></mat-checkbox> -->
+            <!-- </div> -->
+            <div class="col-md-12" style="padding-left: 10px;">
+                <div [ngClass]="{'control-disabled': this.Bank.controls.OTHERBRANCHIND.value!=true}">
+                    <nfs-textbox [maxLength]="100" formControlName="OTOOTHRBRANCHNME" [Name]="'OTOOTHRBRANCHNME'" [Index] = "Index"
+                        [Component]="this.ComponentName" [Placeholder]="'Other'" [Label]="'Other'">
+                    </nfs-textbox>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="50" formControlName="ACCOUNTNME" [Name]="'ACCOUNTNME'" [Index] = "Index"
+                [Component]="this.ComponentName" [Placeholder]="'Account Name'" [Label]="'Account Name'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="25" formControlName="ACCOUNTNBR" [Name]="'ACCOUNTNBR'" [Index] = "Index"
+                [Component]="this.ComponentName" [Placeholder]="'Account No.'" [Label]="'Account No.'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="50" formControlName="CONTACTNME" [Name]="'CONTACTNME'" [Index] = "Index"
+                [Component]="this.ComponentName" [Placeholder]="'Contact Name'" [Label]="'Contact Name'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15" style="margin-top: 0px !important;">
+            <nfs-dropdown [Label]="'Account Type'" formControlName="ACCOUNTTYPCDE" [Name]="'ACCOUNTTYPCDE'"
+                [Component]="this.ComponentName" [controlPlaceholder]="'Account Type'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._bankMasterDataService.AccounTypes"
+                [Index] = "Index"></nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15" style="margin-top: 0px !important;">
+            <nfs-dropdown [Label]="'Bank Currency'" formControlName="CURRENCYCDE" [Name]="'CURRENCYCDE'"
+                [Component]="this.ComponentName" [controlPlaceholder]="'Bank Currency'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._bankMasterDataService.CurrencyType"
+                [Index] = "Index"></nfs-dropdown>
+        </div>
+         <div class="col-md-2 top15 top12"> <!--[ngClass]="{'control-disabled': !this.Bank.controls.BANKBPID.value}"> -->
+            <section class="example-section" >
+                <nfs-checkbox class="example-margin" formControlName="OTODEFAULTIND" [Name]="'OTODEFAULTIND'"
+                    [Label]="'Default Bank'" [isControlDisable]="!this.Bank.controls.BANKBPID.value" (Change)='getBank($event)'>
+                </nfs-checkbox>
+                <!-- <mat-checkbox class="example-margin" formControlName="OTODEFAULTIND" (change)='getBank($event)'>Default
+                    Bank</mat-checkbox> -->
+            </section>
+        </div>
+         <div class="col-md-2 top15 top12" > <!--[ngClass]="{'control-disabled': !this.Bank.controls.ACCOUNTNBR.value}" -->
+            <section class="example-section">
+                <nfs-checkbox class="example-margin" formControlName="ACCOUNTVERIFICATIONINDOTO_Helper" [Name]="'ACCOUNTVERIFICATIONINDOTO_Helper'"
+                    [Label]="'Bank Account Verified'" [isControlDisable]="!this.Bank.controls.ACCOUNTNBR.value">
+                </nfs-checkbox>
+                <!-- <mat-checkbox class="example-margin" formControlName="ACCOUNTVERIFICATIONINDOTO_Helper" >Bank Account Verified
+                </mat-checkbox> -->
+                <!-- (change)='accountVerifiedChange($event)' -->
+            </section>
+        </div>
+    </div>
+</div>

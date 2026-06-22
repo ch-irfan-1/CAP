@@ -1,0 +1,46 @@
+.applicant-sec {
+    background-color: #f8f8f8;
+    padding: 15px 15px;
+    margin-bottom: 25px;
+  }
+  /*   
+TODO(mdc-migration): The following rule targets internal classes of checkbox that may no longer apply for the MDC version. */
+  .applicant-sec .mat-checkbox-layout {
+    margin-top:12px;
+  }
+  
+  .applicant-sec .mat-mdc-raised-button.mat-primary {
+    margin-right: 10px;
+  }
+
+  .btn-right {
+    justify-content: flex-end;
+    display: flex;
+  }
+
+  .commonForm {
+    padding: 15px 0;
+  }
+
+  .exisitingBP-disabled{
+    pointer-events: none;
+  }
+  .assetCond-disabled{
+    pointer-events: none;
+  }
+/*   
+.customerInfo .row{
+  margin: 0px;
+}
+.fieldContainer .col-md-3{
+  padding-right: 0px !important;
+}
+.createLeadHeading p{
+font-size: 14px;
+font-weight: normal;
+padding: 0px 15px;
+font-family: 'Poppins';
+}
+.createLeadHeading {
+  margin-bottom: 25px;
+} */

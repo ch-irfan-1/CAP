@@ -1,0 +1,433 @@
+<div class="row fieldContainer">
+    <ng-container [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+        <div class="col-md-2 top15">
+            <nfs-currency [Placeholder]="'Asset Cost'" [Label]="'Asset Cost'" formControlName="ASSETAMT"
+                [Name]="'ASSETAMT'" [Component]="'Assets'">
+            </nfs-currency>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Down Payment RF'" [Label]="'Down Payment RF'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [Placeholder]="'Application Charges'" [Label]="'Application Charges'"
+                formControlName="CHARGEAMT" [Name]="'CHARGEAMT'" [Component]="'Assets'"></nfs-textbox>
+            <div class="iconPopupMain">
+                <p (click)="openApplicationCharges()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-dropdown [Label]="'Accessories'" [controlPlaceholder]="'Accessories'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown>
+            <div class="iconPopupMain"
+                [ngClass]="{'control-disabled': this._proposalDataService.PROPOSAL.controls.FINANCETYP.value !== '00004'}">
+                <p (click)="openAccessories()">More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Down Payment % RF'" [Label]="'Down Payment % RF'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Net Financed Amount'" [Label]="'Net Financed Amount'">
+            </nfs-textbox>
+            <div class="iconPopupMain">
+                <p (click)="openNetFinancedAmount()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Cost'" [Label]="'Total Cost'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Down Payment'" [Label]="'Total Down Payment'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Net Financed Amount (%)'"
+                [Label]="'Net Financed Amount (%)'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Interest Rate (Effective)'"
+                [Label]="'Interest Rate (Effective)'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Interest Rate (Effective)'"
+            [controlPlaceholder]="'Interest Rate (Effective)'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openInterestRate()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'RV/Balloon'" [Label]="'RV/Balloon'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Adjusted Financed Amount'"
+                [Label]="'Adjusted Financed Amount'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Interest Rate (Fiat)'" [Label]="'Interest Rate (Fiat)'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'RV/Balloon Amount'" [Label]="'RV/Balloon Amount'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-currency [Placeholder]="'Disburse Amount'" [Label]="'Disburse Amount'" formControlName="DSBRAMNTOTO"
+                [Name]="'DSBRAMNTOTO'" [Component]="'Assets'"
+                [ngClass]="{'control-disabled': this._proposalDataService.PROPOSAL.controls.FINANCETYP.value !== '00014'}">
+            </nfs-currency>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Frequency'" [Label]="'Frequency'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Frequency'" [controlPlaceholder]="'Frequency'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown> -->
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'RV/Balloon Amount (%)'" [Label]="'RV/Balloon Amount (%)'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Balance Payable'" [Label]="'Balance Payable'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Rental Mode'" [Label]="'Rental Mode'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Rental Mode'" [controlPlaceholder]="'Rental Mode'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown> -->
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Trade in Amount'" [Label]="'Trade in Amount'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Amount Payable'" [Label]="'Total Amount Payable'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-number [maxLength]="3" [Placeholder]="'Terms(Month)'" [Label]="'Terms(Month)'">
+            </nfs-number>
+            <!-- <nfs-dropdown [Label]="'Terms(Month)'" [controlPlaceholder]="'Terms(Month)'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown> -->
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-dropdown [Label]="'Total Subsidy Amount'" [controlPlaceholder]="'Total Subsidy Amount'"
+                [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown>
+            <div class="iconPopupMain">
+                <p (click)="openTotalSubsidyAmount()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-dropdown [Label]="'Total First Payment'" [controlPlaceholder]="'Total First Payment'"
+                [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown>
+            <div class="iconPopupMain">
+                <p (click)="openTotalFirstPayment()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-currency [Placeholder]="'ET Amount'" [Label]="'ET Amount'" formControlName="ETAMNTOTO"
+                [Name]="'ETAMNTOTO'" [Component]="'Assets'"
+                [ngClass]="{'control-disabled': this._proposalDataService.PROPOSAL.controls.FINANCETYP.value !== '00014'}">
+            </nfs-currency>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Insurance Premium'" [Label]="'Insurance Premium'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Insurance Premium'"
+            [controlPlaceholder]="'Insurance Premium'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openInsurancePremium()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <!-- <nfs-dropdown [Label]="'Total GP Interest Amount'"
+            [controlPlaceholder]="'Total GP Interest Amount'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total GP Interest Amount'"
+                [Label]="'Total GP Interest Amount'">
+            </nfs-textbox>
+            <div class="iconPopupMain">
+                <p (click)="openTotalGPAmount()">More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Comission'" [Label]="'Comission'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Comission'"
+            [controlPlaceholder]="'Comission'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown>
+        <div class="iconPopupMain">
+            <p (click)="openCommission()">More</p>
+        </div> -->
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Insurance Commission-OTO'"
+                [Label]="'Insurance Commission-OTO'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Insurance Commission-OTO'"
+            [controlPlaceholder]="'Insurance Commission-OTO'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openInsuranceCommissionOTO()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Acquisition Income'"
+                [Label]="'Total Acquisition Income'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Total Acquisition Income'"
+            [controlPlaceholder]="'Total Acquisition Income'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openTotalAcquisitionAmount()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Real Rental Amount'" [Label]="'Real Rental Amount'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Insurance Premium PICs'" [Label]="'Insurance Premium PICs'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'NMSIR'" [Label]="'NMSIR'">
+            </nfs-textbox>
+            <div class="iconPopupMain">
+                <p (click)="openNMSIR()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-number [maxLength]="100" [Placeholder]="'Total Admin Fee'" [Label]="'Total Admin Fee'"  formControlName="TOTALADMINFEE"
+            [Name]="'TOTALADMINFEE'" [Component]="'Assets'"></nfs-number>
+            <!-- <nfs-dropdown [Label]="'Total Admin Fee'"
+            [controlPlaceholder]="'Total Admin Fee'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openTotalAdminFee()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Max Insr. Commission PICs'"
+                [Label]="'Max Insr. Commission PICs'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Dealer PO Amount'" [Label]="'Dealer PO Amount'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Dealer PO Amount'"
+            [controlPlaceholder]="'Dealer PO Amount'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openDealerPOAmount()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Provision Fee'" [Label]="'Provision Fee'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Provision Fee'"
+            [controlPlaceholder]="'Provision Fee'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openProvisionFee()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'OJK Insurance Commission'"
+                [Label]="'OJK Insurance Commission'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'OJK Insurance Commission'"
+            [controlPlaceholder]="'OJK Insurance Commission'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openOJKInsuranceCommission()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-datepicker matInput [Placeholder]="'Estimated Invoice Date'" [Label]="'Estimated Invoice Date'">
+            </nfs-datepicker>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Policy Fee'" [Label]="'Policy Fee'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Policy Fee'"
+            [controlPlaceholder]="'Policy Fee'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openPolicyFee()">More</p><!-- (click)="openPolicyFee()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'BBN Agent'" [controlPlaceholder]="'BBN Agent'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._financialClubMasterDataService.BBNAgent"></nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Sec. Deposit'" [Label]="'Total Sec. Deposit'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Total Sec. Deposit'"
+            [controlPlaceholder]="'Total Sec. Deposit'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openTotalSecurityDeposit()">More</p><!-- (click)="openTotalSecurityDeposi()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Fiducia Fee'" [Label]="'Fiducia Fee'">
+            </nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'Fiducia Fee'"
+            [controlPlaceholder]="'Fiducia Fee'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openFiduciaFee()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'BBN Chrages'" [Label]="'BBN Chrages'"></nfs-textbox>
+            <!-- <nfs-dropdown [Label]="'BBN Chrages'"
+            [controlPlaceholder]="'BBN Chrages'" [Ismultiselect]="false" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._masterDataService.FamilySearchCriteria"></nfs-dropdown> -->
+            <div class="iconPopupMain">
+                <p (click)="openBBNChanges()">More</p><!-- (click)="openExposure()" -->
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Term Charges'" [Label]="'Total Term Charges'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Max Commission '" [Label]="'Max Commission '">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Commission'" [Label]="'Total Commission'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Total Income'" [Label]="'Total Income'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'JP1 Commission'" [Label]="'JP1 Commission'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'JP2 Commission'" [Label]="'JP2 Commission'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'JP2 Scheme Commission'" [Label]="'JP2 Scheme Commission'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'Unallocated Expanse'" [Label]="'Unallocated Expanse'">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <span>Commission Distribution</span>
+            <div class="iconPopupMain">
+                <p (click)="openCommissionDistribution()">More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <span>Commission Scheme Configurations</span>
+            <div class="iconPopupMain">
+                <p (click)="openCommissionSchemeConfigurations()">More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">JP1 Commission Include in PO
+                </mat-checkbox>
+            </section>
+        </div>
+        <div class="col-md-2 top15">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">Grace Period Allowed</mat-checkbox>
+            </section>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <span>Repayment</span>
+            <div class="iconPopupMain">
+                <p (click)="openRepaymentPlan()">More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">Installment Pay to Dealer
+                </mat-checkbox>
+            </section>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <span>Article Component Configuration</span>
+            <div class="iconPopupMain">
+                <p (click)="openArticleComponentConfiguration()">More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">Down Payment Dealer Deduction
+                </mat-checkbox>
+            </section>
+        </div>
+        <div class="col-md-2 top15 iconPopup">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">Structured</mat-checkbox>
+            </section>
+            <div class="iconPopupMain">
+                <p (click)='openStructured()'>More</p>
+            </div>
+        </div>
+        <div class="col-md-2 top15">
+            <section class="example-section">
+                <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">Change BKBP Ownership
+                </mat-checkbox>
+            </section>
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,1973 @@
+{
+  "msgDocumentDelete": {
+    "Message": "Document has been deleted successfully."
+  },
+  "msgFile": {
+    "Message": "File"
+  },
+  "FileSizeLessEqual": {
+    "Message": "Must have Size less than or equal to"
+  },
+  "msgDocumentUpload": {
+    "Message": "Documents have been Uploaded successfully"
+  },
+  "errorDocumentUpload": {
+    "Message": "There was an error uploading your file."
+  },
+  "errorDocumentCancel": {
+    "Message": "Please Select a File to Cancel."
+  },
+  "msgDocumentDownload": {
+    "Message": "Document has been Downloaded successfully."
+  },
+  "msgFileDownload": {
+    "Message": "File downloaded successfully."
+  },
+  "msgDocumentNotExist": {
+    "Message": "Document does not Exist."
+  },
+  "FileDeleteConfirm": {
+    "Message": "Are you sure you want to delete the file?"
+  },
+  "QuotationSaveSuccess": {
+    "Message": "Quotation has been saved successfully."
+  },
+  "errorQuotationSave": {
+    "Message": "Exception occurred; Quotation could not be saved."
+  },
+  "SelectFinanceCompany": {
+    "Message": "Please select Finance Company."
+  },
+  "msgEmailAddressValidation": {
+    "Message": "Masukkan Alamat Email yang valid."
+  },
+  "EnterEmailAddress": {
+    "Message": "Please enter valid Email Address."
+  },
+  "QuotaIncreasemsg": {
+    "Message": "Isolated Storage Quota increased to 6 MB Successfully."
+  },
+  "TermLeaseClauseTermARO": {
+    "Message": "Lease Clause should be selected for the starting terms only and ARO can only be selected for the last term."
+  },
+  "msgDuplicateAdditionalInsr": {
+    "Message": "Same Additional Insurance is not allowed against one Term ."
+  },
+  "UserMenuRights": {
+    "Message": "You are not authorized to log in the system. Please contact with your System Administrator."
+  },
+  "AlreadyLoggedIn": {
+    "Message": "User Already Logged In."
+  },
+  "msgloginFieldEmpty": {
+    "Message": "User Name and Password is empty."
+  },
+  "SelectApplicationCurrency": {
+    "Message": "Please select Application Currency."
+  },
+  "SelectMakeBrandModel": {
+    "Message": "Please select Asset's Make, Brand and Model."
+  },
+  "EnterApplicantFirstName": {
+    "Message": "Please enter Applicant first name"
+  },
+  "EnterApplicantLastName": {
+    "Message": "Please enter Applicant last name"
+  },
+  "msgAlreadySelected": {
+    "Message": "is already selected."
+  },
+  "AccessoriesNotAttached": {
+    "Message": "Optional Accessories is not attached with selected asset model"
+  },
+  "DTSSaveSuccess": {
+    "Message": "Document Tracking Sheet has been saved successfully."
+  },
+  "InsuranceAmountAssetCostValidation": {
+    "Message": "Insurance amount can not be less than Asset Cost."
+  },
+  "PremiumAmountInsuranceAmountValidation": {
+    "Message": "Premium insurance amount can not be greater than total insurance Amount."
+  },
+  "msgSelectRegion": {
+    "Message": "Region is not selected."
+  },
+  "OneInsuranceTypeSelection": {
+    "Message": "Only one insurance type can be selected at a time."
+  },
+  "OnlyOneRowAddition": {
+    "Message": "Only one row can be added for each Insurance type."
+  },
+  "NoInsuranceTypeAttached": {
+    "Message": "No Insurance Type is attached."
+  },
+  "NoAdditionalCoverageSelected": {
+    "Message": "Please Select an Additional Coverage."
+  },
+  "TypeAleadySelected": {
+    "Message": "Type is already selected."
+  },
+  "NoAdditionalInsuranceAtteched": {
+    "Message": "No Additional Insurance is attached."
+  },
+  "InsurancePremiumPercentageValidation": {
+    "Message": "Insurance premium Percentage should be between minimum and maximum premium percentage."
+  },
+  "msgAddRow": {
+    "Message": "Please add a row."
+  },
+  "ExpirayDateGreaterThanIssuedDate": {
+    "Message": "Expiry date must be greater than Issued date."
+  },
+  "ExpiryDateGreaterThanApplicationCreationDate": {
+    "Message": "Expiry date must be greater than Application Creation date."
+  },
+  "msgIDAlreadyAdded": {
+    "Message": "ID detail is already added in another Business Partner."
+  },
+  "msgIDType": {
+    "Message": "ID Type"
+  },
+  "EnterIntroducerCommments": {
+    "Message": "Please enter Introducer Comments."
+  },
+  "ApplicationCancelled": {
+    "Message": "Application has been Cancelled"
+  },
+  "RaiseChangeRequest": {
+    "Message": "Please Raise a Change Request to complete Condition(s)."
+  },
+  "ApplicationReviseSuccess": {
+    "Message": "Application revised successfully."
+  },
+  "ApplicationAlreadySubmitted": {
+    "Message": "Application has already been submitted."
+  },
+  "ApplicationResubmitSuccess": {
+    "Message": "Application re-submitted successfully."
+  },
+  "RentalsGenerateForAllAssets": {
+    "Message": "Rentals must be generated for all attached assets."
+  },
+  "SelectRowtoViewDTS": {
+    "Message": "Please select a row to view Document Tracking Screen."
+  },
+  "SelectRowToEditApplication": {
+    "Message": "Please select row to edit Application."
+  },
+  "OperationCannotbePerformed": {
+    "Message": "Operation cannot be performed on selected Application."
+  },
+  "SelectRowToCopyApplication": {
+    "Message": "Please select row to copy Application."
+  },
+  "SelectRowToReviseApplication": {
+    "Message": "Please select row to revise Application."
+  },
+  "SelectFromDate": {
+    "Message": "Please select From Date."
+  },
+  "SelectToDate": {
+    "Message": "Please select To Date."
+  },
+  "FromDateLessThanToDate": {
+    "Message": "From Date should be less than To Date."
+  },
+  "SelectRowToSubmitApplication": {
+    "Message": "Please select a row to submit Application."
+  },
+  "ApplicationChangeRequestAlreadySubmitted": {
+    "Message": "A Change Request is already submitted against selected Application."
+  },
+  "SelectRowToEditTemplate": {
+    "Message": "Please select row to edit Template."
+  },
+  "SlctRowForApplctnFromTmplt": {
+    "Message": "Please select row to create application from template."
+  },
+  "ApplicationWithdrawRequestAlreadySubmitted": {
+    "Message": "A Withdrawal Request is already submitted against selected Application."
+  },
+  "NoConditionAvailable": {
+    "Message": "No Condition is available for this Application."
+  },
+  "StationaryDocumentNotAvailable": {
+    "Message": "No Stationery is attached."
+  },
+  "PrintAcceptanceLetterNotAvailable": {
+    "Message": "Print Acceptance Letter is not available."
+  },
+  "DeleteTemplateConfirm": {
+    "Message": "Are you sure to delete this template?"
+  },
+  "SelectRowToDeleteTemplate": {
+    "Message": "Please select row to delete Template."
+  },
+  "QuotationConvertedSuccess": {
+    "Message": "Quotation has been successfully converted to Application."
+  },
+  "ApplicationAlreadyGeneratedforQuotation": {
+    "Message": "Application has already been generated for this Quotation."
+  },
+  "errorQuotationConvertedToApplication": {
+    "Message": "Exception occurred! Quotation could not converted to Application."
+  },
+  "SelectRowToEditQuotation": {
+    "Message": "Please select row to edit Quotation."
+  },
+  "QuotationCannotConvert": {
+    "Message": "Convert Quotation cannot be open in Edit mode."
+  },
+  "SelectRowToViewQuotation": {
+    "Message": "Please select row to view Quotation."
+  },
+  "SelectRowToCopyQuotation": {
+    "Message": "Please select row to copy Quotation."
+  },
+  "QuotationCancelSuccess": {
+    "Message": "Quotation has been successfully cancelled."
+  },
+  "errorQuotationCancel": {
+    "Message": "Exception occurred! Quotation could not cancelled."
+  },
+  "SelectRowToEdit": {
+    "Message": "Please select a row to edit"
+  },
+  "DataSaveSuccess": {
+    "Message": "Data has been saved successfully."
+  },
+  "msgApplicationCancelled": {
+    "Message": "Application has been Cancelled"
+  },
+  "errorIDTypeEmpty": {
+    "Message": "ID Type cannot be empty."
+  },
+  "msgCannotEmpty": {
+    "Message": "can't be empty."
+  },
+  "msgAlreadyExists": {
+    "Message": "already exists."
+  },
+  "msgAddBorrower": {
+    "Message": "Please Add Borrower."
+  },
+  "msgAppendIndex3": {
+    "Message": "{0} {1} {2}"
+  },
+  "msgSelectAsset": {
+    "Message": "Please select Asset Condition."
+  },
+  "msgMakeModelBrand": {
+    "Message": "Make, Model and Brand."
+  },
+  "msgManufacturer": {
+    "Message": "Manufacturer."
+  },
+  "msgGreaterThanZero": {
+    "Message": "must be greater than zero."
+  },
+  "msgTotalCostOfAsset": {
+    "Message": "Total cost for Asset"
+  },
+  "RentalsAreNotCalculated": {
+    "Message": "Rentals are not Calculated at Asset"
+  },
+  "msgPoliceCategory": {
+    "Message": "Police Category."
+  },
+  "msgAppendIndex4": {
+    "Message": "{0} {1} {2} {3}"
+  },
+  "msgSelectAddressTemplate": {
+    "Message": "Please select Address Template"
+  },
+  "msg's_Address": {
+    "Message": "'s Address"
+  },
+  "msgAddress": {
+    "Message": "Address"
+  },
+  "msgEnter": {
+    "Message": "Please enter"
+  },
+  "msgName": {
+    "Message": "Name."
+  },
+  "msgCustomerID": {
+    "Message": "Customer ID."
+  },
+  "msgIDNumber": {
+    "Message": "ID Number."
+  },
+  "msgFirstName": {
+    "Message": "First name."
+  },
+  "msgLastName": {
+    "Message": "Last name."
+  },
+  "msgValidEmailAddress": {
+    "Message": "'s Valid Email address.s"
+  },
+  "msgAppendIndex6": {
+    "Message": "{0} {1} {2} {3} {4} {5}"
+  },
+  "msgSelect": {
+    "Message": "Please Select "
+  },
+  "msg's_Address-": {
+    "Message": "'s Address-"
+  },
+  "msgAddressFor": {
+    "Message": "Address for"
+  },
+  "msgAppendIndex5": {
+    "Message": "{0} {1} {2} {3} {4}"
+  },
+  "msgFor": {
+    "Message": "for"
+  },
+  "ContractDateCurrentProcessingDateValidation": {
+    "Message": "Contract End date cannot be less than current Processing Date."
+  },
+  "SelectFinanceCompanyBranch": {
+    "Message": "Please select Finance Company Branch."
+  },
+  "SelectIntroducer": {
+    "Message": "Please select Introducer/Dealer."
+  },
+  "SelectTemplateCurrency": {
+    "Message": "Please select Template Currency."
+  },
+  "errorCalculatingMarginRate": {
+    "Message": "Error occoured in calculating margin rate."
+  },
+  "errorInvalidFrequency": {
+    "Message": "Invalid Frequency."
+  },
+  "msgTermsBetween": {
+    "Message": "Terms must be between "
+  },
+  "msgTermsMultiple": {
+    "Message": "Terms must be multiple of "
+  },
+  "msgFrequency": {
+    "Message": " Frequency."
+  },
+  "msgApplicantValidEmail": {
+    "Message": "Please enter Applicant's valid Email address."
+  },
+  "msgApplicantLastName": {
+    "Message": "Please enter Applicant last name."
+  },
+  "msgApplicantFirstName": {
+    "Message": "Please enter Applicant first name."
+  },
+  "SelectQuotationCurrency": {
+    "Message": "Please select Quotation Currency."
+  },
+  "ResubmittingApplicationConditions": {
+    "Message": "Please complete all conditions from Application Queue before Re-Submitting Application."
+  },
+  "errorDuplicateEmailAddress": {
+    "Message": "Duplicate email address(s) are not allowed."
+  },
+  "msgSelectDefaultAddressType": {
+    "Message": "Please select atleast one default Address Type."
+  },
+  "SelectOverPaymentAdjustmentType": {
+    "Message": "Please select any over payment adjustment type."
+  },
+  "SelectSettlementModel": {
+    "Message": "Please select any Settlement model."
+  },
+  "WrongAgreementExpiryDate": {
+    "Message": "Date(s) of Expiry, of agreement, is not correct."
+  },
+  "msgIncompleteAgreementDetail": {
+    "Message": "Please provide complete Agreement Detail."
+  },
+  "errorSameBankDetail": {
+    "Message": "Bank(s) details should not be same."
+  },
+  "msgIncompleteBankDetail": {
+    "Message": "Please provide complete Bank Detail."
+  },
+  "SelectSecretQuestion": {
+    "Message": "Please select Secret Question and its Answer."
+  },
+  "errorEmptyRole": {
+    "Message": "Empty Role not allowed. Select some role."
+  },
+  "msgSelectRole": {
+    "Message": "Please select role."
+  },
+  "errorEmptyName": {
+    "Message": "Name can not be Empty."
+  },
+  "SelectBPSubsidiary": {
+    "Message": "Please select the BP Subsidiary."
+  },
+  "msgDuplicateCommunicationTypes": {
+    "Message": "Some Duplicate Communication types Exist."
+  },
+  "msgDuplicateQuestions": {
+    "Message": "Some Duplicate Questions Exist."
+  },
+  "errorSameIDTypeNumber": {
+    "Message": "ID type number cannot be same."
+  },
+  "EstablishSinceDateValidation": {
+    "Message": "Established Since Date can't be greater than Processing Date."
+  },
+  "WrongDateOfBirth": {
+    "Message": "Date of Birth is not correct."
+  },
+  "SelectClassificationType": {
+    "Message": "Please select Classification Type."
+  },
+  "EnterIDDetail": {
+    "Message": "Please Enter ID Detail."
+  },
+  "msgCountry": {
+    "Message": " Country."
+  },
+  "SelectIndustrySubtype": {
+    "Message": "Please select Industry SubType."
+  },
+  "RestrictBankDelete": {
+    "Message": "Bank can not be deleted."
+  },
+  "RestrictDefaultBankDelete": {
+    "Message": "Default bank can not be deleted."
+  },
+  "RestrictExistingRecordDelete": {
+    "Message": "Existing Record cannot be deleted."
+  },
+  "RestrictAssociatedContactInfoDelete": {
+    "Message": "Contact Info can not be deleted because it has been associated with Contract(s)"
+  },
+  "IncoTermsAdvRent": {
+    "Message": "Terms are not correct with advance rentals."
+  },
+  "SelectFinancialCampaignGroup": {
+    "Message": "Financial Campaign Group is not selected."
+  },
+  "SelectFinancialCampaign": {
+    "Message": "Please select Financial Campaign."
+  },
+  "msgAssetCost": {
+    "Message": "Asset Cost "
+  },
+  "msgFinancedAmount": {
+    "Message": "Financed Amount "
+  },
+  "msgStartDate": {
+    "Message": "Start Date."
+  },
+  "msgRentalMode": {
+    "Message": "Rental Mode."
+  },
+  "msgMissingFinancialMandatorydata": {
+    "Message": "Financial Mandatory data is missing."
+  },
+  "msgIncorrectTerms": {
+    "Message": "Terms are not Correct."
+  },
+  "msgEnterTerms": {
+    "Message": "Terms are not entered."
+  },
+  "ServerPathNotFound": {
+    "Message": "Path not Found on Server."
+  },
+  "NoOptionalAccessoriesAttached": {
+    "Message": "No Optional Accessories Attached."
+  },
+  "SelectRowToLoadInformation": {
+    "Message": "Please select a row to load information."
+  },
+  "msgPasswordExits": {
+    "Message": "Password already Exists."
+  },
+  "msgUserIDFieldEmpty": {
+    "Message": "User Name field is empty."
+  },
+  "msgPasswordFieldEmpty": {
+    "Message": "Password field is empty."
+  },
+  "msgNewPasswordFieldEmpty": {
+    "Message": "New Password field is empty."
+  },
+  "msgConfirmPasswordFieldEmpty": {
+    "Message": "Confirm Password field is empty."
+  },
+  "PasswordNotMatched": {
+    "Message": "Password Not Matched."
+  },
+  "NewPasswordOldPasswordnotbematched": {
+    "Message": "New Password should not be matched with Old Password."
+  },
+  "msgInvalidPasswordLength": {
+    "Message": "Password length is not valid.."
+  },
+  "PasswordContainAtleast": {
+    "Message": "Password should contain atleast "
+  },
+  "msgAppendIndex1": {
+    "Message": "{0}"
+  },
+  "msgSpecialCharacters": {
+    "Message": " special characters."
+  },
+  "DnPayLesAsetCost": {
+    "Message": "Down Payment cannot be greater than or equal to Asset Cost."
+  },
+  "ResBalValueLessAsstCst": {
+    "Message": "Residual Value/Balloon Amount cannot be greater than or equal to Asset Cost."
+  },
+  "TradeInAmountLessThanAssetCost": {
+    "Message": "Trade In Amount cannot be greater than or equal to Asset Cost."
+  },
+  "OnRdCstLesAsetCost": {
+    "Message": "On road cost amount cannot be greater than or equal to Asset Cost."
+  },
+  "DiscAmLesAsetCost": {
+    "Message": "Discount Amount cannot be greater than or equal to Asset Cost."
+  },
+  "msgAllRentalsReset": {
+    "Message": "All defined rentals and repayment schedules will be reset."
+  },
+  "ResBallValLessTtlCst": {
+    "Message": "Residual Value/Balloon Amount cannot be greater than or equal to Total Cost."
+  },
+  "msgNoChargesAttached": {
+    "Message": "No Charges Attached."
+  },
+  "FirstRentalTypeCannotInterestOnly": {
+    "Message": "Rental Mode is Advance, So first Rental Type cannot be Interest Only."
+  },
+  "LastRentalBalloon": {
+    "Message": "Last Rental is Balloon."
+  },
+  "EndEqContTerm": {
+    "Message": "End term cannot be greater than contract term."
+  },
+  "EndTermGreaterEqualStartTerm": {
+    "Message": "End term cannot be less than start term."
+  },
+  "AtleastOneRetalAuto": {
+    "Message": "At least one rental should be Auto."
+  },
+  "RntlStrctgrtrFinAmnt": {
+    "Message": "Rental Structure Amount cannot be greater than Net Finance Amount."
+  },
+  "EntrValidRntlStrctAmnt": {
+    "Message": "Please enter a valid Rental Structure amount."
+  },
+  "CalculationException": {
+    "Message": "Exception occurred while performing Calculation."
+  },
+  "CalculationUnsuccessfull": {
+    "Message": "Calculation is not successfully completed."
+  },
+  "PasswordNotVerified": {
+    "Message": "Password not verified."
+  },
+  "AccountLockedInActive": {
+    "Message": "Account is Locked/In-Active, Please contact your system administrator to unlock your account."
+  },
+  "msgUserNotExits": {
+    "Message": "User does not exist."
+  },
+  "CompanyNotAssigned": {
+    "Message": "Company not assigned."
+  },
+  "AccntLockedWrngAtmpts": {
+    "Message": "Account is locked due to too many wrong attempts to Login. Please contact your system administrator to unlock your account."
+  },
+  "PasswordhasExpired": {
+    "Message": "Your Password has been expired.Please change your password ?"
+  },
+  "RentalsNotCalculated": {
+    "Message": "Rentals are not calculated."
+  },
+  "VerifyAllDocuments": {
+    "Message": "Please verify all attached documents."
+  },
+  "SearchCriteriaRequired": {
+    "Message": "Please provide search criteria."
+  },
+  "NoRecordFound": {
+    "Message": "No record found."
+  },
+  "NoAssetAssociated": {
+    "Message": "No Asset is associated with this Financial Campaign."
+  },
+  "DuplicateDefaultAddress": {
+    "Message": "Duplicate Default Address Found! Previous default addresses are removed."
+  },
+  "OtherAddrsTmpltNotAllowed": {
+    "Message": "Other address templates are not allowed."
+  },
+  "YearNotGrtrthnCrtndt": {
+    "Message": "Year cannot be greater than application creation date."
+  },
+  "errorFileDownload": {
+    "Message": "Error in file downloading."
+  },
+  "RsdualValueGrtrthnNtFinancAmt": {
+    "Message": "Residual Value can not be greater than Net Finance Amount."
+  },
+  "CmpgnAsstnRmvd": {
+    "Message": "Financial Campaign association is removed."
+  },
+  "CmpgnAsstnRmvdCantSubm": {
+    "Message": "Can not Submit Application because Financial Campaign association is removed "
+  },
+  "CantSubmtCmpgnAsstnRmvd": {
+    "Message": "Can not Submit Application because Financial Campaign association is removed."
+  },
+  "CantSubmtQuotCmpgnAsstnRmvd": {
+    "Message": "Can not Submit Quotation because Financial Campaign association is removed."
+  },
+  "CantSbmtApplctn": {
+    "Message": "Can not Submit Application because Company association is removed."
+  },
+  "CantSbmtQuotApplctn": {
+    "Message": "Can not Submit Quotation because Company association is removed."
+  },
+  "CantSbmtApplctnIntr": {
+    "Message": "Can not submit Application because introducer association is removed."
+  },
+  "CantSbmtQuotctnIntr": {
+    "Message": "Can not submit Quotation because introducer association is removed."
+  },
+  "ExcptnRtrvngTmpltCnfg": {
+    "Message": "Exception occurred while retrieving configuration template."
+  },
+  "ExcptnRtrvngApplctn": {
+    "Message": "An Error occurred while retrieving Application."
+  },
+  "CmpnyAsstnRmvd": {
+    "Message": "Company association is removed."
+  },
+  "IntrducrAsstnRmvd": {
+    "Message": "Introducer association is removed."
+  },
+  "TmpltSaveSuccess": {
+    "Message": "Template Saved Successfully."
+  },
+  "ApplctnReviseSuccess": {
+    "Message": "Application revised successfully."
+  },
+  "IntrducrBranchAsstnRmvd": {
+    "Message": "Introducer Branch association is removed."
+  },
+  "CantSubmtIntrBrnchAstnRmvd": {
+    "Message": "Can not Submit Application because Introducer Branch association is removed."
+  },
+  "CantSubmtQuotIntrBrnchAstnRmvd": {
+    "Message": "Can not Submit Quotation because Introducer Branch association is removed."
+  },
+  "CmpnyBranchAsstnRmvd": {
+    "Message": "Company Branch association is removed."
+  },
+  "CantSubmCmpnyBranchAsstnRmvd": {
+    "Message": "Can not Submit Application because Company Branch association is removed."
+  },
+  "CantSubQuotCmpBrncAstnRmvd": {
+    "Message": "Can not Submit Quotation because Company Branch association is removed."
+  },
+  "ApplctnRntlsNotGnratd": {
+    "Message": "Rentals are not generated for this Application."
+  },
+  "TmpltDeletedSuccess": {
+    "Message": "Template Deleted Successfully."
+  },
+  "TmpltDeleteError": {
+    "Message": "An Exception occured, Template could not be deleted."
+  },
+  "CantSbmtQuot": {
+    "Message": "Can not Submit Quotation because "
+  },
+  "ExcpOccrSaving": {
+    "Message": "An Exception occurred while saving"
+  },
+  "AplcSaveSuccess": {
+    "Message": "Application Saved Successfully."
+  },
+  "aplcSbmtSucc": {
+    "Message": "Application Submitted Successfully."
+  },
+  "aplcSbmtExcpt": {
+    "Message": "An Exception occured while submitting application."
+  },
+  "ChangeRequestAlreadySubmitted": {
+    "Message": "A Change Request is already Submitted."
+  },
+  "ChangeRequestSubmitSuccess": {
+    "Message": "Change Request Submitted Successfully."
+  },
+  "WithdrawlRequestAlreadySubmitted": {
+    "Message": "A Withdrawal Request is already Submitted."
+  },
+  "WithdrawlRequestSubmitSuccess": {
+    "Message": "Withdrawal Request Submitted Successfully."
+  },
+  "RsdulValueequalChk": {
+    "Message": "Residual Value cannot be greater than or equal to Total Cost."
+  },
+  "SubsidyCalcInfo": {
+    "Message": "Subsidy is not calculated because Financer % is Less than intorduer OR Financer Margin is less than Customer."
+  },
+  "Operationcantprfrmed": {
+    "Message": "Operation can't be performed on selected Application."
+  },
+  "SlctRowtoViewApplctn": {
+    "Message": "Please select row to view Application."
+  },
+  "errcnvrtedQuotEditMode": {
+    "Message": "Converted Quotation can't be open in Edit mode."
+  },
+  "msgfilldefaultrecord": {
+    "Message": "Please fill default record."
+  },
+  "msgFillAllRecord": {
+    "Message": "Please fill all records."
+  },
+  "IDTypeCantEmpty": {
+    "Message": "ID Type or Id number can't be empty."
+  },
+  "IDNoCantEmpty": {
+    "Message": "{0} can't be empty."
+  },
+  "PremiumInsrAmtInsuranceAmountValidation": {
+    "Message": "Premium insurance amount can not be greater than Insurance Amount."
+  },
+  "DocDeleteSuccess": {
+    "Message": "Document has been deleted successfully."
+  },
+  "docDownldedSucc": {
+    "Message": "Documents has been Downloaded successfully."
+  },
+  "passContSpclChar": {
+    "Message": "Password should contain atleast {0} special characters."
+  },
+  "deletfile": {
+    "Message": "Do you want to delete the file?"
+  },
+  "fileNotExist": {
+    "Message": "File does not Exist"
+  },
+  "rentModFirstInterst": {
+    "Message": "Rental Mode is Advance, So first rental Type cant be Interest Only"
+  },
+  "tradAmtgrtTotCost": {
+    "Message": "Trade In Amount cannot be greater than or equal to Total Cost"
+  },
+  "disbrAmtZero": {
+    "Message": "Disburse amount cannot be zero"
+  },
+  "strtdtegretBaseRteDte": {
+    "Message": "Start Date must be greater than the Base Rate Effective Date"
+  },
+  "minonebaserte": {
+    "Message": "Minimum one Base Rate slab is required against asset"
+  },
+  "revFreqMissCamgn": {
+    "Message": "Revision Frequency Code is missing for selected Financial Campaign."
+  },
+  "FinCompanyntSel": {
+    "Message": "Finance Company is not selected."
+  },
+  "FinCompanybrnchntSel": {
+    "Message": "Finance Company Branch is not selected."
+  },
+  "AsetCostGreatZero": {
+    "Message": "Asset Cost must be greater than zero."
+  },
+  "StrtDteNtSel": {
+    "Message": "Start Date is not selected."
+  },
+  "frqncyNtSel": {
+    "Message": "Rental Frequency is not selected."
+  },
+  "RntlModNtSel": {
+    "Message": "Rental Mode is not selected"
+  },
+  "TermsNtSel": {
+    "Message": "Terms are not selected."
+  },
+  "TermsNtCorct": {
+    "Message": "Terms are not Correct."
+  },
+  "AsetNtSel": {
+    "Message": "Asset is not selected."
+  },
+  "totCostGretZero": {
+    "Message": "Total Cost must be greater than zero at Asset."
+  },
+  "FinlAmtGretZero": {
+    "Message": "Financed Amount must be greater than zero at Asset."
+  },
+  "OthrAddTpleNotAllow": {
+    "Message": "Other address templated are no allowed"
+  },
+  "cantConnectServer": {
+    "Message": "Can not Connect to Server!"
+  },
+  "onRoadCostGrtZero": {
+    "Message": "On road cost cannot be greater than or equal to Total Cost"
+  },
+  "downPayGretZero": {
+    "Message": "Down Payment cannot be greater than or equal to Total Cost"
+  },
+  "plzSelectAsset": {
+    "Message": "Please select Asset - Make, Model and Brand"
+  },
+  "plzSelectAssetManf": {
+    "Message": "Please select Asset - Manufacturer"
+  },
+  "plzSelectTotCost": {
+    "Message": "Asset - Total Cost must be greater than zero."
+  },
+  "plzSelectAssetPolic": {
+    "Message": "Please select Asset -  Police Category"
+  },
+  "plzSelectAsetInsPlicy": {
+    "Message": "Asset - insurance premium is zero so kindly set insurance policy fee charges to zero."
+  },
+  "plzEntAddr": {
+    "Message": "Please enter Address"
+  },
+  "msgDocumentRemove": {
+    "Message": "Document has been Removed successfully."
+  },
+  "plzEntName": {
+    "Message": "Please enter Name."
+  },
+  "plzEntCustID": {
+    "Message": "Please enter Customer ID."
+  },
+  "plzEntIDNBR": {
+    "Message": "Please enter ID Number."
+  },
+  "plzEntfirstName": {
+    "Message": "Please enter First name."
+  },
+  "plzEntlstName": {
+    "Message": "Please enter Last name."
+  },
+  "plzEntEmail": {
+    "Message": "Please enter Valid Email address for {0}"
+  },
+  "plzslctAddforResedential": {
+    "Message": "Please select Residential Address Type detail for Borrower"
+  },
+  "plzslctAddforRgstrd": {
+    "Message": "Please select Legal Address Type detail"
+  },
+  "plzslctAddforInvc": {
+    "Message": "Please select Invoice Address Type detail"
+  },
+  "plzslctAddforMail": {
+    "Message": "Please select Mailing Address Type detail"
+  },
+  "plzslctAddforOffical": {
+    "Message": "Please select Official Address Type detail for {0}"
+  },
+  "plzslctdefAdd": {
+    "Message": "Please select Default Address"
+  },
+  "calculating": {
+    "Message": "Calculating..."
+  },
+  "loadData": {
+    "Message": "Loading Data..."
+  },
+  "saving": {
+    "Message": "Saving..."
+  },
+  "Submitting": {
+    "Message": "Submitting..."
+  },
+  "Converting": {
+    "Message": "Converting..."
+  },
+  "InitParam": {
+    "Message": "Initializing Parameters..."
+  },
+  "IntSecur": {
+    "Message": "Initializing Security..."
+  },
+  "IntLangParm": {
+    "Message": "Initializing Language Parameters..."
+  },
+  "slctAssetSrchCriteria": {
+    "Message": "Please provide search criteria."
+  },
+  "acntexpired": {
+    "Message": "Your account has expired. Please contact your system administrator."
+  },
+  "SlctBrrwrDfltBank": {
+    "Message": "Borrower - Please select default bank."
+  },
+  "SlctCoBrrwrDfltBank": {
+    "Message": "Co-Borrower - Please select default bank."
+  },
+  "SlctGrntrDfltBank": {
+    "Message": "Guarantor - Please select default bank."
+  },
+  "valuenotProvided": {
+    "Message": "' value is not provided at '"
+  },
+  "ReleaseYearValidation": {
+    "Message": "Release Year can not be greater than Current Processing Year."
+  },
+  "folFieldMiss": {
+    "Message": "Following Fields are Missing:"
+  },
+  "msgAddCvrgDel": {
+    "Message": "All Additional Coverages are removed."
+  },
+  "ExcpOccrsubmitingreq": {
+    "Message": "An Exception occurred while submitting request"
+  },
+  "SessionResetForcefully": {
+    "Message": "Do you want to end the previous session forcefully?"
+  },
+  "passExprDaysLeft": {
+    "Message": "Your Password will Expire after {0} Day(s). Do you want to change your password?"
+  },
+  "msgUsrAlreadyCnct": {
+    "Message": "User is already connected! Do you want to login forcefully?"
+  },
+  "IDTypeDefIssExpDte": {
+    "Message": "Please enter Issue Date and Expiry Date of Default ID Type. "
+  },
+  "AccountNotActived": {
+    "Message": "Your account has not been activated. Please contact your system administrator."
+  },
+  "UsrCnfgMisin": {
+    "Message": "User configuration is missing. Please contact your system administrator."
+  },
+  "ClientVersionMismatch": {
+    "Message": "Client version mismatch detected."
+  },
+  "DBVersionMismatch": {
+    "Message": "Database version mismatch detected."
+  },
+  "ClientVersionInfoMis": {
+    "Message": "Client version information missing."
+  },
+  "DBVersionInfoMis": {
+    "Message": "Database version information missing."
+  },
+  "duplicateBanksBorrower": {
+    "Message": "Bank(s) details should not be same for Borrower"
+  },
+  "duplicateBanksCoBorrower": {
+    "Message": "Bank(s) details should not be same for CoBorrower"
+  },
+  "duplicateBanksGuarantor": {
+    "Message": "Bank(s) details should not be same for Guarantor"
+  },
+  "EnterCancellationReason": {
+    "Message": "Please input Cancellation Comments and Cancellation Reason."
+  },
+  "EnterWithdrawnReason": {
+    "Message": "Please enter Withdrawn Reason."
+  },
+  "ActDirtyAuthenFail": {
+    "Message": "Active Directory Authentication Failed."
+  },
+  "WtdrwlReqtAlrdySubmittedcantRevise": {
+    "Message": "Application cannot be Revised because there is a pending Withdrawal Request."
+  },
+  "ChangeReqtAlrdySubmittedcantRevise": {
+    "Message": "Application cannot be Revised because there is a pending Change Request."
+  },
+  "plzslctAddforLegal": {
+    "Message": "Please select Legal Address Type detail for Borrower"
+  },
+  "errorDocumentUploadPath": {
+    "Message": "Document Uploading Directory Does Not Exist."
+  },
+  "DayEndInProcess": {
+    "Message": "Day End is In Process. Please Try Later."
+  },
+  "plzslctAddforEmergency": {
+    "Message": "Please select atleast one Emergency Address Type detail"
+  },
+  "plzslctDiffAddress": {
+    "Message": "Emergency Address and Default Address can't be same"
+  },
+  "AssetUsageDownPaymentPercentValidation": {
+    "Message": "Down payment percentage cannot be less than the configured rate against selected asset usage type."
+  },
+  "ApplicationConverted": {
+    "Message": "iSURE Application converted with application number {0}."
+  },
+  "AdminFeeFinanceAmountValidation": {
+    "Message": "Financed admin fee can not be greater than total admin fee."
+  },
+  "IsureApplicationAlreadyConverted": {
+    "Message": "Application already converted."
+  },
+  "BPKBNumber": {
+    "Message": "Please enter BPKB Number"
+  },
+  "BPKBDate": {
+    "Message": "Please enter BPKB Date"
+  },
+  "EngineChasisNo": {
+    "Message": "Engine Number/Chassis Number already exist against "
+  },
+  "ExcpOccrConverting": {
+    "Message": "An Exception occurred while converting."
+  },
+  "NoOfinstallmentValidation": {
+    "Message": "No. of Installments cannot be greater than Contract Terms"
+  },
+  "AdminFeeDiscountValidation": {
+    "Message": "Admin Fee Discount cannot be greater than Total Admin Fee."
+  },
+  "AdminFeeSubsidytValidation": {
+    "Message": "Admin Fee Subsidy cannot be greater than Total Admin Fee."
+  },
+  "ProvisionCommissionValidation": {
+    "Message": "Provision Fee Commission cannot be greater than Provision Fee Amount."
+  },
+  "DealerAdminFeeCommission": {
+    "Message": "Admin Fee Commission cannot be greater than Total Admin Fee."
+  },
+  "AddGuarantorDetl": {
+    "Message": "Please add Guarantor Detail at BPKB"
+  },
+  "PreviousBPKBSubmitted": {
+    "Message": "Changes Saved Successfully."
+  },
+  "ChangesSavedSuccessfully": {
+    "Message": "Changes Saved Successfully !"
+  },
+  "BPKBNumberalreadyexists": {
+    "Message": "BPKB Number already exists"
+  },
+  "ValidateBPKBFacilityLimit": {
+    "Message": "BPKB facility limit has reached its maximum allowed limit"
+  },
+  "SlctRowtoprntStnry": {
+    "Message": "Please Select row to print Stationery"
+  },
+  "PrntStnrySuccess": {
+    "Message": "Stationery has been printed successfully."
+  },
+  "UseForSmsValidation": {
+    "Message": "Use for sms can only be marked for Mobile Type of Default Address."
+  },
+  "msgNoChangesFound": {
+    "Message": "No Changes Detected !"
+  },
+  "ReSurveySuccessful": {
+    "Message": "Re-Survey Process Initiated Successfully."
+  },
+  "ReSurveyConflictDetected": {
+    "Message": "Conflict Detected. Please re-Open to load updated data."
+  },
+  "ReSurveyNotInitiated": {
+    "Message": "Re-Survey cannot be initiated against converted application."
+  },
+  "ReSurveyInProcess": {
+    "Message": "Re-Survey in process."
+  },
+  "ExcpOccrReSurvey": {
+    "Message": "An Exception occurred while initiating Re-Survey."
+  },
+  "ExcpOccrViewDoc": {
+    "Message": "An Exception occurred while viewing document."
+  },
+  "TermLeaseClause": {
+    "Message": "Lease Clause should be selected for the stating terms only."
+  },
+  "TermLeaseClauseMultipleInsrs": {
+    "Message": "Lease clause selection is not allowed for mulitple terms ."
+  },
+  "EnterReSurveyReason": {
+    "Message": "Please enter Re-Survey Reason."
+  },
+  "SubsidyPasstoCustomerValidation": {
+    "Message": "Subsidy cannot pass to customer as financer rate is 0"
+  },
+  "AROTypeAdded": {
+    "Message": "Selection of ARO Insurance is only allowed for last terms"
+  },
+  "commissionPasstoCustomerValidation": {
+    "Message": "In case of downpayment subsidy commission cannot pass to customer."
+  },
+  "fileUsedByOtherProcess": {
+    "Message": "The file '{0}' is being used by another process."
+  },
+  "TermsNtCorctInsr": {
+    "Message": "Insurance Terms should be equal to Contract Terms plus Grace period terms."
+  },
+  "msgFieldVisitSubmitted": {
+    "Message": "Field visit feedback saved successfully."
+  },
+  "msgFieldVisitSubmittedError": {
+    "Message": "Field Visit feedback can not be Saved."
+  },
+  "msgReCalculateInsurance": {
+    "Message": "Insurance will be reset , Please recalculate the insurance."
+  },
+  "EngineChasisNoNULL": {
+    "Message": "Please enter Engine Number/Chasis Number at Vehicle Detail."
+  },
+  "ReSurveyForonlyiSURE": {
+    "Message": "Re-Survey can only be initiated against application created from iSURE."
+  },
+  "ReSurveyIncorrectResponse": {
+    "Message": "Re-Survey response is not correct."
+  },
+  "msgBPKBNumberDuplicate": {
+    "Message": "BPKB Number already exists against {0}"
+  },
+  "msgLicencePlateNumber": {
+    "Message": "Licence Plate Number is required against used asset"
+  },
+  "plzinputemergencyaddress": {
+    "Message": "Please Input Emergency Addess Information"
+  },
+  "FixPremiumAmtLimit": {
+    "Message": "Fix Premium amount should fall in the defined limit."
+  },
+  "InsrPremTypeReqStnd": {
+    "Message": "Insurance Premium type is required against standard insurance."
+  },
+  "msgDealerSearchCriteria": {
+    "Message": "Please Select Search Criteria."
+  },
+  "msgDealerSearchNoSelectMessage": {
+    "Message": "Please Select Dealer."
+  },
+  "msgDealerSearchEmpty": {
+    "Message": "Please Enter Value to Search."
+  },
+  "msgManufacturingDate": {
+    "Message": "'Manufacturing Year' value is not provided at 'Vehicle Detail'"
+  },
+  "msgVehicleColor": {
+    "Message": "'Color' value is not provided at 'Vehicle Detail'"
+  },
+  "msgCreditPurpose": {
+    "Message": "'Credit Purpose' value is not provided at 'Vehicle Detail'"
+  },
+  "msgContactAddressCountExceeded": {
+    "Message": "Contact Address can not be more than 1."
+  },
+  "plzslctAddforContact": {
+    "Message": "Please select Contact Address Type detail."
+  },
+  "msgSignatorySelectAgain": {
+    "Message": "Signatory type already selected"
+  },
+  "msgSignatoryFirstNotSelect": {
+    "Message": "Signatory First not selected"
+  },
+  "msgSignatorySecondNotSelected": {
+    "Message": "Signatory Second not selected"
+  },
+  "msgNPWPNotSelected": {
+    "Message": "Please input NPWP ID."
+  },
+  "msgAliasNameEmpty": {
+    "Message": "Please input Alias Name."
+  },
+  "msgDebtorCategoryEmpty": {
+    "Message": "Please input Applicant Debtor Category."
+  },
+  "msgFixPhoneNumberEmpty": {
+    "Message": "Fixed Line Number at Default Address."
+  },
+  "msgEmploymentDatesEmpty": {
+    "Message": "From Date and To Date is missing at Employment Details."
+  },
+  "msgEmploymentFromDateCannotBeGreaterthanToDate": {
+    "Message": "From Date Cannot be greater than To Date for {0}."
+  },
+  "msgBPKBNumberEmpty": {
+    "Message": "Please input BPKB Number at BPKB Detail."
+  },
+  "msgBPKBDateEmpty": {
+    "Message": "Please input BPKB Date at BPKB Detail."
+  },
+  "msgApplChargesEmpty": {
+    "Message": "Total Application Charges should be greater than Zero."
+  },
+  "msgSpouceBirthplaceEmpty": {
+    "Message": "Borrower's Spouse Birth Place is Empty."
+  },
+  "msgSpouceExpiryDateEmpty": {
+    "Message": "Peminjam Pasangan ID Tanggal Berakhir Kosong."
+  },
+  "msgSpouceAddressEmpty": {
+    "Message": "Borrower's Spouse ID Expiry Date is Empty."
+  },
+  "msgMobileNumberEmpty": {
+    "Message": "Mobile Phone Number is missing from Default Address."
+  },
+  "msgFamilyMembNameEmpty": {
+    "Message": "Please input Family Member Name."
+  },
+  "msgFamilyMembDOBEmpty": {
+    "Message": "Please input Family Member DOB."
+  },
+  "msgFamilyCardNoEmpty": {
+    "Message": "Please input Family Member Card Number."
+  },
+  "msgFamilyRelationshipEmpty": {
+    "Message": "Please input Family Member Relationship."
+  },
+  "msgFamilyGenderEmpty": {
+    "Message": "Please input Family Member Gender."
+  },
+  "msgFamilyOccupationEmpty": {
+    "Message": "Please input Family Occupation is Missing"
+  },
+  "msgAsstUsgeTypeEmpty": {
+    "Message": "Please input Asset Usage Type."
+  },
+  "msgAdminFeeEmpty": {
+    "Message": "Total Admin Fee can not be Zero."
+  },
+  "msgBPKBOwnerCatgEmpty": {
+    "Message": "Please input BPKB Owner Category."
+  },
+  "msgBPKBOwnerTypeEmpty": {
+    "Message": "Please input BPKB Owner Type."
+  },
+  "msgBPKBOwnerGenderEmpty": {
+    "Message": "Please input BPKB Owner's Gender."
+  },
+  "msgBPKBOwnerKTPEmpty": {
+    "Message": "Please input BPKB Owner KTP ID."
+  },
+  "msgBPKBOwnerSIUPEmpty": {
+    "Message": "Please input BPKB Owner SIUP ID."
+  },
+  "msgBPKBOwnerSpouceAddEmpty": {
+    "Message": "Please input BPKB Owner Spouse Address."
+  },
+  "msgBPKBholderAddressEmpty": {
+    "Message": "Please input BPKB Owner Holder Address."
+  },
+  "msgVehicleChassisEmpty": {
+    "Message": "Chassis No is missing at Vehicle Detail."
+  },
+  "msgVehicleLicPlateEmpty": {
+    "Message": "Lic Plate No is missing at Vehicle Detail."
+  },
+  "msgVehicleEngineNoEmpty": {
+    "Message": "Engine No is missing at Vehicle Detail."
+  },
+  "msgInsuranceEmpty": {
+    "Message": "Please select atleast one standard insurance"
+  },
+  "msgRepresentativeTypeEmpty": {
+    "Message": "Please select Representative Type."
+  },
+  "msgBPKBOwnerNameEmpty": {
+    "Message": "Please input BPKB Owner Name."
+  },
+  "msgBPKBHolderNameEmpty": {
+    "Message": "Please input BPKB Holder Name."
+  },
+  "ExcptnRtrvngCnfg": {
+    "Message": "Exception occurred while retrieving Commission configuration."
+  },
+  "msgCommGreaterthan100": {
+    "Message": "Total sum of JP1 Commission %, JP2 Commission % and JP2 Scheme % against each Commission type should not be greater than 100%."
+  },
+  "msgJP1AmntGreater": {
+    "Message": "Sum of JP1 commission amount cannot be greater than total JP1 Commission amount."
+  },
+  "msgJP2AmntGreater": {
+    "Message": "Sum of JP2 commission amount cannot be greater than total JP2 Commission amount."
+  },
+  "msgMarketCommFixedAmountCantGreater": {
+    "Message": "Fix Commission Amount can not be greater than max commission amount."
+  },
+  "msgMarketCommIncomeDefaultCantGreater": {
+    "Message": "Percentage Income can not be greater than max commission percentage."
+  },
+  "msgMarketCommNFADefaultCantGreater": {
+    "Message": "Percentage NFA can not be greater than max commission percentage."
+  },
+  "msgMarketCommMarketDefaultCantGreater": {
+    "Message": "Percentage marketing fee can not be greater than max commission percentage fee."
+  },
+  "msgCalculateCommissionIndicator": {
+    "Message": "System will not perform any commission calculations."
+  },
+  "msgDuplicateRecipient": {
+    "Message": "Selected Recipient already exist."
+  },
+  "msgCustomOnSavingOrSubmitting": {
+    "Message": "Data is not loaded properly.Please load the data."
+  },
+  "msgBPKBReceivedRF": {
+    "Message": "BPKB received status should be Received"
+  },
+  "msgBPKBOwnerDOB": {
+    "Message": "Please input BPKB Owner DOB."
+  },
+  "msgBPKBOwnerMaritalStatus": {
+    "Message": "Please input BPKB Owner's Marital Status."
+  },
+  "msgBPKBOwnerAddress": {
+    "Message": "Please input BPKB Owner's Address Description."
+  },
+  "msgPrintOVPStationaryFirst": {
+    "Message": "Print OVP Stationary."
+  },
+  "msgBPKBKotamadya": {
+    "Message": "'Kotamadya/Kabupaten' value is not provided at 'BPKB Owner Address'"
+  },
+  "msgBPKBKecamatan": {
+    "Message": "'Kecamatan' value is not provided at 'BPKB Owner Address'"
+  },
+  "msgBPKBKelurahan": {
+    "Message": "'Kelurahan/Desa' value is not provided at 'BPKB Owner Address'"
+  },
+  "msgBPKBProvince": {
+    "Message": "'Province' value is not provided at 'BPKB Owner Address"
+  },
+  "msgBPKBRT": {
+    "Message": "'RT ###' value is not provided at 'BPKB Owner Address'"
+  },
+  "msgBPKBRW": {
+    "Message": "'RW ###' value is not provided at 'BPKB Owner Address'"
+  },
+  "PrntStnryError": {
+    "Message": "Exception occured while printing stationary."
+  },
+  "msgPrintDocIsNotValid": {
+    "Message": "Document is not valid to print."
+  },
+  "msgDocTrackingNull": {
+    "Message": "Error occurred while Saving."
+  },
+  "msgDocTrackingCommunication": {
+    "Message": "Application Server is not Responding.."
+  },
+  "msgDocTrackingDB": {
+    "Message": "Database Server is not Responding."
+  },
+  "msgSelectArticleCompnentConfig": {
+    "Message": "Article Component configuration is missing."
+  },
+  "msgGrndrmissing": {
+    "Message": "Guarantor details are missing from Borrower."
+  },
+  "msgCityofRegisteration": {
+    "Message": "'City of Registration' value is not provided at 'Vehicle Detail'"
+  },
+  "msgBPKBOwnerSpouseName": {
+    "Message": "'BPKB Owner Spouse Name' value is not provided at 'BPKB Detail'"
+  },
+  "msgSelectInsrCompLC": {
+    "Message": "Insurance Company must be selected against Lease Clause."
+  },
+  "msgSalaryLessThanZero": {
+    "Message": "Applicant's Salary must be greater than Zero."
+  },
+  "msgBankBranchMissing": {
+    "Message": "Branch Name is missing from Bank Details."
+  },
+  "msgmissingdepriciation": {
+    "Message": "Please select depreciation policy"
+  },
+  "msgMultipleStandardInsurance": {
+    "Message": "Only one standard insurance can be added in case of refinance application"
+  },
+  "msgSelectAssetCondition": {
+    "Message": "Please select Asset Condition."
+  },
+  "msgSelectKTPID": {
+    "Message": "KTP ID must be selected."
+  },
+  "msgSelectSUIPID": {
+    "Message": "SUIP ID must be selected."
+  },
+  "msgRecipientValidation": {
+    "Message": "Recipient Name can not be empty"
+  },
+  "erroriSUREGeotagging": {
+    "Message": "Exception occured while iSURE Geotagging."
+  },
+  "msgiSUREGeotagging": {
+    "Message": "iSURE Geotagging can only be viewed for iSURE applications."
+  },
+  "msgSpouceBirthplaceEmptyofBorrower": {
+    "Message": "Borrower's Spouse Birth Place is Empty ."
+  },
+  "msgSpouceBirthplaceEmptyofCoBorrower": {
+    "Message": "Co-Borrower's Spouse Birth Place is Empty ."
+  },
+  "msgSpouceBirthplaceEmptyofGuranter": {
+    "Message": "Guarantor's Spouse Birth Place is Empty ."
+  },
+  "msgSpouceExpiryDateEmptyofBorrower": {
+    "Message": "Borrower's Spouse ID Expiry Date is Empty."
+  },
+  "msgSpouceExpiryDateEmptyCoBorrower": {
+    "Message": "Co-Borrower's Spouse ID Expiry Date is Empty."
+  },
+  "msgSpouceExpiryDateEmptyofGuarantor": {
+    "Message": "Guarantor's Spouse ID Expiry Date is Empty."
+  },
+  "msgSpouceAddressEmptyofBorrower": {
+    "Message": "Borrower's Spouce Address is Empty."
+  },
+  "msgSpouceAddressEmptyofCoBorrower": {
+    "Message": "Co-Borrower's Spouce Address is Empty."
+  },
+  "msgSpouceAddressEmptyofGuarantor": {
+    "Message": "Guarantor's Spouce Address is Empty."
+  },
+  "ProvisionFeeReset": {
+    "Message": "Provision Fee details has been reset."
+  },
+  "msgReSurveyTimeout": {
+    "Message": "Submit Request Failed. Please Try Again."
+  },
+  "AddBankDetailRF": {
+    "Message": "Please add Bank Details."
+  },
+  "msgBadCustomerQuestion": {
+    "Message": "Do you want to mark this Business Partner as Bad Customer."
+  },
+  "msgBadCustomerNotFound": {
+    "Message": "Mark as Bad Customer process can only be performed if Business Partner already exist in System."
+  },
+  "msgBadCustomerPerformed": {
+    "Message": "Customer marked as Bad Customer."
+  },
+  "msgBadCustomerNotPerformed": {
+    "Message": "Bad Customer is not performed."
+  },
+  "msgDBConflictDetected": {
+    "Message": "Application Data is changed by another User. Please refresh the data."
+  },
+  "msgSelectIndustrySubType": {
+    "Message": "Business Line is required for borrower at employment"
+  },
+  "msgJP1MarkGrtOne": {
+    "Message": "JP1 Commission against the Recipient should be greater than 1."
+  },
+  "msgJP2MarkGrtOne": {
+    "Message": "JP2 Commission against the Recipient should be greater than 1."
+  },
+  "msgJP1InsrGrtOne": {
+    "Message": "JP1 Insurance Commission against the Recipient should be greater than 1."
+  },
+  "msgJP2InsrGrtOne": {
+    "Message": "JP2 Insurance Commission against the Recipient should be greater than 1."
+  },
+  "msgJP1AdmnGrtOne": {
+    "Message": "JP1 Admin Fee Commission against the Recipient should be greater than 1."
+  },
+  "msgJP2AdmnGrtOne": {
+    "Message": "JP2 Admin Fee Commission against the Recipient should be greater than 1."
+  },
+  "msgJP1PrvnGrtOne": {
+    "Message": "JP1 Provision Fee Commission against the Recipient should be greater than 1."
+  },
+  "msgJP2PrvnGrtOne": {
+    "Message": "JP2 Provision Fee Commission against the Recipient should be greater than 1."
+  },
+  "msgCommissionTax": {
+    "Message": "{0} tax calculation against {1} is not correct."
+  },
+  "msgPcmsRntlAmount": {
+    "Message": "PACMAS Rental Amount is Different from NFS Rental Amount."
+  },
+  "msgTotalSOFCommGreater": {
+    "Message": "Total Commission Amount cannot be greater than Max Commission Amount."
+  },
+  "msgSumSOFCommNotEqual": {
+    "Message": "Sum of JP1, JP2 and JP2 Scheme Commission should be equal to Total Commission."
+  },
+  "msgJP1CommGrtOne": {
+    "Message": "JP1 Commission against the Recipient should be greater than 1."
+  },
+  "msgJP2CommGrtOne": {
+    "Message": "JP2 Commission against the Recipient should be greater than 1."
+  },
+  "msgSOFJP1GrtOne": {
+    "Message": "JP1 Commission amount should be greater than 1."
+  },
+  "msgSOFJP2GrtOne": {
+    "Message": "JP2 Commission amount should be greater than 1."
+  },
+  "ChangeRequestnotSubmitStatusNew": {
+    "Message": "Change Request can only be generated with Credit Approval status New."
+  },
+  "msgKotamadyaKabupatenDflt": {
+    "Message": "Please select 'Kotamadya/Kabupaten' for Default Address."
+  },
+  "msgSupplierMandatory": {
+    "Message": "Please Select the Supplier at Asset Screen"
+  },
+  "msgUpfrontInsurancePremiumMissing": {
+    "Message": "Upfront Insurance Premium not calculated properly. Please re-select Insurance Company and perform calculations again."
+  },
+  "msgUpfrontAdminFeeMissing": {
+    "Message": "Upfront Admin Fee not calculated properly. Please calculate Admin Fee again.."
+  },
+  "msgUpfrontProvisionFeeMissing": {
+    "Message": "Upfront Provision Fee not calculated properly. Please calculate Provision Fee again."
+  },
+  "msgEmploymentGuarantorCoBorrower": {
+    "Message": "Employment Details cannot be deleted against existing Customer."
+  },
+  "msgMissingOTOCommPct": {
+    "Message": "OTO Insurance Commission is not calculated.Please Reselect the insurance company and Calculate insurance."
+  },
+  "msgTotalSOFCommGreaterthanMaxComm": {
+    "Message": "Total SOF Commission cannot be greater than Max SOF Commission."
+  },
+  "BPKBLocation": {
+    "Message": "Please select BPKB location"
+  },
+  "msgEconomicSectorEmpty": {
+    "Message": "Employment's economic sector field cannot be Empty."
+  },
+  "msgIndustryTypeEmpty": {
+    "Message": "Employment's Business Type field cannot be Empty."
+  },
+  "msgIndustryLineEmpty": {
+    "Message": "Employment's Business Line field cannot be Empty."
+  },
+  "WrongDateOfBirthApplicant": {
+    "Message": "Date of Birth is not correct at Applicant Tab."
+  },
+  "WrongDateOfBirthFamilyMember": {
+    "Message": "Date of Birth is not correct at Family Members Tab."
+  },
+  "WrongDateOfBirthBPKB": {
+    "Message": "Date of Birth is not correct at BPKB Detail Tab."
+  },
+  "WrongDateOfBirthSpouse": {
+    "Message": "Spouse DOB is not correct for {0}"
+  },
+  "msgEmploymentGuarantorCoBorrowerMissing": {
+    "Message": "Employment Details is missing for {0}"
+  },
+  "mPOSCFResurvey": {
+    "Message": "mPOS Re-Survey is only allowed for Re-Finance Campaign."
+  },
+  "RejectionComments": {
+    "Message": "Please Input Rejection Comments and Rejection Reason"
+  },
+  "plzslctKelurahanDesaLeglAdds": {
+    "Message": "Please add Kelurahan/Desa for Legal Address for Borrower."
+  },
+  "plzslctKecamatanLeglAdds": {
+    "Message": "Please add Kecamatan for Legal Address for Borrower."
+  },
+  "plzslctInitialCertificate": {
+    "Message": "Please Input Initial Certificate No.."
+  },
+  "plzslctInitialCertificateIssued": {
+    "Message": "Please Input Initial Certificate Issue Place."
+  },
+  "plzslctLastRegistrationDte": {
+    "Message": "Please select Last Registration Date."
+  },
+  "plzslctLastCompanyRegistrationNo": {
+    "Message": "Please select Last Comapany registration No."
+  },
+  "plzslctInitialCertificateDte": {
+    "Message": "Please select Initial Certificate Date."
+  },
+  "plzslctKotamadyaKabupatenLeglAdds": {
+    "Message": "Please add Kotamadya/Kabupaten for Legal Address of Borrower."
+  },
+  "plzslctNPWPId": {
+    "Message": "NPWP Id is missing."
+  },
+  "plzaddLegalAdds": {
+    "Message": "Please add Legal Address for Borrower."
+  },
+  "plzaddFixedLine": {
+    "Message": "Please add Fixed Line for Legal Address of Borrower."
+  },
+  "plzaddMobile": {
+    "Message": "Please add Mobile for Legal Address of Borrower."
+  },
+  "plzslctKelurahanDesaRepAdds": {
+    "Message": "Please add Kelurahan/Desa for Representative {0}."
+  },
+  "plzslctKotamadyaDesaRepAdds": {
+    "Message": "Please add Kotamadya/Kabupaten  for Representative {0}."
+  },
+  "plzIdTypeRep": {
+    "Message": "Please add ID Type  for Representative {0}."
+  },
+  "plzIdTypeNumberRep": {
+    "Message": "Please add ID Type Number  for Representative {0}."
+  },
+  "plzGenderRep": {
+    "Message": "Please add Gender  for Representative {0}."
+  },
+  "plzNameRep": {
+    "Message": "Please enter Name for Representative {0}."
+  },
+  "plzAddressRep": {
+    "Message": "Please enter Address for Representative {0}."
+  },
+  "plzaddLegalAddsGurantor": {
+    "Message": "Please add Legal Address for Gurantor."
+  },
+  "plzslctKelurahanDesaLeglAddsGurantor": {
+    "Message": "Please add Kelurahan/Desa for Legal Address for Gurantor."
+  },
+  "plzAddAdressGurantor": {
+    "Message": "Please add Address in Legal Adress Tab for Gurantor."
+  },
+  "plzktpIdPassGurantor": {
+    "Message": "Please add KTP/Passport for Gurantor."
+  },
+  "plzAddAdressBorrower": {
+    "Message": "Please add Address in Legal Adress Tab for Borrower."
+  },
+  "sharePercentage": {
+    "Message": "Percentage of all Share Holders must be equal to 100%."
+  },
+  "plzaddPassportGurantor": {
+    "Message": "Please add Passport ID Type for Gurantor."
+  },
+  "plzaddNationalityGuranotor": {
+    "Message": "Please add Nationality for Gurantor."
+  },
+  "plzaddSIUPidGuranotr": {
+    "Message": "Please add SIUP ID Type for Gurantor."
+  },
+  "plzaddNPWPidGuranotr": {
+    "Message": "Please add NPWP ID Type for Gurantor."
+  },
+  "plzadddsgnforRep": {
+    "Message": "Please add Designation for Representative {0}."
+  },
+  "plzchngeIDTypeShareHolder": {
+    "Message": "Share Holder Cannot be duplicate."
+  },
+  "msgRescoringConfirm": {
+    "Message": "Do you want to perform rescoring?"
+  },
+  "msgRescoringError": {
+    "Message": "Error occurred while performing Rescoring."
+  },
+  "msgRescoringSuccess": {
+    "Message": "Rescoring done Successfully."
+  },
+  "msgRescoringDraft": {
+    "Message": "Rescoring can only be performed against Draft Applications and Individual Applicants."
+  },
+  "msgGoodsFundService": {
+    "Message": "'Goods/Service Funds' value is not provided at 'Vehicle Detail'"
+  },
+  "msgFinancingType": {
+    "Message": "'Financing Type' value is not provided at 'Vehicle Detail'"
+  },
+  "mComEngChasBPKBNotMatched": {
+    "Message": "Engine No., Chassis No. and BPKB Number values are not matched with  Contract No.: "
+  },
+  "mComETNotValid": {
+    "Message": "ET Quote against Contract No.: {0} is not Valid."
+  },
+  "mComETNotEqual": {
+    "Message": "Input ET amount is not matched with Contract No.: {0} ET value i.e {1}."
+  },
+  "mComIDNbrMisMatch": {
+    "Message": "Input KTP/SUIP ID Number is not matched with Contract No.: "
+  },
+  "mComETAmountZero": {
+    "Message": "ET Amount should be Zero for mCOM Applcation."
+  },
+  "msgAddShareHolder": {
+    "Message": "Please add Share Holder for Company."
+  },
+  "msgSelectRepType": {
+    "Message": "Please select Representative Type (Individual/Company) for Representative {0}."
+  },
+  "msgSupplierSearchNoSelectMessage": {
+    "Message": "Please Select Supplier."
+  },
+  "msgCalculateAccessories": {
+    "Message": "Accessories are not Calculated."
+  },
+  "msgVATAmountValidation": {
+    "Message": "VAT amount cannot be greater than inclusive Amount."
+  },
+  "msgPlzInputMonthlyLeaseFeeAmt": {
+    "Message": "Please Input Monthly Lease Fee Amount."
+  },
+  "msgPlzInputMonthlyMaintCostFeeAmt": {
+    "Message": "Please Input Monthly Maintenance Cost."
+  },
+  "msgSumOfDiscAndVATOnAssetCostCanntGrtrMessage": {
+    "Message": "Sum of Discount and VAT on Asset Cost should not be greater than Asset Cost."
+  },
+  "msgEaglePointScoreCalculate": {
+    "Message": "Are you sure to perform Re-Scoring."
+  },
+  "msgCommissionReload": {
+    "Message": "Please Re-Distribute Marketing Commission"
+  },
+  "msgmarketingofficer": {
+    "Message": "Please Select Marketing Officer."
+  },
+  "msgInvalidPhoneNo": {
+    "Message": "Please input Valid Phone Number."
+  },
+  "msgSelectDocument": {
+    "Message": "Please select any document before proceeding."
+  },
+  "msgNoDocumentFund": {
+    "Message": "Something went wrong!, Please contact administrator"
+  },
+  "msgActualStartDateMissing": {
+    "Message": "Please enter Original Start Date at asset screen."
+  },
+  "msgOriginalTermsMissing": {
+    "Message": "Please enter Original Terms at asset screen"
+  },
+  "msgOriginalTermsShouldBeGreater": {
+    "Message": "Original Term(s) should be greater than Contract Term(s)."
+  },
+  "msgOldContNumberMissing": {
+    "Message": "Please enter Original Contract Number at asset screen."
+  },
+  "msgDuplicateOldContNumberExists": {
+    "Message": "Original Contract Number already exists."
+  },
+  "msgGreatercurrentprocessingDate": {
+    "Message": "Original Start Date is greater than Current Processing Date."
+  },
+  "msgOrignalOrContractTermsIncorrect": {
+    "Message": "Original Terms or Contract Terms are not correct."
+  },
+  "msgTakeControlConfirm": {
+    "Message": "Are you sure you want to take control?"
+  },
+  "msgSelectUser": {
+    "Message": "Please select User name first."
+  },
+  "msgAlreadyAssign": {
+    "Message": "Application is already assigned to this user."
+  },
+  "DateRangeLessthan31days": {
+    "Message": "The Difference between From Date and To Date should not be more than {0} days."
+  },
+  "MaxDownloadLimitMsg": {
+    "Message": "You can download maximum {0} documents"
+  },
+  "MultipleEmergencyAddress": {
+    "Message": "Only One Emergency address is allowed"
+  },
+  "EmergencyAddressChk": {
+    "Message": "Address can't be both emergency and other address."
+  },
+  "msgOLAccountingType": {
+    "Message": "Please select applicant's Accounting Type (OL) field."
+  },
+  "msgOLInvoiceOption": {
+    "Message": "Please select applicant's Invoice Option (OL) field."
+  },
+  "msgOLReceiptingBank": {
+    "Message": "OL Receipting Bank is not selected."
+  },
+  "msgSelectBorrowerApplicant": {
+    "Message": "Please select Borrower Applicant first."
+  },
+  "TermARO": {
+    "Message": "ARO can only be selected for the last term."
+  },
+  "PlzSelectAsetCost": {
+    "Message": "Please select asset cost."
+  },
+  "PlzSelectAsetTerms": {
+    "Message": "Contract terms must be greater than zero."
+  },
+  "CollMetdReqStnd": {
+    "Message": "Insurance Collection method is required against standard insurance."
+  },
+  "ExtMetdReqAddl": {
+    "Message": "Insurance Extension Type is required against additional insurance."
+  },
+  "InsrTypeStndReq": {
+    "Message": "Insurance type is required against standard insurance."
+  },
+  "InsrTypeAddlReq": {
+    "Message": "Insurance type is required against additional insurance."
+  },
+  "InsrCompSelect": {
+    "Message": "Please select insurance company."
+  },
+  "InsuranceTerm": {
+    "Message": "Terms already completed."
+  },
+  "RateMustInBetween": {
+    "Message": "Default rate cannot be less than minimum rate and greater than maximum rate."
+  },
+  "MinMaxRateCheck": {
+    "Message": "Default Premium rate cannot be less than Minimum Premium rate and greater than Maximum premium rate."
+  },
+  "msgAssetAlreadyUsedForContract": {
+    "Message": "Asset cannot be selected, it is being used by another application. Please Select again."
+  },
+  "msgBankAccountNameNotProvided": {
+    "Message": "Account Name is not provided at bank"
+  },
+  "msgBankAccountNumberNotProvided": {
+    "Message": "Account Number is not provided at bank"
+  },
+  "msgFamilyCardNumberNotProvided":{
+    "Message": "Family Card Number is not provided at Family Member"
+  },
+  "msgFamilyMemberGenderNotProvided":{
+    "Message": "Gender is not provided at Family Member"
+  },
+  "msgFamilyMemberRelationNotProvided":{
+    "Message": "Relationship is not provided at Family Member"
+  },
+  "msgFamilyMemberOccupationNotProvided":{
+    "Message": "Occupation is not provided at Family Member"
+  },
+  "plzslctHouseOwnerLegalAddsforBorr": {
+    "Message": "Borrower - Please select House Ownership of Legal Address Type."
+  },
+  "plzslctMobileLegalAddsforBorr": {
+    "Message": "Borrower - Please select Mobile Phone of Legal Address Type."
+  },
+  "EApprovalSaveSuccess": {
+    "Message": "E-Approval has been saved successfully."
+  },
+  "EApprovalMarkComplete": {
+    "Message": "Please Mark as Completed before save."
+  },
+  "EApprovalNotAllowedToEdit": {
+    "Message": "Your are not allowed to Edit/Submit this application."
+  },
+  "EApprovalSubmit": {
+    "Message": "Please complete E-Approval process before application submission."
+  },
+  "WithdrawRequestSubmitSuccess": {
+    "Message": "Withdrawl Request Submitted Successfully!"
+  },
+  "CalInsr": {
+    "Message": "Please calculate the insurance premium amount"
+  },
+  "msgIDIssueDate": {
+    "Message": "Please enter ID type Issue date."
+  },
+  "msgIDExpiryDate": {
+    "Message": "Please enter ID type Expiry date."
+  },
+  "msgprovisionfeeamountlimit": {
+    "Message": "Provision fee amount must be less than asset cost."
+  },
+  "maxprovisionfeevalidation": {
+    "Message": "Provision fee % should be less than or equal to configured maximum provision fee %."
+  },
+  "totalprovisionfeevalidation": {
+    "Message": "Total provision fee can't be less than minimum provision fee!"
+  },
+  "minprovisionfeevalidation": {
+    "Message": "Provision fee % should be greater than or equal to configured minimum provision fee %."
+  },
+  "upfrontfinancedvalidationmsg": {
+    "Message": "Total financed and upfront amount can not greater than provision fee"
+  },
+  "forwardTakeControlNotAllowed": {
+    "Message": "You are not authorized to perform this operation."
+  },
+  "plzaddPassport": {
+    "Message": "Please add Passport ID Type for borrower."
+  },
+  "msgWrongDateOfBirthSpouse": {
+    "Message": "Spouse DOB is not correct for {0}."
+  },
+  "msgBorrowerRoleCodeAlreadyExists": {
+    "Message": "Borrower Role already exists. Please reload the application."
+  },
+  "BMNotFound": {
+    "Message": "BM not found."
+  },
+  "ReScoreforCompanyNotAllowed": {
+    "Message": "Rescoring can only be performed against Draft Applications and Individual Applicants."
+  },
+  "CantAddLeaseClause": {
+    "Message": "Additional Insurance can not be added in case of Lease Clause."
+  },
+  "EmrgPhoneAddressMiss": {
+    "Message": "Emergency Phone and Address can not be empty."
+  },
+  "msgAllRecipientSelect" :{
+    "Message": "Recipients against all Roles should be Selected."
+  },
+  "AdditionalCoverage": {
+    "Message": "Additional Coverage Type is required against additional insurance."
+  },
+  "GPTermsGreater": {
+    "Message": "Grace period terms shold be less than or equal to contract terms."
+  },
+  "IncoGPTermsRemainder": {
+    "Message": "Remaining grace period terms should be equal to zero."
+  },
+  "IncoGPTerms": { 
+    "Message": "Grace Period terms are not correct."
+  },
+  "IncoGPFreq" : { 
+    "Message": "Grace Period frequency is not correct."
+  } ,
+  "IncoResuvery": {
+    "Message": "Invalid character(s), Please enter alphanumeric or ., only. New line is also not allowed"
+  },
+  "msgOTOInsrCommTaxMissing" : {
+    "Message" : "Insurance Commission-OTO tax not calculated. Please re-calculate insurance premium amount."
+  },
+  "CANotApprovalGroup": {
+    "Message": "Your are not allowed to save credit recommendation."
+  }, 
+  "CASaveValidation": {
+    "Message": "Application status is not valid!"
+  },
+  "selectEApprovalReason": {
+    "Message": "Please select E-Approval Reason."
+  },
+  "EnterEApprovalComments": {
+    "Message": "Please input E-Approval Comments."
+  },
+  "passContUpperCaseChar": {
+    "Message": "Password should contain at least {0} uppercase alphabet(s)."
+  },
+  "passContDigitChar": {
+    "Message": "Password should contain at least {0} digit(s)."
+  },
+  "msgInsurancePremiumReCalculate": {
+    "Message": "Insurance Premium not calculated properly. Please re-calculate insurance premium amount."
+  },
+  "plzSelectApplicable": {
+    "Message": "Please select atleast one Address Type Detail."
+  },
+  "msgGoodsFundDetails": {
+    "Message": "'Goods/Service Funds Details' value is not provided at 'Vehicle Detail'"
+  },
+  "msgSalesmanMissing": {
+    "Message": "Salesman Information is missing."
+  },
+  "msgAdressNotesInvalid": {
+    "Message": "Address Notes contains invalid characters."
+  }
+}

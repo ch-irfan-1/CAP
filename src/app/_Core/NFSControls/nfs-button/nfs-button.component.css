@@ -1,0 +1,14 @@
+.disable:hover{
+    cursor: not-allowed;
+}
+/* ::ng-deep .mat-raised-button .mat-button-wrapper {
+    color: #fff !important;
+    min-width: 150px;
+}
+::ng-deep .mat-raised-button {
+    min-width: 150px !important;
+}
+::ng-deep .mat-flat-button.mat-primary, ::ng-deep .mat-raised-button.mat-primary, ::ng-deep .mat-fab.mat-primary, ::ng-deep .mat-mini-fab.mat-primary {
+    background-color: #1A963E !important;
+}
+ */

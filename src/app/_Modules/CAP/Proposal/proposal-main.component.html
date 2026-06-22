@@ -1,0 +1,224 @@
+<!-- <p>proposal-main works!</p> -->
+<ng-container>
+  <div class="main-content" [ngClass]="{'disabledApp': this._generalService.FormMode == 'View'}">
+    <div>
+      <div class="mainContainer">
+        <div class="proposalTabsInner">
+          <div class="customAccordianMain" [formGroup]="PROPOSAL">
+            <div class="accordianHeader">
+              <div class="row fieldContainer" [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+                <div class="col-md-12">
+                  <h5>General Information</h5>
+                </div>
+                <div class="col-md-2 top15 disableAppOn">
+                  <nfs-textbox formControlName="PROPOSALNBR" name="PROPOSALNBR" [maxLength]="100"
+                    [isControlDisable]=true [Placeholder]="'Application No. *'" [Label]="'Application No. *'"
+                    [Name]="'PROPOSALNBR'" [Component]="'GeneralHeader'">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15 disableAppOn">
+                  <nfs-textbox formControlName="QUOTENAME" name="QUOTENAME" [maxLength]="100"
+                    [Placeholder]="'Reference No. *'" [Label]="'Reference No. *'" [Name]="'QUOTENAME'"
+                    [Component]="'GeneralHeader'" [isControlDisable]="this._generalService.FormMode == 'View'">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15 disableDate">
+                  <nfs-datepicker formControlName="PROPOSALDTE_Helper" name="PROPOSALDTE" [isControlDisable]=true
+                    [Component]="'GeneralHeader'" [Placeholder]="'Creation Date'" [Name]="'PROPOSALDTE'"
+                    [Label]="'Creation Date'" [Component]="'GeneralHeader'">
+                  </nfs-datepicker>
+                </div>
+                <div class="col-md-2 top15 comapnyStaric disableDate">
+                  <nfs-dropdown formControlName="BPCOMPANYID" [Label]="'Company'" [isControlDisable]=true
+                    [Name]="'BPCOMPANYID'" [Component]="'GeneralHeader'" [controlPlaceholder]="'Company'"
+                    [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.AllCompanies"></nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown formControlName="BPCOMPANYBRANCHID" [Label]="'Branch *'" [Name]="'BPCOMPANYBRANCHID'"
+                    [Component]="'GeneralHeader'" [controlPlaceholder]="'Branch'" [Ismultiselect]="false"
+                    [AllowUnSelect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.branchDropDown"
+                    (selectionChange)="this.BranchOnChange($event)"
+                    [isControlDisable]="this._generalService.FormMode == 'View' || this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value">
+                  </nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown formControlName="PROPOSALTYPECDE" [AllowUnSelect]="false" [Label]="'Applicant Type *'"
+                    [Name]="'PROPOSALTYPECDE'" [Component]="'GeneralHeader'" [controlPlaceholder]="'Applicant Type'"
+                    [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._masterDataService.ApplicantCodeType"
+                    (selectionChange)="this.onApplicantTypeChange($event)"
+                  [isControlDisable]="this._generalService.FormMode == 'View' || this._proposaldataService.PROPOSAL.controls.MCOMTOPUPIND.value"></nfs-dropdown>
+                </div>
+                <button style="margin-top: 8px;" (click)="openShowMore()" class="showMore" [class.hideBtn]="showMoreContent">Show
+                  More <p>&#748;</p></button>
+                  <div class="showMoreContent" [class.hideContent]="showMoreContent">
+                    <app-general-header-info [ApplicantCategory]="this.ApplicantCategory"
+                      (ResetFinancialDetails)="ResetFinancialDetails()">
+                    </app-general-header-info>
+                    <button style="margin-top: 8px;" (click)="hideShowMore()" class="showLess">Show Less <p>&#708;</p></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row applicationTabMain">
+              <div class="col-md-1 proposalTabTOpMain" [class.active1]="classApplied21"
+                [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+                <img src="assets/Images/expandApplicant.png" class="expandApplicant" (click)="openMenu()" />
+                <div class="proposalTabMain" (click)="proposalActive()" [class.activeTabApplicant]="applicantTab">
+                  <img src="assets/Images/applicantsIcon.png" />
+                  <img src="assets/Images/applicantIconWhite.png" />
+                  <img class="greenArrow" src="assets/Images/selectTab.png" />
+                  <img class="blueArrow" src="assets/Images/selectTabBlue.png" />
+                  <p>Applicants</p>
+                </div>
+                <div class="proposalTabMain" (click)="AssetsActive()" [class.activeTabAsset]="assetTab">
+                  <img src="assets/Images/AssetIcon.png" />
+                  <img src="assets/Images/AssetsIconWhite.png" />
+                  <img class="greenArrow" src="assets/Images/selectTab.png" />
+                  <img class="blueArrow" src="assets/Images/selectTabBlue.png" />
+                  <p>Assets</p>
+                </div>
+              </div>
+              <div class="col-md-11 proposalTabTOpMainContant" [class.active1]="classApplied21">
+
+                @if (!documentTab) {
+                  <div class="row">
+                    <div class="documentBtn">
+                      <nfs-button [disabled]="!this.documentTrackingEnable" [text]="'Documents'" [matButton]="false"
+                        [matRaisedButton]="true" [matRaisedButtonIcon]="false"
+                        [iconPngHover]="'assets/Images/copyGreen.png'" [alwaysEnable]="true"
+                        [iconPng]="'assets/Images/copyGray.png'" (click)="openDocumentView();">
+                      </nfs-button>
+                    </div>
+                  </div>
+                }
+
+                @if (applicantTab) {
+                  <div class="" [class.proposalEditPanel]="applicantEditPanel">
+                    <mat-tab-group disableRipple animationDuration="0ms" dynamicHeight>
+                      @for (applicant of (this.ApplicantEntity.controls | RemovedStateFilter); track applicant; let applicantindex = $index) {
+                        <div
+                          >
+                          @if (this.IsIndividualApplicant(applicant)) {
+                            <mat-tab labelClass="proposal-main-tabs">
+                              <ng-template mat-tab-label>
+                                {{this.getTabName(applicant, applicantindex)}}
+                                @if (!IsBorrowerRole(applicant) && !isViewMode) {
+                                  <button disableRipple
+                                    class="tabsIconsAdjustment" (click)="removeTab()" mat-icon-button aria-label="remove tab">
+                                    <mat-icon (click)="RemoveApplicant(applicant)">close</mat-icon>
+                                  </button>
+                                }
+                              </ng-template>
+                              <ng-template matTabContent>
+                                <app-individual-applicant [Applicant]="applicant"
+                                  [ComponentName]="this.getComponentName(applicant)">
+                                </app-individual-applicant>
+                              </ng-template>
+                            </mat-tab>
+                          }
+                          @if (!this.IsIndividualApplicant(applicant)) {
+                            <mat-tab>
+                              <ng-template mat-tab-label>
+                                {{this.getTabName(applicant, applicantindex)}}
+                                @if (!IsBorrowerRole(applicant) && !isViewMode) {
+                                  <button disableRipple
+                                    class="tabsIconsAdjustment" (click)="removeTab()" mat-icon-button aria-label="remove tab">
+                                    <mat-icon (click)="RemoveApplicant(applicant)">close</mat-icon>
+                                  </button>
+                                }
+                              </ng-template>
+                              <ng-template matTabContent>
+                                <app-company-applicant [Applicant]="applicant"
+                                  [ComponentName]="this.getComponentName(applicant)">
+                                </app-company-applicant>
+                              </ng-template>
+                            </mat-tab>
+                          }
+                          <!-- <mat-tab *ngIf="this.IsIndividualApplicant(applicant)" label="{{this.getTabName(applicant)}}">
+                          <ng-template matTabContent>
+                            <app-individual-applicant [Applicant]="applicant" [ComponentName]="this.getComponentName(applicant)"></app-individual-applicant>
+                          </ng-template>
+                        </mat-tab>
+                        <mat-tab *ngIf="!this.IsIndividualApplicant(applicant)" label="{{this.getTabName(applicant)}}">
+                          <ng-template matTabContent>
+                            <app-company-applicant [Applicant]="applicant"
+                              [ComponentName]="this.getComponentName(applicant)">
+                            </app-company-applicant>
+                          </ng-template>
+                        </mat-tab> -->
+                      </div>
+                    }
+                    @if (!isViewMode) {
+                      <mat-tab class="xyz" label="add">
+                        <ng-template mat-tab-label  class="xyz">
+                          <button class="addTab xyz" [matMenuTriggerFor]="afterMenu">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon">add
+                            </mat-icon>
+                          </button>
+                          <mat-menu #afterMenu="matMenu" backdropClass="proposal-main-tabs-menu">
+                            <button mat-menu-item (click)="addApplicant('00004','I')">Individual
+                            Co-Borrower</button>
+                            <button mat-menu-item (click)="addApplicant('00004','C')">Company
+                            Co-Borrower</button>
+                            <button mat-menu-item (click)="addApplicant('00005','I')">Individual
+                            Guarantor</button>
+                            <button mat-menu-item (click)="addApplicant('00005','C')">Company
+                            Guarantor</button>
+                          </mat-menu>
+                        </ng-template>
+                      </mat-tab>
+                    }
+                  </mat-tab-group>
+                </div>
+              }
+              <!-- <div class="" *ngIf="financialTab">
+              <app-financial-info></app-financial-info>
+
+            </div> -->
+            <div class=""
+              [hidden]="!assetTab || (this.PROPOSAL.controls.FINANCIALPRODUCTID.value == null || this.PROPOSAL.controls.FINANCIALPRODUCTID.value == 0)"
+              [class.proposalEditPanel]="applicantEditPanel">
+              <ng-template #container></ng-template>
+              <!-- <app-asset-details></app-asset-details> -->
+            </div>
+            @if (documentTab) {
+              <div class="">
+                <app-applicant-documents></app-applicant-documents>
+              </div>
+            }
+
+            @if (applicantEditPanel===true && documentTab=== false) {
+              <div
+                [class.DocumentViewPanel]="applicantEditPanel">
+                <app-document-split-view (cancleButtonClick)="openDocumentView();">
+                </app-document-split-view>
+              </div>
+            }
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 bottomBtnSaveMain searchBtns"
+  [ngClass]="{'disabledDiv': this._generalService.FormMode == 'View'}">
+  <nfs-button [text]="'Save'" (onBtnClick)="SaveClicked()" [color]="'primary'" [disabled]="this.isSaveEnabled"
+    [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+    style="float: left; padding-left: 3.3vw">
+  </nfs-button>
+  <nfs-button [text]="'Submit'" (onBtnClick)="SubmitClicked()" [color]="'primary'" [disabled]="isSubmitEnabled"
+    [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+  </nfs-button>
+  <!-- <nfs-button *ngIf="!isViewMode" [text]="'Reset'" (onBtnClick)="ResetClicked()" [color]="'primary'"
+  [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+</nfs-button> -->
+</div>
+</ng-container>

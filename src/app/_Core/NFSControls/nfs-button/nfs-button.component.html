@@ -1,0 +1,58 @@
+@if (matButton === true && matRaisedButton === false && matRaisedButtonIcon === false) {
+  <span>
+    <button mat-button type="{{type}}" (click)='onClick($event)' color="{{color}}" [disabled]="disabled" matTooltip="{{this.tooltip}}"matTooltipDisabled="false"
+      [ngClass]="{'disable':disabled}">
+      <span class="icons">
+        <img src="{{iconPng}}">
+      </span>
+      {{text}}
+    </button>
+  </span>
+}
+@if (matRaisedButton === true && matButton === false && matRaisedButtonIcon === false) {
+  <span>
+    <button mat-raised-button type="{{type}}" (click)='onClick($event)' color="{{color}}" [disabled]="disabled" matTooltip="{{this.tooltip}}"matTooltipDisabled="false"
+      [ngClass]="{'disable':disabled}">
+      @if (icon) {
+        <span>
+          @if (this.disabled === true) {
+            <mat-icon (click)="$event.stopPropagation()">{{icon}}</mat-icon>
+          }
+          @if (this.disabled === false) {
+            <mat-icon>{{icon}}</mat-icon>
+          }
+        </span>
+      }
+      @if (iconPng) {
+        <span class="icons">
+          <img src="{{iconPng}}" class="iconPlan">
+          <img src="{{iconPngHover}}" class="iconHover">
+        </span>
+      }
+      {{text}}
+    </button>
+  </span>
+}
+@if (matRaisedButtonIcon === true && matRaisedButton === false && matButton === false) {
+  <span>
+    <button mat-raised-button type="{{type}}" (click)='onClick($event)' color="{{color}}" [disabled]="disabled" matTooltip="{{this.tooltip}}"matTooltipDisabled="false"
+      [ngClass]="{'disable':disabled}">
+      @if (icon) {
+        <span>
+          @if (this.disabled === true) {
+            <mat-icon (click)="$event.stopPropagation()">{{icon}}</mat-icon>
+          }
+          @if (this.disabled === false) {
+            <mat-icon>{{icon}}</mat-icon>
+          }
+        </span>
+      }
+      @if (iconPng) {
+        <span class="icons">
+          <img src="{{iconPng}}">
+        </span>
+      }
+      {{text}}
+    </button>
+  </span>
+}

@@ -1,0 +1,11 @@
+<div [ngClass]="{'disabledDiv': isControlDisable}">
+  <mat-form-field appearance="fill" class="directive controls-margin" [ngClass]="{'mandatory': isRequired}">
+    <mat-label>{{label}}</mat-label>
+    <input [formControl]="percentageControl" type="text" placeholder="{{placeholder}}" matInput
+      autocomplete="{{autoComplete}}" mask="{{decimals}}" [dropSpecialCharacters]="false" suffix="%"
+      [validation]="false" [ngClass]="{'right': isRightAlinged}">
+    @if (isFieldNotValid()) {
+      <mat-error class="text-danger">{{errorMsg}}</mat-error>
+    }
+  </mat-form-field>
+</div>

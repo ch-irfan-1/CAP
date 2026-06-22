@@ -1,0 +1,1484 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Asset Insurance</span>
+  </div>
+  <!-- <div class="col-md-1">
+  <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+</div> -->
+</div>
+<div class="popupBody">
+  <div class="row noMargin bodyContainer customAccordianMain">
+    <div class="col-md-12 topMargin20">
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Asset Insurance Header
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer" style="padding-bottom: 0;">
+            <div class="col-md-12">
+              <div class="TabInnerMainForm">
+                <div class="row customTop15" [formGroup]="this._prplData.PRPLINSR">
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'Insurance Company'" [controlPlaceholder]="'Insurance Company'"
+                      [Ismultiselect]="false" [AllowUnSelect]="false" [EnableFilter]="true"
+                      [FilterControlPlaceholder]="'Find Some Values...'" formControlName="INSURER"
+                      [noSearchEntriesFoundLabel]="'No Matching Values'" [Name]="'INSURER'"
+                      [Component]="'insurancePremium'" [DataArray]="this._insuranceMasterDataService.InsrCompany"
+                      (selectionChange)="this.InsrCompanyChange($event)">
+                    </nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'Insurance Region'" [controlPlaceholder]="'Insurance Region'"
+                      [Ismultiselect]="false" [AllowUnSelect]="false" [EnableFilter]="false"
+                      [FilterControlPlaceholder]="'Find Some Values...'" formControlName="REGIONCDE"
+                      [noSearchEntriesFoundLabel]="'No Matching Values'" [isControlDisable]="true"
+                      [DataArray]="this._insuranceMasterDataService.InsuranceRegions" [Name]="'REGIONCDE'"
+                      [Component]="'insurancePremium'">
+                    </nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox [maxLength]="100" [Placeholder]="'Certificate Number'"
+                      [isControlDisable]="isCertificateNumberEnabled" [Label]="'Certificate Number'"
+                      formControlName="CERTIFICATENBR" [Name]="'CERTIFICATENBR'" [Component]="'insurancePremium'">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-currency [maxLength]="100" [Placeholder]="'Asset Cost'" [Label]="'Asset Cost'"
+                      formControlName="ASSETCOST" [isControlDisable]="true" [Name]="'ASSETCOST'"
+                      [Component]="'insurancePremium'">
+                    </nfs-currency>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox [maxLength]="100" [Placeholder]="'Loading Rate'" [isControlDisable]="true"
+                      [Label]="'Loading Rate'" formControlName="LOADINGRTE" [Name]="'LOADINGRTE'"
+                      [Component]="'insurancePremium'">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'Insurance Asset Usage'" [controlPlaceholder]="'Insurance Asset Usage'"
+                      [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                      [noSearchEntriesFoundLabel]="'No Matching Values'"
+                      [noSearchEntriesFoundLabel]="'No Matching Values'" formControlName="ASSETUSAGECDE"
+                      [DataArray]="this._insuranceMasterDataService.InsrUsageTypeCode" [Name]="'ASSETUSAGECDE'"
+                      [Component]="'insurancePremium'" (selectionChange)="this.assetUsageSelectionChanged($event)">
+                    </nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox [maxLength]="100" [Placeholder]="'Asset Usage Minimum Rate'"
+                      [Label]="'Asset Usage Minimum Rate'" [isControlDisable]="true" formControlName="ASSETUSAGEMINRTE"
+                      [Name]="'ASSETUSAGEMINRTE'" [Component]="'insurancePremium'">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox [maxLength]="100" [Placeholder]="'Asset Usage Maximum Rate'"
+                      [Label]="'Asset Usage Maximum Rate'" [isControlDisable]="true" formControlName="ASSETUSAGEMAXRTE"
+                      [Name]="'ASSETUSAGEMAXRTE'" [Component]="'insurancePremium'">
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-currency [Placeholder]="'Asset Usage Default Rate'" [Label]="'Asset Usage Default Rate'"
+                      formControlName="ASSETUSAGEDEFAULTRTE" [Name]="'ASSETUSAGEDEFAULTRTE'"
+                      [Component]="'insurancePremium'">
+                    </nfs-currency>
+
+                    <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Asset Usage Default Rate'"
+                    [Label]="'Asset Usage Default Rate'" formControlName="ASSETUSAGEDEFAULTRTE"
+                    [Name]="'ASSETUSAGEDEFAULTRTE'" [Component]="'insurancePremium'">
+                  </nfs-textbox> -->
+                </div>
+                <div class="col-md-3 top15 iconPopup">
+                  <nfs-dropdown class="customArrow" [Label]="'Depreciation Policy'" [controlPlaceholder]="'Depreciation Policy'"
+                    [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    formControlName="DEPRECIATIONPOLICYCDE" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._assetMasterData.DepreciationPolicy" [Name]="'DEPRECIATIONPOLICYCDE'"
+                    [Component]="'insurancePremium'"
+                    (selectionChange)="this.depreciationPolicySelectionChanged($event)">
+                  </nfs-dropdown>
+                  <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Depreciation Policy'"
+                  [Label]="'Depreciation Policy'">
+                </nfs-textbox> -->
+                <div class="iconPopupMain">
+                  <p (click)="openDepreciationPolicy()">More</p>
+                  <!-- (click)="openExposure()" -->
+                </div>
+              </div>
+              <div class="col-md-3 top15">
+                <nfs-datepicker matInput [Placeholder]="'Insurance Start Date '" [isControlDisable]="true"
+                  [Label]="'Insurance Start Date '" formControlName="STARTDTE" [Name]="'STARTDTE'"
+                  [Component]="'insurancePremium'">
+                </nfs-datepicker>
+              </div>
+              <div class="col-md-3 top15">
+                <nfs-datepicker matInput [Placeholder]="'Insurance Expiry Date '" [isControlDisable]="true"
+                  [Label]="'Insurance Expiry Date '" formControlName="EXPIRYDTE" [Name]="'EXPIRYDTE'"
+                  [Component]="'insurancePremium'">
+                </nfs-datepicker>
+              </div>
+              <div class="col-md-3 top15">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Total Upfront'" [Label]="'Total Upfront'"
+                  [isControlDisable]="true" formControlName="TOTALUPFRONTAMNT" [Name]="'TOTALUPFRONTAMNT'"
+                  [Component]="'insurancePremium'">
+                </nfs-currency>
+              </div>
+              <div class="col-md-3 top15">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Total Finance'" [Label]="'Total Finance'"
+                  [isControlDisable]="true" formControlName="TOTALFINANCEAMNT" [Name]="'TOTALFINANCEAMNT'"
+                  [Component]="'insurancePremium'">
+                </nfs-currency>
+              </div>
+              <div class="col-md-3 top15">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Total Insurance Subsidy'"
+                  [Label]="'Total Insurance Subsidy'" [isControlDisable]="true"
+                  formControlName="TOTALINSRSUBSIDYAMNT" [Name]="'TOTALINSRSUBSIDYAMNT'"
+                  [Component]="'insurancePremium'">
+                </nfs-currency>
+              </div>
+
+              <div class="col-md-3 paddingLeftRight8">
+                <section class="example-section" style="margin-top: 16px;">
+                  <nfs-checkbox class="example-margin" formControlName="RECEIVEBYDEALERIND"
+                    [Name]="'RECEIVEBYDEALERIND'" [Label]="'Receive By Dealer'"
+                    [isControlDisable]="!this._proposalManager.chkReceiveByDealer">
+                    Receive By
+                    Dealer
+                  </nfs-checkbox>
+                </section>
+              </div>
+              <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Policy Number'" formControlName="POLICYNBR"
+                  [Name]="'POLICYNBR'" [Component]="'insurancePremium'" [Label]="'Policy Number'"
+                  [isControlDisable]="true">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-3 paddingLeftRight8">
+                <section class="example-section" style="margin-top: 17px;">
+                  <nfs-checkbox class="example-margin"
+                    [Label]="'B2B'"
+                    [Name]="'UPDATEDB2BIND'"
+                    [isControlDisable]="!this._prplData.PRPLINSR.value.INSURANCEB2BIND || this.isViewModeInsurance"
+                    formControlName="UPDATEDB2BIND" (change)='chkB2bInd_Checked($event)'>
+                    <!--[disabled]="isReceivedByDealerDisable" -->
+                    B2B
+                  </nfs-checkbox>
+                </section>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="col-md-12 topMargin15">
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Standard Insurance
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="tableMainStanderdInsurance">
+        <div class="tableMain fieldContainer FormMain">
+
+
+
+          <table mat-table [dataSource]="standardInsuranceDataSource" multiTemplateDataRows class="demoTable">
+            <ng-container matColumnDef="addDataRow">
+              <th mat-header-cell *matHeaderCellDef class="plusIcon">
+                <mat-icon (click)="addStandardInsuranceRow()" [ngClass]="{'disabledDiv': this.isViewModeInsurance}">
+                add</mat-icon>
+              </th>
+              <td mat-cell *matCellDef="let element; let k = dataIndex;">
+                <!-- <mat-icon>add</mat-icon> -->
+                <span (click)="toggleExpandable(element.PRPLSTNDINSRPARENTINDEX)">
+                  @if (!element.isExpanded ) {
+                    <mat-icon>add
+                    </mat-icon>
+                  }
+                  @if (element.isExpanded) {
+                    <mat-icon>remove
+                    </mat-icon>
+                  }
+                </span>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.COLLECTIONMETHODCDE">
+              <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;">Collection Method </th>
+              <td mat-cell *matCellDef="let element; let index = dataIndex;" style="min-width: 210px !important;">
+                <mat-form-field placeholder="never">
+                  <mat-select [(ngModel)]="element.PRPLSTNDINSR.COLLECTIONMETHODCDE"
+                    [disabled]="this.isViewModeInsurance"
+                    (selectionChange)="updateStandardInsuranceControls('CollectionMethod',element, index)">
+                    @for (data of this._insuranceMasterDataService.InsrCollectionMethodCode; track data) {
+                      <mat-option
+                        [value]="data.code || data.id"> {{
+                      data.TextValue }}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.INSURANCEPREMIUMTYPECDE">
+              <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;"> Insurance Premium Type
+              </th>
+              <td mat-cell *matCellDef="let element; let index = dataIndex;" style="min-width: 210px !important;">
+                <mat-form-field placeholder="never">
+                  <mat-select [disabled]="!isCFInd(element) || this.isViewModeInsurance"
+                    [(ngModel)]="element.PRPLSTNDINSR.INSURANCEPREMIUMTYPECDE"
+                    (selectionChange)="updateStandardInsuranceControls('InsurancePremiumType',element, index)">
+                    @for (data of this._insuranceMasterDataService.InsrPremiumType; track data) {
+                      <mat-option
+                        [value]="data.code || data.id"> {{
+                      data.TextValue }}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.INSRTYPECDE">
+              <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;"> Insurance Type </th>
+              <td mat-cell *matCellDef="let element; let index = dataIndex;" style="min-width: 210px !important;">
+                <mat-form-field placeholder="never">
+                  <mat-select [(ngModel)]="element.PRPLSTNDINSR.INSRTYPECDE" [disabled]="this.isViewModeInsurance"
+                    (selectionChange)="updateStandardInsuranceControls('InsuranceType',element, index)">
+                    @for (data of this._insuranceMasterDataService.InsuranceTypes; track data) {
+                      <mat-option
+                        [value]="data.code || data.id"> {{
+                      data.TextValue }}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.TERMFROM">
+              <th mat-header-cell *matHeaderCellDef> Term From </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-form-field placeholder="never">
+                  <input matInput [value]="element.PRPLSTNDINSR.TERMFROM" [disabled]="true"
+                    [(ngModel)]="element.PRPLSTNDINSR.TERMFROM" onClick="this.select();">
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.TERMTO">
+              <th mat-header-cell *matHeaderCellDef> Term To </th>
+              <td mat-cell *matCellDef="let element; let index=dataIndex;">
+                <mat-form-field placeholder="never">
+                  <input matInput [value]="element.PRPLSTNDINSR.TERMTO" [disabled]="this.isViewModeInsurance"
+                    (change)="TermToValueChanged(element,element.PRPLSTNDINSR.TERMTO, index)"
+                    [(ngModel)]="element.PRPLSTNDINSR.TERMTO" onClick="this.select();">
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.TOTALPREMIUMAMNT">
+              <th mat-header-cell *matHeaderCellDef>Standard Premium Amount </th>
+              <td mat-cell *matCellDef="let element; let index = dataIndex;">
+                <mat-form-field placeholder="never">
+                  <input matInput [value]="element.PRPLSTNDINSR.TOTALPREMIUMAMNT"
+                    [disabled]="isCFInd(element) || this.isViewModeInsurance" mask="{{mask}}"
+                    (change)="updateStandardInsuranceControls('StandardPremiumAmount',element, index)"
+                    [(ngModel)]="element.PRPLSTNDINSR.TOTALPREMIUMAMNT"
+                    [ngModel]="element.PRPLSTNDINSR.TOTALPREMIUMAMNT" onClick="this.select();">
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.STARTDTE">
+              <th mat-header-cell *matHeaderCellDef>Insurance Start Date </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-form-field placeholder="never">
+                  <input matInput [value]="element.PRPLSTNDINSR.STARTDTE" disabled
+                    [(ngModel)]="element.PRPLSTNDINSR.STARTDTE"
+                    [ngModel]="element.PRPLSTNDINSR.STARTDTE| date: 'yyyy-MM-dd'" ngModel>
+                  <!-- [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>none</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker disabled="true"></mat-datepicker> -->
+                </mat-form-field>
+              </td>
+
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.ENDDTE">
+              <th mat-header-cell *matHeaderCellDef>Insurance End Date </th>
+              <td mat-cell *matCellDef="let element">
+                <mat-form-field placeholder="never">
+                  <input matInput [value]="element.PRPLSTNDINSR.ENDDTE" disabled
+                    [(ngModel)]="element.PRPLSTNDINSR.ENDDTE"
+                    [ngModel]="element.PRPLSTNDINSR.ENDDTE| date: 'yyyy-MM-dd'" ngModel>
+                  <!-- [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>none</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker disabled="true"></mat-datepicker> -->
+                </mat-form-field>
+              </td>
+
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.INSURANCECERTIFICATENUMBER">
+              <th mat-header-cell *matHeaderCellDef>Certification Number </th>
+              <td mat-cell *matCellDef="let element;let index = dataIndex;">
+                <mat-form-field placeholder="never">
+                  <input matInput [value]="element.PRPLSTNDINSR.INSURANCECERTIFICATENUMBER"
+                    [disabled]="isCFInd(element) || this.isViewModeInsurance"
+                    [(ngModel)]="element.PRPLSTNDINSR.INSURANCECERTIFICATENUMBER"  onClick="this.select();">
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="PRPLSTNDINSR.INSURANCECOMPANYID">
+              <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;">Insurance Company Name
+              </th>
+              <td mat-cell *matCellDef="let element; let index = dataIndex;" style="min-width: 210px !important;">
+                <mat-form-field placeholder="never">
+                  <mat-select [disabled]="isCFInd(element) || this.isViewModeInsurance"
+                    [(ngModel)]="element.PRPLSTNDINSR.INSURANCECOMPANYID"
+                    (selectionChange)="updateStandardInsuranceControls('InsuranceCompanyName',element, index)">
+                    @for (data of this._insuranceMasterDataService.InsrCompany; track data) {
+                      <mat-option
+                        [value]="data.code || data.id">
+                      {{data.TextValue}}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="removeDataRow">
+              <th mat-header-cell *matHeaderCellDef>Action </th>
+              <td mat-cell *matCellDef="let element; let i = dataIndex">
+                <mat-icon [ngClass]="{'disabledDiv': this.isViewModeInsurance}"
+                (click)="removeStandardInsuranceRow(i)">delete</mat-icon>
+              </td>
+            </ng-container>
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail" [class.active1]="classAppliedInsurance">
+              <td mat-cell *matCellDef="let element; let parentIndex= dataIndex"
+                [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail" [@detailExpand]="element.isExpanded ? 'expanded' : 'collapsed'">
+                  <div class="example-element-description">
+
+
+                    <div class="additionalInsuranceTabMain ">
+                      <div class="tableMain fieldContainer FormMain">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th class="header">
+                                <mat-icon [ngClass]="{'disabledDiv': this.isViewModeInsurance}"
+                                  (click)="addAdditionalInsurance(element.PRPLSTNDINSRPARENTINDEX)">
+                                add</mat-icon>
+                              </th>
+                              <th class="header" style=" width: 625px;">Additional Coverage Type</th>
+                              <th class="header" style=" width: 200px; ">Insurance Ext. Method</th>
+                              <th class="header">TPL Coverage Amount</th>
+                              <th class="header">Premium Amount</th>
+                              <th class="header">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @for (element of this.standardInsuranceDataSource.data[parentIndex].PRPLADDLINSR; track element; let index = $index) {
+                              <tr class="customRow"
+                                >
+                                <td class="content" style="width: 30px;"></td>
+                                <td class="content addtionalCvrgType" style=" width: 625px;">
+                                  <mat-form-field placeholder="never">
+                                    <mat-select [(ngModel)]="element.ADDITIONALCOVERAGECDE"
+                                      [disabled]="this.isViewModeInsurance"
+                                      (selectionChange)="updateStandardInsuranceControls('AdditionalCoverageType',this.standardInsuranceDataSource.data[parentIndex], index)">
+                                      @for (data of this._insuranceMasterDataService.AddlInsurances; track data) {
+                                        <mat-option
+                                          [value]="data.code || data.id"> {{
+                                        data.TextValue }}</mat-option>
+                                      }
+                                    </mat-select>
+                                  </mat-form-field>
+                                </td>
+                                <td class="content" style=" width: 200px; ">
+                                  <mat-form-field placeholder="never">
+                                    <mat-select [(ngModel)]="element.EXTENTIONTYPECDE"
+                                      [disabled]="this.isViewModeInsurance"
+                                      (selectionChange)="updateStandardInsuranceControls('InsuranceExtMethod',this.standardInsuranceDataSource.data[parentIndex], index)">
+                                      @for (data of this._insuranceMasterDataService.InsrExtTypeCode; track data) {
+                                        <mat-option
+                                          [value]="data.code || data.id"> {{
+                                        data.TextValue }}</mat-option>
+                                      }
+                                    </mat-select>
+                                  </mat-form-field>
+                                </td>
+                                <td class="content" style="width: 142px;">
+                                  <mat-form-field placeholder="never">
+                                    <input matInput mask="{{mask}}"  onClick="this.select();"
+                                      [disabled]="!isTPLAddionalInsurance(element.ADDITIONALCOVERAGECDE) || this.isViewModeInsurance"
+                                      [value]="element.TPLCOVERAGEAMNT" [(ngModel)]="element.TPLCOVERAGEAMNT"
+                                      (change)="updateStandardInsuranceControls('ADDITIONALCOVERAGEAMOUNT',this.standardInsuranceDataSource.data[parentIndex], index)">
+                                    <!-- <mat-label>Financer Rate - Flat</mat-label> -->
+                                  </mat-form-field>
+                                </td>
+                                <td class="content" style="width: 142px;">
+                                  <mat-form-field placeholder="never">
+                                    <input matInput mask="{{mask}}" disabled [value]="element.TOTALPREMIUMAMNT"
+                                      [(ngModel)]="element.TOTALPREMIUMAMNT">
+                                  </mat-form-field>
+                                </td>
+                                <td class="content padding0" style="width: 142px;">
+                                  <mat-icon [ngClass]="{'disabledDiv': this.isViewModeInsurance}"
+                                    (click)="removeAdditionalRow(this.standardInsuranceDataSource.data[parentIndex].PRPLSTNDINSRPARENTINDEX,this.standardInsuranceDataSource.data[parentIndex].PRPLADDLINSR[index], index)">
+                                    delete
+                                  </mat-icon>
+                                </td>
+                              </tr>
+                            }
+                            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row">
+              <!--  [class.example-expanded-row]="expandedElement === element" (click)="expandedElements4 = expandedElements4 === element ? null : element" -->
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row">
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="tableMain fieldContainer FormMain"
+      [ngClass]="{'disabledDiv': this.isViewModeInsurance}">
+      <mat-table [dataSource]="standardInsuranceDataSource" multiTemplateDataRows>
+
+        <ng-container matColumnDef="addDataRow">
+          <mat-header-cell *matHeaderCellDef style="padding-left: 24px !important;">
+            <mat-icon (click)="addStandardInsuranceRow()">add</mat-icon>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element; let k = dataIndex">
+            <span (click)="expandedElement = expandedElement ? null : element">
+              <mat-icon *ngIf="expandedElement === element ? null : element">add</mat-icon>
+              <mat-icon *ngIf="expandedElement !== element ? null : element">remove</mat-icon>
+            </span>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.COLLECTIONMETHODCDE">
+          <mat-header-cell *matHeaderCellDef> Collection Method </mat-header-cell>
+          <mat-cell *matCellDef="let element; let index = dataIndex;">
+            <mat-form-field placeholder="never">
+              <mat-select [(ngModel)]="element.PRPLSTNDINSR.COLLECTIONMETHODCDE"
+                (selectionChange)="updateStandardInsuranceControls('CollectionMethod',element, index)">
+                <mat-option
+                  *ngFor="let data of this._insuranceMasterDataService.InsrCollectionMethodCode"
+                  [value]="data.code || data.id"> {{
+                data.TextValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.INSURANCEPREMIUMTYPECDE">
+          <mat-header-cell *matHeaderCellDef> Insurance Premium Type </mat-header-cell>
+          <mat-cell *matCellDef="let element; let index = dataIndex;">
+            <mat-form-field placeholder="never">
+              <mat-select [disabled]="!isCFInd(element)"
+                [(ngModel)]="element.PRPLSTNDINSR.INSURANCEPREMIUMTYPECDE"
+                (selectionChange)="updateStandardInsuranceControls('InsurancePremiumType',element, index)">
+                <mat-option
+                  *ngFor="let data of this._insuranceMasterDataService.InsrPremiumType"
+                  [value]="data.code || data.id"> {{
+                data.TextValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.INSRTYPECDE">
+          <mat-header-cell *matHeaderCellDef> Insurance Type </mat-header-cell>
+          <mat-cell *matCellDef="let element; let index = dataIndex;">
+            <mat-form-field placeholder="never">
+              <mat-select [(ngModel)]="element.PRPLSTNDINSR.INSRTYPECDE"
+                (selectionChange)="updateStandardInsuranceControls('InsuranceType',element, index)">
+                <mat-option
+                  *ngFor="let data of this._insuranceMasterDataService.InsuranceTypes"
+                  [value]="data.code || data.id"> {{
+                data.TextValue }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.TERMFROM">
+          <mat-header-cell *matHeaderCellDef> Term Form </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput [value]="element.PRPLSTNDINSR.TERMFROM" [disabled]="true"
+                [(ngModel)]="element.PRPLSTNDINSR.TERMFROM">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.TERMTO">
+          <mat-header-cell *matHeaderCellDef> Term To </mat-header-cell>
+          <mat-cell *matCellDef="let element; let index=dataIndex;">
+            <mat-form-field placeholder="never">
+              <input matInput [value]="element.PRPLSTNDINSR.TERMTO"
+                (change)="TermToValueChanged(element,element.PRPLSTNDINSR.TERMTO, index)"
+                [(ngModel)]="element.PRPLSTNDINSR.TERMTO">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.TOTALPREMIUMAMNT">
+          <mat-header-cell *matHeaderCellDef> Standard Premium Amount </mat-header-cell>
+          <mat-cell *matCellDef="let element; let index = dataIndex;">
+            <mat-form-field placeholder="never">
+              <input matInput [value]="element.PRPLSTNDINSR.TOTALPREMIUMAMNT"
+                [disabled]="isCFInd(element)" mask="{{mask}}"
+                (change)="updateStandardInsuranceControls('StandardPremiumAmount',element, index)"
+                [(ngModel)]="element.PRPLSTNDINSR.TOTALPREMIUMAMNT">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.STARTDTE">
+          <mat-header-cell *matHeaderCellDef> Insurance Start Date </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput [value]="element.PRPLSTNDINSR.STARTDTE" disabled
+                [(ngModel)]="element.PRPLSTNDINSR.STARTDTE" ngModel
+                [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>none</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker disabled="true"></mat-datepicker>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.ENDDTE">
+          <mat-header-cell *matHeaderCellDef> Insurance End Date </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput [value]="element.PRPLSTNDINSR.ENDDTE" disabled
+                [(ngModel)]="element.PRPLSTNDINSR.ENDDTE" ngModel [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>none</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker disabled="true"></mat-datepicker>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.INSURANCECERTIFICATENUMBER">
+          <mat-header-cell *matHeaderCellDef> Certificate Number </mat-header-cell>
+          <mat-cell *matCellDef="let element;let index = dataIndex;">
+            <mat-form-field placeholder="never">
+              <input matInput [value]="element.PRPLSTNDINSR.INSURANCECERTIFICATENUMBER"
+                [disabled]="isCFInd(element)"
+                [(ngModel)]="element.PRPLSTNDINSR.INSURANCECERTIFICATENUMBER">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSR.INSURANCECOMPANYID">
+          <mat-header-cell *matHeaderCellDef> Insurance Company Name </mat-header-cell>
+          <mat-cell *matCellDef="let element; let index = dataIndex;">
+            <mat-form-field placeholder="never">
+              <mat-select [disabled]="isCFInd(element)"
+                [(ngModel)]="element.PRPLSTNDINSR.INSURANCECOMPANYID"
+                (selectionChange)="updateStandardInsuranceControls('InsuranceCompanyName',element, index)">
+                <mat-option
+                  *ngFor="let data of this._insuranceMasterDataService.InsrCompany"
+                  [value]="data.code || data.id">
+                {{data.TextValue}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="removeDataRow">
+          <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i = dataIndex">
+            <span>
+              <mat-icon (click)="removeStandardInsuranceRow(i)">delete</mat-icon>
+            </span>
+          </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="expandedDetail">
+          <mat-cell *matCellDef="let element; let parentIndex= dataIndex">
+            <div class="example-element-detail"
+              [@detailExpand]="element === expandedElement ? 'expanded' : 'collapsed'">
+              <div class="example-element-description">
+                <div class="row noMargin fieldContainer">
+                  <div class="col-md-12 noPadding botmMargin30">
+                    <mat-accordion>
+                      <mat-expansion-panel [expanded]="InsurancePanelOpenState"
+                        (opened)="InsurancePanelOpenState = true"
+                        (closed)="InsurancePanelOpenState = false">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title class="SubHeading">
+                            Additional Insurance
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="tableMain">
+                          <mat-table #subTable
+                            [dataSource]="this.standardInsuranceDataSource.data[parentIndex].PRPLADDLINSR"
+                            multiTemplateDataRows>
+
+                            <ng-container matColumnDef="addRow2">
+                              <th mat-header-cell *matHeaderCellDef>
+                                <mat-icon
+                                  (click)="addAdditionalInsurance(parentIndex)">
+                                add</mat-icon>
+                              </th>
+                              <td mat-cell *matCellDef="let element"></td>
+                            </ng-container>
+                            <ng-container
+                              matColumnDef="PRPLADDLINSR.ADDITIONALCOVERAGECDE">
+                              <th mat-header-cell *matHeaderCellDef>
+                                Additional
+                              Coverage Type </th>
+                              <td mat-cell
+                                *matCellDef="let element; let index = dataIndex;">
+                                <mat-form-field placeholder="never">
+                                  <mat-select
+                                    [(ngModel)]="element.ADDITIONALCOVERAGECDE"
+                                    (selectionChange)="updateStandardInsuranceControls('AdditionalCoverageType',element, index)">
+                                    <mat-option
+                                      *ngFor="let data of this._insuranceMasterDataService.AddlInsurances"
+                                      [value]="data.code || data.id">
+                                      {{
+                                    data.TextValue }}</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+                            <ng-container
+                              matColumnDef="PRPLADDLINSR.EXTENTIONTYPECDE">
+                              <th mat-header-cell *matHeaderCellDef> Insurance
+                              Ext. method </th>
+                              <td mat-cell
+                                *matCellDef="let element; let index = dataIndex;">
+                                <mat-form-field placeholder="never">
+                                  <mat-select
+                                    [(ngModel)]="element.EXTENTIONTYPECDE"
+                                    (selectionChange)="updateStandardInsuranceControls('InsuranceExtMethod',element, index)">
+                                    <mat-option
+                                      *ngFor="let data of this._insuranceMasterDataService.InsrExtTypeCode"
+                                      [value]="data.code || data.id">
+                                      {{
+                                    data.TextValue }}</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+                            <ng-container
+                              matColumnDef="PRPLADDLINSR.TPLCOVERAGEAMNT">
+                              <th mat-header-cell *matHeaderCellDef> TPL
+                                Coverage
+                              Amount </th>
+                              <td mat-cell
+                                *matCellDef="let element; let index= dataIndex">
+                                <mat-form-field placeholder="never">
+                                  <input matInput mask="{{mask}}"
+                                    [disabled]="!isTPL(element.ADDITIONALCOVERAGECDE)"
+                                    [value]="element.TPLCOVERAGEAMNT"
+                                    [(ngModel)]="element.TPLCOVERAGEAMNT"
+                                    (change)="updateStandardInsuranceControls('ADDITIONALCOVERAGEAMOUNT',element, index)">
+
+                                  <mat-label>Financer Rate - Flat
+                                  </mat-label>
+
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+                            <ng-container
+                              matColumnDef="PRPLADDLINSR.TOTALPREMIUMAMNT">
+                              <th mat-header-cell *matHeaderCellDef> Premium
+                              Amount </th>
+                              <td mat-cell *matCellDef="let element">
+                                <mat-form-field placeholder="never">
+                                  <input matInput mask="{{mask}}"
+                                    [value]="element.TOTALPREMIUMAMNT"
+                                    [(ngModel)]="element.TOTALPREMIUMAMNT">
+                                </mat-form-field>
+                              </td>
+                            </ng-container>
+                            <ng-container matColumnDef="removeRow">
+                              <th mat-header-cell *matHeaderCellDef> Action
+                              </th>
+                              <td mat-cell
+                                *matCellDef="let element; let childIndex= dataIndex">
+                                <span>
+                                  <mat-icon
+                                    (click)="removeAdditionalRow(parentIndex, childIndex)">
+                                  delete</mat-icon>
+                                </span>
+                              </td>
+                            </ng-container>
+                            <tr mat-header-row
+                            *matHeaderRowDef="displayedColumns3"> </tr>
+                            <tr mat-row
+                              *matRowDef="let row; columns: displayedColumns3;">
+                            </tr>
+                          </mat-table>
+                        </div>
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+          [class.example-expanded-row]="expandedElement === element"
+          [hidden]="element.RowState == 4">
+        </mat-row>
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row">
+        </mat-row>
+      </mat-table>
+    </div> -->
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+</div>
+<div class="col-md-12 topMargin15">
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Standard Insurance Detail
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class=""></div>
+      <div class="standerdInsuranceTablMain tableMainStanderdInsurance tableInsuranceCustom">
+        <div class="tableMain fieldContainer FormMain">
+
+          <table mat-table [dataSource]="standardInsuranceDetailDataSource" multiTemplateDataRows class="demoTable">
+            <!-- <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay6">
+            <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+          </ng-container> -->
+          <ng-container matColumnDef="addDataRow">
+            <th mat-header-cell *matHeaderCellDef class="plusIcon">
+
+            </th>
+            <td mat-cell *matCellDef="let element1">
+              <!-- <mat-icon>add</mat-icon> -->
+              <span (click)="toggleDetailExpandable(element1.PARENTINDEX, element1.INDEX)">
+                @if (!element1.ISEXPANDED ) {
+                  <mat-icon>add
+                  </mat-icon>
+                }
+                @if (element1.ISEXPANDED) {
+                  <mat-icon>remove
+                  </mat-icon>
+                }
+              </span>
+              <!-- <span
+              (click)="expandedElement1 = expandedElement1 === element1 ? null : element1">
+              <mat-icon *ngIf="expandedElement1 === element1 ? null : element1">add
+              </mat-icon>
+              <mat-icon *ngIf="expandedElement1 !== element1 ? null : element1">remove
+              </mat-icon>
+            </span> -->
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.COLLECTIONMETHODCDE">
+          <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;">Collection Method </th>
+          <td mat-cell *matCellDef="let element" style="min-width: 210px !important;">
+            <mat-form-field placeholder="never">
+              <mat-select disabled [(ngModel)]="element.PRPLSTNDINSRDETL.COLLECTIONMETHODCDE">
+                @for (data of this._insuranceMasterDataService.InsrCollectionMethodCode; track data) {
+                  <mat-option
+                    [value]="data.code || data.id"> {{
+                  data.TextValue }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.INSRTYPECDE">
+          <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;">Insurance Type</th>
+          <td mat-cell *matCellDef="let element" style="min-width: 210px !important;">
+            <mat-form-field placeholder="never">
+              <mat-select disabled [(ngModel)]="element.PRPLSTNDINSRDETL.INSRTYPECDE">
+                @for (data of this._insuranceMasterDataService.InsuranceTypes; track data) {
+                  <mat-option
+                    [value]="data.code || data.id"> {{
+                  data.TextValue }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.TERMFROM">
+          <th mat-header-cell *matHeaderCellDef>Term From</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input disabled matInput [value]="element.PRPLSTNDINSRDETL.TERMFROM"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.TERMFROM">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.TERMTO">
+          <th mat-header-cell *matHeaderCellDef>Term To</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input disabled matInput [value]="element.PRPLSTNDINSRDETL.TERMTO"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.TERMTO">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.DEPRECIATIONRTE">
+          <th mat-header-cell *matHeaderCellDef>Depreciation Rate</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input disabled matInput [value]="element.PRPLSTNDINSRDETL.DEPRECIATIONRTE"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.DEPRECIATIONRTE">
+            </mat-form-field>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.STARTDTE">
+          <th mat-header-cell *matHeaderCellDef>Start Date</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.STARTDTE"
+                [ngModel]="element.PRPLSTNDINSRDETL.STARTDTE| date: 'yyyy-MM-dd'">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.ENDDTE">
+          <th mat-header-cell *matHeaderCellDef>End Date</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.ENDDTE"
+                [ngModel]="element.PRPLSTNDINSRDETL.ENDDTE| date: 'yyyy-MM-dd'">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.SUMINSUREDAMNT">
+          <th mat-header-cell *matHeaderCellDef>Sum Insured Amount</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.SUMINSUREDAMNT" mask="{{mask}}"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.SUMINSUREDAMNT">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.MININSRPREMIUMRTE">
+          <th mat-header-cell *matHeaderCellDef>Minimum Insurance Premium Rate</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.MININSRPREMIUMRTE"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.MININSRPREMIUMRTE">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.MAXINSRPREMIUMRTE">
+          <th mat-header-cell *matHeaderCellDef>Maximum Insurance Premium Rate</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.MAXINSRPREMIUMRTE"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.MAXINSRPREMIUMRTE">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.DEFAULTPREMIUMRTE">
+          <th mat-header-cell *matHeaderCellDef>Default Premium Rate</th>
+          <td mat-cell *matCellDef="let element; let index=dataIndex">
+            <mat-form-field placeholder="never">
+              <input [disabled]="!isPercentage(element)" matInput  onClick="this.select();"
+                [value]="element.PRPLSTNDINSRDETL.DEFAULTPREMIUMRTE"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.DEFAULTPREMIUMRTE"
+                (change)="prcDefaultPRERTE_ValueChanged($event,element, index)">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.FINALPREMIUMRTE">
+          <th mat-header-cell *matHeaderCellDef>Final Premium Rate</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.FINALPREMIUMRTE"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.FINALPREMIUMRTE">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.PREMIUMAMNT">
+          <th mat-header-cell *matHeaderCellDef>Premium Amount</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.PREMIUMAMNT" mask="{{mask}}"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.PREMIUMAMNT">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.LOADINGRTE">
+          <th mat-header-cell *matHeaderCellDef>Loading Rate</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <input matInput disabled [value]="element.PRPLSTNDINSRDETL.LOADINGRTE"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.LOADINGRTE">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.INSURANCEPREMIUMTYPECDE">
+          <th mat-header-cell *matHeaderCellDef style="min-width: 210px !important;">Insurance Premium Type</th>
+          <td mat-cell *matCellDef="let element" style="min-width: 210px !important;">
+            <mat-form-field placeholder="never">
+              <mat-select disabled [(ngModel)]="element.PRPLSTNDINSRDETL.INSURANCEPREMIUMTYPECDE">
+                @for (data of this._insuranceMasterDataService.InsrPremiumType; track data) {
+                  <mat-option
+                    [value]="data.code || data.id"> {{
+                  data.TextValue }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="PRPLSTNDINSRDETL.FIXPREMIUMAMT">
+          <th mat-header-cell *matHeaderCellDef>Fix Premium Amount</th>
+          <td mat-cell *matCellDef="let element; let index = dataIndex">
+            <mat-form-field placeholder="never">
+              <input [disabled]="isPercentage(element) || this.isViewModeInsurance" matInput mask="{{mask}}"
+                [value]="element.PRPLSTNDINSRDETL.FIXPREMIUMAMT"
+                [(ngModel)]="element.PRPLSTNDINSRDETL.FIXPREMIUMAMT"
+                (focus)="FIXPREMIUMAMTFocus(element.PARENTINDEX, element.INDEX)"
+                (change)="txtFixPremiumAmt_ValueChanged($event,element, index)"  onClick="this.select();">
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element1; let i=dataIndex"
+            [attr.colspan]="StandardInduranceDetailColumns.length">
+            <div class="example-element-detail"
+              [@detailExpand]="element1.ISEXPANDED ? 'expanded' : 'collapsed'">
+              <div class="additionalInsuranceTabMain ">
+                <div class="tableMain fieldContainer FormMain">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="header" style="min-width: 210px !important;">Additional Coverage Type</th>
+                        <th class="header" style="min-width: 210px !important;">Insurance Premium Type</th>
+                        <th class="header">Fix Premium Amount</th>
+                        <th class="header" style="min-width: 210px !important;">Insurance Ext. Method</th>
+                        <th class="header">Minimum Premium Rate</th>
+                        <th class="header">Maximum Premium Rate</th>
+                        <th class="header">Default Rate</th>
+                        <th class="header">TPL Coverage Amount</th>
+                        <th class="header">TPL Coverage Rate</th>
+                        <th class="header">Premium Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @for (element1 of this.standardInsuranceDetailDataSource.data[i].PRPLADDLINSRDETL; track element1; let index = $index) {
+                        <tr class="customRow"
+                          >
+                          <td class="content" style="min-width: 210px !important;">
+                            <mat-form-field placeholder="never">
+                              <mat-select disabled [(ngModel)]="element1.ADDITIONALCOVERAGECDE">
+                                @for (data of this._insuranceMasterDataService.AddlInsurances; track data) {
+                                  <mat-option
+                                    [value]="data.code || data.id">
+                                    {{ data.TextValue }}
+                                  </mat-option>
+                                }
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="min-width: 210px !important;">
+                            <mat-form-field placeholder="never">
+                              <mat-select disabled [(value)]="element1.INSURANCEPREMIUMTYPECDE">
+                                @for (data of this._insuranceMasterDataService.InsrPremiumType; track data) {
+                                  <mat-option
+                                    [value]="data.code || data.id">
+                                    {{data.TextValue }}
+                                  </mat-option>
+                                }
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 130px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput mask="{{mask}}" [disabled]="isTPL(element1)" onClick="this.select();"
+                                [value]="element1.FIXPREMIUMAMT" [(ngModel)]="element1.FIXPREMIUMAMT"
+                                (change)="txtAddlFixPremiumAmt_ValueChanged()">
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="min-width: 210px !important;">
+                            <mat-form-field placeholder="never">
+                              <mat-select disabled [(value)]="element1.EXTENSIONTYPECDE">
+                                @for (data of this._insuranceMasterDataService.InsrExtTypeCode; track data) {
+                                  <mat-option
+                                    [value]="data.code || data.id">
+                                    {{data.TextValue }}
+                                  </mat-option>
+                                }
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 139px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled [value]="element1.MININSRPREMIUMRTE"
+                                [(ngModel)]="element1.MININSRPREMIUMRTE">
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 150px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled [value]="element1.MAXINSRPREMIUMRTE"
+                                [(ngModel)]="element1.MAXINSRPREMIUMRTE">
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 98px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput [disabled]="isTPL(element1)" [value]="element1.DEFAULTPREMIUMRTE"
+                                [(ngModel)]="element1.DEFAULTPREMIUMRTE"
+                                (change)="focusout_defaultPremium(element1)"  onClick="this.select();">
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 138px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled mask="{{mask}}" [value]="element1.TPLCOVERAGEAMNT"
+                                [(ngModel)]="element1.TPLCOVERAGEAMNT">
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 118px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput [disabled]="!isTPL(element1)" [value]="element1.TPLCOVERAGERTE"
+                                [(ngModel)]="element1.TPLCOVERAGERTE"
+                                (change)="focusout_tplCoverageRate(element1,index,i)"  onClick="this.select();">
+                            </mat-form-field>
+                          </td>
+                          <td class="content" style="width: 118px;">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled mask="{{mask}}" [value]="element1.PREMIUMAMNT"
+                                [(ngModel)]="element1.PREMIUMAMNT">
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                      }
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="StandardInduranceDetailColumns"></tr>
+        <tr mat-row *matRowDef="let element1; columns: StandardInduranceDetailColumns;"
+          class="example-element-row">
+          <!--  [class.example-expanded-row]="expandedElement1 === element1" (click)="expandedElement6 = expandedElement6 === element ? null : element" -->
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      </table>
+
+    </div>
+    <!-- <mat-table [dataSource]="standardInsuranceDetailDataSource" multiTemplateDataRows>
+    <ng-container matColumnDef="addDataRow">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element1">
+        <span (click)="expandedElement1 = expandedElement1 === element1 ? null : element1">
+          <mat-icon *ngIf="expandedElement1 === element1 ? null : element1">add</mat-icon>
+          <mat-icon *ngIf="expandedElement1 !== element1 ? null : element1">remove
+          </mat-icon>
+        </span>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.COLLECTIONMETHODCDE">
+      <mat-header-cell *matHeaderCellDef> Collection Method </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <mat-select disabled [(ngModel)]="element.PRPLSTNDINSRDETL.COLLECTIONMETHODCDE">
+            <mat-option
+              *ngFor="let data of this._insuranceMasterDataService.InsrCollectionMethodCode"
+              [value]="data.code || data.id"> {{
+            data.TextValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.INSRTYPECDE">
+      <mat-header-cell *matHeaderCellDef> Insurance Type </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <mat-select disabled [(ngModel)]="element.PRPLSTNDINSRDETL.INSRTYPECDE">
+            <mat-option
+              *ngFor="let data of this._insuranceMasterDataService.InsuranceTypes"
+              [value]="data.code || data.id"> {{
+            data.TextValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.TERMFROM">
+      <mat-header-cell *matHeaderCellDef> Term Form </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never" disabled>
+          <input disabled matInput [value]="element.PRPLSTNDINSRDETL.TERMFROM"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.TERMFROM">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.TERMTO">
+      <mat-header-cell *matHeaderCellDef> Term To </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input disabled matInput [value]="element.PRPLSTNDINSRDETL.TERMTO"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.TERMTO">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.DEPRECIATIONRTE">
+      <mat-header-cell *matHeaderCellDef> Depreciation Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input disabled matInput [value]="element.PRPLSTNDINSRDETL.DEPRECIATIONRTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.DEPRECIATIONRTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.STARTDTE">
+      <mat-header-cell *matHeaderCellDef> Start Date </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.STARTDTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.STARTDTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.ENDDTE">
+      <mat-header-cell *matHeaderCellDef> End Date </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.ENDDTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.ENDDTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.SUMINSUREDAMNT">
+      <mat-header-cell *matHeaderCellDef> Sum Insured Amount </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.SUMINSUREDAMNT"
+            mask="{{mask}}" [(ngModel)]="element.PRPLSTNDINSRDETL.SUMINSUREDAMNT">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.MININSRPREMIUMRTE">
+      <mat-header-cell *matHeaderCellDef> Minimum Insurance Premium Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.MININSRPREMIUMRTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.MININSRPREMIUMRTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.MAXINSRPREMIUMRTE">
+      <mat-header-cell *matHeaderCellDef> Maximum Insurance Premium Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.MAXINSRPREMIUMRTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.MAXINSRPREMIUMRTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.DEFAULTPREMIUMRTE">
+      <mat-header-cell *matHeaderCellDef> Default Premium Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element; let index=dataIndex">
+        <mat-form-field placeholder="never">
+          <input [disabled]="!isPercentage(element)" matInput
+            [value]="element.PRPLSTNDINSRDETL.DEFAULTPREMIUMRTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.DEFAULTPREMIUMRTE"
+            (change)="prcDefaultPRERTE_ValueChanged($event,element, index)">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.FINALPREMIUMRTE">
+      <mat-header-cell *matHeaderCellDef> Final Premium Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.FINALPREMIUMRTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.FINALPREMIUMRTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.PREMIUMAMNT">
+      <mat-header-cell *matHeaderCellDef> Premium Amount </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.PREMIUMAMNT"
+            mask="{{mask}}" [(ngModel)]="element.PRPLSTNDINSRDETL.PREMIUMAMNT">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.LOADINGRTE">
+      <mat-header-cell *matHeaderCellDef> Loading Rate </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <input matInput disabled [value]="element.PRPLSTNDINSRDETL.LOADINGRTE"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.LOADINGRTE">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.INSURANCEPREMIUMTYPECDE">
+      <mat-header-cell *matHeaderCellDef> Insurance Premium Type </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field placeholder="never">
+          <mat-select disabled
+            [(ngModel)]="element.PRPLSTNDINSRDETL.INSURANCEPREMIUMTYPECDE">
+            <mat-option
+              *ngFor="let data of this._insuranceMasterDataService.InsrPremiumType"
+              [value]="data.code || data.id"> {{
+            data.TextValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="PRPLSTNDINSRDETL.FIXPREMIUMAMT">
+      <mat-header-cell *matHeaderCellDef> Fix Premium Amount </mat-header-cell>
+      <mat-cell *matCellDef="let element; let index = dataIndex">
+        <mat-form-field placeholder="never">
+          <input [disabled]="isPercentage(element)" matInput mask="{{mask}}"
+            [value]="element.PRPLSTNDINSRDETL.FIXPREMIUMAMT"
+            [(ngModel)]="element.PRPLSTNDINSRDETL.FIXPREMIUMAMT"
+            (change)="txtFixPremiumAmt_ValueChanged($event,element, index)">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="expandedDetail">
+      <mat-cell *matCellDef="let element1; let i=dataIndex">
+        <div class="example-element-detail"
+          [@detailExpand]="element1 == expandedElement1 ? 'expanded' : 'collapsed'">
+          <div class="example-element-description">
+            <div class="row noMargin fieldContainer">
+              <div class="col-md-12 noPadding botmMargin30">
+                <mat-accordion>
+                  <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title class="SubHeading">
+                        Additional Insurance Detail
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain">
+                      <mat-table #subTable
+                        [dataSource]="standardInsuranceDetailDataSource.data[i].PRPLADDLINSRDETL"
+                        multiTemplateDataRows>
+
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.ADDITIONALCOVERAGECDE">
+                          <th mat-header-cell *matHeaderCellDef>
+                            Additional
+                          Coverage Type </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <mat-select disabled
+                                [(ngModel)]="element1.ADDITIONALCOVERAGECDE">
+                                <mat-option
+                                  *ngFor="let data of this._insuranceMasterDataService.AddlInsurances"
+                                  [value]="data.code || data.id">
+                                  {{ data.TextValue }}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.INSURANCEPREMIUMTYPECDE">
+                          <th mat-header-cell *matHeaderCellDef> Insurance
+                          Premium Type </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <mat-select disabled
+                                [(value)]="element1.INSURANCEPREMIUMTYPECDE">
+                                <mat-option
+                                  *ngFor="let data of this._insuranceMasterDataService.InsrPremiumType"
+                                  [value]="data.code || data.id">
+                                  {{data.TextValue }}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.FIXPREMIUMAMT">
+                          <th mat-header-cell *matHeaderCellDef> Fix
+                            Premium
+                          Amount </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input mask="{{mask}}"
+                                [disabled]="isTPL(element1.ADDITIONALCOVERAGECDE)"
+                                matInput
+                                [value]="element1.FIXPREMIUMAMT"
+                                [(ngModel)]="element1.FIXPREMIUMAMT">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.EXTENSIONTYPECDE">
+                          <th mat-header-cell *matHeaderCellDef> Insurance
+                          Ext. method </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <mat-select disabled
+                                [(value)]="element1.EXTENSIONTYPECDE">
+                                <mat-option
+                                  *ngFor="let data of this._insuranceMasterDataService.InsrExtTypeCode"
+                                  [value]="data.code || data.id">
+                                  {{data.TextValue }}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.MININSRPREMIUMRTE">
+                          <th mat-header-cell *matHeaderCellDef> Minimum
+                          Premium Rate </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled
+                                [value]="element1.MININSRPREMIUMRTE"
+                                [(ngModel)]="element1.MININSRPREMIUMRTE">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.MAXINSRPREMIUMRTE">
+                          <th mat-header-cell *matHeaderCellDef> Maximum
+                          Premium Rate </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled
+                                [value]="element1.MAXINSRPREMIUMRTE"
+                                [(ngModel)]="element1.MAXINSRPREMIUMRTE">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.DEFAULTPREMIUMRTE">
+                          <th mat-header-cell *matHeaderCellDef> Default
+                            Rate
+                          </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input
+                                [disabled]="isTPL(element1.ADDITIONALCOVERAGECDE)"
+                                matInput
+                                [value]="element1.DEFAULTPREMIUMRTE"
+                                [(ngModel)]="element1.DEFAULTPREMIUMRTE"
+                                (change)="focusout_defaultPremium(element1)">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.TPLCOVERAGEAMNT">
+                          <th mat-header-cell *matHeaderCellDef> TPL
+                            Coverage
+                          Amount </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled mask="{{mask}}"
+                                [value]="element1.TPLCOVERAGEAMNT"
+                                [(ngModel)]="element1.TPLCOVERAGEAMNT">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.TPLCOVERAGERTE">
+                          <th mat-header-cell *matHeaderCellDef> TPL
+                            Coverage
+                          Rate </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input
+                                [disabled]="!isTPL(element1.ADDITIONALCOVERAGECDE)"
+                                matInput
+                                [value]="element1.TPLCOVERAGERTE"
+                                [(ngModel)]="element1.TPLCOVERAGERTE">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+                        <ng-container
+                          matColumnDef="PRPLADDLINSRDETL.PREMIUMAMNT">
+                          <th mat-header-cell *matHeaderCellDef> Premium
+                          Amount </th>
+                          <td mat-cell *matCellDef="let element1">
+                            <mat-form-field placeholder="never">
+                              <input matInput disabled mask="{{mask}}"
+                                [value]="element1.PREMIUMAMNT"
+                                [(ngModel)]="element1.PREMIUMAMNT">
+                            </mat-form-field>
+                          </td>
+                        </ng-container>
+
+                        <tr mat-header-row
+                          *matHeaderRowDef="columnsAdditionalInsuranceDetail">
+                        </tr>
+                        <tr mat-row
+                          *matRowDef="let row; columns: columnsAdditionalInsuranceDetail;">
+                        </tr>
+                      </mat-table>
+                    </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="StandardInduranceDetailColumns"></mat-header-row>
+    <mat-row *matRowDef="let element1; columns: StandardInduranceDetailColumns;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement1 === element1">
+    </mat-row>
+    <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row">
+    </mat-row>
+  </mat-table> -->
+</div>
+
+</mat-expansion-panel>
+
+</mat-accordion>
+</div>
+<div class="row bodyContainer fieldContainer" [formGroup]="this._prplData.PROPOSALFINANCIALAGREEMENT">
+  <div class="col-md-12 noPadding">
+    <div class="TabInnerMainForm" style="padding-left: 0;margin-top: -8px;">
+      <div class="row noMargin ">
+        <div class="col-md-3 top10" style="padding-bottom: 45px;">
+          <nfs-currency [Placeholder]="'Total Premium Amount'" [isControlDisable]="true"
+            [Label]="'Total Premium Amount'" formControlName="INSURANCEPREMIUM" [Name]="'TotalPremiumAmount'"
+            [Component]="'insurancePremium'">
+          </nfs-currency>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row popupFooter">
+  <div class="row bodyContainer">
+    <div class="col-md-12 searchBtns">
+      <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+        [matRaisedButtonIcon]="true" (onBtnClick)="this.btnCancel()">
+      </nfs-button>
+      <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+        [alwaysEnable]="true" [matRaisedButtonIcon]="true" (onBtnClick)="btnOk()">
+      </nfs-button>
+      <nfs-button [text]="'Calculate'" [color]="'primary'" [matButton]="false"
+        [disabled]="!this._calService.btnInsCalculateIsEnabled" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+        (onBtnClick)="insuranceCalculateClicked()">
+      </nfs-button>
+    </div>
+  </div>
+</div>

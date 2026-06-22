@@ -1,0 +1,45 @@
+{
+  "name": "my-lib",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "module": "fesm2015/my-lib.mjs",
+  "es2020": "fesm2020/my-lib.mjs",
+  "esm2020": "esm2020/my-lib.mjs",
+  "fesm2020": "fesm2020/my-lib.mjs",
+  "fesm2015": "fesm2015/my-lib.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./lib/ngs-forms.module": "./lib/src/lib/ngs-forms.module",
+    "./lib/form-array": "./lib/src/lib/form-array",
+    "./lib/form-builder": "./lib/src/lib/form-builder",
+    "./lib/form-control": "./lib/src/lib/form-control",
+    "./lib/form-group": "./lib/src/lib/form-group",
+    "./lib/validators": "./lib/src/lib/validators",
+    "./lib/input-file.directive": "./lib/src/lib/input-file.directive",
+    "./lib/types": "./lib/src/lib/types",
+    ".": {
+      "types": "./index.d.ts",
+      "esm2020": "./esm2020/my-lib.mjs",
+      "es2020": "./fesm2020/my-lib.mjs",
+      "es2015": "./fesm2015/my-lib.mjs",
+      "node": "./fesm2015/my-lib.mjs",
+      "default": "./fesm2020/my-lib.mjs"
+    },
+    "./src/lib": {
+      "types": "./src/lib/index.d.ts",
+      "esm2020": "./esm2020/src/lib/my-lib-src-lib.mjs",
+      "es2020": "./fesm2020/my-lib-src-lib.mjs",
+      "es2015": "./fesm2015/my-lib-src-lib.mjs",
+      "node": "./fesm2015/my-lib-src-lib.mjs",
+      "default": "./fesm2020/my-lib-src-lib.mjs"
+    }
+  }
+}

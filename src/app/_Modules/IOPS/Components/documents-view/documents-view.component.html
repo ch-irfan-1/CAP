@@ -1,0 +1,126 @@
+<div class="documentsViewPage">
+  <!-- OLD changes -->
+
+
+  <!-- <div class="headerHight">
+  <div class="row">
+    <div class="col-md-12 documentsArray">
+      <div class="col-md-6">
+        <p>Documents</p>
+      </div>
+      <div class="col-md-6 btn-right">
+        <div>
+          <p><img src="assets/Images/cancel.png" class="cursorPointer" (click)="cancleButtonClick.emit()">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollFiles">
+    <div *ngFor="let file of files; let i = index" class="fileDiv"
+      [ngClass]="{'active': (selectedDocument == file?.docid)}" (click)="viewDocument(file)">
+      <img *ngIf="file.fileType == 'application/pdf'" src="assets/Images/pdfFileIcon.png">
+      <img *ngIf="file.fileType != 'application/pdf'" src="assets/Images/pngFileIcon.png">
+      <p matTooltip="{{ file?.name }}">{{ file?.name }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="row viewDocumentSection">
+  <div class="col-md-12">
+    <div class="col-md-12 noPadding docView">
+      <img [style.transform]="'scale('+scale+')'" *ngIf="imageSource != ''" height="100px" width="100px"
+        [src]="imageSource" alt="Image Source">
+    </div>
+    <div *ngIf="imageSource != ''" class="col-md-12 imageControl">
+      <div class="col-md-4 imgCntrlInner">
+        <img src="assets/Images/previousDoc.png" (click)="prevDoc()" matTooltip="previous">
+        <p>{{selectedIndex + 1}} of {{totalIndex}}</p>
+        <img src="assets/Images/nextDoc.png" (click)="nextDoc()" matTooltip="Next">
+      </div>
+      <div class="col-md-6 zoomControls imgCntrlInner">
+        <img src="assets/Images/zoomOut.png" (click)="zoomOutImg(scale)" matTooltip="Zoom Out">
+        <p>{{scale}}</p>
+        <img src="assets/Images/zoomIn.png" (click)="scale=scale+ .1" matTooltip="Zoom In">
+      </div>
+      <div class="col-md-2 imgCntrlInner">
+        <img (click)="viewMaxDocument()" src="assets/Images/strechDoc.png" class="strechDocIcon">
+        <img src="assets/Images/downloadWhite.png" class="downloadDocIcon">
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="isShown" class="row container-fluid zoomedPicture" id="divshow">
+  <img *ngIf="imageSource != ''" [src]="imageSource" alt="Image Source">
+</div> -->
+
+
+<!-- End OF OLD changes -->
+
+<!-- NEW design hanges -->
+
+<div class="FormMain capDocuments">
+  @if (showDocument) {
+    <div class="row">
+      <div class="col-md-12 noPadding">
+        <span class="mainHeading">
+          <p>Document Details</p>
+        </span>
+      </div>
+      <div class="col-md-12 noPadding">
+        <div class="TabInnerMainForm">
+          <div class="row tableMain rentalDetail">
+            <div class="col-md-12">
+              <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [contextMenu]="ContextMenu"
+                [ActionLabel]="'View'" [IsDeleteRequired]="false" [columns]="columns"
+              (SelectionChange)="DocumentView()" [Labels]="Labels"></nfs-static-grid>
+            </div>
+            <div class="col-md-12 noPadding">
+              <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  @if (!showDocument) {
+    <div class="row">
+      <div class="col-md-12 noPadding">
+        <span class="mainHeading">
+          <p class="backImage" (click)="DocumentView()"><img src="assets/Images/arrowBack.png"></p>
+          <p>Default Documents</p>
+        </span>
+      </div>
+      <div class="row col-md-12 noPadding DocumentExpansionPanel">
+        <div class="col-md-12 noPadding docView">
+          <img [style.transform]="'scale('+scale+')'" height="100px" width="100px"
+                        src="assets/Images/demo.jpg" alt="Image Source" style=" display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 50%;transform-origin: left top 32px;">
+        </div>
+        <div class="row col-md-12 imageControl">
+          <div class="col-md-4 imgCntrlInner noPadding">
+            <img src="assets/Images/previousDoc.png"  matTooltip="previous">
+            <p>1 of 1</p>
+            <img src="assets/Images/nextDoc.png"  matTooltip="Next">
+          </div>
+          <div class="col-md-5 zoomControls imgCntrlInner noPadding">
+            <img src="assets/Images/zoomOut.png" (click)="zoomOutImg(scale)" >
+            <p>{{scale}}</p>
+            <img src="assets/Images/zoomIn.png" (click)="scale=scale+ .1" >
+          </div>
+          <div class="col-md-3 imgCntrlInner noPadding">
+            <img src="assets/Images/strechDoc.png" class="strechDocIcon" (click)="openFullImage()">
+            <img src="assets/Images/downloadWhite.png" class="downloadDocIcon">
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+<!-- End NEW design hanges -->
+</div>

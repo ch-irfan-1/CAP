@@ -1,0 +1,54 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Admin Fee Tax Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain" [formGroup]="PRPLARTICLECOMPONENTENTITYCOL">
+
+        <ng-container [formGroup]="PRPLARTEAMNTTRAN">
+            <div class="col-md-3 top22 noPadding">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Component Name'" [Label]="'Component Name'"
+                    formControlName="AMTCOMPONENTDESC" [isControlDisable]="true">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top22 ">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Component Amount'" [Label]="'Component Amount'"
+                    formControlName="INPUTAMT" [isControlDisable]="true">
+                </nfs-currency>
+            </div>
+        </ng-container>
+        <div class="col-md-3 top22 ">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Tax Inclusive Amount'" [Label]="'Tax Inclusive Amount'"
+                formControlName="TAXINCULSIVEAMT" [isControlDisable]="true">
+            </nfs-currency>
+        </div>
+        <div class="col-md-3 top22 ">
+            <nfs-currency [maxLength]="100" [Placeholder]="'Tax Exclusive Amount'" [Label]="'Tax Exclusive Amount'"
+                formControlName="TAXEXCULSIVEAMT" [isControlDisable]="true">
+            </nfs-currency>
+        </div>
+
+        <div class="col-md-12 noPadding">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="SubHeading">
+                            Tax Details
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain top10 rentalDetail" style="padding: 0">
+                        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+                            [IsActionRequired]="false" [radioPropertyName]="'DEFAULTIND'" [columns]="columns"
+                            [Labels]="Labels" [pipes]="pipes"></nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

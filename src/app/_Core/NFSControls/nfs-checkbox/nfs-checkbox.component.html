@@ -1,0 +1,9 @@
+<div>
+  <mat-checkbox [matTooltip]="this.Label" (change)='onDateChange()' color='primary' [formControl]="CheckboxControl"
+    [disabled]="isControlDisable">
+    {{Label}}
+  </mat-checkbox>
+  @if (IsFieldValid()) {
+    <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+  }
+</div>

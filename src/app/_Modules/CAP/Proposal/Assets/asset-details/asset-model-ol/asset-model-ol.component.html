@@ -1,0 +1,113 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Asset Search</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  @if (searchPanel) {
+    <div class="row bodyContainer fieldContainer">
+      <div class="col-md-4 top10">
+        <nfs-dropdown [Label]="'Asset Type'" [controlPlaceholder]="'Asset Type'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown>
+      </div>
+      <div class="col-md-4 top10">
+        <nfs-dropdown [Label]="'Asset Sub-Type'" [controlPlaceholder]="'Asset Sub-Type'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown>
+      </div>
+      <div class="col-md-4 top10">
+        <nfs-dropdown [Label]="'Asset Make'" [controlPlaceholder]="'Asset Make'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown>
+      </div>
+      <div class="col-md-4 top10">
+        <nfs-dropdown [Label]="'Asset Brand'" [controlPlaceholder]="'Asset Brand'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown>
+      </div>
+      <div class="col-md-4 top10">
+        <nfs-dropdown [Label]="'Asset Model'" [controlPlaceholder]="'Asset Model'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.tempData"></nfs-dropdown>
+      </div>
+      <div class="row col-md-12 assetTypeButtonBox searchBtns">
+        <div class="col-md-12 top10">
+          <!-- <nfs-button [text]="'Reset'" [color]="'primary'" [disabled]="false" [iconPng]="'assets/Images/reset.png'"
+          [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+        </nfs-button>            -->
+        <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false"
+          [iconPng]="'assets/Images/searchwhite.png'" [matButton]="false" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="true" (onBtnClick)='ShowResults()'>
+        </nfs-button>
+        <nfs-button [text]="'Show All'" [color]="'primary'" [disabled]="false"
+          [iconPng]="'assets/Images/carButtonIconGreen.png'" [matButton]="true" [matRaisedButton]="false"
+          [matRaisedButtonIcon]="false" (onBtnClick)='ShowResults()'>
+        </nfs-button>
+      </div>
+    </div>
+  </div>
+}
+
+@if (resultPanel) {
+  <div class="row bodyContainer ">
+    <div class="row col-md-12 filterBox">
+      <div class="col-md-8 resultCOunt noPadding">
+        <p>Results(150)</p>
+      </div>
+      <div class="col-md-4 resulFilter noPadding">
+        <span (click)='ShowResults()'>Reset all</span>
+      </div>
+    </div>
+    <div class="col-md-12 top10">
+      <div class="TabInnerMainForm">
+        <div class="row tableMain rentalDetail">
+          <div class="col-md-12">
+            <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+              [ActionLabel]="'Load Contract'" [radioPropertyName]="'DEFAULTIND'" [columns]="columns"
+            [Labels]="Labels"></nfs-static-grid>
+          </div>
+          <div class="col-md-12 noPadding">
+            <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="selectedPageSize"
+              [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+      <!-- <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="SubHeading">
+            Results
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="tableMain">
+          <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+          [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels"></nfs-static-grid>
+        </div>
+        <div class="">
+          <mat-paginator [length]="dataSourcelength" [pageSize]="selectedPageSize"
+            [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+          </mat-paginator>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion> -->
+  </div>
+  <div class="row col-md-12 assetTypeButtonBox searchBtns">
+    <div class="col-md-12 top10">
+      <nfs-button [text]="'Cancel'" [color]="'primary'" [disabled]="false" [matButton]="false"
+        [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+      </nfs-button>
+      <nfs-button [text]="'OK'" [color]="'primary'" [disabled]="false" [matButton]="true"
+        [matRaisedButton]="false" [matRaisedButtonIcon]="false">
+      </nfs-button>
+    </div>
+  </div>
+</div>
+}
+</div>

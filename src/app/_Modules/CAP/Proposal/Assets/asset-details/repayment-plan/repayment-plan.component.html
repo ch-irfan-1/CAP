@@ -1,0 +1,131 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Repayment Plan</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row">
+        <div class="">
+            <div class="card">
+                <div class="tableMain customTop15 rentalDetail">
+                    <div class="col-md-12 botmMargin30 noPaddingRight" style="margin-top: 15px !important;">
+                        <nfs-static-grid [inputArr]="this.dataSource" [isRadioBtnRequired]="false"
+                            [columns]="RPColumns" [Labels]="RPLabel" [pipes]="Pipes"
+                            [IsActionRequired]="false" [IsDeleteRequired]="false"
+                            (SelectionChange)="DefaultSelectionChange($event)"></nfs-static-grid>
+
+                        <!-- <div class="tableTotal">
+                            <p>Total:
+                                <span *ngFor="let ele of this.Totals; let _index = index">
+                                    {{ele | currency:'':''}}
+                                </span>
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Repayment Plan</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="tableMain fieldContainer FormMain">
+    <mat-table [dataSource]="dataSource1" multiTemplateDataRows>
+        <ng-container matColumnDef="feeOpen">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span (click)="expandedElement = expandedElement === element ? null : element">
+                    <mat-icon *ngIf="expandedElement === element ? null : element">add</mat-icon>
+                    <mat-icon *ngIf="expandedElement !== element ? null : element">remove</mat-icon>
+                </span>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Installment No.">
+            <mat-header-cell *matHeaderCellDef> Installment No. </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.InstallmentNo}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Rental Due">
+            <mat-header-cell *matHeaderCellDef> Rental Due </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.RentalDue}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Principal Amount">
+            <mat-header-cell *matHeaderCellDef> Principal Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.PrincipalAmount}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Interest Amount">
+            <mat-header-cell *matHeaderCellDef> Interest Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.InterestAmount}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Gross Rental Amount">
+            <mat-header-cell *matHeaderCellDef> Gross Rental Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.GrossRentalAmount}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Principal Outstanding Amount">
+            <mat-header-cell *matHeaderCellDef> Principal Outstanding Amount </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                {{element.PrincipalOutstandingAmount}}
+            </mat-cell>
+        </ng-container>
+       <ng-container matColumnDef="expandedDetail">
+            <mat-cell *matCellDef="let element">
+            <div class="example-element-detail"
+                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                <div class="example-element-description">
+                    <div class="row noMargin fieldContainer">
+                        <div class="col-md-12 noPadding botmMargin30">
+                            ABC
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+        <mat-row *matRowDef="let element; columns: columnsToDisplay;"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element">
+        </mat-row>
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></mat-row>
+    </mat-table>
+    <div class="row fieldContainer totalYear">
+        <div class="col-md-3 top15 yearField">
+            <p>Total: </p>
+        </div>
+        <div class="col-md-3 top15 yearField">
+            <p>IDR 0.00 </p>
+        </div>
+        <div class="col-md-3 top15 yearField">
+            <p>IDR 0.00 </p>
+        </div>
+        <div class="col-md-3 top15 yearField">
+            <p>IDR 0.00 </p>
+        </div>
+    </div> 
+</div> -->

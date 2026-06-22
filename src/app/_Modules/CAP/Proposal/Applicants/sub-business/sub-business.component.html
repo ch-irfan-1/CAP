@@ -1,0 +1,160 @@
+<div class="FormMain">
+
+    <div class="row fieldContainer" [formGroup]="this.Business.controls.PRPLAPLTBUS">
+        <div class="col-md-6 top15">
+            <nfs-textbox [maxLength]="50" [Placeholder]="'Name'" [Label]="'Name'" formControlName="BUSINESSNME"
+                [Name]="'BUSINESSNME'" [Component]="this.ComponentName" [Index] = "Index">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-number [maxLength]="14" [Placeholder]="'Contact Number'" [Label]="'Contact Number'"
+                formControlName="PHONENBR" [Name]="'PHONENBR'" [Component]="this.ComponentName">
+            </nfs-number>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-email [maxLength]="20" [placeholder]="'Email'" [label]="'Email'" formControlName="EMAIL"
+                [Name]="'EMAIL'" [Component]="this.ComponentName" [Index] = "Index">
+            </nfs-email>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-textbox [maxLength]="17" [Placeholder]="'Fax'" [Label]="'Fax'" formControlName="FAXNBR"
+                [Name]="'FAXNBR'" [Component]="this.ComponentName" [Index] = "Index">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Business Type'" formControlName="INDUSTRYTYPECDE" [Name]="'INDUSTRYTYPECDE'"
+                [Component]="this.ComponentName" [controlPlaceholder]="'Business Type'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._employmentMasterDataService.BusinessType"
+                [Index] = "Index"></nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Business Line'" [controlPlaceholder]="'Business Line'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.BusinessLineArray"
+                formControlName="INDUSTRYSUBTYPECDE" [Name]="'INDUSTRYSUBTYPECDE'" [Component]="this.ComponentName"
+                [Index] = "Index">
+            </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-dropdown [Label]="'Relationship'" [controlPlaceholder]="'Relationship'" [Ismultiselect]="false"
+                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.Relationships"
+                formControlName="RELATIONSHIPCDE" [Name]="'RELATIONSHIPCDE'" [Component]="this.ComponentName"
+                [Index] = "Index">
+            </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-currency [maxLength]="20" [Placeholder]="'Revenue'" [Label]="'Revenue'" formControlName="REVENUE"
+                [Name]="'REVENUE'" [Component]="this.ComponentName" (Change)="onRevenueChange($event)">
+            </nfs-currency>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-currency [maxLength]="20" [Placeholder]="'Profit'" [Label]="'Profit'" formControlName="PROFIT"
+                [Name]="'PROFIT'" [Component]="this.ComponentName" (Change)="onProfitChange($event)">
+            </nfs-currency>
+        </div>
+        <div class="col-md-2 top15">
+            <nfs-number [maxLength]="4" [Placeholder]="'Year in Business'" [Label]="'Year in Business'"
+                formControlName="YEARINBUSINESS" [Name]="'YEARINBUSINESS'" [Component]="this.ComponentName">
+            </nfs-number>
+        </div>
+
+        <div class="col-md-12 top15">
+            <nfs-textbox [maxLength]="200" [Placeholder]="'Business Detail'" [Label]="'Business Detail'"
+                formControlName="BUSINESSDETAIL" [Name]="'BUSINESSDETAIL'" [Component]="this.ComponentName" [Index] = "Index">
+            </nfs-textbox>
+        </div>
+        <div class="col-md-12 top15">
+            <nfs-textbox [maxLength]="200" [Placeholder]="'Comments'" [Label]="'Comments'" formControlName="COMMENT"
+                [Name]="'COMMENT'" [Component]="this.ComponentName" [Index] = "Index">
+            </nfs-textbox>
+        </div>
+        
+    </div>
+    <div class="row" [formGroup]="this.Business.controls.PRPLAPLTBUS">
+        <div class="col-md-12">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Address Detail
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+                        <div class="col-md-2 top15" [ngClass]="'control-disabled'">
+                            <nfs-dropdown formControlName="COUNTRYID" [Name]="'COUNTRYID'" [Component]="this.ComponentName"
+                                [Label]="'Country'" [controlPlaceholder]="'Country *'" [Ismultiselect]="false"
+                                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.CountryList"
+                                [Index] = "Index">
+                            </nfs-dropdown>
+                        </div>
+                        <div class="col-md-2 top15">
+                            <nfs-dropdown [Label]="'Province'" formControlName="PROVINCEID" [Name]="'PROVINCEID'"
+                                [Component]="this.ComponentName" [controlPlaceholder]="'Province'" [Ismultiselect]="false"
+                                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                                [DataArray]="this._AddressMasterDataService.AllProvinceData" (selectionChange)="selectionChange_PROVINCEID($event)"
+                                [Index] = "Index">
+                            </nfs-dropdown>
+                        </div>
+                        <div class="col-md-2 top15">
+                            <nfs-dropdown [Label]="'Kotamadya/Kabupaten'" formControlName="KOTAMADYAIDOTO" [Name]="'KOTAMADYAIDOTO'"
+                                [Component]="this.ComponentName" [controlPlaceholder]="'Kotamadya/Kabupaten'" [Ismultiselect]="false"
+                                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]=" this.AllKotaByProvince" (selectionChange)="selectionChange_KOTAMADYAIDOTO($event)"
+                                [Index] = "Index">
+                            </nfs-dropdown>
+                        </div>
+                        <div class="col-md-2 top15">
+                            <nfs-dropdown [Label]="'Kecamatan'" formControlName="KECAMATANIDOTO" [Name]="'KECAMATANIDOTO'"
+                                [Component]="this.ComponentName" [controlPlaceholder]="'Kecamatan'" [Ismultiselect]="false"
+                                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKecamatanByKota" (selectionChange)="selectionChange_KECAMATANIDOTO($event)"
+                                [Index] = "Index">
+                            </nfs-dropdown>
+                        </div>
+                        <div class="col-md-2 top15">
+                            <nfs-dropdown [Label]="'Kelurahan/Desa'" formControlName="KELURAHANIDOTO" [Name]="'KELURAHANIDOTO'"
+                                [Component]="this.ComponentName" [controlPlaceholder]="'Kelurahan/Desa'" [Ismultiselect]="false"
+                                [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKelurahanByKeca"
+                                [Index] = "Index">
+                            </nfs-dropdown>
+                        </div>
+                        <div class="col-md-2 top15"
+                            [ngClass]="{'control-disabled':  !(this.Business.controls.PRPLAPLTBUS.controls.KELURAHANIDOTO.value>0)}">
+                            <nfs-number [maxLength]="3" [Placeholder]="'RW###'" [Label]="'RW###'" formControlName="RWOTO"
+                                [Name]="'RWOTO'" [Component]="this.ComponentName">
+                            </nfs-number>
+                        </div>
+                        <div class="col-md-2 top15"
+                            [ngClass]="{'control-disabled':  !(this.Business.controls.PRPLAPLTBUS.controls.KELURAHANIDOTO.value>0)}">
+                            <nfs-number [maxLength]="3" [Placeholder]="'RT###'" [Label]="'RT###'" formControlName="RTOTO"
+                                [Name]="'RTOTO'" [Component]="this.ComponentName">
+                            </nfs-number>
+                        </div>
+                        <div class="col-md-10 top15">
+                            <nfs-textbox [maxLength]="500" [Placeholder]="'Address'" [Label]="'Address'" formControlName="ADDRESSOTO"
+                                [Name]="'ADDRESSOTO'" [Component]="this.ComponentName" [Index] = "Index">
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-2 top15">
+                            <nfs-number [maxLength]="10" [Placeholder]="'Postal/Zip Code'" [Label]="'Postal/Zip Code'"
+                                formControlName="POSTALCODE" [Name]="'POSTALCODE'" [Component]="this.ComponentName">
+                            </nfs-number>
+                        </div>
+                        <div class="col-md-2 top15">
+                            <nfs-textbox [Placeholder]="'Area Code'" [Label]="'Area Code'"
+                                 formControlName="AREACDE" [Name]="'AREACDE'" [Component]="this.ComponentName" [isControlDisable]="true">
+                            </nfs-textbox>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    
+</div>

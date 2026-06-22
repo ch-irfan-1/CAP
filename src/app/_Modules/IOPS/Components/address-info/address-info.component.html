@@ -1,0 +1,41 @@
+<div class="AddressInfoPage TabInnerMain">
+  <div class="">
+    <!-- <div class="row addAddressBtn">
+    <div class="col-md-12">
+      <button id="Add-Address-Button" type="button" [disableRipple]="true" #selectAfterAdding mat-button (click)="addAddress()" [disabled]="this.Mode==='View'">
+        <mat-icon>add</mat-icon> Add New Address
+      </button>
+    </div>
+  </div> -->
+  <!-- <a id="Add-Address-Button" class="posBtn" #selectAfterAdding (click)="addAddress()">ADD ADDRESS</a> -->
+
+  <mat-tab-group #tabRef [disableRipple]="true" [selectedIndex]="selected.value"
+    (selectedIndexChange)="tabSelectionChange(tabRef.selectedIndex)">
+    @for (address of Addresses.controls | IOPSFilter:searchText; track address; let Addressindex = $index) {
+      <mat-tab
+        [label]="'Address Detail'">
+        <ng-template mat-tab-label>
+          Address Detail &nbsp; {{Addressindex+1}} &nbsp;
+          @if (Addressindex>0) {
+            <mat-icon (click)="this.Mode==='View'? $event.stopPropagation(): removeTab(address)">
+            clear</mat-icon>
+          }
+        </ng-template>
+        <ng-template matTabContent>
+          <app-sub-address [address]="address" [Parent]="Addresses"  [Mode]="this.Mode"
+          ></app-sub-address>
+        </ng-template>
+      </mat-tab>
+    }
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <button class="addTab" type="button" (click)="addAddress()" [disabled]="this.Mode==='View'">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+        </button>
+      </ng-template>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+</div>

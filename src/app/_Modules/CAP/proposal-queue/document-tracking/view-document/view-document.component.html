@@ -1,0 +1,33 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Document View</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain"> 
+        <div class="col-md-12 noPadding topMargin15">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true" [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="SubHeading">
+                            Uploaded Documents
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain rentalDetail" style="padding-top: 10px;">
+                        <nfs-static-grid [inputArr]="documentsArray" [ActionLabel]="'View'"
+                            (SelectionChange)="viewSelectedDocument($event)" [isRadioBtnRequired]="false"
+                            [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels" [pipes]="pipes"
+                            [IsActionRequired]="true" [IsDeleteRequired]="false" >
+                        </nfs-static-grid>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+    
+        </div>
+    </div>
+</div>

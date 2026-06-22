@@ -1,0 +1,328 @@
+[
+  {
+    "text": "Copy",
+    "icon": "file_copy",
+    "inputVal": "Copy",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "mPOS Resurvey",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "Copy",
+    "icon": "file_copy",
+    "inputVal": "Copy",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00004"]
+  },
+  {
+    "text": "View",
+    "icon": "visibility",
+    "inputVal": "View",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "mPOS Resurvey",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "View",
+    "icon": "visibility",
+    "inputVal": "View",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00004"]
+  },
+  {
+    "text": "Application Cancel / Reject Comments",
+    "icon": "visibility",
+    "inputVal": "Application Cancel / Reject Comments",
+    "status": ["Cancelled"],
+    "showbyCampaign": ["00004", "00005", "00014"]
+  },
+  {
+    "text": "Field Visit Feedback",
+    "icon": "feedback",
+    "inputVal": "Field Visit Feedback",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "mPOS Resurvey",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "Field Visit Feedback",
+    "icon": "feedback",
+    "inputVal": "Field Visit Feedback",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00004"]
+  },
+  {
+    "text": "Document Tracking",
+    "icon": "folder",
+    "inputVal": "Document Tracking",
+    "status": [
+      "Draft",
+      "New",
+      "Approved",
+      "Declined",
+      "Change in process",
+      "Converted",
+      "mPOS Resurvey",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00014", "00005"]
+  },
+  {
+    "text": "Document Tracking",
+    "icon": "folder",
+    "inputVal": "Document Tracking",
+    "status": [
+      "Draft",
+      "New",
+      "Approved",
+      "Declined",
+      "Change in process",
+      "Converted",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00004"]
+  },
+
+  {
+    "text": "Edit",
+    "icon": "edit",
+    "inputVal": "Edit",
+    "status": ["Draft"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+
+  {
+    "text": "Re-Submit For Approval",
+    "icon": "block",
+    "inputVal": "Re-Submit For Approval",
+    "status": ["Change in process"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+
+  {
+    "text": "E-Approval",
+    "icon": "reply",
+    "inputVal": "E-Approval",
+    "status": ["Draft", "Change in process", "Converted",
+    "New",
+    "Declined",
+    "Withdrawn",
+    "mPOS Resurvey",
+    "Cancelled",
+    "Approved"
+  ],
+    "showbyCampaign": ["00005", "00014"]
+  },
+
+  {
+    "text": "Print",
+    "icon": "print",
+    "inputVal": "Print",
+    "status": [
+      "Draft",
+      "Change in process",
+      "Converted",
+      "Declined",
+      "mPOS Resurvey",
+      "New",
+      "Approved",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00014"]
+  },
+  {
+    "text": "Withdraw Request",
+    "icon": "restore",
+    "inputVal": "Withdraw Request",
+    "status": ["New","Recommend - Approve","Recommend - Reject","Recommend - Condition"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "Submit For Approval",
+    "icon": "forward",
+    "inputVal": "Submit For Approval",
+    "status": ["Draft"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "Cancel Request",
+    "icon": "cancel",
+    "inputVal": "Cancel Request",
+    "status": ["Draft"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "Reject",
+    "icon": "block",
+    "inputVal": "Reject",
+    "status": ["Draft"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "mPOS Resurvey",
+    "icon": "block",
+    "inputVal": "mPOS Resurvey",
+    "status": ["Draft"],
+    "showbyCampaign": ["00014", "00005"]
+  },
+  {
+    "text": "OVP Stationery",
+    "icon": "ev_station",
+    "inputVal": "OVP Stationery",
+    "status": ["Draft", "mPOS Resurvey"],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "Forward",
+    "icon": "forward",
+    "inputVal": "Forward",
+    "status": ["Draft", "Change in process"],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "Take Control",
+    "icon": "forward",
+    "inputVal": "Take Control",
+    "status": ["Draft", "Change in process"],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "Change Request",
+    "icon": "note_add",
+    "inputVal": "Change Request",
+    "status": ["New","Recommend - Approve","Recommend - Reject","Recommend - Condition"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "Point Score",
+    "icon": "print",
+    "inputVal": "Point_Score",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "mPOS Resurvey",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "Rescoring",
+    "icon": "attach_file",
+    "inputVal": "Rescoring",
+    "status": ["Draft"],
+    "showbyCampaign": ["00014", "00005", "00004"]
+  },
+  {
+    "text": "Forward to BM",
+    "icon": "forward",
+    "inputVal": "Forward to BM",
+    "status": ["Draft"],
+    "showbyCampaign": ["00005", "00014"]
+  },
+  {
+    "text": "CA Recommendation",
+    "icon": "thumb_up",
+    "inputVal": "CA Recommendation",
+    "status": [
+      "Draft",
+      "New",
+      "Cancelled",
+      "Approved",
+      "Declined",
+      "Withdrawn",
+      "Change in process",
+      "Converted",
+      "mPOS Resurvey",
+      "Recommend - Approve",
+      "Recommend - Reject",
+      "Recommend - Condition"
+    ],
+    "showbyCampaign": ["00005", "00014"]
+  }
+]

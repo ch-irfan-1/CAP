@@ -1,0 +1,4 @@
+.custom-disabled {
+    pointer-events: none;
+    opacity: 1;
+  }

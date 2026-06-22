@@ -1,0 +1,1879 @@
+{
+   "msgDocumentDelete": {
+      "Message": "Dokumen telah berhasil dihapus."
+   },
+   "msgFile": {
+      "Message": "Berkas"
+   },
+   "msgDocumentUpload": {
+      "Message": "Dokumen telah Uploaded berhasil."
+   },
+   "errorDocumentUpload": {
+      "Message": "Ada kesalahan upload file Anda."
+   },
+   "errorDocumentCancel": {
+      "Message": "Silakan Pilih File untuk Batal."
+   },
+   "msgDocumentDownload": {
+      "Message": "Dokumen telah Diunduh berhasil."
+   },
+   "msgFileDownload": {
+      "Message": "File yang didownload berhasil."
+   },
+   "msgDocumentNotExist": {
+      "Message": "Dokumen tidak Exist."
+   },
+   "FileDeleteConfirm": {
+      "Message": "Apakah Anda yakin ingin menghapus file?"
+   },
+   "QuotationSaveSuccess": {
+      "Message": "Kutipan berhasil disimpan."
+   },
+   "errorQuotationSave": {
+      "Message": "Pengecualian terjadi; Kutipan tidak dapat disimpan."
+   },
+   "SelectFinanceCompany": {
+      "Message": "Silakan pilih Finance Company."
+   },
+   "msgEmailAddressValidation": {
+      "Message": "Masukkan Alamat Email yang valid."
+   },
+   "EnterEmailAddress": {
+      "Message": "Masukkan Alamat Email."
+   },
+   "QuotaIncreasemsg": {
+      "Message": "Isolated Storage Kuota meningkat menjadi 6 MB Berhasil."
+   },
+   "TermLeaseClauseTermARO": {
+      "Message": "Sewa Ayat harus dipilih untuk istilah awal saja dan ARO hanya dapat dipilih untuk musim lalu."
+   },
+   "msgDuplicateAdditionalInsr": {
+      "Message": "Asuransi Tambahan yang sama tidak diperbolehkan terhadap satu Term ."
+   },
+   "UserMenuRights": {
+      "Message": "Anda tidak memiliki izin untuk masuk sistem . Silahkan kontak dengan Sistem Administrator"
+   },
+   "AlreadyLoggedIn": {
+      "Message": "Pengguna Sudah Masuk Dalam."
+   },
+   "msgloginFieldEmpty": {
+      "Message": "Nama Pengguna dan Password kosong ."
+   },
+   "SelectApplicationCurrency": {
+      "Message": "Silakan pilih Aplikasi Mata Uang."
+   },
+   "SelectMakeBrandModel": {
+      "Message": "Silakan pilih Aset yang Membuat, Brand dan Model."
+   },
+   "EnterApplicantFirstName": {
+      "Message": "Masukkan Pemohon pertama nama"
+   },
+   "EnterApplicantLastName": {
+      "Message": "Masukkan Pemohon nama belakang"
+   },
+   "msgAlreadySelected": {
+      "Message": "sudah dipilih."
+   },
+   "AccessoriesNotAttached": {
+      "Message": "Opsional Aksesoris tidak terpasang dengan model yang aset yang dipilih"
+   },
+   "DTSSaveSuccess": {
+      "Message": "Lembar Dokumen Tracking berhasil disimpan."
+   },
+   "InsuranceAmountAssetCostValidation": {
+      "Message": "Jumlah Asuransi tidak bisa kurang dari Asset Biaya."
+   },
+   "PremiumAmountInsuranceAmountValidation": {
+      "Message": "Jumlah premi asuransi tidak dapat lebih besar dari jumlah Jumlah asuransi."
+   },
+   "msgSelectRegion": {
+      "Message": "Region tidak dipilih."
+   },
+   "OneInsuranceTypeSelection": {
+      "Message": "Hanya satu jenis asuransi dapat dipilih pada satu waktu."
+   },
+   "OnlyOneRowAddition": {
+      "Message": "Hanya satu baris dapat ditambahkan untuk setiap jenis asuransi."
+   },
+   "NoInsuranceTypeAttached": {
+      "Message": "No Jenis Asuransi terpasang."
+   },
+   "NoAdditionalCoverageSelected": {
+      "Message": "Silakan Pilih Cakupan tambahan."
+   },
+   "TypeAleadySelected": {
+      "Message": "Jenis sudah dipilih."
+   },
+   "NoAdditionalInsuranceAtteched": {
+      "Message": "Tidak ada asuransi tambahan terpasang."
+   },
+   "InsurancePremiumPercentageValidation": {
+      "Message": "Asuransi Persentase premium harus antara minimum dan persentase premi maksimal."
+   },
+   "msgAddRow": {
+      "Message": "Silahkan menambahkan baris."
+   },
+   "ExpirayDateGreaterThanIssuedDate": {
+      "Message": "Tanggal kadaluarsa harus lebih besar dari tanggal Tahun."
+   },
+   "ExpiryDateGreaterThanApplicationCreationDate": {
+      "Message": "Tanggal kadaluarsa harus lebih besar dari Tanggal pembuatan aplikasi."
+   },
+   "msgIDAlreadyAdded": {
+      "Message": "ID detail sudah ditambahkan di Mitra Bisnis lain."
+   },
+   "msgIDType": {
+      "Message": "ID Type"
+   },
+   "EnterIntroducerCommments": {
+      "Message": "Masukkan Introducer Komentar."
+   },
+   "ApplicationCancelled": {
+      "Message": "Aplikasi telah Dibatalkan Berhasil."
+   },
+   "RaiseChangeRequest": {
+      "Message": "Silakan Angkat Perubahan Permintaan untuk menyelesaikan Kondisi (s)."
+   },
+   "ApplicationReviseSuccess": {
+      "Message": "Aplikasi revisi berhasil."
+   },
+   "ApplicationAlreadySubmitted": {
+      "Message": "Aplikasi telah diajukan."
+   },
+   "ApplicationResubmitSuccess": {
+      "Message": "Aplikasi re-diajukan berhasil."
+   },
+   "RentalsGenerateForAllAssets": {
+      "Message": "Di harus dihasilkan untuk semua aset terpasang."
+   },
+   "SelectRowtoViewDTS": {
+      "Message": "Silakan pilih baris untuk melihat Document Tracking Layar."
+   },
+   "SelectRowToEditApplication": {
+      "Message": "Silakan pilih baris untuk mengedit aplikasi."
+   },
+   "OperationCannotbePerformed": {
+      "Message": "Operasi tidak dapat dilakukan pada aplikasi yang dipilih."
+   },
+   "SelectRowToCopyApplication": {
+      "Message": "Silakan pilih baris untuk menyalin Aplikasi."
+   },
+   "SelectRowToReviseApplication": {
+      "Message": "Silakan pilih baris untuk merevisi aplikasi."
+   },
+   "SelectFromDate": {
+      "Message": "Silakan pilih Dari Tanggal."
+   },
+   "SelectToDate": {
+      "Message": "Silakan pilih To Date."
+   },
+   "FromDateLessThanToDate": {
+      "Message": "Dari tanggal harus kurang dari To Date."
+   },
+   "SelectRowToSubmitApplication": {
+      "Message": "Silakan pilih baris untuk mengirimkan aplikasi."
+   },
+   "ApplicationChangeRequestAlreadySubmitted": {
+      "Message": "A Change Request sudah diajukan terhadap Aplikasi yang dipilih."
+   },
+   "SelectRowToEditTemplate": {
+      "Message": "Silakan pilih baris untuk mengedit Template."
+   },
+   "SlctRowForApplctnFromTmplt": {
+      "Message": "Silakan pilih baris untuk membuat aplikasi dari template."
+   },
+   "ApplicationWithdrawRequestAlreadySubmitted": {
+      "Message": "Sebuah Permintaan Penarikan sudah diajukan terhadap Aplikasi yang dipilih."
+   },
+   "NoConditionAvailable": {
+      "Message": "Tidak ada Kondisi yang tersedia untuk proposal ini."
+   },
+   "StationaryDocumentNotAvailable": {
+      "Message": "Tidak ada Stationery terpasang."
+   },
+   "PrintAcceptanceLetterNotAvailable": {
+      "Message": "Cetak Surat Penerimaan tidak tersedia."
+   },
+   "DeleteTemplateConfirm": {
+      "Message": "Apakah Anda yakin akan menghapus template ini?"
+   },
+   "SelectRowToDeleteTemplate": {
+      "Message": "Silakan pilih baris untuk menghapus Template."
+   },
+   "QuotationConvertedSuccess": {
+      "Message": "Quotation telah berhasil dikonversi ke Aplikasi."
+   },
+   "ApplicationAlreadyGeneratedforQuotation": {
+      "Message": "Aplikasi telah dibuat untuk Quotation ini."
+   },
+   "errorQuotationConvertedToApplication": {
+      "Message": "Pengecualian terjadi! Kutipan tidak bisa dikonversi ke aplikasi."
+   },
+   "SelectRowToEditQuotation": {
+      "Message": "Silakan pilih baris untuk mengedit Quotation."
+   },
+   "QuotationCannotConvert": {
+      "Message": "Mengkonversi Quotation tidak dapat terbuka di mode Edit."
+   },
+   "SelectRowToViewQuotation": {
+      "Message": "Silakan pilih baris untuk melihat Quotation."
+   },
+   "SelectRowToCopyQuotation": {
+      "Message": "Silakan pilih baris untuk menyalin Quotation."
+   },
+   "QuotationCancelSuccess": {
+      "Message": "Quotation telah berhasil dibatalkan."
+   },
+   "errorQuotationCancel": {
+      "Message": "Pengecualian terjadi! Kutipan tidak bisa dibatalkan."
+   },
+   "SelectRowToEdit": {
+      "Message": "Silakan pilih baris untuk mengedit"
+   },
+   "DataSaveSuccess": {
+      "Message": "Data berhasil disimpan."
+   },
+   "msgApplicationCancelled": {
+      "Message": "Aplikasi telah Dibatalkan"
+   },
+   "errorIDTypeEmpty": {
+      "Message": "ID Tipe tidak boleh kosong."
+   },
+   "msgCannotEmpty": {
+      "Message": "tidak boleh kosong."
+   },
+   "msgAlreadyExists": {
+      "Message": "sudah ada."
+   },
+   "msgAddBorrower": {
+      "Message": "Silakan Tambahkan Peminjam."
+   },
+   "msgAppendIndex3": {
+      "Message": "{0} {1} {2}"
+   },
+   "msgSelectAsset": {
+      "Message": "Silakan pilih Asset -"
+   },
+   "msgMakeModelBrand": {
+      "Message": "Membuat, Model dan Merek."
+   },
+   "msgManufacturer": {
+      "Message": "Produsen."
+   },
+   "msgGreaterThanZero": {
+      "Message": "harus lebih besar dari nol."
+   },
+   "msgTotalCostOfAsset": {
+      "Message": "Total biaya untuk Aset"
+   },
+   "RentalsAreNotCalculated": {
+      "Message": "Di tidak Dihitung saat Asset"
+   },
+   "msgPoliceCategory": {
+      "Message": "Polisi Kategori."
+   },
+   "msgAppendIndex4": {
+      "Message": "{0} {1} {2} {3}"
+   },
+   "msgSelectAddressTemplate": {
+      "Message": "Silakan pilih Template Alamat"
+   },
+   "msg's_Address": {
+      "Message": "'s Alamat"
+   },
+   "msgAddress": {
+      "Message": "alamat"
+   },
+   "msgEnter": {
+      "Message": "Cukup masukkan"
+   },
+   "msgName": {
+      "Message": "Nama."
+   },
+   "msgCustomerID": {
+      "Message": "ID Pelanggan."
+   },
+   "msgIDNumber": {
+      "Message": "Nomor ID."
+   },
+   "msgFirstName": {
+      "Message": "Nama depan."
+   },
+   "msgLastName": {
+      "Message": "Nama belakang."
+   },
+   "msgValidEmailAddress": {
+      "Message": "Ini Alamat email Valid."
+   },
+   "msgAppendIndex6": {
+      "Message": "{0} {1} {2} {3} {4} {5}"
+   },
+   "msgSelect": {
+      "Message": "silakan Pilih"
+   },
+   "msg's_Address-": {
+      "Message": "'s ALAMAT"
+   },
+   "msgAddressFor": {
+      "Message": "alamat untuk"
+   },
+   "msgAppendIndex5": {
+      "Message": "{0} {1} {2} {3} {4}"
+   },
+   "msgFor": {
+      "Message": "untuk"
+   },
+   "ContractDateCurrentProcessingDateValidation": {
+      "Message": "Tanggal kontrak akhir tidak boleh kurang dari arus Pengolahan Tanggal."
+   },
+   "SelectFinanceCompanyBranch": {
+      "Message": "Silakan pilih Finance Cabang Perusahaan."
+   },
+   "SelectIntroducer": {
+      "Message": "Silakan pilih Introducer / Dealer."
+   },
+   "SelectTemplateCurrency": {
+      "Message": "Silakan pilih Mata Template."
+   },
+   "errorCalculatingMarginRate": {
+      "Message": "Kesalahan occoured dalam menghitung tingkat margin."
+   },
+   "errorInvalidFrequency": {
+      "Message": "Frekuensi tidak valid."
+   },
+   "msgTermsBetween": {
+      "Message": "Persyaratan harus antara"
+   },
+   "msgTermsMultiple": {
+      "Message": "Persyaratan harus kelipatan"
+   },
+   "msgFrequency": {
+      "Message": "Frekuensi."
+   },
+   "msgApplicantValidEmail": {
+      "Message": "Masukkan alamat email yang valid Pemohon."
+   },
+   "msgApplicantLastName": {
+      "Message": "Masukkan Pemohon nama belakang."
+   },
+   "msgApplicantFirstName": {
+      "Message": "Masukkan Pemohon pertama nama."
+   },
+   "SelectQuotationCurrency": {
+      "Message": "Silakan pilih Quotation mata."
+   },
+   "ResubmittingApplicationConditions": {
+      "Message": "Lengkapi semua kondisi dari Aplikasi Antrian sebelum Re-Mengirimkan Aplikasi."
+   },
+   "errorDuplicateEmailAddress": {
+      "Message": "Alamat email duplikat (s) tidak diperbolehkan."
+   },
+   "msgSelectDefaultAddressType": {
+      "Message": "Silakan pilih minimal satu standar Alamat Type."
+   },
+   "SelectOverPaymentAdjustmentType": {
+      "Message": "Silakan memilih lebih dari pembayaran jenis penyesuaian."
+   },
+   "SelectSettlementModel": {
+      "Message": "Silakan pilih model Settlement."
+   },
+   "WrongAgreementExpiryDate": {
+      "Message": "Tanggal (s) dari kadaluarsa, perjanjian, tidak benar."
+   },
+   "msgIncompleteAgreementDetail": {
+      "Message": "Harap memberikan Detil Perjanjian lengkap."
+   },
+   "errorSameBankDetail": {
+      "Message": "Bank (s) rincian tidak harus sama."
+   },
+   "msgIncompleteBankDetail": {
+      "Message": "Harap memberikan Detil Bank lengkap."
+   },
+   "SelectSecretQuestion": {
+      "Message": "Silakan pilih Rahasia Question and Answer nya."
+   },
+   "errorEmptyRole": {
+      "Message": "Peran Kosong tidak diperbolehkan. Pilih beberapa peran."
+   },
+   "msgSelectRole": {
+      "Message": "Silakan pilih peran."
+   },
+   "errorEmptyName": {
+      "Message": "Nama tidak bisa Kosong."
+   },
+   "SelectBPSubsidiary": {
+      "Message": "Pilih Anak BP."
+   },
+   "msgDuplicateCommunicationTypes": {
+      "Message": "Beberapa jenis Gandakan Komunikasi Exist."
+   },
+   "msgDuplicateQuestions": {
+      "Message": "Beberapa Pertanyaan Gandakan Exist."
+   },
+   "errorSameIDTypeNumber": {
+      "Message": "Nomor ID jenis tidak boleh sama."
+   },
+   "EstablishSinceDateValidation": {
+      "Message": "Didirikan Sejak Tanggal tidak dapat lebih besar dari Pengolahan Tanggal."
+   },
+   "WrongDateOfBirth": {
+      "Message": "Tanggal lahir tidak benar."
+   },
+   "SelectClassificationType": {
+      "Message": "Silakan pilih Klasifikasi Type."
+   },
+   "EnterIDDetail": {
+      "Message": "Silahkan Masukkan ID Detil."
+   },
+   "msgCountry": {
+      "Message": "Negara."
+   },
+   "SelectIndustrySubtype": {
+      "Message": "Silakan pilih Industri subtipe."
+   },
+   "RestrictBankDelete": {
+      "Message": "Bank tidak dapat dihapus."
+   },
+   "RestrictDefaultBankDelete": {
+      "Message": "Bank default tidak dapat dihapus."
+   },
+   "RestrictExistingRecordDelete": {
+      "Message": "Rekam ada tidak dapat dihapus."
+   },
+   "RestrictAssociatedContactInfoDelete": {
+      "Message": "Info kontak tidak dapat dihapus karena telah dikaitkan dengan Kontrak (s)"
+   },
+   "IncoTermsAdvRent": {
+      "Message": "Persyaratan tidak benar dengan uang muka sewa."
+   },
+   "SelectFinancialCampaignGroup": {
+      "Message": "Kelompok Kampanye Keuangan tidak dipilih."
+   },
+   "SelectFinancialCampaign": {
+      "Message": "Kampanye Keuangan tidak dipilih."
+   },
+   "msgAssetCost": {
+      "Message": "aset Biaya"
+   },
+   "msgFinancedAmount": {
+      "Message": "dibiayai Jumlah"
+   },
+   "msgStartDate": {
+      "Message": "Mulai Tanggal."
+   },
+   "msgRentalMode": {
+      "Message": "Modus Rental."
+   },
+   "msgMissingFinancialMandatorydata": {
+      "Message": "Data Wajib Keuangan hilang."
+   },
+   "msgIncorrectTerms": {
+      "Message": "Persyaratan tidak benar."
+   },
+   "msgEnterTerms": {
+      "Message": "Persyaratan tidak dimasukkan."
+   },
+   "ServerPathNotFound": {
+      "Message": "Jalur tidak Ditemukan pada Server."
+   },
+   "NoOptionalAccessoriesAttached": {
+      "Message": "Tidak Aksesori Opsional Terlampir."
+   },
+   "SelectRowToLoadInformation": {
+      "Message": "Silakan pilih baris untuk memuat informasi."
+   },
+   "msgPasswordExits": {
+      "Message": "Sandi sudah Ada."
+   },
+   "msgUserIDFieldEmpty": {
+      "Message": "Nama pengguna lapangan kosong."
+   },
+   "msgPasswordFieldEmpty": {
+      "Message": "Password kosong."
+   },
+   "msgNewPasswordFieldEmpty": {
+      "Message": "Password Baru kosong."
+   },
+   "msgConfirmPasswordFieldEmpty": {
+      "Message": "Konfirmasi Password kosong."
+   },
+   "PasswordNotMatched": {
+      "Message": "Sandi Tidak Cocok."
+   },
+   "NewPasswordOldPasswordnotbematched": {
+      "Message": "New Password tidak boleh dicocokkan dengan Old Password."
+   },
+   "msgInvalidPasswordLength": {
+      "Message": "Panjang kata sandi tidak valid."
+   },
+   "PasswordContainAtleast": {
+      "Message": "Sandi harus berisi minimal"
+   },
+   "msgAppendIndex1": {
+      "Message": "{0}"
+   },
+   "msgSpecialCharacters": {
+      "Message": "karakter khusus."
+   },
+   "DnPayLesAsetCost": {
+      "Message": "Uang Muka tidak dapat lebih besar dari atau sama dengan Asset Biaya."
+   },
+   "ResBalValueLessAsstCst": {
+      "Message": "Nilai Sisa / Balloon Jumlah tidak boleh lebih besar dari atau sama dengan Asset Biaya."
+   },
+   "TradeInAmountLessThanAssetCost": {
+      "Message": "Perdagangan Dalam Jumlah tidak boleh lebih besar dari atau sama dengan Asset Biaya."
+   },
+   "OnRdCstLesAsetCost": {
+      "Message": "Di jalan jumlah biaya tidak dapat lebih besar dari atau sama dengan Asset Biaya."
+   },
+   "DiscAmLesAsetCost": {
+      "Message": "Jumlah Diskon tidak dapat lebih besar dari atau sama dengan Asset Biaya."
+   },
+   "msgAllRentalsReset": {
+      "Message": "Ke didefinisikan dan jadwal pembayaran akan diatur ulang."
+   },
+   "ResBallValLessTtlCst": {
+      "Message": "Nilai Sisa / Balloon Jumlah tidak boleh lebih besar dari atau sama dengan Total Biaya."
+   },
+   "msgNoChargesAttached": {
+      "Message": "Tidak ada Biaya Terlampir."
+   },
+   "FirstRentalTypeCannotInterestOnly": {
+      "Message": "Modus sewa Advance, Jadi Rental Jenis pertama tidak bisa Interest Only."
+   },
+   "LastRentalBalloon": {
+      "Message": "Rental terakhir adalah Balloon."
+   },
+   "EndEqContTerm": {
+      "Message": "Istilah End tidak dapat lebih besar dari masa kontrak."
+   },
+   "EndTermGreaterEqualStartTerm": {
+      "Message": "Istilah End tidak bisa kurang dari mulai istilah."
+   },
+   "AtleastOneRetalAuto": {
+      "Message": "Setidaknya satu sewa harus Auto."
+   },
+   "RntlStrctgrtrFinAmnt": {
+      "Message": "Struktur Rental Jumlah tidak boleh lebih besar dari Jumlah Keuangan Net."
+   },
+   "EntrValidRntlStrctAmnt": {
+      "Message": "Masukkan jumlah Struktur Rental valid."
+   },
+   "CalculationException": {
+      "Message": "Pengecualian terjadi saat melakukan Perhitungan."
+   },
+   "CalculationUnsuccessfull": {
+      "Message": "Perhitungan tidak berhasil diselesaikan."
+   },
+   "PasswordNotVerified": {
+      "Message": "Sandi tidak diverifikasi."
+   },
+   "AccountLockedInActive": {
+      "Message": "Akun Terkunci / In-Aktif, Silahkan hubungi administrator sistem Anda untuk membuka account Anda."
+   },
+   "msgUserNotExits": {
+      "Message": "Pengguna tidak ada."
+   },
+   "CompanyNotAssigned": {
+      "Message": "Perusahaan tidak ditugaskan."
+   },
+   "AccntLockedWrngAtmpts": {
+      "Message": "Akun terkunci karena terlalu banyak upaya yang salah untuk Login. Silakan hubungi administrator sistem Anda untuk membuka account Anda."
+   },
+   "PasswordhasExpired": {
+      "Message": "Password Anda telah expired.Please mengubah sandi Anda?"
+   },
+   "RentalsNotCalculated": {
+      "Message": "Di tidak dihitung."
+   },
+   "VerifyAllDocuments": {
+      "Message": "Silakan memverifikasi semua dokumen yang dilampirkan."
+   },
+   "SearchCriteriaRequired": {
+      "Message": "Harap memberikan kriteria pencarian."
+   },
+   "NoRecordFound": {
+      "Message": "Tidak ada catatan yang ditemukan."
+   },
+   "NoAssetAssociated": {
+      "Message": "Tidak ada Asset berhubungan dengan Kampanye Keuangan ini."
+   },
+   "DuplicateDefaultAddress": {
+      "Message": "Gandakan Default Address Ditemukan! Alamat standar Sebelumnya dihapus."
+   },
+   "OtherAddrsTmpltNotAllowed": {
+      "Message": "Alamat template lain tidak diperbolehkan."
+   },
+   "YearNotGrtrthnCrtndt": {
+      "Message": "Tahun tidak dapat lebih besar dari tanggal pembuatan aplikasi."
+   },
+   "errorFileDownload": {
+      "Message": "Kesalahan dalam file download."
+   },
+   "RsdualValueGrtrthnNtFinancAmt": {
+      "Message": "Nilai Sisa tidak dapat lebih besar dari Net Finance Jumlah."
+   },
+   "CmpgnAsstnRmvd": {
+      "Message": "Asosiasi Kampanye Keuangan dihapus."
+   },
+   "CmpgnAsstnRmvdCantSubm": {
+      "Message": "Tidak dapat Ajukan Permohonan karena asosiasi Kampanye Keuangan dihapus"
+   },
+   "CantSubmtCmpgnAsstnRmvd": {
+      "Message": "Tidak dapat Ajukan Permohonan karena asosiasi Kampanye Keuangan dihapus."
+   },
+   "CantSubmtQuotCmpgnAsstnRmvd": {
+      "Message": "Tidak bisa Kirim Quotation karena asosiasi Kampanye Keuangan dihapus."
+   },
+   "CantSbmtApplctn": {
+      "Message": "Tidak dapat Ajukan Permohonan karena asosiasi Perusahaan dihapus."
+   },
+   "CantSbmtQuotApplctn": {
+      "Message": "Tidak bisa Kirim Quotation karena asosiasi Perusahaan dihapus."
+   },
+   "CantSbmtApplctnIntr": {
+      "Message": "Tidak dapat menyerahkan aplikasi karena asosiasi introducer dihapus."
+   },
+   "CantSbmtQuotctnIntr": {
+      "Message": "Tidak dapat mengirimkan Quotation karena asosiasi introducer dihapus."
+   },
+   "ExcptnRtrvngTmpltCnfg": {
+      "Message": "Pengecualian terjadi saat mengambil konfigurasi Template."
+   },
+   "ExcptnRtrvngApplctn": {
+      "Message": "Kesalahan terjadi selagi mengambil Application."
+   },
+   "CmpnyAsstnRmvd": {
+      "Message": "Asosiasi Perusahaan dihapus."
+   },
+   "IntrducrAsstnRmvd": {
+      "Message": "Asosiasi pemasuk dihapus."
+   },
+   "TmpltSaveSuccess": {
+      "Message": "Template Disimpan Berhasil."
+   },
+   "ApplctnReviseSuccess": {
+      "Message": "Aplikasi revisi berhasil."
+   },
+   "IntrducrBranchAsstnRmvd": {
+      "Message": "Asosiasi pemasuk Branch dihapus."
+   },
+   "CantSubmtIntrBrnchAstnRmvd": {
+      "Message": "Tidak dapat Ajukan Permohonan karena asosiasi Introducer Cabang dihapus."
+   },
+   "CantSubmtQuotIntrBrnchAstnRmvd": {
+      "Message": "Tidak bisa Kirim Quotation karena asosiasi Introducer Cabang dihapus."
+   },
+   "CmpnyBranchAsstnRmvd": {
+      "Message": "Asosiasi Perusahaan Cabang dihapus."
+   },
+   "CantSubmCmpnyBranchAsstnRmvd": {
+      "Message": "Tidak dapat Ajukan Permohonan karena asosiasi Cabang Perusahaan dihapus."
+   },
+   "CantSubQuotCmpBrncAstnRmvd": {
+      "Message": "Tidak bisa Kirim Quotation karena asosiasi Cabang Perusahaan dihapus."
+   },
+   "ApplctnRntlsNotGnratd": {
+      "Message": "Di tidak dihasilkan untuk Aplikasi ini."
+   },
+   "TmpltDeletedSuccess": {
+      "Message": "Template Dihapus Berhasil."
+   },
+   "TmpltDeleteError": {
+      "Message": "Sebuah Exception terjadi, Template tidak bisa dihapus."
+   },
+   "CantSbmtQuot": {
+      "Message": "Tidak bisa Kirim Quotation karena"
+   },
+   "ExcpOccrSaving": {
+      "Message": "Sebuah Pengecualian terjadi saat menyimpan"
+   },
+   "AplcSaveSuccess": {
+      "Message": "Aplikasi Disimpan Berhasil."
+   },
+   "aplcSbmtSucc": {
+      "Message": "Permohonan yang diajukan Berhasil."
+   },
+   "aplcSbmtExcpt": {
+      "Message": "Sebuah Pengecualian terjadi saat mengajukan permohonan."
+   },
+   "ChangeRequestAlreadySubmitted": {
+      "Message": "A Change Request sudah Dikirim."
+   },
+   "ChangeRequestSubmitSuccess": {
+      "Message": "Permintaan Perubahan Dikirim Berhasil."
+   },
+   "WithdrawlRequestAlreadySubmitted": {
+      "Message": "Sebuah Permintaan Penarikan sudah Dikirim."
+   },
+   "WithdrawlRequestSubmitSuccess": {
+      "Message": "Penarikan Permintaan Dikirim Berhasil."
+   },
+   "RsdulValueequalChk": {
+      "Message": "Nilai Sisa tidak dapat lebih besar dari atau sama dengan Total Biaya."
+   },
+   "SubsidyCalcInfo": {
+      "Message": "Subsidi tidak dihitung karena financer% adalah Kurang dari intorduer ATAU financer Margin kurang dari Pelanggan."
+   },
+   "Operationcantprfrmed": {
+      "Message": "Operasi tidak dapat dilakukan pada aplikasi yang dipilih."
+   },
+   "SlctRowtoViewApplctn": {
+      "Message": "Silakan pilih baris untuk melihat aplikasi."
+   },
+   "msgfilldefaultrecord": {
+      "Message": "Silahkan mengisi catatan default."
+   },
+   "msgFillAllRecord": {
+      "Message": "Silahkan isi semua catatan."
+   },
+   "IDTypeCantEmpty": {
+      "Message": "ID Tipe tidak boleh kosong."
+   },
+   "IDNoCantEmpty": {
+      "Message": "{0} tidak boleh kosong."
+   },
+   "PremiumInsrAmtInsuranceAmountValidation": {
+      "Message": "Jumlah premi asuransi tidak dapat lebih besar dari Asuransi Jumlah."
+   },
+   "DocDeleteSuccess": {
+      "Message": "Dokumen telah berhasil dihapus."
+   },
+   "errcnvrtedQuotEditMode": {
+      "Message": "Kutipan Dikonversi tidak dapat terbuka di mode Edit."
+   },
+   "docDownldedSucc": {
+      "Message": "Dokumen telah Diunduh berhasil."
+   },
+   "passContSpclChar": {
+      "Message": "Sandi harus berisi minimal {0} karakter khusus."
+   },
+   "deletfile": {
+      "Message": "Apakah Anda ingin menghapus file?"
+   },
+   "fileNotExist": {
+      "Message": "Berkas tidak Exist"
+   },
+   "rentModFirstInterst": {
+      "Message": "Modus sewa Advance, Jadi pertama sewa Type cant Bunga Hanya"
+   },
+   "tradAmtgrtTotCost": {
+      "Message": "Perdagangan Dalam Jumlah tidak dapat lebih besar dari atau sama dengan Total Biaya"
+   },
+   "disbrAmtZero": {
+      "Message": "Mencairkan jumlah yang tidak dapat nol"
+   },
+   "strtdtegretBaseRteDte": {
+      "Message": "Mulai Tanggal harus lebih besar dari Rate Basis Tanggal Efektif"
+   },
+   "minonebaserte": {
+      "Message": "Minimum satu Base Rate slab diperlukan terhadap aset"
+   },
+   "revFreqMissCamgn": {
+      "Message": "Revisi Frekuensi Kode hilang untuk Kampanye Keuangan yang dipilih."
+   },
+   "FinCompanyntSel": {
+      "Message": "Keuangan Perusahaan tidak dipilih."
+   },
+   "FinCompanybrnchntSel": {
+      "Message": "Keuangan Cabang Perusahaan tidak dipilih."
+   },
+   "AsetCostGreatZero": {
+      "Message": "Aset Biaya harus lebih besar dari nol."
+   },
+   "StrtDteNtSel": {
+      "Message": "Tanggal Mulai tidak dipilih."
+   },
+   "frqncyNtSel": {
+      "Message": "Frekuensi Rental tidak dipilih."
+   },
+   "RntlModNtSel": {
+      "Message": "Modus Rental tidak dipilih."
+   },
+   "TermsNtSel": {
+      "Message": "Persyaratan tidak dipilih."
+   },
+   "TermsNtCorct": {
+      "Message": "Persyaratan tidak benar."
+   },
+   "AsetNtSel": {
+      "Message": "Aset tidak dipilih."
+   },
+   "totCostGretZero": {
+      "Message": "Total Biaya harus lebih besar dari nol pada Asset."
+   },
+   "FinlAmtGretZero": {
+      "Message": "Dibiayai Jumlah harus lebih besar dari nol pada Asset."
+   },
+   "OthrAddTpleNotAllow": {
+      "Message": "Alamat lain templated yang tidak diperbolehkan"
+   },
+   "cantConnectServer": {
+      "Message": "Tidak dapat Hubungkan ke Server!"
+   },
+   "onRoadCostGrtZero": {
+      "Message": "Di jalan biaya tidak dapat lebih besar dari atau sama dengan Total Biaya"
+   },
+   "downPayGretZero": {
+      "Message": "Uang Muka tidak dapat lebih besar dari atau sama dengan Total Biaya"
+   },
+   "plzSelectAsset": {
+      "Message": "Silakan pilih Asset - Membuat, Model dan Merek"
+   },
+   "plzSelectAssetManf": {
+      "Message": "Silakan pilih Asset - Produsen"
+   },
+   "plzSelectTotCost": {
+      "Message": "Aset - Total Biaya harus lebih besar dari nol."
+   },
+   "plzSelectAssetPolic": {
+      "Message": "Silakan pilih Aset - Polisi Kategori"
+   },
+   "plzSelectAsetInsPlicy": {
+      "Message": "Aset - premi asuransi adalah nol begitu baik mengatur polis asuransi biaya fee ke nol."
+   },
+   "plzEntAddr": {
+      "Message": "Masukkan Alamat"
+   },
+   "msgDocumentRemove": {
+      "Message": "Dokumen telah Dihapus berhasil."
+   },
+   "plzEntName": {
+      "Message": "Masukkan Nama."
+   },
+   "plzEntCustID": {
+      "Message": "Masukkan ID Pelanggan."
+   },
+   "plzEntIDNBR": {
+      "Message": "Masukkan Nomor ID."
+   },
+   "plzEntfirstName": {
+      "Message": "Masukkan Nama depan."
+   },
+   "plzEntlstName": {
+      "Message": "Masukkan Nama belakang."
+   },
+   "plzEntEmail": {
+      "Message": "Masukkan alamat email Valid."
+   },
+   "plzslctAddforResedential": {
+      "Message": "Silakan pilih rincian Jenis Alamat Tempat Tinggal untuk Peminjam"
+   },
+   "plzslctAddforRgstrd": {
+      "Message": "Silakan pilih Legal Alamat Jenis detil"
+   },
+   "plzslctAddforInvc": {
+      "Message": "Silakan pilih Faktur Alamat Jenis detil"
+   },
+   "plzslctAddforMail": {
+      "Message": "Silakan pilih Alamat Surat Jenis detil"
+   },
+   "plzslctAddforOffical": {
+      "Message": "Silakan pilih Resmi Alamat Jenis detil"
+   },
+   "plzslctdefAdd": {
+      "Message": "Silakan pilih Default Address"
+   },
+   "calculating": {
+      "Message": "Menghitung ..."
+   },
+   "loadData": {
+      "Message": "Memuat data ..."
+   },
+   "saving": {
+      "Message": "Menyimpan ..."
+   },
+   "Submitting": {
+      "Message": "Mengirimkan ..."
+   },
+   "Converting": {
+      "Message": "Konversi ..."
+   },
+   "InitParam": {
+      "Message": "Memulai Parameter ..."
+   },
+   "IntSecur": {
+      "Message": "Memulai Keamanan ..."
+   },
+   "IntLangParm": {
+      "Message": "Memulai Bahasa Parameter ..."
+   },
+   "slctAssetSrchCriteria": {
+      "Message": "Harap memberikan kriteria pencarian."
+   },
+   "acntexpired": {
+      "Message": "Akun Anda telah kedaluwarsa. Silakan hubungi administrator sistem Anda."
+   },
+   "SlctBrrwrDfltBank": {
+      "Message": "Peminjam - Silakan pilih bank default."
+   },
+   "SlctCoBrrwrDfltBank": {
+      "Message": "Co-Peminjam - Silakan pilih bank default."
+   },
+   "SlctGrntrDfltBank": {
+      "Message": "Penjamin - Silakan pilih bank default."
+   },
+   "valuenotProvided": {
+      "Message": "'Nilai tidak disediakan di'"
+   },
+   "ReleaseYearValidation": {
+      "Message": "Tahun Rilis tidak dapat lebih besar dari Pengolahan Tahun Berjalan."
+   },
+   "folFieldMiss": {
+      "Message": "Berikut Fields Hilang:"
+   },
+   "msgAddCvrgDel": {
+      "Message": "Semua Coverages tambahan dihapus."
+   },
+   "ExcpOccrsubmitingreq": {
+      "Message": "Sebuah Pengecualian terjadi saat mengirim permintaan"
+   },
+   "SessionResetForcefully": {
+      "Message": "Apakah Anda ingin mengakhiri sesi sebelumnya paksa?"
+   },
+   "passExprDaysLeft": {
+      "Message": "Password Anda akan Kadaluarsa setelah {0} hari. Apakah Anda ingin mengubah password Anda?"
+   },
+   "msgUsrAlreadyCnct": {
+      "Message": "Pengguna sudah terhubung! Apakah Anda ingin login tegas?"
+   },
+   "IDTypeDefIssExpDte": {
+      "Message": "Cukup masukkan Issue Tanggal dan kadaluarsa Tanggal default ID Type."
+   },
+   "AccountNotActived": {
+      "Message": "Akun Anda belum diaktifkan. Silakan hubungi administrator sistem Anda."
+   },
+   "UsrCnfgMisin": {
+      "Message": "Konfigurasi pengguna yang hilang. Silakan hubungi administrator sistem Anda."
+   },
+   "ClientVersionMismatch": {
+      "Message": "Versi klien ketidakcocokan terdeteksi."
+   },
+   "DBVersionMismatch": {
+      "Message": "Versi database ketidakcocokan terdeteksi."
+   },
+   "ClientVersionInfoMis": {
+      "Message": "Informasi versi klien hilang."
+   },
+   "DBVersionInfoMis": {
+      "Message": "Informasi versi database hilang."
+   },
+   "duplicateBanks": {
+      "Message": "Rincian bank seharusnya tidak sama untuk {0}"
+   },
+   "EnterCancellationReason": {
+      "Message": "Cukup masukkan Pembatalan Alasan."
+   },
+   "EnterWithdrawnReason": {
+      "Message": "Cukup masukkan Ditarik Alasan."
+   },
+   "ActDirtyAuthenFail": {
+      "Message": "Aktif Direktori Otentikasi Gagal."
+   },
+   "WtdrwlReqtAlrdySubmittedcantRevise": {
+      "Message": "Aplikasi tidak dapat Revisi karena ada pending Penarikan Permintaan."
+   },
+   "ChangeReqtAlrdySubmittedcantRevise": {
+      "Message": "Aplikasi tidak dapat Revisi karena ada menunggu Perubahan Permintaan."
+   },
+   "plzslctAddforLegal": {
+      "Message": "Silakan pilih Jenis Alamat Resmi yang dirinci untuk Peminjam"
+   },
+   "FileSizeLessEqual": {
+      "Message": "harus memiliki Ukuran kurang dari atau sama dengan"
+   },
+   "errorDocumentUploadPath": {
+      "Message": "Dokumen Meng-upload direktori tidak ada."
+   },
+   "DayEndInProcess": {
+      "Message": "Hari Akhir adalah Dalam Proses. Silakan coba Nanti."
+   },
+   "plzslctAddforEmergency": {
+      "Message": "Silakan pilih minimal satu Darurat Alamat Type rinci untuk"
+   },
+   "plzslctDiffAddress": {
+      "Message": "Alamat darurat dan Default Address yang sama"
+   },
+   "AssetUsageDownPaymentPercentValidation": {
+      "Message": "Persentase uang muka tidak bisa kurang dari tingkat dikonfigurasi terhadap dipilih jenis penggunaan aset."
+   },
+   "ApplicationConverted": {
+      "Message": "iSURE Aplikasi dikonversi dengan jumlah aplikasi {0}."
+   },
+   "AdminFeeFinanceAmountValidation": {
+      "Message": "Biaya admin dibiayai tidak dapat lebih besar dari total biaya."
+   },
+   "IsureApplicationAlreadyConverted": {
+      "Message": "Aplikasi yang sudah dikonversi."
+   },
+   "BPKBNumber": {
+      "Message": "Cukup masukkan BPKB Nomor"
+   },
+   "BPKBDate": {
+      "Message": "Cukup masukkan BPKB Tanggal"
+   },
+   "EngineChasisNo": {
+      "Message": "Mesin Nomor/Chassis Number sudah ada "
+   },
+   "ExcpOccrConverting": {
+      "Message": "Pengecualian terjadi saat mengkonversi."
+   },
+   "NoOfinstallmentValidation": {
+      "Message": "Tidak. dari angsuran tidak dapat lebih besar dari syarat-syarat kontrak"
+   },
+   "AdminFeeDiscountValidation": {
+      "Message": "Biaya Admin Diskon tidak dapat lebih besar dari total Biaya Admin."
+   },
+   "AdminFeeSubsidytValidation": {
+      "Message": "Admin Fee Subsidi tidak dapat lebih besar dari total Biaya Admin."
+   },
+   "ProvisionCommissionValidation": {
+      "Message": "Penyediaan Biaya Komisi tidak dapat lebih besar dari Penyediaan Biaya Jumlah."
+   },
+   "DealerAdminFeeCommission": {
+      "Message": "Admin Fee Komisi tidak dapat lebih besar dari Biaya Jumlah Admin."
+   },
+   "AddGuarantorDetl": {
+      "Message": "Harap tambahkan Penjamin Detail di BPKB"
+   },
+   "PreviousBPKBSubmitted": {
+      "Message": "BPKB Dikirim Berhasil."
+   },
+   "ChangesSavedSuccessfully": {
+      "Message": "Perubahan Disimpan Berhasil!"
+   },
+   "BPKBNumberalreadyexists": {
+      "Message": "BPKB Nomor sudah ada"
+   },
+   "ValidateBPKBFacilityLimit": {
+      "Message": "Batas fasilitas BPKB telah mencapai batas maksimum yang diizinkan nya"
+   },
+   "SlctRowtoprntStnry": {
+      "Message": "Silakan pilih baris untuk mencetak Stationery."
+   },
+   "PrntStnrySuccess": {
+      "Message": "Stationery telah dicetak berhasil."
+   },
+   "CustomerCdeException": {
+      "Message": "Terjadi kesalahan saat membuat kode pelanggan."
+   },
+   "UseForSmsValidation": {
+      "Message": "Gunakan untuk sms hanya dapat ditandai untuk Mobile Jenis Default Address."
+   },
+   "msgNoChangesFound": {
+      "Message": "Tidak ada Perubahan Terdeteksi!"
+   },
+   "ReSurveySuccessful": {
+      "Message": "Re-Survey Diprakarsai Berhasil."
+   },
+   "ReSurveyConflictDetected": {
+      "Message": "Konflik Terdeteksi. Silakan buka kembali untuk memuat data terbaru."
+   },
+   "ReSurveyNotInitiated": {
+      "Message": "Re-Survey tidak dapat dimulai terhadap aplikasi dikonversi."
+   },
+   "ReSurveyInProcess": {
+      "Message": "Re-Survey dalam proses."
+   },
+   "ExcpOccrReSurvey": {
+      "Message": "Exception terjadi saat memulai Re-Survey."
+   },
+   "ExcpOccrViewDoc": {
+      "Message": "Exception terjadi saat melihat dokumen."
+   },
+   "TermLeaseClause": {
+      "Message": "Klausul kontrak harus menjadi seleced untuk istilah menyatakan hanya."
+   },
+   "TermLeaseClauseMultipleInsrs": {
+      "Message": "Sewa klausul seleksi tidak diperbolehkan untuk mulitple istilah."
+   },
+   "EnterReSurveyReason": {
+      "Message": "Silahkan antar-ray ras survei."
+   },
+   "SubsidyPasstoCustomerValidation": {
+      "Message": "Subsidi tidak bisa lewat ke pelanggan sebagai tingkat financer 0"
+   },
+   "AROTypeAdded": {
+      "Message": "Pemilihan Asuransi ARO hanya diperbolehkan untuk istilah terakhir"
+   },
+   "commissionPasstoCustomerValidation": {
+      "Message": "Dalam kasus pembayaran subsidi komisi tidak bisa lewat ke pelanggan."
+   },
+   "fileUsedByOtherProcess": {
+      "Message": "File '{0}' sedang digunakan oleh proses lain."
+   },
+   "TermsNtCorctInsr": {
+      "Message": "Syarat asuransi harus sama dengan Kontrak Syarat ditambah Rahmat istilah periode ."
+   },
+   "msgFieldVisitSubmitted": {
+      "Message": "Umpan balik kunjungan lapangan berhasil disimpan."
+   },
+   "msgFieldVisitSubmittedError": {
+      "Message": "Kunjungan Lapangan umpan balik tidak dapat tersimpan."
+   },
+   "msgReCalculateInsurance": {
+      "Message": "Asuransi akan diatur ulang , Silakan menghitung ulang asuransi."
+   },
+   "EngineChasisNoNULL": {
+      "Message": "Masukkan Mesin Nomor / Chasis Nomor Kendaraan di Detil ."
+   },
+   "ReSurveyForonlyiSURE": {
+      "Message": "Re-Survey hanya dapat dimulai terhadap aplikasi yang dibuat dari iSure."
+   },
+   "ReSurveyIncorrectResponse": {
+      "Message": "Re-Survey respon tidak benar."
+   },
+   "msgBPKBNumberDuplicate": {
+      "Message": "BPKB Nomor sudah ada {0}."
+   },
+   "msgLicencePlateNumber": {
+      "Message": "Licence Plate Number is required against used asset"
+   },
+   "plzinputemergencyaddress": {
+      "Message": "Please Input Emergency Addess Information"
+   },
+   "FixPremiumAmtLimit": {
+      "Message": "Perbaiki jumlah Premium harus jatuh dalam batas yang ditentukan."
+   },
+   "InsrPremTypeReqStnd": {
+      "Message": "Jenis asuransi Premium diperlukan terhadap asuransi standar."
+   },
+   "msgDealerSearchCriteria": {
+      "Message": "Silakan Pilih Kriteria Pencarian."
+   },
+   "msgDealerSearchNoSelectMessage": {
+      "Message": "Silakan Pilih Dealer."
+   },
+   "msgDealerSearchEmpty": {
+      "Message": "Silahkan Masukkan Nilai untuk Pencarian."
+   },
+   "msgManufacturingDate": {
+      "Message": "Nilai 'Manufacturing Tahun' tidak disediakan di 'Kendaraan Detil'"
+   },
+   "msgVehicleColor": {
+      "Message": "Nilai 'Warna' tidak disediakan di 'Kendaraan Detil'"
+   },
+   "msgCreditPurpose": {
+      "Message": "Nilai 'Tujuan Kredit' tidak disediakan di 'Detil Kendaraan'"
+   },
+   "msgContactAddressCountExceeded": {
+      "Message": "Kontak Alamat tidak bisa lebih dari satu."
+   },
+   "plzslctAddforContact": {
+      "Message": "Silakan pilih Kontak Alamat Jenis rinci untuk."
+   },
+   "msgSignatorySelectAgain": {
+      "Message": "Jenis penandatangan sudah dipilih"
+   },
+   "msgSignatoryFirstNotSelect": {
+      "Message": "Penandatangan Pertama tidak dipilih"
+   },
+   "msgSignatorySecondNotSelected": {
+      "Message": "Penandatangan Kedua tidak dipilih"
+   },
+   "msgNPWPNotSelected": {
+      "Message": "Silahkan masukan ID NPWP."
+   },
+   "msgAliasNameEmpty": {
+      "Message": "Silahkan masukan Alias Nama."
+   },
+   "msgDebtorCategoryEmpty": {
+      "Message": "Silahkan masukan Pemohon Debitur Kategori."
+   },
+   "msgFixPhoneNumberEmpty": {
+      "Message": "Jumlah Baris tetap sebesar Default Address."
+   },
+   "msgEmploymentDatesEmpty": {
+      "Message": "Dari Tanggal dan To Date hilang di Detail Ketenagakerjaan."
+   },
+   "msgEmploymentFromDateCannotBeGreaterthanToDate": {
+      "Message": "Dari Tanggal Tidak boleh lebih besar dari Sampai Tanggal untuk {0}."
+   },
+   "msgBPKBNumberEmpty": {
+      "Message": "Silahkan masukan Nomor BPKB di BPKB Detil."
+   },
+   "msgBPKBDateEmpty": {
+      "Message": "Silahkan masukan BPKB Tanggal di BPKB Detil."
+   },
+   "msgApplChargesEmpty": {
+      "Message": "Jumlah Beban Aplikasi harus lebih besar dari nol."
+   },
+   "msgSpouceBirthplaceEmpty": {
+      "Message": "Peminjam Pasangan Birth Place adalah kosong."
+   },
+   "msgSpouceExpiryDateEmpty": {
+      "Message": "Peminjam Pasangan ID Tanggal Berakhir Kosong."
+   },
+   "msgSpouceAddressEmpty": {
+      "Message": "Peminjam Spouce Alamat Kosong."
+   },
+   "msgMobileNumberEmpty": {
+      "Message": "Ponsel Nomor Telepon yang hilang dari Default Address."
+   },
+   "msgFamilyMembNameEmpty": {
+      "Message": "Silahkan masukan Nama Anggota Keluarga."
+   },
+   "msgFamilyMembDOBEmpty": {
+      "Message": "Silahkan masukan Keluarga Anggota DOB."
+   },
+   "msgFamilyCardNoEmpty": {
+      "Message": "Silahkan masukan Nomor Anggota Keluarga Card."
+   },
+   "msgFamilyRelationshipEmpty": {
+      "Message": "Silahkan masukan Keluarga Anggota Relationship."
+   },
+   "msgFamilyGenderEmpty": {
+      "Message": "Silahkan masukan Keluarga Anggota Gender."
+   },
+   "msgFamilyOccupationEmpty": {
+      "Message": "Silakan masukan Keluarga Pekerjaan Hilang."
+   },
+   "msgAsstUsgeTypeEmpty": {
+      "Message": "Silahkan masukan Asset Penggunaan Type."
+   },
+   "msgAdminFeeEmpty": {
+      "Message": "Total Biaya Admin tidak bisa Zero."
+   },
+   "msgBPKBOwnerCatgEmpty": {
+      "Message": "Silahkan masukan BPKB Pemilik Kategori."
+   },
+   "msgBPKBOwnerTypeEmpty": {
+      "Message": "Silahkan masukan BPKB Pemilik Type."
+   },
+   "msgBPKBOwnerGenderEmpty": {
+      "Message": "Silahkan masukan BPKB pemilik Gender."
+   },
+   "msgBPKBOwnerKTPEmpty": {
+      "Message": "Silahkan masukan ID BPKB Pemilik KTP."
+   },
+   "msgBPKBOwnerSIUPEmpty": {
+      "Message": "Silahkan masukan ID BPKB Pemilik SIUP."
+   },
+   "msgBPKBOwnerSpouceAddEmpty": {
+      "Message": "Silahkan masukan BPKB Pemilik Pasangan Alamat."
+   },
+   "msgBPKBholderAddressEmpty": {
+      "Message": "Silahkan masukan BPKB Pemilik Pemegang Alamat."
+   },
+   "msgVehicleChassisEmpty": {
+      "Message": "Chassis ada yang hilang di Kendaraan Detil."
+   },
+   "msgVehicleLicPlateEmpty": {
+      "Message": "Lic Plat Tidak ada yang hilang di Kendaraan Detil."
+   },
+   "msgVehicleEngineNoEmpty": {
+      "Message": "Mesin ada yang hilang di Kendaraan Detil."
+   },
+   "msgInsuranceEmpty": {
+      "Message": "Silakan pilih minimal satu asuransi standar"
+   },
+   "msgRepresentativeTypeEmpty": {
+      "Message": "Silakan pilih Perwakilan Jenis."
+   },
+   "msgBPKBOwnerNameEmpty": {
+      "Message": "Silahkan masukan Nama BPKB Pemilik."
+   },
+   "msgBPKBHolderNameEmpty": {
+      "Message": "Silahkan masukan Nama BPKB Holder."
+   },
+   "ExcptnRtrvngCnfg": {
+      "Message": "Pengecualian terjadi saat mengambil konfigurasi Komisi."
+   },
+   "msgCommGreaterthan100": {
+      "Message": "Total jumlah Komisi JP1%, Komisi JP2% dan JP2 Skema% terhadap setiap jenis Komisi tidak harus lebih besar dari 100%."
+   },
+   "msgJP1AmntGreater": {
+      "Message": "Jumlah jumlah komisi JP1 tidak dapat lebih besar dari jumlah total Komisi JP1."
+   },
+   "msgJP2AmntGreater": {
+      "Message": "Jumlah jumlah komisi JP2 tidak dapat lebih besar dari jumlah total Komisi JP2."
+   },
+   "msgMarketCommFixedAmountCantGreater": {
+      "Message": "Perbaiki Komisi Jumlah tidak dapat lebih besar dari jumlah komisi max."
+   },
+   "msgMarketCommIncomeDefaultCantGreater": {
+      "Message": "Penghasilan persentase tidak dapat lebih besar dari persentase komisi max."
+   },
+   "msgMarketCommNFADefaultCantGreater": {
+      "Message": "Persentase NFA tidak dapat lebih besar dari persentase komisi max."
+   },
+   "msgMarketCommMarketDefaultCantGreater": {
+      "Message": "Biaya persentase pemasaran tidak dapat lebih besar dari biaya persentase komisi max."
+   },
+   "msgCalculateCommissionIndicator": {
+      "Message": "Sistem tidak akan melakukan perhitungan apapun komisi."
+   },
+   "msgDuplicateRecipient": {
+      "Message": "Penerima dipilih sudah ada."
+   },
+   "msgCustomOnSavingOrSubmitting": {
+      "Message": "Data tidak dimuat properly.Please memuat data."
+   },
+   "msgBPKBReceivedRF": {
+      "Message": "BPKB menerima status harus Diterima."
+   },
+   "msgBPKBOwnerDOB": {
+      "Message": "Silahkan masukan BPKB Pemilik DOB."
+   },
+   "msgBPKBOwnerMaritalStatus": {
+      "Message": "Silahkan masukan BPKB Owner Status perkawinan."
+   },
+   "msgBPKBOwnerAddress": {
+      "Message": "Silakan masukan BPKB pemilik Alamat Keterangan."
+   },
+   "msgPrintOVPStationaryFirst": {
+      "Message": "Cetak OVP Stationary."
+   },
+   "msgBPKBKotamadya": {
+      "Message": "Nilai 'Kotamadya/Kabupaten' tidak disediakan di 'BPKB Pemilik Alamat'"
+   },
+   "msgBPKBKecamatan": {
+      "Message": "Nilai 'Kecamatan' tidak disediakan di 'BPKB Pemilik Alamat'"
+   },
+   "msgBPKBKelurahan": {
+      "Message": "Nilai 'Kelurahan/Desa' tidak disediakan di 'BPKB Pemilik Alamat'"
+   },
+   "msgBPKBProvince": {
+      "Message": "Nilai 'Province' tidak disediakan di 'BPKB Pemilik Alamat'"
+   },
+   "msgBPKBRT": {
+      "Message": "Nilai 'RT ###' tidak disediakan di 'BPKB Pemilik Alamat'"
+   },
+   "msgBPKBRW": {
+      "Message": "Nilai 'RW ###' tidak disediakan di 'BPKB Pemilik Alamat'"
+   },
+   "PrntStnryError": {
+      "Message": "Pengecualian terjadi saat mencetak stasioner."
+   },
+   "msgPrintDocIsNotValid": {
+      "Message": "Dokumen tidak valid untuk cetak."
+   },
+   "msgDocTrackingNull": {
+      "Message": "Kesalahan terjadi saat Saving."
+   },
+   "msgDocTrackingCommunication": {
+      "Message": "Aplikasi Server tidak Menanggapi."
+   },
+   "msgDocTrackingDB": {
+      "Message": "Database Server tidak Menanggapi."
+   },
+   "msgSelectArticleCompnentConfig": {
+      "Message": "konfigurasi Pasal Komponen hilang."
+   },
+   "msgGrndrmissing": {
+      "Message": "Rincian Penjamin hilang dari Peminjam."
+   },
+   "msgCityofRegisteration": {
+      "Message": "'Kota Pendaftaran' nilai tidak tersedia di 'Detil Vehicle'"
+   },
+   "msgBPKBOwnerSpouseName": {
+      "Message": "nilai ' BPKB Owner Pasangan Nama ' tidak tersedia di ' BPKB Detil '"
+   },
+   "msgSelectInsrCompLC": {
+      "Message": "Perusahaan Asuransi harus dipilih melawan Sewa Klausul."
+   },
+   "msgSalaryLessThanZero": {
+      "Message": "Gaji pemohon harus lebih besar dari nol."
+   },
+   "msgBankBranchMissing": {
+      "Message": "Nama Cabang hilang dari Detail Bank."
+   },
+   "msgmissingdepriciation": {
+      "Message": "Silakan pilih Kebijakan Depriciation"
+   },
+   "msgMultipleStandardInsurance": {
+      "Message": "Asuransi Standard beberapa tidak diperbolehkan dalam Kasus Refiance Aplikasi"
+   },
+   "msgSelectAssetCondition": {
+      "Message": "Silakan pilih Kondisi Aset."
+   },
+   "msgSelectKTPID": {
+      "Message": "KTP ID harus dipilih."
+   },
+   "msgSelectSUIPID": {
+      "Message": "SUIP ID harus dipilih."
+   },
+   "msgRecipientValidation": {
+      "Message": "Nama Penerima tidak boleh kosong"
+   },
+   "erroriSUREGeotagging": {
+      "Message": "Pengecualian terjadi saat iSure Geotagging."
+   },
+   "msgiSUREGeotagging": {
+      "Message": "iSure Geotagging hanya dapat dilihat untuk aplikasi iSure."
+   },
+   "msgSpouceBirthplaceEmptyofBorrower": {
+      "Message": "Peminjam Pasangan Tempat Lahir Kosong."
+   },
+   "msgSpouceBirthplaceEmptyofCoBorrower": {
+      "Message": "Co-Peminjam Pasangan Tempat Lahir Kosong ."
+   },
+   "msgSpouceBirthplaceEmptyofGuranter": {
+      "Message": "Penjamin Pasangan Tempat Lahir Kosong ."
+   },
+   "msgSpouceExpiryDateEmptyofBorrower": {
+      "Message": "Peminjam Pasangan ID kadaluarsa Tanggal Kosong."
+   },
+   "msgSpouceExpiryDateEmptyCoBorrower": {
+      "Message": "Co-Peminjam Pasangan ID kadaluarsa Tanggal Kosong."
+   },
+   "msgSpouceExpiryDateEmptyofGuarantor": {
+      "Message": "Penjamin Pasangan ID kadaluarsa Tanggal Kosong."
+   },
+   "msgSpouceAddressEmptyofBorrower": {
+      "Message": "Peminjam Spouce Alamat Kosong."
+   },
+   "msgSpouceAddressEmptyofCoBorrower": {
+      "Message": "Co-Peminjam Spouce Alamat Kosong."
+   },
+   "msgSpouceAddressEmptyofGuarantor": {
+      "Message": "Penjamin Spouce Alamat Kosong."
+   },
+   "ProvisionFeeReset": {
+      "Message": "Provision Fee details has been reset."
+   },
+   "msgReSurveyTimeout": {
+      "Message": "Kirim Permintaan Gagal. Silakan Coba Lagi."
+   },
+   "AddBankDetailRF": {
+      "Message": "Harap tambahkan Detail Bank."
+   },
+   "msgBadCustomerQuestion": {
+      "Message": "Apakah Anda ingin menandai Mitra Bisnis ini sebagai Bad Pelanggan."
+   },
+   "msgBadCustomerNotFound": {
+      "Message": "Mark proses Pelanggan sebagai Bad hanya dapat dilakukan jika Mitra Bisnis sudah ada di System."
+   },
+   "msgBadCustomerPerformed": {
+      "Message": "Pelanggan ditandai sebagai Bad pelanggan."
+   },
+   "msgBadCustomerNotPerformed": {
+      "Message": "Bad Pelanggan tidak dilakukan."
+   },
+   "msgDBConflictDetected": {
+      "Message": "Application Data diubah oleh pengguna ini. Harap lain refresh data."
+   },
+   "msgSelectIndustrySubType": {
+      "Message": "Industri Sub Type yang dipilih dalam Ketenagakerjaan tidak benar."
+   },
+   "msgJP1MarkGrtOne": {
+      "Message": "Komisi Pemasaran JP1 terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgJP2MarkGrtOne": {
+      "Message": "Komisi Pemasaran JP2 terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgJP1InsrGrtOne": {
+      "Message": "JP1 Komisi Asuransi Penerima harus lebih besar dari 1."
+   },
+   "msgJP2InsrGrtOne": {
+      "Message": "JP2 Komisi Asuransi Penerima harus lebih besar dari 1."
+   },
+   "msgJP1AdmnGrtOne": {
+      "Message": "JP1 Admin Komisi Fee terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgJP2AdmnGrtOne": {
+      "Message": "JP2 Admin Komisi Fee terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgJP1PrvnGrtOne": {
+      "Message": "JP1 Penyediaan Komisi Fee terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgJP2PrvnGrtOne": {
+      "Message": "JP2 Penyediaan Komisi Fee terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgCommissionTax": {
+      "Message": "{0} Perhitungan pajak terhadap {1} tidak benar."
+   },
+   "msgPcmsRntlAmount": {
+      "Message": "PACMAS Jumlah Rental Berbeda dari NFS Rental Jumlah."
+   },
+   "msgTotalSOFCommGreater": {
+      "Message": "Total Komisi Jumlah tidak dapat lebih besar dari Komisi Max Jumlah."
+   },
+   "msgSumSOFCommNotEqual": {
+      "Message": "Sum dari JP1, JP2 dan JP2 Komisi Skema harus sama dengan Komisi Jumlah."
+   },
+   "msgJP1CommGrtOne": {
+      "Message": "Komisi JP1 terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgJP2CommGrtOne": {
+      "Message": "Komisi JP2 terhadap Penerima harus lebih besar dari 1."
+   },
+   "msgSOFJP1GrtOne": {
+      "Message": "Jumlah Komisi JP1 harus lebih besar dari 1."
+   },
+   "msgSOFJP2GrtOne": {
+      "Message": "Jumlah Komisi JP2 harus lebih besar dari 1."
+   },
+   "ChangeRequestnotSubmitStatusNew": {
+      "Message": "Permintaan Perubahan hanya dapat dibuat dengan status Persetujuan Kredit Baru."
+   },
+   "msgKotamadyaKabupatenDflt": {
+      "Message": "Silahkan pilih 'Kotamadya / Kabupaten' untuk Alamat Default."
+   },
+   "msgSupplierMandatory": {
+      "Message": "Please Select the Supplier at Asset Screen"
+   },
+   "msgUpfrontInsurancePremiumMissing": {
+      "Message": "Premi Asuransi dimuka tidak dihitung dengan benar. Silahkan pilih kembali Perusahaan Asuransi dan lakukan perhitungan lagi."
+   },
+   "msgUpfrontAdminFeeMissing": {
+      "Message": "Biaya Admin dimuka tidak dihitung dengan benar. Harap hitung Biaya Admin lagi."
+   },
+   "msgUpfrontProvisionFeeMissing": {
+      "Message": "Upcoming Provision Fee tidak dihitung dengan benar. Harap hitung kembali Provisi Fee."
+   },
+   "msgEmploymentGuarantorCoBorrower": {
+      "Message": "Rincian pekerjaan harus dipilih terhadap Peminjam / Penjamin."
+   },
+   "msgMissingOTOCommPct": {
+      "Message": "Komisi Asuransi OTO tidak dihitung. Silakan pilih kembali perusahaan asuransi dan Hitung asuransi."
+   },
+   "msgTotalSOFCommGreaterthanMaxComm": {
+      "Message": "Total Komisi SOF tidak bisa lebih besar dari Max SOF Commission."
+   },
+   "BPKBLocation": {
+      "Message": "Silakan pilih lokasi BPKB"
+   },
+   "msgEconomicSectorEmpty": {
+      "Message": "Bidang ekonomi sektor ketenagakerjaan tidak boleh Empty."
+   },
+   "WrongDateOfBirthApplicant": {
+      "Message": "Tanggal Lahir tidak benar di Tab Pemohon."
+   },
+   "WrongDateOfBirthFamilyMember": {
+      "Message": "Tanggal Lahir tidak benar di Tab Anggota Keluarga."
+   },
+   "WrongDateOfBirthBPKB": {
+      "Message": "Tanggal Lahir tidak benar di BPKB Detail Tab."
+   },
+   "WrongDateOfBirthSpouse": {
+      "Message": "Pasangan DOB tidak benar."
+   },
+   "msgEmploymentGuarantorCoBorrowerMissing": {
+      "Message": "Detail Ketenagakerjaan tidak ada {0}"
+   },
+   "mPOSCFResurvey": {
+      "Message": "mPOS Survei ulang hanya diizinkan untuk Kampanye Re-Finance."
+   },
+   "RejectionComments": {
+      "Message": "Harap Masukan Komentar Penolakan"
+   },
+   "plzslctKelurahanDesaLeglAdds": {
+      "Message": "Silakan tambahkan Kelurahan / Desa untuk Alamat Hukum untuk Peminjam."
+   },
+   "plzslctKecamatanLeglAdds": {
+      "Message": "Silakan tambahkan Kecamatan untuk Alamat Hukum untuk Peminjam."
+   },
+   "plzslctInitialCertificate": {
+      "Message": "Silakan Masukkan No. Sertifikat Awal."
+   },
+   "plzslctInitialCertificateIssued": {
+      "Message": "Silakan Masukkan Tempat Penerbitan Sertifikat Awal."
+   },
+   "plzslctLastRegistrationDte": {
+      "Message": "Silakan pilih tanggal pendaftaran terakhir."
+   },
+   "plzslctLastCompanyRegistrationNo": {
+      "Message": "Silakan pilih Pendaftaran Perusahaan Terakhir No."
+   },
+   "plzslctInitialCertificateDte": {
+      "Message": "Silakan pilih Tanggal Sertifikat Awal."
+   },
+   "plzslctKotamadyaKabupatenLeglAdds": {
+      "Message": "Silakan tambahkan Kotamadya / Kabupaten untuk Alamat Hukum Peminjam."
+   },
+   "plzslctNPWPId": {
+      "Message": "Id NPWP tidak ada."
+   },
+   "plzaddLegalAdds": {
+      "Message": "Silakan tambahkan Alamat Hukum untuk Peminjam."
+   },
+   "plzaddFixedLine": {
+      "Message": "Silakan tambahkan Saluran Telepon Tetap untuk Alamat Hukum Peminjam."
+   },
+   "plzaddMobile": {
+      "Message": "Silakan tambahkan Ponsel untuk Alamat Hukum Peminjam."
+   },
+   "plzslctKelurahanDesaRepAdds": {
+      "Message": "Silakan tambahkan Kelurahan / Desa untuk Perwakilan {0}."
+   },
+   "plzslctKotamadyaDesaRepAdds": {
+      "Message": "Silakan tambahkan Kotamadya / Kabupaten untuk Perwakilan {0}."
+   },
+   "plzIdTypeRep": {
+      "Message": "Silakan tambahkan Tipe ID untuk Perwakilan {0}."
+   },
+   "plzIdTypeNumberRep": {
+      "Message": "Silakan tambahkan Nomor Jenis ID untuk Perwakilan {0}."
+   },
+   "plzGenderRep": {
+      "Message": "Silakan tambahkan Gender untuk Perwakilan {0}."
+   },
+   "plzNameRep": {
+      "Message": "Silakan masukkan Nama untuk Perwakilan {0}."
+   },
+   "plzAddressRep": {
+      "Message": "Silakan masukkan Alamat untuk Perwakilan {0}."
+   },
+   "plzaddLegalAddsGurantor": {
+      "Message": "Silakan tambahkan Alamat Legal untuk Penjamin."
+   },
+   "plzslctKelurahanDesaLeglAddsGurantor": {
+      "Message": "Silakan tambahkan Kelurahan / Desa untuk Alamat Hukum untuk Penjamin."
+   },
+   "plzAddAdressGurantor": {
+      "Message": "Silakan tambahkan Alamat di Tab Alamat Adat untuk Pengacara."
+   },
+   "plzktpIdPassGurantor": {
+      "Message": "Silakan tambahkan KTP / Paspor untuk Gurantor."
+   },
+   "plzAddAdressBorrower": {
+      "Message": "Silakan tambahkan Alamat di Tab Alamat Hukum untuk Peminjam."
+   },
+   "sharePercentage": {
+      "Message": "Persentase dari semua Pemegang Saham harus sama dengan 100%."
+   },
+   "plzaddPassportGurantor": {
+      "Message": "Silakan tambahkan Jenis ID Paspor untuk Jaminan."
+   },
+   "plzaddNationalityGuranotor": {
+      "Message": "Silakan tambahkan kewarganegaraan untuk jaminan."
+   },
+   "plzaddSIUPidGuranotr": {
+      "Message": "Silakan tambahkan SIUP ID Type for Gurantor."
+   },
+   "plzaddNPWPidGuranotr": {
+      "Message": "Silakan tambahkan NPWP ID Type for Gurantor."
+   },
+   "plzadddsgnforRep": {
+      "Message": "Silakan tambahkan Designation for Representative {0}."
+   },
+   "plzchngeIDTypeShareHolder": {
+      "Message": "Pemegang Saham Tidak dapat digandakan."
+   },
+   "msgRescoringConfirm": {
+      "Message": "Apakah Anda ingin melakukan penyelamatan?"
+   },
+   "msgRescoringError": {
+      "Message": "Terjadi kesalahan saat melakukan Penyelamatan."
+   },
+   "msgRescoringSuccess": {
+      "Message": "Penyelamatan berhasil dilakukan."
+   },
+   "msgRescoringDraft": {
+      "Message": "Penyelamatan ulang hanya dapat dilakukan terhadap Aplikasi Draft dan Pelamar Perorangan."
+   },
+   "msgGoodsFundService": {
+      "Message": "Nilai 'Barang / Dana Layanan' tidak disediakan di 'Detail Kendaraan'."
+   },
+   "msgFinancingType": {
+      "Message": "Nilai 'Jenis Pembiayaan' tidak disediakan di 'Detail Kendaraan'."
+   },
+   "mComEngChasBPKBNotMatched": {
+      "Message": "Nilai Engine No., Chassis No., dan BPKB Number tidak cocok dengan Contract No.: {0}."
+   },
+   "mComETNotValid": {
+      "Message": "Kutipan ET terhadap Contract No.: {0} tidak Valid."
+   },
+   "mComETNotEqual": {
+      "Message": "Jumlah input ET tidak cocok dengan Contract No.: {0} Nilai ET yaitu {1}."
+   },
+   "mComIDNbrMisMatch": {
+      "Message": "Masukan Nomor KTP / SUIP ID tidak cocok dengan Contract No.: {0} Nomor Peminjam, mis {1}."
+   },
+   "mComETAmountZero": {
+      "Message": "Jumlah ET harus Nol untuk Aplikasi mCOM."
+   },
+   "msgAddShareHolder": {
+      "Message": "Silakan tambahkan Pemegang Saham untuk Perusahaan."
+   },
+   "msgSelectRepType": {
+      "Message": "Silakan pilih Jenis Perwakilan (Perorangan/Perusahaan) untuk Perwakilan {0}."
+   },
+   "msgSupplierSearchNoSelectMessage": {
+      "Message": "Silahkan Pilih Supplier."
+   },
+   "msgCalculateAccessories": {
+      "Message": "Aksesoris tidak Dihitung."
+   },
+   "msgVATAmountValidation": {
+      "Message": "Jumlah PPN tidak boleh lebih besar dari jumlah inklusif."
+   },
+   "msgPlzInputMonthlyLeaseFeeAmt": {
+      "Message": "Harap masukan jumlah biaya sewa bulanan."
+   },
+   "msgPlzInputMonthlyMaintCostFeeAmt": {
+      "Message": "Mohon Masukan Biaya Pemeliharaan Bulanan."
+   },
+   "msgSumOfDiscAndVATOnAssetCostCanntGrtrMessage": {
+      "Message": "Jumlah Diskon dan PPN Biaya Aktiva tidak boleh lebih besar dari Biaya Aktiva."
+   },
+   "msgEaglePointScoreCalculate": {
+      "Message": "Apakah Anda ingin Menghitung Skor Poin."
+   },
+   "msgCommissionReload": {
+      "Message": "Please Re-Distribute Marketing Commission"
+   },
+   "msgmarketingofficer": {
+      "Message": "Silakan Pilih Petugas Pemasaran."
+   },
+   "msgInvalidPhoneNo": {
+      "Message": "Harap masukkan Nomor Telepon yang Valid."
+   },
+   "msgSelectDocument": {
+      "Message": "Pilih dokumen apa saja sebelum melanjutkan."
+   },
+   "msgNoDocumentFund": {
+      "Message": "Ada yang tidak beres !, Harap hubungi administrator"
+   },
+   "msgTakeControlConfirm": {
+      "Message": "Apakah Anda yakin ingin mengambil kendali?"
+   },
+   "msgSelectUser": {
+      "Message": "Pilih Nama Pengguna terlebih dahulu."
+   },
+   "msgAlreadyAssign": {
+      "Message": "Aplikasi sudah ditetapkan untuk pengguna ini."
+   },
+   "DateRangeLessthan31days": {
+      "Message": "Perbedaan antara From Date dan To Date tidak boleh lebih dari {0} hari."
+   },
+   "MaxDownloadLimitMsg": {
+      "Message": "Anda dapat mengunduh maksimal {0} dokumen"
+   },
+   "MultipleEmergencyAddress": {
+      "Message": "Hanya satu alamat Darurat Izinkan"
+   },
+   "EmergencyAddressChk": {
+      "Message": "Alamat tidak dapat menjadi darurat dan alamat lain."
+   },
+   "msgOriginalTermsMissing": {
+      "Message": "Silakan masukkan Ketentuan Asli di layar aset"
+   },
+   "msgOLAccountingType": {
+      "Message": "Silakan pilih bidang Jenis Akuntansi (OL) pemohon."
+   },
+   "msgOLInvoiceOption": {
+      "Message": "Silakan pilih bidang Opsi Faktur (OL) pemohon."
+   },
+   "msgOLReceiptingBank": {
+      "Message": "Bank Penerima OL tidak dipilih."
+   },
+   "msgSelectBorrowerApplicant": {
+      "Message": "Silakan pilih Pemohon Peminjam terlebih dahulu."
+   },
+   "TermARO": {
+      "Message": "ARO hanya dapat dipilih untuk term terakhir."
+   },
+   "PlzSelectAsetCost": {
+      "Message": "Harap pilih biaya aset."
+   },
+   "PlzSelectAsetTerms": {
+      "Message": "Persyaratan kontrak harus lebih besar dari nol."
+   },
+   "CollMetdReqStnd": {
+      "Message": "Metode Penagihan Asuransi diperlukan terhadap asuransi standar"
+   },
+   "ExtMetdReqAddl": {
+      "Message": "Jenis Perpanjangan Asuransi diperlukan terhadap asuransi tambahan."
+   },
+   "InsrTypeAddlReq": {
+      "Message": "Jenis asuransi diperlukan terhadap asuransi tambahan."
+   },
+   "InsrCompSelect": {
+      "Message": "Silakan pilih perusahaan asuransi"
+   },
+   "InsuranceTerm": {
+      "Message": "Persyaratan sudah selesai."
+   },
+   "RateMustInBetween": {
+      "Message": "Tarif default tidak boleh kurang dari tarif minimum dan lebih besar dari tarif maksimum."
+   },
+   "MinMaxRateCheck": {
+      "Message": "Tarif Premi Default tidak boleh kurang dari tarif Premium Minimum dan lebih besar dari tarif premi Maksimum."
+   },
+   "plzslctHouseOwnerLegalAddsforBorr": {
+      "Message": "Peminjam - Silakan pilih Kepemilikan Rumah dengan Jenis Alamat Resmi."
+   },
+   "plzslctMobileLegalAddsforBorr": {
+      "Message": "Peminjam - Silakan pilih Ponsel dengan Jenis Alamat Resmi."
+   },
+   "EApprovalSaveSuccess": {
+      "Message": "E-Persetujuan telah berhasil disimpan."
+   },
+   "EApprovalMarkComplete": {
+      "Message": "Harap Tandai sebagai Selesai sebelum menyimpan."
+   },
+   "EApprovalNotAllowedToEdit": {
+      "Message": "Anda tidak diizinkan untuk Mengedit/Mengirim aplikasi ini."
+   },
+   "EApprovalSubmit": {
+      "Message": "Harap selesaikan proses E-Persetujuan sebelum pengajuan aplikasi."
+   },
+   "forwardTakeControlNotAllowed": {
+     "Message": "Anda tidak berwenang untuk melakukan operasi ini."
+   },
+   "msgBorrowerRoleCodeAlreadyExists": {
+     "Message": "Borrower Role already exists. Please reload the application."
+   },
+   "BMNotFound": {
+     "Message": "BM tidak ditemukan."
+   },
+   "ReScoreforCompanyNotAllowed": {
+     "Message": "Rescoring hanya dapat dilakukan terhadap Draf Aplikasi dan Pelamar Perorangan."
+   },
+   "CantAddLeaseClause": {
+     "Message": "Asuransi Tambahan tidak dapat ditambahkan dalam hal Klausul Sewa."
+   }
+   ,
+   "EmrgPhoneAddressMiss": {
+     "Message": "Telepon dan Alamat Darurat tidak boleh kosong."
+   },
+   "msgAllRecipientSelect" :{
+      "Message": "Penerima terhadap semua Peran harus Dipilih."
+   },
+   "AdditionalCoverage": {
+     "Message": "Jenis Pertanggungan Tambahan diperlukan terhadap asuransi tambahan."
+   },
+   "IncoResuvery": {
+      "Message": "Karakter tidak valid, Harap masukkan alfanumerik atau ., saja.. Baris baru juga tidak diperbolehkan"
+   },
+   "msgFamilyCardNumberNotProvided":{
+      "Message": "Nomor Kartu Keluarga tidak tersedia di Anggota Keluarga"
+    },
+    "msgFamilyMemberGenderNotProvided":{
+      "Message": "Jenis kelamin tidak disediakan di Anggota Keluarga"
+    },
+    "msgFamilyMemberRelationNotProvided":{
+      "Message": "Hubungan tidak tersedia di Anggota Keluarga"
+    },
+    "msgFamilyMemberOccupationNotProvided":{
+      "Message": "Pekerjaan tidak tersedia di Anggota Keluarga"
+    },
+    "selectEApprovalReason": {
+      "Message": "Silakan pilih Alasan Persetujuan Elektronik."
+    },
+    "EnterEApprovalComments": {
+      "Message": "Silakan masukkan Komentar Persetujuan Elektronik."
+    },
+    "passContUpperCaseChar": {
+      "Message": "Kata sandi harus berisi setidaknya {0} huruf besar."
+    },
+    "passContDigitChar": {
+      "Message": "Kata sandi harus berisi setidaknya {0} digit."
+    },
+    "msgInsurancePremiumReCalculate": {
+      "Message": "Premi Asuransi tidak dihitung dengan benar. Silakan hitung kembali jumlah premi asuransi."
+    },
+    "plzSelectApplicable": {
+      "Message": "Silakan pilih setidaknya satu Detail Jenis Alamat."
+    },
+    "msgGoodsFundDetails": {
+      "Message": "Nilai 'Detail Dana Barang/Jasa' tidak tersedia di 'Detail Kendaraan'"
+    },
+    "msgSalesmanMissing": {
+    "Message": "Informasi Salesman hilang."
+  }
+  
+}

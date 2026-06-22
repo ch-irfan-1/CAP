@@ -1,0 +1,371 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Truck Detail</span>
+  </div>
+  <!-- <div class="col-md-1">
+  <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+</div> -->
+</div>
+
+<div class="popupBody">
+  <div [formGroup]="Truck">
+    <div formGroupName="PROPOSALTRUCKDETAIL">
+      <div class="row fieldContainer">
+        <ng-container>
+          <div class="col-md-3 top15">
+            <nfs-dropdown [Label]="'Business Type'" formControlName="BUSINESSTYPECDE" [DataArray]="this._truckMasterDataService.IndustryTypeCode"></nfs-dropdown>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-yeardatepicker [Label]="'Year Of First Own Truck'" formControlName="YEAROFOWNTRUCK" ></nfs-yeardatepicker>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-textbox [Label]="'Hand Phone Number'"formControlName="HANDPHONENUMBER" [maxLength]="25"></nfs-textbox>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-checkbox [Label]="'Private Workshop'"formControlName="PRIVATEWORKSHOPIND" ></nfs-checkbox>
+          </div>
+
+        </ng-container>
+      </div>
+      <div class="row fieldContainer">
+        <ng-container>
+          <div class="col-md-3 top15">
+            <nfs-number [Label]="'No of Labours'" formControlName="NOOFLABOURS" [maxLength]="7" [isControlDisable]="this.fieldDisabled"></nfs-number>
+          </div>
+        </ng-container>
+      </div>
+      <mat-accordion>
+        <mat-expansion-panel expanded="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Address Detail
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer">
+            <div class="col-md-3 top15 ">
+              <nfs-dropdown formControlName="COUNTRYID" [Label]="'Country'" [DataArray]="this.CountryList">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-dropdown formControlName="PROVINCEID" [Label]="'Province'" [DataArray]="this._addressMasterDataService.AllProvinceData">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-dropdown formControlName="KOTAMADYAIDOTO" [Label]="'Kotamadya/Kabupaten'" [DataArray]="this.AllKotaByProvince">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-dropdown formControlName="KECAMATANIDOTO" [Label]="'Kecamatan'"  [DataArray]="this.AllKecamatanByKota">
+              </nfs-dropdown>
+            </div>
+          </div>
+
+
+
+          <div class="row fieldContainer">
+            <div class="col-md-3 top15">
+              <nfs-dropdown formControlName="KELURAHANIDOTO" [Label]="'Kelurahan/Desa'" [DataArray]="this.AllKelurahanByKeca">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-number formControlName="RWOTO" [maxLength]="3" [Name]="'RWOTO'" [Label]="'RW###'">
+              </nfs-number>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-number formControlName="RTOTO" [maxLength]="3" [Label]="'RT###'">
+              </nfs-number>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-number formControlName="POSTALCODE" [maxLength]="10" [Name]="'POSTALCODE'" [Label]="'Postal/Zip Code'">
+              </nfs-number>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-textbox formControlName="ADDRESSOTO" [Label]="'Address *'" [maxLength]="500">
+              </nfs-textbox>
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <mat-accordion>
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Operating Revenue
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div mat-dialog-content>
+        <!-- <h4>Optional Accessories</h4> -->
+        <div class="row noMargin ">
+          <div class="col-md-12 top15 tableMain rentalDetail" [ngClass]="{'disabledDiv':this.isViewMode}">
+            <table mat-table [dataSource]="dataSourceOperatingRevenu" class="mat-elevation-z8">
+              <ng-container matColumnDef="addDataRow">
+                <th mat-header-cell *matHeaderCellDef class="plusIcon">
+                  <mat-icon (click)="addOperatingRevenueData()">add</mat-icon>
+                </th>
+                <td mat-cell *matCellDef="let element;"></td>
+              </ng-container>
+              <ng-container matColumnDef="TRUCKCATEGORYCDE" class="Accessories">
+                <th mat-header-cell *matHeaderCellDef> Truck Category</th>
+                <td mat-cell *matCellDef="let element; let i = index">
+                  <mat-form-field placeholder="never" class="AccessoriesBox">
+                    <mat-select [(value)]="element.TRUCKCATEGORYCDE"
+                      (ngModelChange)="OPERATINGREVENUE_PropertyChanged(element,false)">
+                      @for (data of this._truckMasterDataService.TruckCategoryCode; track data) {
+                        <mat-option
+                          [value]="data.code">
+                        {{ data.TextValue }}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="REVENUEUNIT">
+                <th mat-header-cell *matHeaderCellDef> Revenue / Unit </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field placeholder="never">
+                    <input type="number" matInput
+                      [value]="element.REVENUEUNIT" [(ngModel)]="element.REVENUEUNIT"
+                      (ngModelChange)="OPERATINGREVENUE_PropertyChanged(element,false)"maxlength="7"
+                      onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="UNITINOPERATION">
+                  <th mat-header-cell *matHeaderCellDef> Unit In Operation </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input type="number" matInput [value]="element.UNITINOPERATION"
+                        [(ngModel)]="element.UNITINOPERATION" maxlength="7"
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                        (ngModelChange)="OPERATINGREVENUE_PropertyChanged(element,false)">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="SUBTOTALREVENUE">
+                  <th mat-header-cell *matHeaderCellDef>Sub Total Revenue</th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input  mask="{{mask}}" step="0.01" thousandSeparator="," matInput
+                        value="element.SUBTOTALREVENUE"  onClick="this.select();"
+                        [(ngModel)]="element.SUBTOTALREVENUE" (ngModelChange)="OPERATINGREVENUE_PropertyChanged(element,true)">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="deleterow"  style="width: 40px;">
+                  <th mat-header-cell *matHeaderCellDef> </th>
+                  <td mat-cell *matCellDef="let element; let i = index">
+                    <button mat-menu-item type="button" (click)="removeOperatingRevenueRow(element, i)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div [formGroup]="Truck">
+          <div formGroupName="PROPOSALTRUCKDETAIL" class="row fieldContainer">
+            <div class="col-md-3 top15 ">
+              <nfs-currency [Label]="'Total Revenue'" [isControlDisable]="true" formControlName="TOTALREVENUE"></nfs-currency>
+            </div>
+            <div class="col-md-3 top15 ">
+              <nfs-textbox [Label]="'Incoming Revenue Method'" formControlName="INCOMINGREVENUEMETHOD" [maxLength]="50"></nfs-textbox>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <mat-accordion>
+      <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Total Truck Owned
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div mat-dialog-content>
+          <div class="row noMargin ">
+            <div class="col-md-12 top15 tableMain rentalDetail" [ngClass]="{'disabledDiv':this.isViewMode}">
+              <table mat-table [dataSource]="dataSourceTruckOwned" class="mat-elevation-z8">
+                <ng-container matColumnDef="addDataRow">
+                  <th mat-header-cell *matHeaderCellDef class="plusIcon">
+                    <mat-icon (click)="addTotalTruckOwnedData()">add</mat-icon>
+                  </th>
+                  <td mat-cell *matCellDef="let element;"></td>
+                </ng-container>
+                <ng-container matColumnDef="TRUCKCATEGORYCDE" class="Accessories">
+                  <th mat-header-cell *matHeaderCellDef> Truck Category</th>
+                  <td mat-cell *matCellDef="let element; let i = index">
+                    <mat-form-field placeholder="never" class="AccessoriesBox">
+                      <mat-select [(value)]="element.TRUCKCATEGORYCDE"
+                        (ngModelChange)="TOTALTRUCKOWNED_PropertyChanged(element,false)">
+                        @for (data of this._truckMasterDataService.TruckCategoryCode; track data) {
+                          <mat-option
+                            [value]="data.code">
+                          {{ data.TextValue }}</mat-option>
+                        }
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="NOOFUNITS">
+                  <th mat-header-cell *matHeaderCellDef> Number of Unit </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field placeholder="never">
+                      <input matInput maxlength="7"
+                        [value]="element.NOOFUNITS" [(ngModel)]="element.NOOFUNITS"
+                        (ngModelChange)="TOTALTRUCKOWNED_PropertyChanged(element,true)"
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
+
+                      </mat-form-field>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="MODEL">
+                    <th mat-header-cell *matHeaderCellDef>Model </th>
+                    <td mat-cell *matCellDef="let element">
+                      <mat-form-field placeholder="never">
+                        <input matInput [value]="element.MODEL"
+                          [(ngModel)]="element.MODEL" (ngModelChange)="TOTALTRUCKOWNED_PropertyChanged(element,false)"
+                          >
+                      </mat-form-field>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="NOOFUNITSONCREDIT">
+                    <th mat-header-cell *matHeaderCellDef style="max-width: 300px">Number of units that are still on credit </th>
+                    <td mat-cell *matCellDef="let element" style="max-width: 300px">
+                      <mat-form-field placeholder="never">
+                        <input type="number" matInput [value]="element.NOOFUNITSONCREDIT" maxlength="7"
+                          [(ngModel)]="element.NOOFUNITSONCREDIT" (ngModelChange)="TOTALTRUCKOWNED_PropertyChanged(element,false)"
+                          onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+                          >
+                      </mat-form-field>
+                    </td>
+                  </ng-container>
+
+
+                  <ng-container matColumnDef="BODYTYPECDE" class="Accessories">
+                    <th mat-header-cell *matHeaderCellDef> Body Type</th>
+                    <td mat-cell *matCellDef="let element; let i = index">
+                      <mat-form-field placeholder="never" class="AccessoriesBox">
+                        <mat-select [(value)]="element.BODYTYPECDE"
+                          (ngModelChange)="TOTALTRUCKOWNED_PropertyChanged(element,false)">
+                          @for (data of this._truckMasterDataService.BodyType; track data) {
+                            <mat-option
+                              [value]="data.code">
+                            {{ data.TextValue }}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="deleterow"  style="width: 40px;">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element; let i = index">
+                      <button mat-menu-item type="button" (click)="removeTotalTruckOwnedRow(element, i)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div [formGroup]="Truck" class="row fieldContainer">
+            <div formGroupName="PROPOSALTRUCKDETAIL" class="col-md-3 top15 ">
+              <nfs-number [Label]="'Total'"  [isControlDisable]="true" formControlName="TOTALNUMBEROFUNITS"></nfs-number>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <div [formGroup]="Truck" class="customAccordianMain">
+        <div formGroupName="PROPOSALTRUCKDETAIL">
+          <mat-accordion>
+            <mat-expansion-panel expanded="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Date of Financed Truck and Body
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="row fieldContainer" style="padding-bottom: 0;">
+                <ng-container>
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'Body Type'" formControlName="BODYTYPECDE" [DataArray]="this._truckMasterDataService.BodyType"></nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'License Plate Color'" formControlName="LISCENCEPLATECOLORCDE" [DataArray]="this._truckMasterDataService.AssetModelColour"></nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox [Label]="'Vehicle Body'"formControlName="VEHICLEBODY" [maxLength]="50"></nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-currency [Label]="'Truck Price'"formControlName="TRUCKPRICE"></nfs-currency>
+                  </div>
+                </ng-container>
+              </div>
+              <div class="row fieldContainer" style="padding-bottom: 0;">
+                <ng-container>
+                  <div class="col-md-3 top15">
+                    <nfs-currency [Label]="'Truck Body Price'"formControlName="TRUCKBODYPRICE"></nfs-currency>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-currency [Label]="'Total Price'"formControlName="TOTALPRICE"></nfs-currency>
+                  </div>
+                </ng-container>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion>
+            <mat-expansion-panel expanded="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Truck Operation Objective
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="row fieldContainer" style="padding-bottom: 2rem;">
+
+                <ng-container class="customPadding">
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'Purchasing Objective'" formControlName="PURCHASINGOBJECTIVECDE" [DataArray]="this._truckMasterDataService.PurchasingObjective"></nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-dropdown [Label]="'Operating Objective'" formControlName="OPERATINGOBJECTIVECDE"  [DataArray]="this._truckMasterDataService.OperatingObjective"></nfs-dropdown>
+                  </div>
+                  <div class="col-md-3 top15">
+                    <nfs-textbox [Label]="'Operating Location'"formControlName="OPERATINGLOCATION" [maxLength]="250"></nfs-textbox>
+                  </div>
+                  <div class="col-md-3 top15 customPosition">
+                    <nfs-dropdown [Label]="'Distance Location From OTO'" formControlName="DISTANCELOCATIONCDE" [DataArray]="this._truckMasterDataService.PropertyLocation"></nfs-dropdown>
+                  </div>
+                </ng-container>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+
+    <div class="row popupFooter">
+      <div mat-dialog-actions class="d-flex justify-content-end">
+        <div class="">
+          <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+            [alwaysEnable] = "true"
+          [matRaisedButtonIcon]="true" (click)="btnOK_Click()"></nfs-button>
+        </div>
+      </div>
+    </div>

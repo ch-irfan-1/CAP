@@ -1,0 +1,93 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Document</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="noPadding fieldContainer" style="min-height: 400px; min-width: 400px;">
+    <app-nfs-image-viewer style="text-align: center;"
+      #imageViewer
+      [imageUrl]="imageSource"
+    >
+  </app-nfs-image-viewer>
+   
+    <div class="container"*ngIf="showgeoCode">
+
+      <div class="column">
+        <h2>Contact Address</h2>
+        <p>{{Contact_Address}}</p>
+        <p *ngIf="this.isContactAddrCoordsValid"> {{ContactAddrLatLng}}</p>
+
+      </div>
+     
+      <div class="column">
+        <h2></h2>
+       
+        
+          <img src="assets/Images/gps.png" class="icon"/>
+        <span class="text-content clickable" (click)="onLatLngClick()">{{LatLng}}</span>
+
+        <p style="margin-left: 20px;">{{Timespan | date: 'dd/MM/yyyy HH:mm:ss'}}</p>
+        
+      </div>
+    </div>
+     </div>  
+
+  
+  
+    <div
+      class="col-md-12 zoomControls imgCntrlInner noPadding justify-content-center d-flex"
+      style="padding-top: 4px; margin-top: 4px;"
+    >
+      <div class="col-md-4 imgCntrlInner noPadding">
+        <div (click)="prevDoc()">
+          <p
+            style="width: 15px; margin-left: 37px; margin-right: 5px"
+            [ngClass]="{ disable: isPrevDisabled }"
+          >
+            <
+          </p>
+        </div>
+        <p style="margin-left: 0; width: auto">
+          {{ selectedIndex + 1 }} of {{ totalIndex }}
+        </p>
+        <div (click)="nextDoc()">
+          <p
+            style="width: 15px; margin-left: -8px"
+            [ngClass]="{ disable: isNextDisabled }"
+          >
+            >
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <mat-icon
+          (click)="this.imageViewer.rotate(true)"
+          style="margin-left: 55px; color: white; font-size: 20px"
+          >rotate_left</mat-icon
+        >
+        <mat-icon
+          (click)="this.imageViewer.cropper.reset()"
+          style="
+            margin-left: 8px;
+            margin-right: 8px;
+            color: white;
+            font-size: 20px;
+          "
+          >autorenew</mat-icon
+        >
+        <mat-icon
+          (click)="this.imageViewer.rotate(false)"
+          style="color: white; font-size: 20px"
+          >rotate_right</mat-icon
+        >
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+ 

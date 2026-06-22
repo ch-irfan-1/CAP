@@ -1,0 +1,85 @@
+<!-- <div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url(../../../../../assets/Images/demo.jpg);">
+    <div class="full-bg-img mask rgba-black-light">
+      <div class="container flex-center">
+        <div class="row pt-5 mt-3 w-100">
+          <div class="col-md-12">
+            <div class="text-center">
+              <h1>Hello</h1>
+              <hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+              <h5 class="font-up mb-5 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Lease & Finance</strong></h5>
+              <a mdbBtn color="white" outline="true" class="wow fadeInDown waves-light" data-wow-delay="0.4s"
+                mdbWavesEffect>IOPS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <ng-container>
+      <div class="main-content">
+        <div class="mainContainer">
+          <div class="row dashboardMainTop">
+            <div class="col-md-6">
+              <h2>Hi {{this.username}}</h2><br style="display: none;">
+              <h1>Welcome Back</h1>
+            </div>
+            <!-- <div class="col-md-3">
+              <div class="graphDropDown">
+                <nfs-dropdown formControlName="''" [Label]="'Graph Duration'" [controlPlaceholder]="'Select Some Values'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'">
+                </nfs-dropdown>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-3">
+              <div class="loginSuccess">
+                <img src="../../../../../assets/Images/good.png" />
+                <p>Logged in successfully. </p>
+              </div>
+            </div> -->
+          </div>
+    
+    
+          <div class="row">
+            <div class="col-md-4 topFinanceProducts">
+              <h3>Top Financial Products (last 30 days)</h3>
+              <div class="row">
+                <div class="col-md-12">
+    
+                  <!-- <canvas baseChart
+                  [data]="barChartData"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [type]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+                </canvas> -->
+    
+                  <canvas baseChart
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [type]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                  </canvas>
+                </div>
+              </div>
+                
+            </div>
+            <div class="col-md-4 topSellingAsset">
+              <h3>Top Selling Assets (last 30 days)</h3>
+              <div class="row topPadding15">
+                <div class="col-md-12">
+                  <canvas baseChart
+                  [data]="doughnutChartData"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"
+                  [type]="doughnutChartType">
+                </canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>

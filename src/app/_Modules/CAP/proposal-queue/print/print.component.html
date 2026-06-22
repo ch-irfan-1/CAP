@@ -1,0 +1,27 @@
+<div class="row popupHeader">
+    <div class="col-md-10">
+        <span class="popupMainHeading">Stationery</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain">
+        <div class="topMargin20">
+            Stationery
+            <div class="TabInnerMainForm row">
+                <div class="col-12 noPadding tableMain top10 rentalDetail">
+                    <nfs-static-grid [inputArr]="this.StationeryList"
+                        (SelectionChange)="printSelectedStationery($event)" [isRadioBtnRequired]="false"
+                        [columns]="columns" [Labels]="Labels" [DisableSorting]="false" [IsActionRequired]="true"
+                        [ActionLabel]="'Print'" [IsDeleteRequired]="false">
+                    </nfs-static-grid>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

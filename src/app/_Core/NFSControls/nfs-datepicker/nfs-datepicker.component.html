@@ -1,0 +1,16 @@
+<div>
+  <mat-form-field appearance="fill" class="directive controls-margin"
+    [ngClass]="{'mandatory': IsRequiredField === true}">
+    <mat-label [matTooltip]="Label">{{Label}}</mat-label>
+    <input class="customDatePicker" [readonly]="isControlDisable" matInput [formControl]=DatePickerControl [max]="Max" [min]="Min"
+      [matDatepicker]="Datepicker" (dateChange)="Datepicker.close(); onDateChange($event)"
+      placeholder="{{Placeholder}}" (keydown.tab)="onTabPress($event)" [tabIndex]="SetTabIndex()"
+      [matTooltip]="tooltipValue">
+    <mat-datepicker-toggle class="customIcon" matSuffix [disabled]="isControlDisable" [for]="Datepicker">
+    </mat-datepicker-toggle>
+    <mat-datepicker #Datepicker></mat-datepicker>
+    @if (IsFieldValid()) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>

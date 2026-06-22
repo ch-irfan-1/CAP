@@ -1,0 +1,185 @@
+<body class="loginMain">
+  <div id="wrapper2">
+    <div id="mainContents">
+      <div class="row">
+        <div class="col-md-5 loginLeftArea">
+          <!-- <img src="../../../../assets/Images/loginImg.png" /> -->
+          <p></p>
+          @if (this.appConfig.CompanyCode === '001') {
+            <img src="assets/Images/otoLogo.png" class="loginLogo" />
+          }
+          @if (this.appConfig.CompanyCode === '002') {
+            <img src="assets/Images/sof_logo.png" class="loginLogo" />
+          }
+        </div>
+        <div class="col-md-7 loginRightArea">
+
+          <form class="login-form" [formGroup]="loginForm" novalidate>
+            @if (!this.enableTwoFactorcontrols) {
+              <div>
+                <h1>Welcome to OTO</h1>
+                <!-- <p>Please sign in to you account to manage leads</p> -->
+                <div class="row">
+                  <div class="col-md-12 loginField" style="padding-bottom: 4px !important;">
+                    <nfs-textbox class="parent customLogin" [Type]="'text'" formControlName="username" [Label]="'User Name'"
+                      [Component]="'Login'" [IsMandatory]='true' [Placeholder]="'User Name'" [autocomplete]="'off'"
+                      [isControlDisable]="this.resetPassword" [maxLength]='50'>
+                    </nfs-textbox>
+                  </div>
+                  <div class="col-md-12 loginField">
+                    <nfs-password class="parent" [type]="'password'" formControlName="password" [label]="'Password'"
+                      [isControlDisable]="this.resetPassword" [placeholder]="'Password'" [autoComplete]="'off'"
+                    [maxLength]='20'></nfs-password>
+                  </div>
+                  @if (this.resetPassword) {
+                    <div class="col-md-12 loginField">
+                      <nfs-password class="parent" [type]="'password'" formControlName="newpassword"
+                        [label]="'New Password'" [placeholder]="'New Password'" [autoComplete]="'off'" [maxLength]='20'>
+                      </nfs-password>
+                    </div>
+                  }
+                  @if (this.resetPassword) {
+                    <div class="col-md-12 loginField">
+                      <nfs-password class="parent" [type]="'password'" formControlName="confirmpassword"
+                        [label]="'Confirm New Password'" [placeholder]="'Confirm New Password'" [autoComplete]="'off'"
+                      [maxLength]='20'></nfs-password>
+                    </div>
+                  }
+                  @if (this.enableRecaptcha) {
+                    <div class="col-md-12 loginField captchaField">
+                      <re-captcha (resolved)="resolved($event)" siteKey={{reCaptchaKey}}></re-captcha>
+                    </div>
+                  }
+                  <div class="col-md-12 loginField">
+                    <button mat-raised-button color="primary" type="submit" data-filter=".coupe" routerLink="/login"
+                    (click)="authenticateUser()">Login</button>
+                  </div>
+                </div>
+              </div>
+            }
+
+
+            <!------OTP-------->
+            @if (this.enableTwoFactorcontrols) {
+              <div>
+                <h1>Verification Code</h1>
+                <p>Please enter the code we sent to your <br>
+                email bilal***************com</p>
+                <div class="col-md-12 loginField">
+                  <nfs-textbox class="parent" [Type]="'text'" formControlName="OTP" [Label]="'OTP'" [Placeholder]="'OTP'"
+                  [autocomplete]="'off'"></nfs-textbox>
+                </div>
+                <div class="col-md-12 loginField verificationAgain" id="ResendOTPToken-text">
+                  <p>If verification code is not received within 30sec. Click
+                    <a><img src="assets/Images/resend.png" /><u (click)="ResendOTPToken()"
+                    class="resend-OTP">Resend</u></a>
+                  </p>
+                </div>
+                <div class="col-md-12 loginField">
+                  <div>
+                    <button mat-raised-button id="VerifyCodeButton" color="primary" type="submit" (click)="verifyOTP()">
+                      Verify Code
+                    </button>
+                  </div>
+                </div>
+              </div>
+            }
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- <div class="captchaMain">
+<img src="../../../../assets/Images/captchaIcon.png" />
+<p>Click to verify</p>
+<img src="../../../../assets/Images/men.png" class="menIcon" />
+</div> -->
+
+
+<!-- <div class="login-sec">
+<div id="mainContents" class="loginMain">
+  <div class="container loginClass">
+    <div class="md-padding login _md layout-align-center-center layout-row flex-100">
+      <div class="col-md-12">
+        <h1 class="loginHeading">
+          <img src="assets/Images/oto_logo.png" alt="avatar" />
+
+        </h1>
+        <h4>Welcome to i-OPS. <br>
+          Please sign in to your account to manage leads.
+        </h4>
+
+        <form class="login-form" [formGroup]="loginForm" novalidate>
+
+
+
+          <nfs-textbox class="row parent" [Type]="'text'" formControlName="username" [Label]="'User Name'"
+          [Placeholder]="'User Name'" [autocomplete]="'off'"></nfs-textbox>
+
+
+
+          <nfs-password class="row parent" [type]="'password'" formControlName="password" [label]="'Password'"
+          [placeholder]="'Password'" [autoComplete]="'off'"></nfs-password>
+
+
+
+          <div class="row parent mt-3">
+
+
+            <div><button mat-raised-button color="primary" type="submit" data-filter=".coupe" routerLink="/login"
+            (click)="authenticateUser()">Login</button></div>
+          </div>
+
+          <div class="row parent mt-3" *ngIf="this.enableRecaptcha">
+            <re-captcha (resolved)="resolved($event)" siteKey={{reCaptchaKey}}></re-captcha>
+          </div>
+
+          <div class="row parent mt-3" *ngIf="this.enableTwoFactorcontrols">
+            <nfs-textbox class="row parent" [Type]="'text'" formControlName="OTP" [Label]="'OTP'"
+            [Placeholder]="'OTP'" [autocomplete]="'off'"></nfs-textbox>
+          </div>
+
+
+          <div class="row parent mt-3" *ngIf="this.enableTwoFactorcontrols">
+            <div>
+              <button mat-raised-button id="VerifyCodeButton" color="primary" type="submit" (click)="verifyOTP()">
+                Verify Code
+              </button>
+            </div>
+          </div>
+
+          <div class="row parent mt-3" *ngIf="this.enableTwoFactorcontrols">
+            <div id="ResendOTPToken-text" class="small">
+              <small>If Verification code is not received within 30 sec, click
+                <u (click)="ResendOTPToken()">Resend Verification Code.</u>
+              </small>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+<!-- <mat-form-field appearance="outline">
+<mat-label>Username</mat-label>
+<input matInput placeholder="Username" maxlength="25" [(ngModel)]="this.loginDto.userId"
+  [ngModelOptions]="{standalone: true}">
+</mat-form-field> -->
+<!-- <mat-form-field appearance="outline">
+<mat-label>Password</mat-label>
+<input matInput Type="password" placeholder="Password" maxlength="15"
+  [(ngModel)]="this.loginDto.userPassword" [ngModelOptions]="{standalone: true}">
+</mat-form-field> -->
+<!-- <mat-form-field class="example-full-width">
+<input matInput placeholder="Username" maxlength="25" [(ngModel)]="this.loginDto.userId" [ngModelOptions]="{standalone: true}">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <input matInput Type="password" placeholder="Password" maxlength="15" [(ngModel)]="this.loginDto.userPassword" [ngModelOptions]="{standalone: true}">
+</mat-form-field> -->
+<!-- <div class="col-md-6"><button mat-button class="custom-Btn"  >Create Account</button></div> -->
+<!-- <img *ngIf="this.appConstants.CompanyCode == '002'" src="assets/images/sof_logo.png" alt="avatar" /> -->

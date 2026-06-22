@@ -1,0 +1,260 @@
+<div class="row popupHeader">
+  <div class="col-md-10">
+    <span class="popupMainHeading">Document Tracking Sheet</span>
+  </div>
+  <div class="col-md-1">
+    <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="false" [disabled]="false" [matButton]="false"
+      [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="SaveProposalDTS()">
+    </nfs-button>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="bodyContainer FormMain documentTraking customAccordianMain">
+    <div class="applicationInfoHeading">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true" [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Application Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer" [formGroup]="this.PROPOSALDTSHEADER">
+            <div class="col-md-3 top15 customTop2">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Application Number'" [isControlDisable]="true"
+                [Label]="'Application Number'" formControlName="PROPOSALNBR" name="PROPOSALNBR"
+                [Name]="'PROPOSALNBR'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15 customTop2">
+              <nfs-datepicker matInput name="APPLICATIONDTE" [Placeholder]="'Application Date'"[isControlDisable]="true"
+                [Name]="'APPLICATIONDTE'" [Label]="'Application Date'" formControlName="PROPOSALDTE_Helper"
+                name="PROPOSALDTE" [Name]="'PROPOSALDTE'">
+              </nfs-datepicker>
+            </div>
+            <div class="col-md-3 top15 customTop2">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Applicant Name'" [Label]="'Applicant Name'"[isControlDisable]="true"
+                formControlName="APPLICANTNME" name="APPLICANTNME" [Name]="'APPLICANTNME'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15 customTop2">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Applicant Type'" [Label]="'Applicant Type'"[isControlDisable]="true"
+                formControlName="PROPOSALTYPE" name="APPLICANTTYPE" [Name]="'APPLICANTTYPE'" value='abc'>
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Application Status'"[isControlDisable]="true"
+                [Label]="'Application Status'" formControlName="PROPOSALSTATUS" name="PROPOSALSTATUS"
+                [Name]="'PROPOSALSTATUS'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Rental Mode'" [Label]="'Rental Mode'"[isControlDisable]="true"
+                formControlName="RENTALMODE" name="RENTALMODE" [Name]="'RENTALMODE'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Introducer'" [Label]="'Introducer'"[isControlDisable]="true"
+                formControlName="INTRODUCER" name="INTRODUCER" [Name]="'INTRODUCER'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Company Branch'" [Label]="'Company Branch'"[isControlDisable]="true"
+                formControlName="BRANCH" name="BRANCH" [Name]="'BRANCH'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Asset Type'" [Label]="'Asset Type'"[isControlDisable]="true"
+                formControlName="ASSETTYPE" name="ASSETTYPE" [Name]="'ASSETTYPE'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Financial Product Group'"[isControlDisable]="true"
+                [Label]="'Financial Product Group'" formControlName="FPGROUP" name="FPGROUP"
+                [Name]="'FPGROUP'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'Financial Product Campaign'"[isControlDisable]="true"
+                [Label]="'Financial Product Campaign'" formControlName="FPTYPE" name="FPTYPE"
+                [Name]="'FPTYPE'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-textbox [maxLength]="100" [Placeholder]="'DTS Model Name'" [Label]="'DTS Model Name'"[isControlDisable]="true"
+                formControlName="DTSMODELNME" name="DTSMODELNME" [Name]="'DTSMODELNME'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-12 top15 top30">
+              <nfs-textarea class="customLength" [maxLength]="500" [Placeholder]="'Comments'" [Label]="'Comments'"
+                formControlName="COMMENTS" [Name]="'COMMENTS'">
+              </nfs-textarea>
+            </div>
+
+          </div>
+          <div class="row fieldContainer" [formGroup]="this.PROPOSALDTS">
+            <div class="col-md-6 top15">
+            </div>
+            <div class="col-md-3 top10">
+              <section class="example-section topCheck">
+                <!-- <mat-checkbox [formControl]="COMPLETIONIND" class="example-margin">Completed</mat-checkbox> -->
+                <nfs-checkbox formControlName="COMPLETIONIND" class="example-margin"[isControlDisable]="true"
+                  [Name]="'COMPLETIONIND'" [Label]="'Completed'"
+                  >
+                </nfs-checkbox>
+              </section>
+            </div>
+            <div class="col-md-3 top15">
+              <nfs-datepicker matInput name="COMPLETIONDTE" [Placeholder]="'Completion Date'"[isControlDisable]="true"
+                [Name]="'COMPLETIONDTE'" formControlName="COMPLETIONDTE" [Label]="'Completion Date'">
+              </nfs-datepicker>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <!-- <div class="topMargin20 DocumentExpansionPanel">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            iSURE Documents
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="row fieldContainer noMargin">
+          <div class="col-md-12 tableMain top10">
+            <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+              [ActionLabel]="'Load Contract'" [radioPropertyName]="'DEFAULTIND'" [columns]="columns"
+            [Labels]="Labels"></nfs-static-grid>
+          </div>
+          <div class="col-md-12">
+            <mat-paginator [length]="dataSourcelength" [pageSize]="selectedPageSize"
+              [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+            </mat-paginator>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div> -->
+  <div class="distanceInfo">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Distance Information
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="row fieldContainer noMargin">
+          <div class="col-md-12 tableMain top10 rentalDetail">
+            <div class="horizontal-scroll-wrapper">
+              <nfs-static-grid [isRadioBtnRequired]="false" [radioPropertyName]="'DEFAULTIND'" [columns]="columnsDocInfo"
+                [Labels]="LabelsDocInfo" [IsActionRequired]="false" [IsDeleteRequired]="false" [inputArr]="historyInfoDocs"
+                [showTooTip]="EnableTooltip">
+              </nfs-static-grid>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <nfs-button [text]="'Calculate'" [color]="'primary'" [disabled]="this.isCalculateDisabled" [matButton]="false"
+      [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="CalculateHistoryInfo()">
+
+    </nfs-button>
+  </div>
+  <div class="topMargin20 DocumentExpansionPanel">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            mPOS Documents
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="row fieldContainer noMargin">
+          <div class="col-md-12 tableMain top10 rentalDetail">
+            <nfs-static-grid [inputArr]="docdataSet" [isRadioBtnRequired]="false"
+              [ActionLabel]="'Load Contract'" [radioPropertyName]="'DEFAULTIND'" [columns]="columnsPOS"
+              [Labels]="LabelsPOS" [IsActionRequired]="true" [ActionLabel]="'View Documents'"
+            [IsDeleteRequired]="false"(SelectionChange)="showmPOSDocument($event)"></nfs-static-grid>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  @if (this.ProposalDTSDocuments) {
+    <div>
+      @for (applicantType of this.ProposalDTSDocuments.controls; track applicantType; let i = $index) {
+        <div class="topMargin20 DocumentExpansionPanel borrowerAccordian"
+          >
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{(applicantType.get('ApplicantType')?.value)}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              @for (applicant of applicantType.controls.Applicants.controls; track applicant) {
+                <div class="TabInnerMainForm"
+                  style="padding-top: 15px;">
+                  <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+                    <mat-accordion>
+                      <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            {{applicant.get('ApplicantName')?.value}}
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="TabInnerMainForm row documentTrckTable">
+                          <div class="col-12 noPadding tableMain top10 rentalDetail">
+                            <nfs-static-grid [inputArr]="applicant.controls.Documents"
+                              [isRadioBtnRequired]="false" [columns]="columns" [pipes]="pipes"
+                              [ActionLabel]="'Upload/View Document'" [IsDeleteRequired]="false" [Labels]="Labels"
+                              [DisableSorting]="false" (SelectionChange)="showSelectedDocument($event)">
+                            </nfs-static-grid>
+                            <!-- <nfs-static-grid [inputArr]="dealerSearchData" [isRadioBtnRequired]="false" [columns]="dealerResultColumns"
+                            [pipes]="pipes" [ActionLabel]="'Load Dealer'" [IsDeleteRequired]="false" [Labels]="Labels"
+                            [DisableSorting]="false" (SelectionChange)="DelaerLoadchildOutput($event)">
+                          </nfs-static-grid> -->
+                        </div>
+                      </div>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </div>
+              </div>
+            }
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    }
+    <div class="topMargin20 row">
+      <mat-paginator [length]="dataSourcelength" [pageSize]="selectedPageSize" [pageSizeOptions]="pageSizeOptions" [selectConfig]="paginatorSelectConfig"
+        (page)="PageSelectionChanged($event)">
+      </mat-paginator>
+    </div>
+  </div>
+  }
+      <div class="noPadding topMargin20 col-md-12 overflow">
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Deviation Information
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tableMain eApprovalTable dvtnTable">
+              <div class="deviationGrid">
+                <nfs-static-grid [isRadioBtnRequired]="false" [radioPropertyName]="'DEFAULTIND'"
+                  [columns]="columnsDeviationInfo" [inputArr]="this.DvtnTrckInformation" [Labels]="LabelsDeviationInfo"
+                  [IsActionRequired]="false" [IsDeleteRequired]="false" [showTooTip]="EnableTooltip"></nfs-static-grid>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+</div>
+</div>

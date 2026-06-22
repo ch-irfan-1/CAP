@@ -1,0 +1,20 @@
+.disabledDiv {
+    pointer-events: none;
+    opacity: 1.0;
+}
+/* 
+.mandatory {
+    background-color: rgb(183, 214, 183) !important;;
+} */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

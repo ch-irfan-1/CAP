@@ -1,0 +1,104 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">JP1-JP2 Commission Tax Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain">
+        <!-- <div [formGroup]="Tax">
+            <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Commission Name'" [Label]="'Component Name'" formControlName="CommissionTypeDescription">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Commission Type'" [Label]="'Component Type'" formControlName="DivisionType">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Recipient Name'" [Label]="'Recipient Name'" formControlName="RecepientName">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Recipient Amount'" [Label]="'Recipient Amount'" formControlName="TaxInclusiveAmount">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Tax Inclusive Amount'" [Label]="'Tax Inclusive Amount'" formControlName="TaxExclusiveAmount">
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Tax Exclusive Amount'" [Label]="'Tax Exclusive Amount'" formControlName="CommissionAmount">
+                </nfs-textbox>
+            </div>
+        </div> -->
+        <div class="row noMargin top15" [formGroup]="Tax">
+            <div class="col-md-3 top15 customTop8">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Component Name'" [Label]="'Component Name'" formControlName="CommissionTypeDescription" [isControlDisable]=true>
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top1 customTop8">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Component Type'" [Label]="'Component Type'" formControlName="DivisionType" [isControlDisable]=true>
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15 customTop8">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'Recipient Name'" [Label]="'Recipient Name'" formControlName="RecepientName" [isControlDisable]=true>
+                </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15 customTop8">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Recipient Amount'" [Label]="'Recipient Amount'" formControlName="CommissionAmount" [isControlDisable]=true>
+                </nfs-currency>
+            </div>
+            <div class="col-md-3 top15 top10">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Tax Inclusive Amount'" [Label]="'Tax Inclusive Amount'" formControlName="TaxInclusiveAmount" [isControlDisable]=true>
+                </nfs-currency>
+            </div>
+            <div class="col-md-3 top15 top10">
+                <nfs-currency [maxLength]="100" [Placeholder]="'Tax Exclusive Amount'" [Label]="'Tax Exclusive Amount'" formControlName="TaxExclusiveAmount" [isControlDisable]=true>
+                </nfs-currency>
+            </div>
+        </div>
+        <div class="col-md-12 noPadding top15">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="SubHeading">
+                            Tax Details
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain top10 rentalDetail" style="padding: 0">
+                        <nfs-static-grid [inputArr]="TaxCollection" [isRadioBtnRequired]="false"
+                            [IsActionRequired]="false" [columns]="columns" [Mode]="'View'"
+                            [Labels]="Labels" [pipes]="pipes"></nfs-static-grid>
+                    </div>
+                    <!-- <div class="">
+                        <mat-paginator [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                            [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+                        </mat-paginator>
+                    </div> -->
+                </mat-expansion-panel>
+            </mat-accordion>
+    
+    
+            <!-- <span class="SubHeading">Tax Detail</span>
+            <div class="TabInnerMainForm">
+                <div class="row tableMain">
+                    <div class="col-md-12">
+                        <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+                            [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [Labels]="Labels"></nfs-static-grid>
+                    </div>
+                    <div class="col-md-12 noPadding">
+                        <mat-paginator [length]="dataSourcelength" [pageSize]="selectedPageSize"
+                            [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+                        </mat-paginator>
+                    </div>
+                </div>
+            </div> -->
+    
+        </div>
+    </div>
+</div>

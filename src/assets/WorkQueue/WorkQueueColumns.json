@@ -1,0 +1,24 @@
+{
+  "WQFilterColumns":[
+    { "id": 1, "code": "QUOTATIONNBR", "TextValue": "Lead Number", "OptionalData": { "isDefault": true }, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+    { "id": 2, "code": "QUOTATIONDTE", "TextValue": "Date", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+    { "id": 3, "code": "FINANCIALPRODUCTNME", "TextValue": "Campaign Name", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+    { "id": 4, "code": "APPLICANTNME", "TextValue": "Customer Name", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+    { "id": 5, "code": "BPINTRODUCERNME", "TextValue": "Dealer Name", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+    { "id": 6, "code": "STATUSDSC", "TextValue": "Status", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" }
+],
+  "PRPLFilterColumns":[
+  { "id": 1, "code": "PROPOSALNBR", "TextValue": "Application No.", "OptionalData": { "isDefault": true }, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 2, "code": "FINANCIALPRODUCTNME", "TextValue": "Campaign", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 3, "code": "BUSINESSPARTNERNME", "TextValue": "Applicant Name", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 4, "code": "REQUESTSTATUSDSC", "TextValue": "Status", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 5, "code": "APPLICANTTYP", "TextValue": "Applicant Type", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 6, "code": "PROPOSALDTE", "TextValue": "Creation Date", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 7, "code": "FINANCETYPDSC", "TextValue": "Application Type", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 8, "code": "FINANCEDAMT", "TextValue": "Financed Amount", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 9, "code": "BPINTRODUCERNME", "TextValue": "Introducer", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" },
+  { "id": 10, "code": "BPCOMPANYBRANCHNME", "TextValue": "Company Branch", "OptionalData": {}, "ISMCOMDEALER": false, "FINACETYPECODE": "", "APPTYP": "" }
+],
+"MOColumns":["QUOTATIONNBR", "QUOTATIONDTE", "FINANCIALPRODUCTNME", "APPLICANTNME", "BPINTRODUCERNME", "STATUSDSC"],
+"APCColumns":["QUOTATIONNBR", "QUOTATIONDTE", "FINANCIALPRODUCTNME", "APPLICANTNME", "BPINTRODUCERNME", "APCSTATUSDSC"]
+}

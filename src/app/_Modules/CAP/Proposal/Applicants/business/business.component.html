@@ -1,0 +1,35 @@
+<mat-tab-group #tabRef disableRipple (selectedIndexChange)="tabSelectionChange(tabRef.selectedIndex)">
+  @for (Business of (this.Businesses.controls| RemovedStateFilter); track Business; let BusinessIndex = $index) {
+    <div>
+      @if (Business.controls.RowState.value != dataRowState.Removed) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Business Info - {{BusinessIndex+1}}
+            @if (!isViewMode) {
+              <button disableRipple class="tabsIconsAdjustment" (click)="removeBusiness(Business, BusinessIndex)"
+                mat-icon-button aria-label="remove tab">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </ng-template>
+          <ng-template matTabContent>
+            <sub-business [Business]="Business" [ComponentName]="this.getComponentName()" [Index]= "BusinessIndex + 1"></sub-business>
+          </ng-template>
+        </mat-tab>
+      }
+    </div>
+  }
+  @if (!isViewMode) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <button class="addTab" (click)="addBusiness()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+        </button>
+      </ng-template>
+    </mat-tab>
+  }
+  @if (isViewMode && this.Businesses.controls.length > 0) {
+    <mat-tab>
+    </mat-tab>
+  }
+</mat-tab-group>

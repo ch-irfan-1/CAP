@@ -1,0 +1,5 @@
+.disabledDiv {
+    pointer-events: none;
+    opacity: 1.0;
+    column-rule-color: grey;
+}

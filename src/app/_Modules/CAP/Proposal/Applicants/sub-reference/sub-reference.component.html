@@ -1,0 +1,212 @@
+<div class="FormMain padding15" [formGroup]="Reference">
+  <div class="row">
+    <!-- fieldContainer"> -->
+
+    <div class="form-group">
+      <mat-radio-group formControlName="REFERENCETYPIND" (change)="referenceTypeInd_SelectionChange($event)">
+        <mat-radio-button [value]="'I'" class="example-margin customTop2" [disabled]="isViewMode"
+          [checked]="this.Reference.controls.REFERENCETYPIND.value == 'I'" style="margin-right: 30px;">Individual
+        </mat-radio-button>
+        <mat-radio-button [value]="'C'" class="example-margin customTop2" [disabled]="isViewMode"
+        [checked]="this.Reference.controls.REFERENCETYPIND.value == 'C'">Company</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+  </div>
+  <div class="row fieldContainer paddingTop0 paddingBottom">
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'First Name'" [Label]="'First Name'" formControlName="FIRSTNME"
+          [Name]="'FIRSTNME'" [Component]="this.ComponentName" [Index]="Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'Last Name'" [Label]="'Last Name'" formControlName="LASTNAME"
+          [Name]="'LASTNAME'" [Component]="this.ComponentName" [Index]="Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'C') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Company Name'" [Label]="'Company Name'"
+          formControlName="COMPANYNME" [Name]="'COMPANYNME'" [Component]="this.ComponentName" [Index]="Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'C') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Business Type'" [controlPlaceholder]="'Business Type'" formControlName="BUSINESSTYPCDE"
+          [Name]="'BUSINESSTYPCDE'" [Component]="this.ComponentName" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.ReferenceBusinessType"></nfs-dropdown>
+      </div>
+    }
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Relationship'" [controlPlaceholder]="'Relationship'" formControlName="RELATIONSHIPCDE"
+        [Name]="'RELATIONSHIPCDE'" [Component]="this.ComponentName" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+      [DataArray]="RelationshipValue"></nfs-dropdown>
+    </div>
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Marital Status'" [controlPlaceholder]="'Marital Status'"
+          formControlName="MARITALSTATUSCDE" [Name]="'MARITALSTATUSCDE'" [Component]="this.ComponentName"
+          [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.MaritalStatusTypes">
+        </nfs-dropdown>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15">
+        <nfs-datepicker [Max]="dateToday" matInput [Placeholder]="'Enter Date'" [Label]="'Date Of Birth'"
+          formControlName="DATEOFBIRTH" [Name]="'DATEOFBIRTH'" [Component]="this.ComponentName" [Index]="Index">
+        </nfs-datepicker>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'C') {
+      <div class="col-md-2 top15">
+        <nfs-datepicker [Max]="dateToday" matInput [Placeholder]="'Enter Date'" [Label]="'Established Since'"
+          formControlName="ESTABLISHSINCE" [Name]="'ESTABLISHSINCE'" [Component]="this.ComponentName" [Index]="Index">
+        </nfs-datepicker>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15"
+        [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="4" [Placeholder]="'Years'" [Label]="'Years'" [isControlDisable]="true"
+          formControlName="TIMEINYEAR" [Name]="'AGEINYEAR'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15"
+        [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="4" [Placeholder]="'Month'" [Label]="'Month'" [isControlDisable]="true"
+          formControlName="TIMEINMONTH" [Name]="'AGEINMONTH'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'C') {
+      <div class="col-md-2 top15"
+        [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="4" [Placeholder]="'Duration Years'" [Label]="'Duration in Years'"
+          [isControlDisable]="true" formControlName="ESTABLISHINYEAR" [Name]="'ESTABLISHINYEAR'"
+          [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'C') {
+      <div class="col-md-2 top15"
+        [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="4" [Placeholder]="'Duration Months'" [Label]="'Duration in Months'"
+          [isControlDisable]="true" formControlName="ESTABLISHINMONTH" [Name]="'ESTABLISHINMONTH'"
+          [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Reference Type'" [controlPlaceholder]="'Reference Type'"
+        formControlName="REFERENCETYPECDE" [Name]="'REFERENCETYPECDE'" [Component]="this.ComponentName"
+        [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.ReferenceType">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-number [maxLength]="14" [Placeholder]="'Office Phone'" [Label]="'Office Phone'" formControlName="OFFPHONENBR"
+        [Name]="'OFFPHONENBR'" [Component]="this.ComponentName">
+      </nfs-number>
+    </div>
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'I') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="14" [Placeholder]="'Home Phone'" [Label]="'Home Phone'" formControlName="HOMEPHONENBR"
+          [Name]="'HOMEPHONENBR'" [Component]="this.ComponentName" [Index]="Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Reference.controls.REFERENCETYPIND.value == 'C') {
+      <div class="col-md-2 top15 ">
+        <nfs-textbox [maxLength]="15" [Placeholder]="'Fax'" [Label]="'Fax'" formControlName="FAX" [Name]="'FAX'"
+          [Component]="this.ComponentName" [Index]="Index">
+        </nfs-textbox>
+      </div>
+    }
+    <div class="col-md-2 top15">
+      <nfs-email [maxLength]="65" [placeholder]="'Email'" [label]="'Email'" formControlName="EMAIL" [Name]="'EMAIL'"
+        [Component]="this.ComponentName" [Index]="Index">
+      </nfs-email>
+    </div>
+    <div class="col-md-6 top15">
+      <nfs-textbox [maxLength]="100" [Placeholder]="'Comments'" [Label]="'Comments'" [Index]="Index"
+        formControlName="RESIDENCEOWNCOMMENTS" [Name]="'RESIDENCEOWNCOMMENTS'" [Component]="this.ComponentName">
+      </nfs-textbox>
+    </div>
+
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Country'" [controlPlaceholder]="'Country'" [Ismultiselect]="false"
+        formControlName="COUNTRYID" [Name]="'COUNTRYID'" [Component]="this.ComponentName" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this.CountryList" [isControlDisable]="true">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Province'" [controlPlaceholder]="'Province'" [Ismultiselect]="false"
+        formControlName="PROVINCEID" [Name]="'PROVINCEID'" [Component]="this.ComponentName" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._AddressMasterDataService.AllProvinceData"
+        (selectionChange)="selectionChange_PROVINCEID($event)">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Kotamadya/Kabupaten'" [controlPlaceholder]="'Kotamadya/Kabupaten'"
+        formControlName="KOTAMADYAIDOTO" [Name]="'KOTAMADYAIDOTO'" [Component]="this.ComponentName"
+        [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKotaByProvince"
+        (selectionChange)="selectionChange_KOTAMADYAIDOTO($event)">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Kecamatan'" [controlPlaceholder]="'Kecamatan'" [Ismultiselect]="false"
+        formControlName="KECAMATANIDOTO" [Name]="'KECAMATANIDOTO'" [Component]="this.ComponentName"
+        [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKecamatanByKota"
+        (selectionChange)="selectionChange_KECAMATANIDOTO($event)">
+      </nfs-dropdown>
+    </div>
+
+    <div class="col-md-2 top15">
+      <nfs-dropdown formControlName="KELURAHANIDOTO" [Name]="'KELURAHANIDOTO'" [Component]="this.ComponentName"
+        [Label]="'Kelurahan/Desa'" [controlPlaceholder]="'Kelurahan/Desa'" [Ismultiselect]="false" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this.AllKelurahanByKeca">
+      </nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15" [ngClass]="{'control-disabled':  !(this.Reference.controls.KELURAHANIDOTO.value>0)}">
+      <nfs-number formControlName="RWOTO" [Name]="'RWOTO'" [Component]="this.ComponentName" matInput
+        [Placeholder]="'RW###'" [Label]="'RW###'" [maxLength]="3">
+      </nfs-number>
+    </div>
+    <div class="col-md-2 top15" [ngClass]="{'control-disabled':!(this.Reference.controls.KELURAHANIDOTO.value>0)}">
+      <nfs-number formControlName="RTOTO" [Name]="'RTOTO'" [Component]="this.ComponentName" matInput
+        [Placeholder]="'RT###'" [Label]="'RT###'" [maxLength]="3">
+      </nfs-number>
+    </div>
+
+    <div class="col-md-6 top15">
+      <nfs-textbox [maxLength]="500" [Placeholder]="'Address'" [Label]="'Address'" formControlName="ADDRESSOTO"
+        [Name]="'ADDRESSOTO'" [Component]="this.ComponentName" [Index]="Index">
+      </nfs-textbox>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-number [maxLength]="10" [Placeholder]="'Postal/Zip Code'" [Label]="'Postal/Zip Code'"
+        formControlName="POSTALCODE" [Name]="'POSTALCODE'" [Component]="this.ComponentName">
+      </nfs-number>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-textbox [Placeholder]="'Area Code'" [Label]="'Area Code'" [Component]="this.ComponentName"
+        formControlName="AREACDE" [Name]="'AREACDE'" [isControlDisable]="true">
+      </nfs-textbox>
+    </div>
+  </div>
+</div>

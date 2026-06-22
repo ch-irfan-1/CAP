@@ -1,0 +1,5980 @@
+{
+  "ApplicantInfo": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email ID"
+    },
+    "IDTYPENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "IDTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "COUNTRYCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country Code"
+    },
+    "COMPANYNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "SALARY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Salary Income",
+      "pattern": "^[0-9]{1,13}(\\.[0-9]{1,2})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 13 digits"]
+    },
+    "MONTHLYINSTALLMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Installment",
+      "pattern": "^[0-9]{1,13}(\\.[0-9]{1,2})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 13 digits"]
+    },
+    "PLACEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Birth",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "MOTHERMDNNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mother Maiden Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "SPOUSEFIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "SPOUSEMIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "SPOUSELASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    },
+    "SPOUSEIDTYPENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number",
+      "pattern": "^[\\p{Z}\\s]*(?:[^\\p{Z}\\s][\\p{Z}\\s]*){0,25}$",
+      "ErrorMessage": ["ID Number can have only 20 characters"]
+    }
+  },
+  "AddressInfo": {
+    "ADDRESSTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Type"
+    },
+    "COUNTRYCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country Code"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Stay In years (yy)",
+      "pattern": "^[0-9]*$",
+      "ErrorMessage": ["Please Enter Numeric Only"]
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Stay In months (mm)",
+      "pattern": "^[0-9]*$",
+      "ErrorMessage": ["Please Enter Numeric Only"]
+    },
+    "RWNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###",
+      "pattern": "^[0-9]*$",
+      "ErrorMessage": ["Please Enter Numeric Only"]
+    },
+    "RTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###",
+      "pattern": "^[0-9]*$",
+      "ErrorMessage": ["Please Enter Numeric Only"]
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/ZIP Code",
+      "pattern": "^[0-9]*$",
+      "ErrorMessage": ["Please Enter Numeric only"]
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Emergency Contact Person",
+      "pattern": "[a-zA-Z0-9 &_,.'-]*",
+      "ErrorMessage": ["Please Enter Alphanumeric or &_,.'-"]
+    }
+  },
+  "GeneralInfo": {
+    "BPBRANCHID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch"
+    },
+    "BPINTRODUCERID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Dealer"
+    },
+    "FPGROUPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "FP Group"
+    },
+    "FINANCIALPRODUCTID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "FP Campaign"
+    },
+    "COMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Lead Notes",
+      "pattern": "^[a-zA-Z0-9 !%*[@#$&\\]\\?()/\\\\\\-.\\+,<=>:\\^/\\\"\\_\n]*$",
+      "ErrorMessage": [
+        "Please Enter Alphanumeric or !\"#$%&()*+,-./:<=>?@[]\\^_"
+      ]
+    }
+  },
+  "ContactInformation": {
+    "PHONETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Phone Type"
+    },
+    "COUNTRYCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country Code",
+      "pattern": "^[0-9]*$",
+      "ErrorMessage": ["Please Enter Numeric Only"]
+    },
+    "NUMBER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Phone No.",
+      "pattern": "[1-9][0-9]*",
+      "ErrorMessage": ["Please Enter Numeric Only"]
+    },
+    "EXTENSIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Extension",
+      "pattern": "[0-9+]*",
+      "ErrorMessage": ["Please Enter Numeric or +"]
+    }
+  },
+  "AssignToVO": {
+    "VOList": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Verification Officer"
+    },
+    "ApprovalTypeList": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Approval Types"
+    },
+    "Comments": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments",
+      "pattern": "^[a-zA-Z0-9 !%*[@#$&\\]\\?()/\\\\\\-.\\+,<=>:\\^/\\\"\\_\n]*$",
+      "ErrorMessage": [
+        "Please Enter Alphanumeric or !\"#$%&()*+,-./:<=>?@[]\\^_"
+      ]
+    }
+  },
+  "Cancelled": {
+    "RejectionReason": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Rejection Reason"
+    },
+    "Comments": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments",
+      "pattern": "^[a-zA-Z0-9 !%*[@#$&\\]\\?()/\\\\\\-.\\+,<=>:\\^/\\\"\\_\n]*$",
+      "ErrorMessage": [
+        "Please Enter Alphanumeric or !\"#$%&()*+,-./:<=>?@[]\\^_"
+      ]
+    }
+  },
+  "IndividualBorrower": {
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "TITLESUFFIX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title Suffix"
+    },
+    "TITLECDELOCAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title (Local)"
+    },
+    "IDCARDTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month"
+    },
+    "MONTHONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month on Book"
+    },
+    "TIMEONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time on Book"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "OTOMOTHERMDNNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mother Maiden Name"
+    },
+    "OTOPLACEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Birth"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "DBTRCTGYCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Debtor Category"
+    },
+    "NATIONALITYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Nationality"
+    },
+    "GENDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Gender"
+    },
+    "EDUCATIONLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Education Degree Status"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "OTORLGNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Religion"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "SALARY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Salary/Income",
+      "pattern": "^[0-9]{1,13}(\\.[0-9]{1,2})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 13 digits"]
+    },
+    "CREDITRATING": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Rating"
+    },
+    "FIRSTNMELOCAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Alias Name"
+    },
+    "NUMBEROFDEPENDENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. Of Dependants"
+    },
+    "CITIZENSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Citizenship"
+    },
+    "CNTRYDOMCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country Domicile(WNA)"
+    },
+    "FAMILYCARDNO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Family Card Number"
+    },
+    "KTPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "KTPID Expiry"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "ISOTOEMPLOYEEIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employee"
+    },
+    "VIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIP"
+    },
+    "BLACKLISTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bad Customer"
+    },
+    "CALCULATECOMMISSIONIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Calculate Commission"
+    },
+    "SignatureVerified": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signature Verified"
+    }
+  },
+  "IndividualCoBorrower": {
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "TITLESUFFIX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title Suffix"
+    },
+    "TITLECDELOCAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title (Local)"
+    },
+    "IDCARDTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month"
+    },
+    "MONTHONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month on Book"
+    },
+    "TIMEONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time on Book"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "OTOMOTHERMDNNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mother Maiden Name"
+    },
+    "OTOPLACEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Birth"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "DBTRCTGYCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Debtor Category"
+    },
+    "NATIONALITYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Nationality"
+    },
+    "GENDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Gender"
+    },
+    "EDUCATIONLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Education Degree Status"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "OTORLGNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Religion"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "SALARY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Salary/Income",
+      "pattern": "^[0-9]{1,13}(\\.[0-9]{1,2})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 13 digits"]
+    },
+    "CREDITRATING": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Rating"
+    },
+    "FIRSTNMELOCAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Alias Name"
+    },
+    "NUMBEROFDEPENDENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. Of Dependants"
+    },
+    "CITIZENSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Citizenship"
+    },
+    "CNTRYDOMCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country Domicile(WNA)"
+    },
+    "FAMILYCARDNO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Family Card Number"
+    },
+    "KTPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "KTPID Expiry"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "ISOTOEMPLOYEEIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employee"
+    },
+    "VIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIP"
+    },
+    "BLACKLISTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bad Customer"
+    },
+    "CALCULATECOMMISSIONIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Calculate Commission"
+    },
+    "SignatureVerified": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signature Verified"
+    }
+  },
+  "IndividualGuarantor": {
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "TITLESUFFIX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title Suffix"
+    },
+    "TITLECDELOCAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title (Local)"
+    },
+    "IDCARDTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month"
+    },
+    "MONTHONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month on Book"
+    },
+    "TIMEONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time on Book"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "OTOMOTHERMDNNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mother Maiden Name"
+    },
+    "OTOPLACEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Birth"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "DBTRCTGYCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Debtor Category"
+    },
+    "NATIONALITYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Nationality"
+    },
+    "GENDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Gender"
+    },
+    "EDUCATIONLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Education Degree Status"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "OTORLGNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Religion"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "SALARY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Salary/Income",
+      "pattern": "^[0-9]{1,13}(\\.[0-9]{1,2})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 13 digits"]
+    },
+    "CREDITRATING": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Rating"
+    },
+    "FIRSTNMELOCAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Alias Name"
+    },
+    "NUMBEROFDEPENDENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. Of Dependants"
+    },
+    "CITIZENSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Citizenship"
+    },
+    "CNTRYDOMCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country Domicile(WNA)"
+    },
+    "FAMILYCARDNO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Family Card Number"
+    },
+    "KTPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "KTPID Expiry"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "ISOTOEMPLOYEEIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employee"
+    },
+    "VIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIP"
+    },
+    "BLACKLISTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bad Customer"
+    },
+    "CALCULATECOMMISSIONIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Calculate Commission"
+    },
+    "SignatureVerified": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signature Verified"
+    }
+  },
+  "CompanyBorrower": {
+    "IDCARDTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "COMPANYNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "NAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "COMPANYGROUP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Group"
+    },
+    "TRADINGAS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trading As"
+    },
+    "TRUSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trust Name"
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "BUREAUREFNO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bureau Ref File No."
+    },
+    "ESTABLISHEDSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Establishment Date"
+    },
+    "ESTABLISHEDSINCEYY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration Years"
+    },
+    "ESTABLISHEDSINCEMM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration Months"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "CREDITRATING": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Rating"
+    },
+    "CUSTOMERCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Customer Code"
+    },
+    "REGISTRATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Registration #"
+    },
+    "INITIALCERTIFICATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Initial Certificate"
+    },
+    "INITIALCERTIFICATEDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Initial Certificate Date"
+    },
+    "ECNMSCTRCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "LASTCOMYREGISTRATIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Company Registration Number"
+    },
+    "LASTREGISTRATIONDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Registration Date"
+    },
+    "PLACEINTLCERTIFICATEISSUED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Initial Certificate issued"
+    },
+    "PROVIDEDBYMINISTRYJUSTICE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Provided By Ministry Of Justice"
+    },
+    "TIMEONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time On Book"
+    },
+    "MONTHONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month On Book"
+    },
+    "DOMICILE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Domicile"
+    },
+    "ISPUBLIC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Is Public"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "CONSENTTOSHARE_Helper": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "PRIVACYACTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Privacy Act Consent Held"
+    },
+    "PRIVACYACTIND_Helper": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Privacy Act Consent Held"
+    },
+    "VIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIP"
+    },
+    "BLACKLISTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bad Customer"
+    },
+    "SIGNATUREVERIFIED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signature Verified"
+    },
+    "OFFICEOWN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office - Own"
+    },
+    "OFFICELEASE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office - Lease"
+    },
+    "OFFICELEASEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Lease Amount"
+    },
+    "FACTORYOWN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory - Own"
+    },
+    "FACTORYLEASE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory - Lease"
+    },
+    "FACTORYLEASEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory Lease Amount"
+    },
+    "INVCOPTNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Invoice Option (OL)"
+    },
+    "SHOWWHTOL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Show WHT (OL)"
+    },
+    "ACCTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Accounting Type (OL)"
+    }
+  },
+  "CompanyCoBorrower": {
+    "IDCARDTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "COMPANYNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "NAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "COMPANYGROUP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Group"
+    },
+    "TRADINGAS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trading As"
+    },
+    "TRUSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trust Name"
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "BUREAUREFNO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bureau Ref File No."
+    },
+    "ESTABLISHEDSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Establishment Date"
+    },
+    "ESTABLISHEDSINCEYY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration Years"
+    },
+    "ESTABLISHEDSINCEMM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration Months"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "CREDITRATING": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Rating"
+    },
+    "CUSTOMERCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Customer Code"
+    },
+    "REGISTRATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Registration #"
+    },
+    "INITIALCERTIFICATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Initial Certificate"
+    },
+    "INITIALCERTIFICATEDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Initial Certificate Date"
+    },
+    "ECNMSCTRCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "LASTCOMYREGISTRATIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Company Registration Number"
+    },
+    "LASTREGISTRATIONDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Registration Date"
+    },
+    "PLACEINTLCERTIFICATEISSUED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Initial Certificate issued"
+    },
+    "PROVIDEDBYMINISTRYJUSTICE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Provided By Ministry Of Justice"
+    },
+    "TIMEONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time On Book"
+    },
+    "MONTHONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month On Book"
+    },
+    "DOMICILE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Domicile"
+    },
+    "ISPUBLIC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Is Public"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "CONSENTTOSHARE_Helper": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "PRIVACYACTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Privacy Act Consent Held"
+    },
+    "PRIVACYACTIND_Helper": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Privacy Act Consent Held"
+    },
+    "VIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIP"
+    },
+    "BLACKLISTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bad Customer"
+    },
+    "SIGNATUREVERIFIED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signature Verified"
+    },
+    "OFFICEOWN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office - Own"
+    },
+    "OFFICELEASE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office - Lease"
+    },
+    "OFFICELEASEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Lease Amount"
+    },
+    "FACTORYOWN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory - Own"
+    },
+    "FACTORYLEASE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory - Lease"
+    },
+    "FACTORYLEASEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory Lease Amount"
+    },
+    "INVCOPTNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Invoice Option (OL)"
+    },
+    "SHOWWHTOL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Show WHT (OL)"
+    },
+    "ACCTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Accounting Type (OL)"
+    }
+  },
+  "CompanyGuarantor": {
+    "IDCARDTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "COMPANYNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "NAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "COMPANYGROUP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Group"
+    },
+    "TRADINGAS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trading As"
+    },
+    "TRUSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trust Name"
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "BUREAUREFNO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bureau Ref File No."
+    },
+    "ESTABLISHEDSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Establishment Date"
+    },
+    "ESTABLISHEDSINCEYY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration Years"
+    },
+    "ESTABLISHEDSINCEMM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration Months"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "CREDITRATING": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Rating"
+    },
+    "CUSTOMERCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Customer Code"
+    },
+    "REGISTRATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Registration #"
+    },
+    "INITIALCERTIFICATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Initial Certificate"
+    },
+    "INITIALCERTIFICATEDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Initial Certificate Date"
+    },
+    "ECNMSCTRCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "LASTCOMYREGISTRATIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Company Registration Number"
+    },
+    "LASTREGISTRATIONDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Registration Date"
+    },
+    "PLACEINTLCERTIFICATEISSUED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place of Initial Certificate issued"
+    },
+    "PROVIDEDBYMINISTRYJUSTICE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Provided By Ministry Of Justice"
+    },
+    "TIMEONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time On Book"
+    },
+    "MONTHONBOOK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Month On Book"
+    },
+    "DOMICILE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Domicile"
+    },
+    "ISPUBLIC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Is Public"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "CONSENTTOSHARE_Helper": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent to share"
+    },
+    "PRIVACYACTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Privacy Act Consent Held"
+    },
+    "PRIVACYACTIND_Helper": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Privacy Act Consent Held"
+    },
+    "VIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIP"
+    },
+    "BLACKLISTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bad Customer"
+    },
+    "SIGNATUREVERIFIED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signature Verified"
+    },
+    "OFFICEOWN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office - Own"
+    },
+    "OFFICELEASE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office - Lease"
+    },
+    "OFFICELEASEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Lease Amount"
+    },
+    "FACTORYOWN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory - Own"
+    },
+    "FACTORYLEASE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory - Lease"
+    },
+    "FACTORYLEASEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory Lease Amount"
+    },
+    "INVCOPTNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Invoice Option (OL)"
+    },
+    "SHOWWHTOL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Show WHT (OL)"
+    },
+    "ACCTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Accounting Type (OL)"
+    }
+  },
+  "IndividualBorrower-Bank": {
+    "BANKNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BANKBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "BANKBRANCHBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "ACCOUNTTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Type"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Currency"
+    },
+    "OTOOTHRBRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "ACCOUNTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Name"
+    },
+    "ACCOUNTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account No."
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTHERBRANCHIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTODEFAULTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Default Bank"
+    },
+    "ACCOUNTVERIFICATIONINDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Account Verified"
+    }
+  },
+  "CompanyBorrower-Bank": {
+    "BANKNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BANKBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "BANKBRANCHBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "ACCOUNTTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Type"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Currency"
+    },
+    "OTOOTHRBRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "ACCOUNTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Name"
+    },
+    "ACCOUNTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account No."
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTHERBRANCHIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTODEFAULTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Default Bank"
+    },
+    "ACCOUNTVERIFICATIONINDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Account Verified"
+    }
+  },
+  "CompanyCoBorrower-Bank": {
+    "BANKNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BANKBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "BANKBRANCHBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "ACCOUNTTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Type"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Currency"
+    },
+    "OTOOTHRBRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "ACCOUNTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Name"
+    },
+    "ACCOUNTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account No."
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTHERBRANCHIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTODEFAULTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Default Bank"
+    },
+    "ACCOUNTVERIFICATIONINDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Account Verified"
+    }
+  },
+  "IndividualCoBorrower-Bank": {
+    "BANKNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BANKBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "BANKBRANCHBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "ACCOUNTTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Type"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Currency"
+    },
+    "OTOOTHRBRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "ACCOUNTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Name"
+    },
+    "ACCOUNTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account No."
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTHERBRANCHIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTODEFAULTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Default Bank"
+    },
+    "ACCOUNTVERIFICATIONINDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Account Verified"
+    }
+  },
+  "CompanyGuarantor-Bank": {
+    "BANKNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BANKBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "BANKBRANCHBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "ACCOUNTTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Type"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Currency"
+    },
+    "OTOOTHRBRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "ACCOUNTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Name"
+    },
+    "ACCOUNTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account No."
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTHERBRANCHIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTODEFAULTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Default Bank"
+    },
+    "ACCOUNTVERIFICATIONINDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Account Verified"
+    }
+  },
+  "IndividualGuarantor-Bank": {
+    "BANKNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BANKBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Name"
+    },
+    "BRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "BANKBRANCHBPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch Name"
+    },
+    "ACCOUNTTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Type"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Currency"
+    },
+    "OTOOTHRBRANCHNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "ACCOUNTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account Name"
+    },
+    "ACCOUNTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Account No."
+    },
+    "CONTACTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTHERBRANCHIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Name"
+    },
+    "OTODEFAULTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Default Bank"
+    },
+    "ACCOUNTVERIFICATIONINDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Bank Account Verified"
+    }
+  },
+  "IndividualBorrower-Employment": {
+    "EMPLOYMENTTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employment Type"
+    },
+    "EMPLOYMENTSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employment Status"
+    },
+    "OCCUPATIONTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "DESIGNATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "DEPARTMENTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Department"
+    },
+    "ECNMSCTRCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "FROMDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "From"
+    },
+    "TODTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "To"
+    },
+    "DURATIONINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Job Duration Years"
+    },
+    "DURATIONINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Job Duration Months"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business  Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "PHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Phone"
+    },
+    "EXTENSIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Extension"
+    },
+    "MOBILENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mobile No."
+    },
+    "FAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "COMMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "DOMICILE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Domicile"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "EMPLOYERNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employer Name"
+    }
+  },
+  "IndividualCoBorrower-Employment": {
+    "EMPLOYMENTTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employment Type"
+    },
+    "EMPLOYMENTSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employment Status"
+    },
+    "OCCUPATIONTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "DESIGNATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "DEPARTMENTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Department"
+    },
+    "ECNMSCTRCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "FROMDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "From"
+    },
+    "TODTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "To"
+    },
+    "DURATIONINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Job Duration Years"
+    },
+    "DURATIONINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Job Duration Months"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business  Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "PHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Phone"
+    },
+    "EXTENSIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Extension"
+    },
+    "MOBILENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mobile No."
+    },
+    "FAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "COMMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "DOMICILE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Domicile"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "EMPLOYERNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employer Name"
+    }
+  },
+  "IndividualGuarantor-Employment": {
+    "EMPLOYMENTTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employment Type"
+    },
+    "EMPLOYMENTSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employment Status"
+    },
+    "OCCUPATIONTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "DESIGNATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "DEPARTMENTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Department"
+    },
+    "ECNMSCTRCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "FROMDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "From"
+    },
+    "TODTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "To"
+    },
+    "DURATIONINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Job Duration Years"
+    },
+    "DURATIONINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Job Duration Months"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business  Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "PHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Phone"
+    },
+    "EXTENSIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Extension"
+    },
+    "MOBILENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mobile No."
+    },
+    "FAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "COMMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "DOMICILE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Domicile"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "EMPLOYERNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employer Name"
+    }
+  },
+  "GeneralHeader": {
+    "PROPOSALNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Application No."
+    },
+    "QUOTENAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference No."
+    },
+    "PROPOSALDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Creation Date"
+    },
+    "BPCOMPANYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company"
+    },
+    "BPCOMPANYBRANCHID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Branch"
+    },
+    "PROPOSALTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Applicant Type"
+    },
+    "BPINTRODUCERBRANCHID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Introducer Branch"
+    },
+    "CURRENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Application Currency"
+    },
+    "FPGROUPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "FP Group"
+    },
+    "FINANCIALPRODUCTID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "FP Campaign"
+    },
+    "PACKAGECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Package Code"
+    },
+    "MARKETINGOFFICERID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marketing Officer"
+    },
+    "POSLOCATION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Point Of Sale Location"
+    },
+    "OTOAPLTCTGYCDEAC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Applicant Category"
+    },
+    "MPOSAPPLICATIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "MPOS Reference Number"
+    },
+    "OLRCPTNGBNK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "OL Receipting Bank"
+    },
+    "BPINTRODUCERNME": {
+      "isMandatory": true,
+      "isEnabled": true,
+      "LocalValue": "Introducer"
+    },
+    "COMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Loan Purpose"
+    },
+    "APPLICATIONCENTERCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Application Center Comments"
+    },
+    "LEADNOTES": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Lead Notes"
+    },
+    "LEADCREATIONDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "iOPS Application Date"
+    },
+    "APPLICATIONCENTERUSERNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Application Center User"
+    },
+    "VONME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "MVO Name"
+    },
+    "LEADCREATEDBY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "MVO/TMO Name"
+    },
+    "LEADNUMBER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "iOPS Reference Number"
+    }
+  },
+  "IndividualBorrower-Address": {
+    "ADDRESSSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Status"
+    },
+    "RESIDENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residence Type"
+    },
+    "APPARTMENTNAMEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residential Complex"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(YY)"
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(MM)"
+    },
+    "PROPERTYLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "HOUSINGOWNERSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Housing Ownership"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Person"
+    },
+    "RLSPWITHCONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    }
+  },
+  "CompanyBorrower-Address": {
+    "ADDRESSSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Status"
+    },
+    "RESIDENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residence Type"
+    },
+    "APPARTMENTNAMEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residential Complex"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(YY)"
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(MM)"
+    },
+    "PROPERTYLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "HOUSINGOWNERSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Housing Ownership"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Person"
+    },
+    "RLSPWITHCONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    }
+  },
+  "IndividualCoBorrower-Address": {
+    "ADDRESSSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Status"
+    },
+    "RESIDENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residence Type"
+    },
+    "APPARTMENTNAMEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residential Complex"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(YY)"
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(MM)"
+    },
+    "PROPERTYLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "HOUSINGOWNERSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Housing Ownership"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Person"
+    },
+    "RLSPWITHCONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    }
+  },
+  "CompanyCoBorrower-Address": {
+    "ADDRESSSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Status"
+    },
+    "RESIDENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residence Type"
+    },
+    "APPARTMENTNAMEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residential Complex"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(YY)"
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(MM)"
+    },
+    "PROPERTYLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "HOUSINGOWNERSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Housing Ownership"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Person"
+    },
+    "RLSPWITHCONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    }
+  },
+  "IndividualGuarantor-Address": {
+    "ADDRESSSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Status"
+    },
+    "RESIDENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residence Type"
+    },
+    "APPARTMENTNAMEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residential Complex"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(YY)"
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(MM)"
+    },
+    "PROPERTYLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "HOUSINGOWNERSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Housing Ownership"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Person"
+    },
+    "RLSPWITHCONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    }
+  },
+  "CompanyGuarantor-Address": {
+    "ADDRESSSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address Status"
+    },
+    "RESIDENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residence Type"
+    },
+    "APPARTMENTNAMEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Residential Complex"
+    },
+    "TIMEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(YY)"
+    },
+    "TIMEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "STAY(MM)"
+    },
+    "PROPERTYLOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "HOUSINGOWNERSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Housing Ownership"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    },
+    "CONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Person"
+    },
+    "RLSPWITHCONTACTPERSON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    }
+  },
+  "CompanyBorrower-Representative": {
+    "REPRESENTATIVETYPE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Representative Type"
+    },
+    "TYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Type"
+    },
+    "SHAREHOLDERTYPE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Type"
+    },
+    "SIGNATORYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Signatory"
+    },
+    "IDTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Years"
+    },
+    "AGEINMONTHS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "DESIGNATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "EMAILADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFICEPHONE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "MOBILEPHONE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Mobile Phone"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "COMPANYNAMEINDIVIDUAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "REPRESENTATIVENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Representative No."
+    },
+    "TAXREGISTRATIONNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Tax Registration No."
+    },
+    "GENDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Gender"
+    },
+    "PERCENTAGESHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Percentage Share"
+    },
+    "DEPOSITEDCAPITAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Deposited Capital"
+    },
+    "PRIMARYCAPITAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Primary Capital"
+    },
+    "IDTYPECDECOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "IDCARDNBRCOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "TRADINGAS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trading as"
+    },
+    "COMPANYNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "BUSINESSTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Type"
+    },
+    "BUSINESSLINECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "AGEINYEARCOMP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration (Years)"
+    },
+    "AGEINMONTHCOMP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration (Months)"
+    },
+    "EMAILADDRESSCOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "ECNMSCTRCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Economic Sector"
+    },
+    "TAXREGISTRATIONNBRCOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Tax Registration Number"
+    },
+    "DEPOSITEDCAPITALCOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Deposited Capital"
+    },
+    "PERCENTAGESHARECOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Percentage Share"
+    },
+    "ESTBSINC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "COMPANYFORMATCOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Format"
+    },
+    "PRIMARYCAPITALCOMY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Primary Capital"
+    },
+    "CTZNSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Citizenship"
+    },
+    "CONSENTTOSHARE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Consent To Share"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    }
+  },
+  "IndividualBorrower-FamilyMember": {
+    "FAMCRDNUM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Family Card Number"
+    },
+    "NAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "FAMLIYSEARCHCRITERIA": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Exposure"
+    },
+    "GENDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Gender"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    }
+  },
+  "IndividualBorrower-Reference": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "LASTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "REFERENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference Type"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "BUSINESSTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "COMPANYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ESTABLISHSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "ESTABLISHINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Years"
+    },
+    "ESTABLISHINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Months"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "CompanyBorrower-Reference": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "LASTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "REFERENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference Type"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "BUSINESSTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "COMPANYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ESTABLISHSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "ESTABLISHINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Years"
+    },
+    "ESTABLISHINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Months"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "IndividualCoBorrower-Reference": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "LASTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "REFERENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference Type"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "BUSINESSTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "COMPANYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ESTABLISHSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "ESTABLISHINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Years"
+    },
+    "ESTABLISHINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Months"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "CompanyCoBorrower-Reference": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "LASTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "REFERENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference Type"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "BUSINESSTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "COMPANYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ESTABLISHSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "ESTABLISHINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Years"
+    },
+    "ESTABLISHINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Months"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "IndividualGuarantor-Reference": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "LASTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "REFERENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference Type"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "BUSINESSTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "COMPANYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ESTABLISHSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "ESTABLISHINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Years"
+    },
+    "ESTABLISHINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Months"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "CompanyGuarantor-Reference": {
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "LASTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "DATEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "AGEINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Years"
+    },
+    "AGEINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Age Months"
+    },
+    "MARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Marital Status"
+    },
+    "REFERENCETYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reference Type"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "OFFPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Office Phone"
+    },
+    "HOMEPHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Home Phone"
+    },
+    "BUSINESSTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "COMPANYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Company Name"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "ESTABLISHSINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Established Since"
+    },
+    "RESIDENCEOWNCOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "ESTABLISHINYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Years"
+    },
+    "ESTABLISHINMONTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Duration in Months"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "FAX": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "ApplicantIndividualIDDetail": {
+    "IDTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Type"
+    },
+    "IDTYPENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "ISSUEDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Issue Date"
+    },
+    "EXPIRYDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Expiry Date"
+    }
+  },
+  "CompanyBorrower-Business": {
+    "BUSINESSNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "REVENUE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Revenue"
+    },
+    "YEARINBUSINESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Year in Business"
+    },
+    "PHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Number"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "FAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "PROFIT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Profit"
+    },
+    "BUSINESSDETAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Detail"
+    },
+    "COMMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "CompanyCoBorrower-Business": {
+    "BUSINESSNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "REVENUE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Revenue"
+    },
+    "YEARINBUSINESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Year in Business"
+    },
+    "PHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Number"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "FAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "PROFIT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Profit"
+    },
+    "BUSINESSDETAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Detail"
+    },
+    "COMMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "CompanyGuarantor-Business": {
+    "BUSINESSNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Name"
+    },
+    "INDUSTRYTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "INDUSTRYSUBTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Line"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship"
+    },
+    "REVENUE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Revenue"
+    },
+    "YEARINBUSINESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Year in Business"
+    },
+    "PHONENBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Contact Number"
+    },
+    "EMAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Email"
+    },
+    "FAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fax"
+    },
+    "PROFIT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Profit"
+    },
+    "BUSINESSDETAIL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Detail"
+    },
+    "COMMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "COUNTRYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "PROVINCEID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "KOTAMADYAIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "KECAMATANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "KELURAHANIDOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "RWOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW###"
+    },
+    "RTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT###"
+    },
+    "ADDRESSOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "POSTALCODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Postal/Zip Code"
+    },
+    "AREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Area Code"
+    }
+  },
+  "VehicleDetail": {
+    "ASSETNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Name"
+    },
+    "ASSETNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Name"
+    },
+    "ASSETSUBTYPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Sub Type"
+    },
+    "CONDITION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Vehicle Condition"
+    },
+    "ASSETAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset List Price"
+    },
+    "CHASSISNBROTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Chassis No. (1-100 Char)"
+    },
+    "CRDTPURPCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Credit Purpose"
+    },
+    "VINNUMBER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VIN No."
+    },
+    "TRAILERREGISTRATIONNUMBER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Lic Plate No."
+    },
+    "TRLLICPLT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trailer Lic.Plate No."
+    },
+    "RELEASEYEAR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Manufacturing Year"
+    },
+    "CYLINDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Cylinder Msrt."
+    },
+    "ENGINENUMBER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Engine Number"
+    },
+    "TRANSMISSION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Transmission Type"
+    },
+    "COLOR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Vehicle Color"
+    },
+    "CC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Engine CC"
+    },
+    "BODY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Body"
+    },
+    "SERIES": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Series"
+    },
+    "STYLE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Style"
+    },
+    "BUILDDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Build Date"
+    },
+    "VEHICLEAGE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Vehicle Age"
+    },
+    "CITYOFREGISTRATIONOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "City of Registration"
+    },
+    "VEHICLESERIESDSCOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Vehicle Series Desc."
+    },
+    "VEHICLEBODYDSCOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Vehicle Body Desc."
+    },
+    "OPRTOFVEHICLE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Operator of Vehicle "
+    },
+    "USGEAREACDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Usage area of unit"
+    },
+    "GOODSSERVICESFUND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Goods/Services Funds"
+    },
+    "NOOFSEATS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. Of Seats"
+    },
+    "KILOMETERS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kilometers"
+    },
+    "FINANCINGTYPE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Financing Type"
+    },
+    "ASSETSUBTYPDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Sub-Type"
+    },
+    "BUYBACKGUARANTEEIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Buy Back Guarantee"
+    }
+  },
+  "BPKBDetail": {
+    "BPKBRECEIVEDSTATUS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Received Status"
+    },
+    "BPKBRECEIVEDDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Received Date"
+    },
+    "BPKBSTATUS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Status"
+    },
+    "STATUSCHANGEDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Status Change Date"
+    },
+    "OTOBPKBNUMBER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Number"
+    },
+    "OTOBPKBDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Date"
+    },
+    "BPKBPLCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Place"
+    },
+    "OTOCITYID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "City of Registration"
+    },
+    "BPKBEXPECTEDDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Expected Date"
+    },
+    "BPKBOVERDUEDAYS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Overdue Days"
+    },
+    "OTOBPKBOWNER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Owner"
+    },
+    "BPKBOWNERCATEGORY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Category"
+    },
+    "BPKBOWNERTYPE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Type"
+    },
+    "BPKBOWNERTITLE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Title"
+    },
+    "RELATIONSHIPCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Relationship with Customer"
+    },
+    "OTOBPKBHOLDERNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Holder Name"
+    },
+    "BPKBHOLDERADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Holder Address"
+    },
+    "REASON": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Reason"
+    },
+    "OTOADDRESSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Owner Address Template"
+    },
+    "BPKBLOCATION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Location"
+    },
+    "OTOBPKBOWNERNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Name"
+    },
+    "GENDER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Gender"
+    },
+    "BPKBOWNERKTPID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "KTP/SIUP ID of BPKB Owner"
+    },
+    "BPKBOWNERKTPIDEXPIRY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "KTPID Expiry Date"
+    },
+    "BPKBOWNERDOB": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner DOB"
+    },
+    "BPKBOWNERPLACEOFBIRTH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Place Of Birth"
+    },
+    "OTOMARITALSTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Marital Status"
+    },
+    "OTOBPKBOWNERSPOUSENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Spouse Name"
+    },
+    "OTOAGMTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Agreement"
+    },
+    "BPKBOWNERSPOUSEADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BPKB Owner Spouse Address"
+    },
+    "ADDSDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Address"
+    },
+    "OTOCOUNTRY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country"
+    },
+    "OTOPROVINCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Province"
+    },
+    "OTOKOTAMADYA": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kotamadya/Kabupaten"
+    },
+    "OTOKECAMATAN": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kecamatan"
+    },
+    "OTODESA": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Kelurahan/Desa"
+    },
+    "OTORW": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RW##"
+    },
+    "OTORT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RT##"
+    }
+  },
+  "ProposalAssetInfo": {
+    "ASSETTYPEDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Type"
+    },
+    "ASSETSUBTYPDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Sub Type"
+    },
+    "MAKEDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Make"
+    },
+    "BRANDDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Brand"
+    },
+    "MODELDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Model"
+    },
+    "PLICCTGYCODEOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Police Category"
+    },
+    "SUPPLIERNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Supplier"
+    },
+    "DELIVERYDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Delivery Date"
+    },
+    "COUNTRYDSC": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Country of Origin"
+    },
+    "USAGETYPECODE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Usage"
+    },
+    "ASSETSELECTIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Selection"
+    },
+    "PACMASPACKAGEDESCRIPTION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Package Description"
+    }
+  },
+  "FieldVisitFeedback": {
+    "FIELDAGENTID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Field Agent"
+    },
+    "APPLICANTNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Applicant Name"
+    },
+    "FIPLANDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Appointment Date"
+    },
+    "FITIME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Time"
+    },
+    "FIPLACE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Location"
+    },
+    "COMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    },
+    "FIRATINGCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "FI Rating"
+    },
+    "PARTYBEINGSURVEYED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Party being Surveyed"
+    },
+    "DISTANCETOHOUSE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Distance to House"
+    },
+    "ELECTRICITYVOLTAGE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Electricity Voltage"
+    },
+    "HOUSELOCATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Factory Location(if applicable)"
+    },
+    "OTHERVISIT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Other"
+    },
+    "SURVEYMEETWITH": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Meet With"
+    },
+    "SURVEYPARTYNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Person who met the Surveyor"
+    },
+    "SURVEYCONTACTNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Tel/Mob"
+    },
+    "SURVEYSOCIALINTERACTIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Social Interaction"
+    },
+    "ELECTRICITYSUBSCRIBERNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Subscriber Number"
+    },
+    "ELECTRICITYMONTHS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Months"
+    },
+    "ELECTRICITYYEARS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Years"
+    },
+    "ELECTRICITYAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Amount"
+    },
+    "PROPERTYTAXNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Property Tax No"
+    },
+    "PROPERTYSIZEOFLAND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Size of Land/Building"
+    },
+    "PROPERTYSALEVALUE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Sale value of land & bld tax"
+    },
+    "FICOMPLETIONDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Completion Date"
+    },
+    "FICOMMENTS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Comments"
+    }
+  },
+  "ProposalFinancialDetail": {
+    "CONTRACTSTARTDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Start Date"
+    },
+    "FREQUENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Frequency"
+    },
+    "RENTALMODETYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Rental Mode"
+    },
+    "CONTRACTTRM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Terms(Months)"
+    },
+    "TOTALCOST": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Cost"
+    },
+    "DOWNPAYMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment"
+    },
+    "ONROADCOST": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "On Road Cost"
+    },
+    "DOWNPAYMENTPERCENTAGE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment %"
+    },
+    "FINANCEDAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Financed Amount"
+    },
+    "BALLOONAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV/Balloon Amount"
+    },
+    "FINANCEDAMOUNTPERCENTAGE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Financed Amount (%)"
+    },
+    "BALLOONAMOUNTPERCENTAGE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV/Balloon Amount (%)"
+    },
+    "TOTALTERMCHARGES": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Term Charges"
+    },
+    "TRADEAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trade in Amount"
+    },
+    "DEPAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Sec. Dep. Amount"
+    },
+    "DEPCONFIG": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Sec. Dep. Config"
+    },
+    "TOTALAMOUNTPAYABLE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Amount Payable"
+    },
+    "SUBSIDYPERCENTAGE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV Subsidy by Factory %"
+    },
+    "DEPCALCMETHOD": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Sec. Dep. Calc Method"
+    },
+    "PAYER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Payer/Payee"
+    },
+    "ISSUBSIDYFSCTORYAPPLICABLE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV Subsidy by factory applicable"
+    }
+  },
+  "IndividualBorrower-Spouse": {
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "BIRTHDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "NOOFSONS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. of Sons"
+    },
+    "NOOFDAUGHTERS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. of Daughters"
+    },
+    "MONTHLYINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Income"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "NATIONALITYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Nationality"
+    },
+    "PLACEOFWORK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Present Place of Work"
+    },
+    "POSITIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "OTOAGMTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Agreement"
+    },
+    "SPOUSEADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Spouse Address"
+    },
+    "ALIASNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Alias Name"
+    },
+    "BIRTHPLACE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Birth Place"
+    },
+    "TOTALINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Income"
+    },
+    "EMPLOYEESTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employee Status"
+    },
+    "BUSINESSTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "JOININGDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Joining Date"
+    },
+    "EXPIRYIDDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Expired ID Date"
+    }
+  },
+  "IndividualCoBorrower-Spouse": {
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "BIRTHDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "NOOFSONS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. of Sons"
+    },
+    "NOOFDAUGHTERS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. of Daughters"
+    },
+    "MONTHLYINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Income"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "NATIONALITYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Nationality"
+    },
+    "PLACEOFWORK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Present Place of Work"
+    },
+    "POSITIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "OTOAGMTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Agreement"
+    },
+    "SPOUSEADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Spouse Address"
+    },
+    "ALIASNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Alias Name"
+    },
+    "BIRTHPLACE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Birth Place"
+    },
+    "TOTALINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Income"
+    },
+    "EMPLOYEESTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employee Status"
+    },
+    "BUSINESSTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "JOININGDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Joining Date"
+    },
+    "EXPIRYIDDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Expired ID Date"
+    }
+  },
+  "IndividualGuarantor-Spouse": {
+    "TITLECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Title"
+    },
+    "FIRSTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "First Name"
+    },
+    "MIDDLENME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Middle Name"
+    },
+    "LASTNME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Name"
+    },
+    "OCCUPATIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Occupation"
+    },
+    "BIRTHDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Date Of Birth"
+    },
+    "NOOFSONS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. of Sons"
+    },
+    "NOOFDAUGHTERS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No. of Daughters"
+    },
+    "MONTHLYINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Income"
+    },
+    "IDCARDNBR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ID Number"
+    },
+    "NATIONALITYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Nationality"
+    },
+    "PLACEOFWORK": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Present Place of Work"
+    },
+    "POSITIONCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Designation"
+    },
+    "OTOAGMTCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Agreement"
+    },
+    "SPOUSEADDRESS": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Spouse Address"
+    },
+    "ALIASNAME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Alias Name"
+    },
+    "BIRTHPLACE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Birth Place"
+    },
+    "TOTALINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Income"
+    },
+    "EMPLOYEESTATUSCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Employee Status"
+    },
+    "BUSINESSTYPECDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Business Type"
+    },
+    "JOININGDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Joining Date"
+    },
+    "EXPIRYIDDATE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Expired ID Date"
+    }
+  },
+  "Assets": {
+    "ASSETAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Asset Cost"
+    },
+    "CASHDEPOSITAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment"
+    },
+    "CASHDEPOSITPCT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment %"
+    },
+    "VATONASSETCOST": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "VAT On Asset Cost"
+    },
+    "TOTALCOST": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Cost"
+    },
+    "TOTALDOWNPAYMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Down Payment"
+    },
+    "CHARGEAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Application Charges"
+    },
+    "FINANNCEDPCT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Net Financed Amount (%)"
+    },
+    "ADJUSTEDFINANCEDAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Net Financed Amount"
+    },
+    "ACCESSORYAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Accessories"
+    },
+    "ACCYWITHOUTVAT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Accessories Without VAT"
+    },
+    "RESIDUALTYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV/Balloon"
+    },
+    "RESIDUALAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV/Balloon Amount"
+    },
+    "RESIDUALPCT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "RV/Balloon Amount (%)"
+    },
+    "FINANCEDAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Adjusted Financed Amount"
+    },
+    "DSBRAMNTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Disburse Amount"
+    },
+    "APPLIEDCUSTOMERRTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Interest Rate (Effective)",
+      "pattern": "^[0-9]{1,2}(\\.[0-9]{1,5})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 2 digits"]
+    },
+    "APPLIEDCUSTOMERRTECALCULATED": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Interest Rate (Flat)",
+      "pattern": "^[0-9]{1,3}(\\.[0-9]{1,5})?$",
+      "ErrorMessage": ["Please Enter numeric, can be of maximum 3 digits"]
+    },
+    "TRADEINAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Trade In Amount"
+    },
+    "BALANCEPAYABLE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Balance Payable"
+    },
+    "TOTALPAYABLEAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Amount Payable"
+    },
+    "TOTALSUBSIDYAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Subsidy Amount"
+    },
+    "TOTALFIRSTPAYMENT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total First Payment"
+    },
+    "ETAMNTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "ET Amount"
+    },
+    "INSURANCEPREMIUM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Insurance Premium"
+    },
+    "GPALLOWEDIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total GP Interest Amount"
+    },
+    "COMMFIXAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Commission"
+    },
+    "INSRCOMMAMTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Insurance Commission-OTO"
+    },
+    "TOTALACQUISITIONINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Acquisition Income"
+    },
+    "REALDOWNPAYMENTAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Real Down Payment"
+    },
+    "INSURANCECOMMISSIONAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Insurance Commission PICs"
+    },
+    "NMSIR": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "NMSIR"
+    },
+    "TOTALADMINFEE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Admin Fee"
+    },
+    "MAXINSURANCECOMMISSIONAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Max Insr. Commission PICs"
+    },
+    "DEALERPOAMOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Dealer PO Amount"
+    },
+    "PROVISIONFEE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Provision Fee"
+    },
+    "OJKINSURANCECOMMISSIONAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "OJK Insurance Commission"
+    },
+    "POLICYFEE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Policy Fee"
+    },
+    "SECURITYDEPOSITAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Sec. Deposit"
+    },
+    "FIDUCIAFEE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Fiducia Fee"
+    },
+    "TOTALINTERESTAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Term Charges"
+    },
+    "MAXSOFCOMMISSION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Max Commission "
+    },
+    "TOTALSOFCOMMISSION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Commission"
+    },
+    "OJKTOTALCALCULATEDINCOME": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total Income"
+    },
+    "SOFJP1COMMISSION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "JP1 Commission"
+    },
+    "SOFJP2COMMISSION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "JP2 Commission"
+    },
+    "SOFJP2SCHEMECOMMISSION": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "JP2 Scheme Commission"
+    },
+    "UNALLOCATEDEXPENSEAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Unallocated Expense"
+    },
+    "DISCOUNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Discount"
+    },
+    "LASTPAYMENTDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Last Payment Date"
+    },
+    "MONTHLYLEASECOSTWITHOUTMAINTENANCE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Lease Cost w/o Maint"
+    },
+    "MONTHLYMAINTENANCECOST": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Maintenance Cost"
+    },
+    "MONTHLYLEASEFEEAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Monthly Lease Fee Amount"
+    },
+    "SALESMARGINRTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Sales Margin Rate"
+    },
+    "SALESMARGINAMT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Sales Margin Amount"
+    },
+    "DSCTAMNTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment RF"
+    },
+    "DSCTAMNTPCTOTO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment (%) RF"
+    },
+    "NOOFMONTHSDELAY": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "No Of Month(s) Delay"
+    },
+    "ESTMINVCDTE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Estimated Invoice Date"
+    },
+    "BBNAGENTID": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BBN Agent"
+    },
+    "BBNCHARGES": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "BBN Charges"
+    },
+    "FREQUENCYCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Frequency"
+    },
+    "RENTALMODETYP": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Rental Mode"
+    },
+    "CONTRACTTRM": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Terms(Months)"
+    },
+    "TOTALGPINTERESTAMNT": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Total GP Interest Amount"
+    },
+    "COMMISSIONINCLUDETOPO": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "JP1 Commission Include in PO"
+    },
+    "INSTALMENTPAYTOINTRODUCER": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Installment Pay to Dealer"
+    },
+    "DOWNPAYMENTPAIDTOINTIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Down Payment Dealer Deduction"
+    },
+    "ISSTRUCTUREDRENTAL": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Structured"
+    },
+    "BPKBCHANGEOWNERSHIPIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Change BPKB Ownership"
+    },
+    "MIGRATIONIND": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Migration"
+    }
+  },
+  "CaRecommendation": {
+    "RJTNRESNCDE": {
+      "isMandatory": false,
+      "isEnabled": true,
+      "LocalValue": "Rejection Reason"
+    },
+    "CARECOMMENDATION": {
+      "isMandatory": true,
+      "isEnabled": true,
+      "LocalValue": "Recommedation"
+    },
+    "COMMENT": {
+      "isMandatory": true,
+      "isEnabled": true,
+      "LocalValue": "Comments",
+      "pattern": "^[a-zA-Z0-9 !%*[@#$&\\]\\?()/\\\\\\-.\\+,<=>:\\^/\\\"\\_\n]*$",
+      "ErrorMessage": [
+        "Please Enter Alphanumeric or !\"#$%&()*+,-./:<=>?@[]\\^_"
+      ]
+    }
+  }
+}

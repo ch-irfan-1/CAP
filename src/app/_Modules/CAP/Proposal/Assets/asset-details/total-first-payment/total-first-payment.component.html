@@ -1,0 +1,85 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">First Payment Component</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain customAccordianMain">
+        <div>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            1st Payment Finance Company
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain top15 rentalDetail" style="padding: 0; padding-top: 8px !important;">
+                        <nfs-static-grid [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'"
+                            [inputArr]="this.FCComponents" [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [pipes]="pipes"
+                            [Labels]="Labels" [IsActionRequired]="false"></nfs-static-grid>
+                    </div>
+
+                    <div class="row fieldContainer  btn-right" [formGroup]="this._dataService.PROPOSALFINANCIALAGREEMENT" style="padding-right: 14px;">
+                        <div class="col-md-3">
+                            <nfs-currency formControlName="TOTALFIRSTPAYMENTFC" name="TOTALFIRSTPAYMENTFC"
+                                [Placeholder]="'Total 1st Payment FC'" [Label]="'Total 1st Payment FC'"
+                                [Name]="'TOTALFIRSTPAYMENTFC'" [Component]="'GeneralHeader'" [isControlDisable]="true">
+                            </nfs-currency>
+                        </div>
+
+                    </div>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </div>
+        <div class="topMargin20">
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            1st Payment Dealer
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="tableMain top15 rentalDetail" style="padding: 0; padding-top: 8px !important;">
+                        <nfs-static-grid [isRadioBtnRequired]="false" [ActionLabel]="'Load Contract'" [pipes]="pipes"
+                            [inputArr]="this.DealerComponents" [radioPropertyName]="'DEFAULTIND'" [columns]="columns"
+                            [Labels]="Labels" [IsActionRequired]="false"></nfs-static-grid>
+                    </div>
+                    <div class="row fieldContainer  btn-right" [formGroup]="this._dataService.PROPOSALFINANCIALAGREEMENT" style="padding-right: 14px;">
+                        <div class="col-md-3">
+                            <nfs-currency formControlName="TOTALFIRSTPAYMENTDEALER" name="TOTALFIRSTPAYMENTDEALER"
+                                [Placeholder]="'Total 1st Payment Dealer'" [Label]="'Total 1st Payment Dealer'"
+                                [Name]="'TOTALFIRSTPAYMENTDEALER'" [Component]="'GeneralHeader'"
+                                [isControlDisable]="true">
+                            </nfs-currency>
+                        </div>
+                        <!-- <div class="col-md-3">
+                            <nfs-currency formControlName="TOTALFIRSTPAYMENT" name="TOTALFIRSTPAYMENT"
+                                [Placeholder]="'Total 1st Payment'" [Label]="'Total 1st Payment'"
+                                [Name]="'TOTALFIRSTPAYMENT'" [Component]="'GeneralHeader'" [isControlDisable]="true">
+                            </nfs-currency>
+                        </div> -->
+
+
+                    </div>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </div>
+    </div>
+    <div class="bodyContainer FormMain customAccordianMain" >
+        <div class="row fieldContainer  btn-right" style="padding-right: 28px;" [formGroup]="this._dataService.PROPOSALFINANCIALAGREEMENT">
+            <div class="col-md-3">
+                <nfs-currency formControlName="TOTALFIRSTPAYMENT" name="TOTALFIRSTPAYMENT"
+                    [Placeholder]="'Total 1st Payment'" [Label]="'Total 1st Payment'"
+                    [Name]="'TOTALFIRSTPAYMENT'" [Component]="'GeneralHeader'" [isControlDisable]="true" style="margin-bottom: 0;">
+                </nfs-currency>
+            </div>
+        </div>
+        </div>
+</div>

@@ -1,0 +1,13 @@
+<div>
+  <mat-form-field appearance="fill" class="directive controls-margin" [ngClass]="{'mandatory': IsRequiredField}">
+    <mat-label [matTooltip]="Label">{{Label}}</mat-label>
+    <input class="customCurrency" [readonly]="isControlDisable" maxlength="{{maxLength}}" mask="{{mask}}" thousandSeparator=","
+      [allowNegativeNumbers]="true" [formControl]="currencyControl" placeholder="{{Placeholder}}" step="0.01" matInput
+      autocomplete="{{autoComplete}}" [ngClass]="{'right': isRightAlinged}" separatorLimit="{{separatorLimit}}"
+      (change)="onValueChanged($event)" (keydown.tab)="onTabPress($event)" onClick="this.select();"
+      [tabIndex]="SetTabIndex()" [matTooltip]="tooltipValue || ''">
+    @if (isFieldNotValid()) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>

@@ -1,0 +1,94 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <h3 mat-dialog-title>ID Search</h3>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" (click)="Validations()">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="customAccordianMain">
+    <div class="row">
+      <div mat-dialog-content>
+        <h4>ID Detail(s)</h4>
+        <div class="row fieldContainer noMargin" [formGroup]="this.IdDetailForm">
+          <div class="col-md-3 top15 customTop2">
+            <nfs-dropdown [Label]="'ID Type'" [controlPlaceholder]="'ID Type'" [Ismultiselect]="false"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'" [isControlDisable]="updateMode"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.IdTypesbyAppTyp"
+              formControlName="IDTYPECDE" [Name]="'IDTYPECDE'" [Component]="'ApplicantIndividualIDDetail'">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-3 top15 customTop2">
+            <nfs-textbox [maxLength]="100" [Placeholder]="'ID Number'" [Label]="'ID Number'" formControlName="IDTYPENBR"
+              [Name]="'IDTYPENBR'" [Component]="'ApplicantIndividualIDDetail'"[isControlDisable]="isIdNumberDisabled">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-3 top15 customTop2">
+            <nfs-datepicker matInput [Placeholder]="'Issue Date'" [Label]="'Issue Date'" formControlName="ISSUEDTE"
+              [Name]="'ISSUEDTE'" [Component]="'ApplicantIndividualIDDetail'" [Max]="this.toDate">
+            </nfs-datepicker>
+          </div>
+          <div class="col-md-3 top15 customTop2">
+            <nfs-datepicker matInput [Placeholder]="'Expiry Date'" [Label]="'Expiry Date'" formControlName="EXPIRYDTE"
+              [Name]="'EXPIRYDTE'" [Component]="'ApplicantIndividualIDDetail'" [Min]="toDate">
+            </nfs-datepicker>
+          </div>
+        </div>
+        <div class="row fieldContainer">
+          <div class="col-md-12 btn-right">
+            <nfs-button [text]="addUpdateLabel" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+              [matRaisedButtonIcon]="true" [icon]="''" (onBtnClick)="addIdDetail()">
+            </nfs-button>
+            <nfs-button class="ml-1" [text]="'Search'" [color]="'primary'" [disabled]="false" [matButton]="false"
+              [matRaisedButton]="false" [matRaisedButtonIcon]="true" [icon]="''"
+              (onBtnClick)="searchExistingBP()">
+            </nfs-button>
+          </div>
+        </div>
+        @if (this.iddetailArray && this.iddetailArray.length>0 && !isLoad) {
+          <div class="tableMain top15 rentalDetail">
+            <nfs-static-grid [inputArr]="this.iddetailArray" [isRadioBtnRequired]="false"
+              [radioPropertyName]="'DEFAULTIND'" [columns]="columns" [IsMultiActionRequired]="true" [actionList]="ActionList"
+              (ItemRemoved)="childOutput($event); MarkDefaultOnRemove()" [pipes]="pipes" (MultiActionOption)="UpdateSelectedID($event)"
+            (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="labels"></nfs-static-grid>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="customAccordianMain">
+    @if (this.loadIDddetailArray && this.loadIDddetailArray.length>0 && isLoad) {
+      <div class="row">
+        <div mat-dialog-content>
+          <h4>Existing BP Searched Results</h4>
+          <div class="tableMain rentalDetail">
+            <nfs-static-grid [inputArr]="this.loadIDddetailArray" [isRadioBtnRequired]="false"
+              [columns]="loadIDddetailColumns" (ItemRemoved)="childOutput($event)" [pipes]="loadIDddetailPipes"
+              [IsActionRequired]="true" [ActionLabel]="'Load Applicant'" [IsDeleteRequired]="false"
+              (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="loadIDddetailLabels"
+              (SelectionChange)="LoadExistingBP()">
+            </nfs-static-grid>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>
+
+<!-- <div class="row">
+<div mat-dialog-actions class="d-flex justify-content-end">
+  <div class="">
+    <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+    [matRaisedButtonIcon]="true"></nfs-button>
+    <nfs-button [text]="'Add'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+    [matRaisedButtonIcon]="true"></nfs-button>
+    <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+    [matRaisedButtonIcon]="true"></nfs-button>
+  </div>
+
+</div>
+</div> -->

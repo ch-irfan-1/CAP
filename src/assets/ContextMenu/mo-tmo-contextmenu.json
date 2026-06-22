@@ -1,0 +1,24 @@
+[{
+    "text" : "Edit",
+    "icon" : "edit",
+    "inputVal" : "Edit",
+    "status" : ["Draft"]
+  },
+  {
+    "text" : "View",
+    "icon" : "visibility",
+    "inputVal" : "View",
+    "status" : ["Draft", "Submitted", "Cancelled"]
+  },
+  {
+    "text" : "Cancel",
+    "icon" : "cancel",
+    "inputVal" : "Cancel",
+    "status" : ["Draft"]
+  },
+  {
+    "text" : "Submit",
+    "icon" : "arrow_forward",
+    "inputVal" : "Submit",
+    "status" : ["Draft"]
+  }]

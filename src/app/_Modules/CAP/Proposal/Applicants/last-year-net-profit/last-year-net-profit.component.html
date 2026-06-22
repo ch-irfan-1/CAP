@@ -1,0 +1,51 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <h3 class="popupMainHeading">Last Years-Net Profit</h3>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+
+  <div class="col-md-12 ">
+        <div class="row" style="padding: 20px 0px 20px 20px;
+        background-color: #28a74554;
+        margin: 10px !important;border-radius:4px">
+      <div class="col-md-3">
+        <span></span>
+      </div>
+      <div class="col-md-3">
+        <span>Year No.</span>
+      </div>
+      <div class="col-md-3">
+        <span>Profit Amount</span>
+      </div>
+    </div>
+  </div>
+  @for (item of this.PROPOSALAPPLICANTNETPROFIT.controls; track item) {
+    <div>
+      <div class="col-md-12 " [formGroup]="item">
+        <div class="row noMargin fieldContainer">
+          <div class="col-md-3">
+            <nfs-textbox [maxLength]="100" [Placeholder]="''" [Label]="''" formControlName="PRFTYEARDSC"
+              [Name]="'PRFTYEARDSC'" [Component]="'Assets'" [isControlDisable]=true>
+            </nfs-textbox>
+          </div>
+          <div class="col-md-3">
+            <nfs-yeardatepicker [Placeholder]="'Enter date'" [Label]="'Enter date'"
+              formControlName="YEARNUMBER">
+            </nfs-yeardatepicker>
+          </div>
+          <div class="col-md-3">
+            <nfs-currency [Placeholder]="'Profit Amount'" [Label]="'Profit Amount'"
+              formControlName="PROFITAMOUNT" [Name]="'PROFITAMOUNT'" [Component]="'Assets'">
+            </nfs-currency>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

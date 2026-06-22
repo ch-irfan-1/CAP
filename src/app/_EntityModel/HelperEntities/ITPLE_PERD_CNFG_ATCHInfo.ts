@@ -1,0 +1,47 @@
+import { Control } from "src/Library";
+
+export interface ITPLE_PERD_CNFG_ATCHInfo{
+        TPLEPERDSEQID: number;
+        TPLEID: number;
+        REDEMPTIONEXPIRYDAYS: number;
+        REMARKETINGBEFOREDAYS: number;
+        FLATCANCELDAYS: number;
+        INSURANCERENEWALDAYS: number;
+        CREDITLINEREMINDDAYS: number;
+        OLEXTENSIONMNTH: number;
+        REGISTRATIONRENEWALDAYS: number;
+        EXECUTIONDTE: Control<Date>;
+        EXECUTIONOFFSET: number;
+        SESSIONID: number;
+        SESSIONCDE: string;
+        WRTEOFFCONTBFRLTGTN: boolean;
+        OVRDDAYSFORLTGTN: number;
+        RDMPEXPYMODLCDE: string;
+        OWNERSHIPTRANSFERDAYS: number;
+        FIXPETITIONAMT: number;
+        TPLEPERDHEDRSEQID: number;
+        BACKWARDCUSHIONDAYS: number;
+        FORWARDCUSHIONDAYS: number;
+        RECEIPTCANCELLATIONDAYS: number;        
+        RECEIPTREALLOCATIONDAYS: number;     
+        RECEIPTDEALLOCATIONDAYS: number;     
+        OVERDUEMESSAGEDAYS: number;        
+        ADDITIONALADMINFEE: number;
+        MAXPAYDAYS: number; 
+        STEXPIRYDAYS: number; 
+        SKEXPIRYDAYS: number; 
+        MAXRFNDAMNT: number;  
+        WRITEOFFMODELCDE: string; 
+        WRITEOFFOVERDUEDAYS: number;
+        BPKBBORROWERAGE: number;     
+        BPKBOTHERAGE: number;        
+        MINPROVISIONFEEPCT: number;   
+        MAXPROVISIONFEEPCT: number;       
+        MAXPROVISIONFEECOMMPCT: number;    
+        RNTLDUEDATECDE: string;        
+        OJKCOMMVALIDATION: string;     
+        VALIDATIONREQ: string;         
+        MAXCOMMPCT: number;             
+        OJKCOMMTODEALER: number;         
+        PAYABLEGENERATIONDAYS: number;
+}

@@ -1,0 +1,120 @@
+<div class="row popupHeader">
+    <div class="col-md-10">
+        <span class="popupMainHeading">Point Score</span>
+    </div>
+    <div class="col-md-1">
+        <nfs-button [text]="'Print'" [color]="'primary'" [matButton]="false"
+            [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="printPointScoring()">
+        </nfs-button>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="bodyContainer FormMain customAccordianMain" >
+        <div class="" [formGroup]="this.prplEntity" >
+            <!-- [ngClass]="{'disabledDiv': true}"> -->
+            <mat-accordion>
+                <mat-expansion-panel  [expanded]="true"  [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Application Information
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+    
+                        <div class="col-md-3 top15">
+                            <nfs-textbox [isControlDisable]="true" [maxLength]="100" [Placeholder]="'Application Number'"
+                                [Label]="'Application Number'" formControlName="PROPOSALNBR">
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15">
+                            <nfs-datepicker [isControlDisable]="true" matInput name="TODTE" [Placeholder]="'Application Date'"
+                                [Label]="'Application Date'" formControlName="PROPOSALDTE">
+                            </nfs-datepicker>
+                        </div>
+                        <div class="col-md-3 top15">
+                            <nfs-textbox [isControlDisable]="true" [maxLength]="100" [Placeholder]="'Applicant Name'" 
+                            [Label]="'Applicant Name'" formControlName="BUSINESSPARTNERNME">
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15">
+                            <nfs-textbox [isControlDisable]="true" [Label]="'Applicant Type'" [Placeholder]="'Applicant Type'"
+                                formControlName="APPLICANTTYP" >
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15">
+                            <nfs-textbox [isControlDisable]="true" [Label]="'Application Status'" [Placeholder]="'Application Status'"
+                                formControlName="REQUESTSTATUSDSC">
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15">
+                            <nfs-textbox  [isControlDisable]="true" [maxLength]="100" [Placeholder]="'Introducer'" 
+                            [Label]="'Introducer'" formControlName="BPINTRODUCERNME">
+                            </nfs-textbox>
+                        </div>
+    
+                        <div class="col-md-3 top15">
+                            <nfs-textbox [isControlDisable]="true" [Label]="'Company Branch'" [Placeholder]="'Company Branch'"
+                                formControlName="BPCOMPANYBRANCHNME">
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15">
+                            <nfs-textbox [isControlDisable]="true" [maxLength]="100" [Placeholder]="'Financial Product Campaign'"
+                                [Label]="'Financial Product Campaign'" formControlName="FINANCIALPRODUCTNME">
+                            </nfs-textbox>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="topMargin20 borrowerAccordian">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="false" [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Point Score Details
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class=" row">
+                        <div class="col-12 noPadding tableMain top10 rentalDetail">
+                            <nfs-static-grid [inputArr]="this.eagerScoreEntity"
+                                [isRadioBtnRequired]="false"
+                                [columns]="columnsEP" [pipes]="pipesEP" [contextMenu]="ContextMenu" [Labels]="LabelsEP"
+                                [DisableSorting]="false" [IsActionRequired]="false"
+                                [IsDeleteRequired]="false" 
+                                [showTooTip]="EnableTooltipEP">
+                            </nfs-static-grid>
+                        </div>
+                    </div>
+    
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="topMargin20 borrowerAccordian">
+            <mat-accordion>
+                <mat-expansion-panel [expanded]="false" [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Point Score Details
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class=" row">
+                        <div class="col-12 noPadding tableMain top10 rentalDetail">
+                            <nfs-static-grid [inputArr]="this.pointScoreEntity"
+                                [isRadioBtnRequired]="false"
+                                [columns]="columnsP" [pipes]="pipes" [contextMenu]="ContextMenu" [Labels]="LabelsP"
+                                [DisableSorting]="false" [IsActionRequired]="false"
+                                [IsDeleteRequired]="false">
+                            </nfs-static-grid>
+                        </div>
+                    </div>
+    
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

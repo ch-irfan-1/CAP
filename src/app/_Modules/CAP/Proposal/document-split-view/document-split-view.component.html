@@ -1,0 +1,193 @@
+<div class="FormMain capDocuments">
+  @if (viewDocument) {
+    <div class="row">
+      <div class="col-md-12 noPadding">
+        <span class="mainHeading">
+          <p>Document Details</p>
+        </span>
+      </div>
+      <!-- <div class="col-md-12 noPadding DocumentExpansionPanel">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              iSURE Documents
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="TabInnerMainForm">
+            <div class="row fieldContainer">
+              <div class="col-md-12">
+                <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false" [contextMenu]="ContextMenu"
+                  [ActionLabel]="'View'" [IsDeleteRequired]="false" [columns]="columns"
+                (SelectionChange)="DocumentView($event)" [Labels]="Labels"></nfs-static-grid>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div> -->
+    <div class="col-md-12 noPadding DocumentExpansionPanel">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              mPOS Documents
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- <div class="TabInnerMainForm">
+          <div class="row fieldContainer">
+            <div class="col-md-12">
+              <nfs-static-grid [inputArr]="docdataSet" [isRadioBtnRequired]="false" [contextMenu]="ContextMenu"
+                [ActionLabel]="'View'" [IsDeleteRequired]="false" [columns]="columnsPOS"
+              (SelectionChange)="DocumentView($event)" [Labels]="LabelsPOS"></nfs-static-grid>
+            </div>
+          </div>
+        </div> -->
+        @for (mPOSdocuments of this.ProposalDTSmPosDocuments.controls; track mPOSdocuments) {
+          <div class="TabInnerMainForm"
+            style="padding-top: 15px;">
+            <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+              <mat-accordion>
+                <mat-expansion-panel [expanded]="true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{mPOSdocuments.get('mPosDocumentType')?.value}}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="TabInnerMainForm">
+                    <div class="row">
+                      <div class="col-md-12 noPadding">
+                        <nfs-static-grid [inputArr]="mPOSdocuments.controls.mPosDocuments" [isRadioBtnRequired]="false"
+                          [ActionLabel]="'View'" [IsDeleteRequired]="false" [columns]="columnsPOS" [alwaysEnable]="true"
+                        (SelectionChange)="DocumentView($event)" [Labels]="Labels"></nfs-static-grid>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </div>
+        }
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  @if (this.ProposalDTSDocuments) {
+    @for (applicantType of this.ProposalDTSDocuments.controls; track applicantType; let i = $index) {
+      <div class="col-md-12 noPadding DocumentExpansionPanel borrowerAccordian"
+        >
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{(applicantType.get('ApplicantType')?.value)}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            @for (applicant of applicantType.controls.Applicants.controls; track applicant) {
+              <div class="TabInnerMainForm"
+                style="padding-top: 15px;">
+                <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+                  <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          {{applicant.get('ApplicantName')?.value}}
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      @for (documents of applicant.controls.Documents.controls; track documents) {
+                        <div class="TabInnerMainForm"
+                          style="padding-top: 15px;">
+                          <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+                            <mat-accordion>
+                              <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                  <mat-panel-title>
+                                    {{documents.get('DocumentType')?.value}}
+                                  </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="TabInnerMainForm">
+                                  <div class="row">
+                                    <div class="col-md-12 noPadding">
+                                      <nfs-static-grid [inputArr]="documents.controls.DocumentInfo"
+                                        [isRadioBtnRequired]="false" [ActionLabel]="'View'" [IsDeleteRequired]="false"
+                                        [columns]="columns" [alwaysEnable]="true" (SelectionChange)="DocumentView($event)"
+                                      [Labels]="Labels"></nfs-static-grid>
+                                    </div>
+                                  </div>
+                                </div>
+                              </mat-expansion-panel>
+                            </mat-accordion>
+                          </div>
+                        </div>
+                      }
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </div>
+                <!-- <div class="col-md-12 DocumentExpansionPanel borrowerInnerAccordian">
+                <mat-accordion>
+                  <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Wendy Ferdyanto
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="TabInnerMainForm">
+                      <div class="row">
+                        <div class="col-md-12 noPadding">
+                          <nfs-static-grid [inputArr]="doctDataset" [isRadioBtnRequired]="false"
+                            [ActionLabel]="'View'" [IsDeleteRequired]="false" [columns]="columns"
+                          (SelectionChange)="DocumentView()" [Labels]="Labels"></nfs-static-grid>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div> -->
+            </div>
+          }
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  }
+}
+</div>
+}
+
+@if (!viewDocument) {
+  <div class="row">
+    <div class="col-md-12 noPadding">
+      <span class="mainHeading">
+        <p class="backImage" (click)="back()"><img src="assets/Images/arrowBack.png"></p>
+        <p>Document</p>
+      </span>
+    </div>
+    <div class="row col-md-12 noPadding DocumentExpansionPanel">
+      <div class="row col-md-12 imageControl">
+        <div class="col-md-4 imgCntrlInner noPadding">
+          <div (click)="prevDoc()"><img src="assets/Images/previos1.png" [ngClass]="{'disable':isPrevDisabled}"></div>
+          <p>{{selectedIndex + 1}} of {{totalIndex}}</p>
+          <div (click)="nextDoc()"><img src="assets/Images/next1.png" [ngClass]="{'disable':isNextDisabled}"></div>
+        </div>
+        <!-- <div class="col-md-5 zoomControls imgCntrlInner noPadding">
+        <div (click)="zoomOutImg(scale)"><img src="assets/Images/minus1.png" style="width: 32px;margin-top: -5px;">
+        </div>
+        <p>{{scale | number:'1.1-1'}}</p>
+        <div (click)="zoomInImg(scale)" style=" float: left; height: 20px; width: 20px; position: relative; "><img
+        style=" margin-top: 3px; margin-left: 3px; " src="assets/Images/plus1.png"></div>
+      </div> -->
+      <div class="col-md-3 imgCntrlInner noPadding">
+        <div style="float: left; margin-top: 8px; margin-left: -44px; margin-right: 34px;">
+          <mat-icon (click)="this.imageViewer.rotate(true)" style="color: #11142d; font-size: 20px;">rotate_left</mat-icon>
+          <mat-icon (click)="this.imageViewer.cropper.reset()" style="color: #11142d; font-size: 20px;">autorenew</mat-icon>
+          <mat-icon (click)="this.imageViewer.rotate(false)" style="color: #11142d;font-size: 20px;">rotate_right</mat-icon>
+        </div>
+        <img src="assets/Images/expand1.png" class="strechDocIcon" (click)="openFullImage()">
+        <img src="assets/Images/download1.png" class="downloadDocIcon" (click)="downloadImage()">
+      </div>
+    </div>
+    <div class="col-md-12 noPadding fieldContainer">
+      <app-nfs-image-viewer #imgViewer [imageUrl]="imageSource"></app-nfs-image-viewer>
+    </div>
+  </div>
+</div>
+}
+</div>

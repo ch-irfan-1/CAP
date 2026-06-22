@@ -1,0 +1,338 @@
+<div class="row popupHeader">
+  <div class="col-md-10">
+    <span class="popupMainHeading">Field Visit Feedback</span>
+  </div>
+  <div class="col-md-1">
+    <nfs-button [text]="'Save'" [color]="'primary'" [disabled]="isControlDisable" [matButton]="false"
+      [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="SaveFieldVisitFeedback()">
+    </nfs-button>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div [formGroup]="ProposalFieldEntity" class="bodyContainer FormMain customAccordianMain">
+    <div>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]=isControlDisable (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Appointment Details
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row fieldContainer">
+
+            <div class="col-md-3 top15 customTopNegatiive">
+              <nfs-dropdown [Label]="'Field Agent'" [controlPlaceholder]="'Field Agent'"
+                [Ismultiselect]="false" [EnableFilter]="true" formControlName="FIELDAGENTID"
+                [FilterControlPlaceholder]="'Find Some Values...'"[isControlDisable]="isControlDisable"
+                [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.FieldInvestigator"
+                [Name]="'FIELDAGENTID'" [Component]="'FieldVisitFeedback'"[AllowUnSelect]="false">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3 top15 customTopNegatiive">
+              <nfs-textbox [Placeholder]="'Applicant Name'" [Label]="'Applicant Name'"
+                formControlName="APPLICANTNAME" [Name]="'APPLICANTNAME'" [Component]="'FieldVisitFeedback'"
+                [isControlDisable]="true">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15 customTopNegatiive">
+              <nfs-datepicker matInput name="TODTE" [Placeholder]="'Appointment Date'"
+                [Label]="'Appointment Date'" formControlName="FIPLANDTE" [Name]="'FIPLANDTE'"[isControlDisable]="isControlDisable"
+                [Component]="'FieldVisitFeedback'">
+              </nfs-datepicker>
+            </div>
+            <div class="col-md-3 top15 customTopNegatiive">
+              <!-- <nfs-datepicker matInput readonly name="TODTE" [Placeholder]="'Enter Time'"
+              [Label]="'Enter Time'" formControlName="FITIME">
+            </nfs-datepicker> -->
+            <nfs-dropdown [Label]="'Enter Time'" [controlPlaceholder]="'Enter Time'" [Ismultiselect]="false"
+              [EnableFilter]="true" formControlName="FITIME"[isControlDisable]="isControlDisable"
+              [FilterControlPlaceholder]="'Find Some Values...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.time" [Name]="'FITIME'"
+              [Component]="'FieldVisitFeedback'"[AllowUnSelect]="false">
+            </nfs-dropdown>
+          </div>
+          <div class="col-md-3 top15">
+            <nfs-textbox [maxLength]="250" [Placeholder]="'Location'" [Label]="'Location'"[isControlDisable]="isControlDisable"
+              formControlName="FIPLACE" [Name]="'FIPLACE'" [Component]="'FieldVisitFeedback'">
+            </nfs-textbox>
+          </div>
+          <div class="col-md-6 top15 row visitLocation customFieldVisit" style="margin: 0;">
+            <p>Visit Location Type</p>
+            <div class="col-md-6 customHeight">
+              <section class="example-section">
+                <nfs-checkbox class="example-margin" formControlName="HOMEVISITIND" [Name]="'HOMEVISITIND'" [Label]="'Home Visit'"[isControlDisable]="isControlDisable">
+                </nfs-checkbox>
+                <!-- <mat-checkbox class="example-margin" formControlName="HOMEVISITIND">Home Visit
+              </mat-checkbox> -->
+            </section>
+          </div>
+          <div class="col-md-6 customHeight">
+            <section class="example-section">
+              <nfs-checkbox class="example-margin" [isControlDisable]="isControlDisable" formControlName="OFFICEVISITIND" [Name]="'OFFICEVISITIND'" [Label]="'Office Visit'">
+              </nfs-checkbox>
+              <!-- <mat-checkbox class="example-margin" formControlName="OFFICEVISITIND">Office Visit
+            </mat-checkbox> -->
+          </section>
+        </div>
+      </div>
+      <!-- <div class="col-md-3">
+      <section class="example-section">
+        <mat-checkbox class="example-margin" formControlName="HOMEVISITIND">{{hVisit}}
+        </mat-checkbox>
+      </section>
+    </div> -->
+    <!-- <div class="col-md-3">
+    <section class="example-section">
+      <mat-checkbox class="example-margin" formControlName="OFFICEVISITIND">{{oVisit}}
+      </mat-checkbox>
+    </section>
+  </div> -->
+
+  <div class="col-md-12 top15 top30">
+    <nfs-textarea class="customLengthUpload" [maxLength]="2000" [isControlDisable]="isControlDisable" [Placeholder]="'Comments'" [Label]="'Comments'"
+      formControlName="COMMENTS" [Name]="'COMMENTS'" [Component]="'FieldVisitFeedback'">
+    </nfs-textarea>
+  </div>
+</div>
+</mat-expansion-panel>
+</mat-accordion>
+</div>
+<div class="topMargin20">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]=isControlDisable (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Feedback Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row fieldContainer">
+
+        <div class="col-md-3 top15 customTop2">
+          <nfs-dropdown [Label]="'FI Rating'" [controlPlaceholder]="'FI Rating'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"[isControlDisable]="isControlDisable"
+            formControlName="FIRATINGCDE" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.FiRating" [Name]="'FIRATINGCDE'" [Component]="'FieldVisitFeedback'">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-3 top15 customTop2">
+          <nfs-textbox [maxLength]="250" [Placeholder]="'Party Being Survayed'"
+            [Label]="'Party Being Survayed'" formControlName="PARTYBEINGSURVEYED"[isControlDisable]="isControlDisable"
+            [Name]="'PARTYBEINGSURVEYED'" [Component]="'FieldVisitFeedback'">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-3 top15 customTop2">
+          <nfs-textbox [maxLength]="250" [Placeholder]="'Distance to House'" [Label]='distanceTo'[isControlDisable]="isControlDisable"
+            formControlName="DISTANCETOHOUSE" [Name]="'DISTANCETOHOUSE'"
+            [Component]="'FieldVisitFeedback'">
+          </nfs-textbox>
+        </div>
+        @if (showForI) {
+          <div class="col-md-3 top15 customTop2">
+            <nfs-currency [Placeholder]="'Electricity Voltage'"
+              [Label]="'Electricity Voltage'" formControlName="ELECTRICITYVOLTAGE"[isControlDisable]="isControlDisable"
+              [Name]="'ELECTRICITYVOLTAGE'" [Component]="'FieldVisitFeedback'">
+            </nfs-currency>
+          </div>
+        }
+        @if (!showForI) {
+          <div class="col-md-3 top15 customTop2">
+            <nfs-dropdown [Label]="'Office Location'" [controlPlaceholder]="'Office Location'" [Ismultiselect]="false"[isControlDisable]="isControlDisable"
+              [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+              formControlName="OFFICELOCATIONCDE" [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this.OfficeLocation" [Name]="'OFFICELOCATIONCDE'"
+              [Component]="'FieldVisitFeedback'">
+            </nfs-dropdown>
+          </div>
+        }
+        <div class="col-md-3 top15">
+          <nfs-dropdown [Label]="this.location" [controlPlaceholder]="'House Location'" [Ismultiselect]="false"
+            [EnableFilter]="true" formControlName="HOUSELOCATIONCDE" [FilterControlPlaceholder]="'Search '+this.location"
+            [isControlDisable]="isControlDisable" [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.OfficeLocation" [ApplyLocalLabel]="true" [Name]="'HOUSELOCATIONCDE'"
+            [Component]="'FieldVisitFeedback'">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-8 top15 row visitLocation customFieldVisit" style="margin: 0;">
+          <p>Survey Location</p>
+          <div class="col-md-4">
+            <section class="example-section customHeight">
+              <nfs-checkbox class="example-margin"[isControlDisable]="isControlDisable" formControlName="FIHOMEVISITIND" [Name]="'FIHOMEVISITIND'" [Label]="this.gethVisit">
+              </nfs-checkbox>
+              <!-- <mat-checkbox class="example-margin" formControlName="FIHOMEVISITIND">{{hVisit}}
+            </mat-checkbox> -->
+          </section>
+        </div>
+        <div class="col-md-4">
+          <section class="example-section customHeight">
+            <nfs-checkbox class="example-margin"[isControlDisable]="isControlDisable" formControlName="FIOFFICEVISITIND" [Name]="'FIOFFICEVISITIND'" [Label]="this.getoVisit">
+            </nfs-checkbox>
+            <!-- <mat-checkbox class="example-margin" formControlName="FIOFFICEVISITIND">{{oVisit}}
+          </mat-checkbox> -->
+        </section>
+      </div>
+      <div class="col-md-4">
+        <section class="example-section customHeight">
+          <nfs-checkbox class="example-margin"[isControlDisable]="isControlDisable" formControlName="OTHERVISITIND" [Name]="'OTHERVISITIND'" [Label]="'Other'"
+            (Change)="isOtherVisit()">
+          </nfs-checkbox>
+          <!-- <mat-checkbox class="example-margin" (change)=isOtherVisit()
+          formControlName="OTHERVISITIND">Other
+        </mat-checkbox> -->
+      </section>
+    </div>
+  </div>
+  <div class="col-md-3 top15" [ngClass]="{'disabledDiv': isOtherDisabled}">
+    <nfs-textbox class="customLengthUpload" [maxLength]="50" [Placeholder]="'Other'" [Label]="'Other'"
+      formControlName="OTHERVISIT" [isControlDisable]="isOtherDisabled || isControlDisable" [Name]="'OTHERVISIT'"
+      [Component]="'FieldVisitFeedback'">
+    </nfs-textbox>
+  </div>
+
+</div>
+<div class="row marginTop12">
+  <div class="TabInnerMain">
+    <mat-tab-group animationDuration="0ms" dynamicHeight>
+      <mat-tab label="Survey Surroundings">
+        <ng-template matTabContent>
+          <div class="row fieldContainer tabContainer">
+            <div class="col-md-3 top15 customTop2">
+              <nfs-dropdown [Label]="'Meet With'" [controlPlaceholder]="'Field Agent'"
+                [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'"[isControlDisable]="isControlDisable"
+                [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [Name]="'SURVEYMEETWITH'" [Component]="'FieldVisitFeedback'"
+                formControlName="SURVEYMEETWITH" [DataArray]="this.MeetWith">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-3 top15 customTop2">
+              <nfs-textbox [maxLength]="250" [Placeholder]="'Person who met the Surveyor'"
+                [Label]="'Person who met the Surveyor'" [Name]="'SURVEYPARTYNME'"[isControlDisable]="isControlDisable"
+                [Component]="'FieldVisitFeedback'" formControlName="SURVEYPARTYNME">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-3 top15 customTop2">
+              <nfs-textbox [maxLength]="50" [Placeholder]="'Tel/Mob'" [Label]="'Tel/Mob'"
+                formControlName="SURVEYCONTACTNBR" [Name]="'SURVEYCONTACTNBR'"[isControlDisable]="isControlDisable"
+                [Component]="'FieldVisitFeedback'">
+              </nfs-textbox>
+            </div>
+            @if (showForI) {
+              <div class="col-md-3 top15 customTop2">
+                <nfs-dropdown [Label]="'Social Interaction'"
+                  [controlPlaceholder]="'Social Interaction'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  formControlName="SURVEYSOCIALINTERACTIONCDE"
+                  [DataArray]="this.SocialInteraction"[isControlDisable]="isControlDisable"
+                  [Name]="'SURVEYSOCIALINTERACTIONCDE'"
+                  [Component]="'FieldVisitFeedback'"
+                  [customClass]="'socialIntrectDropAdjust'">
+                </nfs-dropdown>
+              </div>
+            }
+          </div>
+        </ng-template>
+      </mat-tab>
+      @if (showForI) {
+        <mat-tab label="Electricity">
+          <ng-template matTabContent>
+            <div class="row fieldContainer tabContainer">
+              <div class="col-md-3 top15 customTop2">
+                <nfs-textbox [maxLength]="50" [Placeholder]="'Subscriber Number'"
+                  [Label]="'Subscriber Number'" [Name]="'ELECTRICITYSUBSCRIBERNBR'"
+                  [Component]="'FieldVisitFeedback'"[isControlDisable]="isControlDisable"
+                  formControlName="ELECTRICITYSUBSCRIBERNBR">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-3 top15 customTop2">
+                <nfs-number [maxLength]="3" [Placeholder]="'Month'" [Label]="'Month'"
+                  formControlName="ELECTRICITYMONTHS" [Name]="'ELECTRICITYMONTHS'"[isControlDisable]="isControlDisable"
+                  [Component]="'FieldVisitFeedback'">
+                </nfs-number>
+              </div>
+              <div class="col-md-3 top15 customTop2">
+                <nfs-number [maxLength]="3" [Placeholder]="'Years'" [Label]="'Years'"
+                  formControlName="ELECTRICITYYEARS" [Name]="'ELECTRICITYYEARS'"[isControlDisable]="isControlDisable"
+                  [Component]="'FieldVisitFeedback'">
+                </nfs-number>
+              </div>
+              <div class="col-md-3 top15 customTop2">
+                <nfs-currency [Placeholder]="'Amount'" [Label]="'Amount'"[isControlDisable]="isControlDisable"
+                  formControlName="ELECTRICITYAMOUNT" [Name]="'ELECTRICITYAMOUNT'"
+                  [Component]="'FieldVisitFeedback'">
+                </nfs-currency>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+      }
+      @if (showForI) {
+        <mat-tab label="Property Tax">
+          <ng-template matTabContent>
+            <div class="row fieldContainer tabContainer">
+              <div class="col-md-3 top15 customTop2">
+                <nfs-textbox [maxLength]="250" [Placeholder]="'Property Tax No'"[isControlDisable]="isControlDisable"
+                  [Label]="'Property Tax No'" formControlName="PROPERTYTAXNBR"
+                  [Name]="'PROPERTYTAXNBR'" [Component]="'FieldVisitFeedback'">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-3 top15 customTop2">
+                <nfs-currency [mask]="'separator.5'" [maxLength]="100" [Placeholder]="'Size of Land/Building'"
+                  [Label]="'Size of Land/Building'" formControlName="PROPERTYSIZEOFLAND"[isControlDisable]="isControlDisable"
+                  [Name]="'PROPERTYSIZEOFLAND'" [Component]="'FieldVisitFeedback'">
+                </nfs-currency>
+              </div>
+              <div class="col-md-3 top15 customTop2">
+                <nfs-textbox [maxLength]="250"
+                  [Placeholder]="'Sale value of land & bld tax'"[isControlDisable]="isControlDisable"
+                  [Label]="'Sale value of land & bld tax'"
+                  formControlName="PROPERTYSALEVALUE" [Name]="'PROPERTYSALEVALUE'"
+                  [Component]="'FieldVisitFeedback'">
+                </nfs-textbox>
+              </div>
+            </div>
+          </ng-template>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  </div>
+</div>
+</mat-expansion-panel>
+</mat-accordion>
+
+</div>
+<div class="TabInnerMainForm fieldContainer tabContainer">
+  <div class="row">
+    <div class="col-md-3 customTop2">
+      <section class="example-section">
+        <nfs-checkbox class="example-margin exempted" formControlName="FLDVISITCMPLTD" [Name]="'FLDVISITCMPLTD'"
+          [Label]="'Field Visit Completed'" (Change)="isCompleted()"[isControlDisable]="isControlDisable">
+        </nfs-checkbox>
+        <!-- <mat-checkbox class="example-margin" (change)=isCompleted() formControlName="FLDVISITCMPLTD">Field
+        Visit Completed
+      </mat-checkbox> -->
+    </section>
+  </div>
+  <div class="col-md-3 top15 customTop2 TempDisable">
+    <nfs-datepicker matInput readonly name="FICOMPLETIONDTE" [Placeholder]="'Completion Date'"
+      formControlName="FICOMPLETIONDTE" [Label]="'Completion Date'" [Name]="'FICOMPLETIONDTE'"
+      [Component]="'FieldVisitFeedback'" [isControlDisable]="true">
+    </nfs-datepicker>
+  </div>
+  <div class="col-md-12 top15 top30">
+    <nfs-textarea class="customLengthUpload" [maxLength]="2000" [Placeholder]="'Comments'" formControlName="FICOMMENTS"
+      [Label]="'Comments'" [Name]="'FICOMMENTS'" [Component]="'FieldVisitFeedback'"[isControlDisable]="isControlDisable">
+    </nfs-textarea>
+  </div>
+</div>
+
+</div>
+</div>
+</div>

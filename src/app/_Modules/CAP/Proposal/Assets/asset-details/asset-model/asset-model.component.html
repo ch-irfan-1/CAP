@@ -1,0 +1,118 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Asset Search</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  @if (searchPanel) {
+    <div class="row bodyContainer fieldContainer padding0Asset" [formGroup]="this.PROPOSALASSET" style="padding-top: 22px;margin-bottom: 15px;">
+      <div class="col-md-3 top10">
+        <nfs-dropdown formControlName="ASSETTYPECDE" [Name]="'ASSETTYPECDE'" [Component]="'assetTypeDetail'"
+          [Label]="'Asset Type'" [controlPlaceholder]="'Asset Type'" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._assetSearchMasterDataService.AssetType"></nfs-dropdown>
+      </div>
+      <div class="col-md-3 top10">
+        <nfs-dropdown formControlName="ASSETSUBTYPCDE" [Name]="'ASSETSUBTYPCDE'" [Component]="'assetTypeDetail'"
+          [Label]="'Asset Sub-Type'" [controlPlaceholder]="'Asset Sub-Type'" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AssetSubType"></nfs-dropdown>
+      </div>
+      <div class="col-md-3 top10">
+        <nfs-dropdown formControlName="ASSETMAKECDE" [Name]="'ASSETMAKECDE'" [Component]="'assetTypeDetail'"
+          [Label]="'Asset Make'" [controlPlaceholder]="'Asset Make'" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this.AssetMake"></nfs-dropdown>
+      </div>
+      <div class="col-md-3 top10">
+        <nfs-dropdown formControlName="ASSETBRANDCDE" [Name]="'ASSETBRANDCDE'" [Component]="'assetTypeDetail'"
+          [Label]="'Asset Brand'" [controlPlaceholder]="'Asset Brand'" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this.AssetBrand"></nfs-dropdown>
+      </div>
+      <div class="col-md-12  top10" style="padding-right: 0; margin-top: 5px !important;">
+        <nfs-dropdown formControlName="ASSETMODELCDE" [Name]="'ASSETMODELCDE'" [Component]="'assetTypeDetail'"
+          [Label]="'Asset Model'" [controlPlaceholder]="'Asset Model'" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this.AssetModel"></nfs-dropdown>
+      </div>
+      @if (this.PROPOSALASSETInfo.controls.ASSETSELECTIONCDE.value == '00002') {
+        <div class="col-md-3 top10">
+          <nfs-textbox formControlName="BPKBNUMBER" [Name]="'BPKBNUMBER'"
+            [maxLength]="50" [Placeholder]="'BPKB'" [Label]="'BPKB'" >
+          </nfs-textbox>
+        </div>
+      }
+      @if (this.PROPOSALASSETInfo.controls.ASSETSELECTIONCDE.value == '00002') {
+        <div class="col-md-3 top10">
+          <nfs-textbox formControlName="LICENSEPLATENUMBR" [Name]="'LICENSEPLATENUMBR'"
+            [maxLength]="50" [Placeholder]="'License Plate Number'" [Label]="'License Plate Number'" >
+          </nfs-textbox>
+        </div>
+      }
+      @if (this.PROPOSALASSETInfo.controls.ASSETSELECTIONCDE.value == '00002') {
+        <div class="col-md-3 top10">
+          <nfs-textbox formControlName="ENGINENUMBER" [Name]="'ENGINENUMBER'"
+            [maxLength]="50" [Placeholder]="'Engine #'" [Label]="'Engine #'" >
+          </nfs-textbox>
+        </div>
+      }
+      @if (this.appConfig.CompanyCode === '001') {
+        <div class="col-md-12 assetTypeButtonBox searchBtns btn-right top15Custom">
+          <nfs-button [text]="'Show All'" [color]="'primary'" [disabled]="false"
+            [iconPng]="'assets/Images/carButtonIconGreen.png'" [matButton]="true" [matRaisedButton]="false"
+            [matRaisedButtonIcon]="false" (onBtnClick)='ShowResults()'>
+          </nfs-button>
+          <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false" [iconPng]="'assets/Images/searchwhite.png'"
+            [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+            (onBtnClick)='ShowResultsbyTemplateID()'>
+          </nfs-button>
+        </div>
+      }
+      @if (this.appConfig.CompanyCode === '002') {
+        <div class="col-md-12 assetTypeButtonBox searchBtns btn-right top15Custom">
+          <nfs-button [text]="'Show All'" [color]="'primary'" [disabled]="false"
+            [iconPng]="'assets/Images/carButtonIconBlue.jpg'" [matButton]="true" [matRaisedButton]="false"
+            [matRaisedButtonIcon]="false" (onBtnClick)='ShowResults()'>
+          </nfs-button>
+          <nfs-button [text]="'Search'" [color]="'primary'" [disabled]="false" [iconPng]="'assets/Images/searchwhite.png'"
+            [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true"
+            (onBtnClick)='ShowResultsbyTemplateID()'>
+          </nfs-button>
+        </div>
+      }
+    </div>
+  }
+  @if (resultPanel) {
+    <div class="row bodyContainer">
+      <div class="row col-md-12 filterBox">
+        <div class="col-md-8 resultCOunt noPadding">
+          <p>Results({{this.dataSourcelength}})</p>
+        </div>
+        <div class="col-md-4 resulFilter noPadding">
+          <span (click)='ResetResults()'>Reset all</span>
+        </div>
+      </div>
+      <div class="col-md-12 top10 tableMain rentalDetail">
+        <nfs-static-grid [inputArr]="AssetSearchInfo" [isRadioBtnRequired]="false" [columns]="assetSearchColumns"
+          [IsActionRequired]="true" [ActionLabel]="'Load Asset'" [IsDeleteRequired]="false" [Mode]="Mode"
+          [Labels]="assetSearchLabels" (SelectionChange)="loadAsset($event)" [pipes]="assetSearchPipes" >
+        </nfs-static-grid>
+        <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="dataSourcelength" [pageSize]="10" (page)="PageSelectionChanged($event)">
+        </mat-paginator>
+      </div>
+      <!-- <div class="col-md-12 top10" *ngIf="this.inventorySearch">
+      <nfs-static-grid [inputArr]="this.AssetSearchInfo" [isRadioBtnRequired]="false"
+        [columns]="assetSearchInventoryColumns" (ItemRemoved)="childOutput($event)"  [IsActionRequired]="true"
+        [ActionLabel]="'Load Applicant'" [IsDeleteRequired]="false" (SelectionChange)="childOutput($event)"
+        [Mode]="Mode" [Labels]="assetSearchInventoryLabels" (SelectionChange)="loadAsset($event)">
+      </nfs-static-grid>
+    </div> -->
+  </div>
+}
+</div>

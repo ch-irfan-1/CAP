@@ -1,0 +1,30 @@
+.dashboard .col-sm-12.col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .dashboard .container {
+    max-width: 1350px;
+  }
+
+  .dashboard .datePicker {
+    margin-bottom: 25px;
+  }
+
+  .container {
+    max-width: 1900px !important;
+  }
+
+  .container #mainContents {
+    padding: 20px 10px;
+  }
+
+  .search-radiobtn {
+    margin-bottom: 10px;
+  }
+
+  .search-radiobtn .mat-mdc-radio-button {
+    margin-right: 20px;
+  }
+
+  

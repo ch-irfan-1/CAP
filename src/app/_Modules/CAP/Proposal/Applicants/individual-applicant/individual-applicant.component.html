@@ -1,0 +1,810 @@
+<div class="TabInnerMain">
+  <mat-tab-group animationDuration="0ms" dynamicHeight>
+    <mat-tab label="Applicant">
+      <ng-template matTabContent>
+        <mat-accordion class="tabsPadding">
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Applicant Information
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="TabInnerMainForm">
+              <div class="row fieldContainer"
+                [formGroup]="Applicant.controls.INDIVIDUALAPPLICANT.controls.PROPOSALAPPLICANTINDIVIDUAL">
+                <div class="col-md-2 top15">
+                  <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'ID Type *****'"
+                  [Label]="'ID Type *****'" formControlName="IDCARDTYP" [Name]="'IDCARDTYP'"
+                  [Component]="this.ComponentName">
+                </nfs-textbox> -->
+                <nfs-dropdown [Label]="'ID Type'" [controlPlaceholder]="'ID Type'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.ApplicantIdTypesSetup" formControlName="IDCARDTYP"
+                  [Name]="'IDCARDTYP'" [Component]="this.ComponentName" [isControlDisable]="true">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15 iconPopup">
+                <nfs-textbox [maxLength]="100" [Placeholder]="'ID Number *'" [Label]="'ID Number *'"
+                  formControlName="IDCARDNBR" [Name]="'IDCARDNBR'" [Component]="this.ComponentName"
+                  [isControlDisable]=true>
+                </nfs-textbox>
+                <div class="iconPopupMain">
+                  <p (click)="openIdSearch()">More</p>
+                </div>
+              </div>
+              <div class="col-md-2 top15 iconPopup">
+                <div style="margin-top: 24px;" class="onlyLable">
+                  <span class="popupSpn">Exposure</span>
+                  <div class="iconPopupMain">
+                    <p (click)="openExposure()">More</p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Title *'" [controlPlaceholder]="'Title'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.TitleCode"
+                formControlName="TITLECDE" [Name]="'TITLECDE'" [Component]="this.ComponentName"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="50" [Placeholder]="'First Name *'" [Label]="'First Name *'"
+                  formControlName="FIRSTNME" [Name]="'FIRSTNME'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isExistingBPLoaded || this.isFromMpos">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="50" [Placeholder]="'Middle Name *'" [Label]="'Middle Name *'"
+                  formControlName="MIDDLENME" [Name]="'MIDDLENME'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isExistingBPLoaded || this.isFromMpos">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="50" [Placeholder]="'Last Name *'" [Label]="'Last Name *'"
+                  formControlName="LASTNME" [Name]="'LASTNME'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isExistingBPLoaded || this.isFromMpos">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Title Suffix *'" [controlPlaceholder]="'Title Suffix'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.TitleSuffix"
+                  formControlName="TITLESUFFIX" [Name]="'TITLESUFFIX'" [Component]="this.ComponentName">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Title (Local) *'" [controlPlaceholder]="'Title (Local)'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.TitleCode"
+                  formControlName="TITLECDELOCAL" [Name]="'TITLECDELOCAL'" [Component]="this.ComponentName">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="255" [Placeholder]="'Mother Maiden Name *'" [Label]="'Mother Maiden Name *'"
+                  formControlName="OTOMOTHERMDNNME" [Name]="'OTOMOTHERMDNNME'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isFromMpos">
+                </nfs-textbox>
+              </div>
+
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Debtor Category *'" [controlPlaceholder]="'Debtor Category'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.DebtorCategoryCode" formControlName="DBTRCTGYCODEOTO"
+                  [Name]="'DBTRCTGYCODEOTO'" [Component]="this.ComponentName"
+                  [isControlDisable]="this._proposaldataService.PROPOSAL.value.FINANCETYP == '00014'">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Gender *'" [controlPlaceholder]="'Gender'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.GenderCode"
+                formControlName="GENDER" [Name]="'GENDER'" [Component]="this.ComponentName"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="255" [Placeholder]="'Place of Birth *'" [Label]="'Place of Birth *'"
+                  formControlName="OTOPLACEOFBIRTH" [Name]="'OTOPLACEOFBIRTH'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isFromMpos">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-datepicker [Max]="this.maxDate" matInput [Placeholder]="'Date Of Birth'"
+                  [Label]="'Date Of Birth'" formControlName="DATEOFBIRTH" [Name]="'DATEOFBIRTH'"
+                  [Component]="this.ComponentName" [isControlDisable]="this.isFromMpos">
+                </nfs-datepicker>
+              </div>
+              <div class="col-md-2 top15  row">
+                <div class="col-md-6" style="padding-left: 2px;padding-right: 8px;margin-top: 5px;">
+                  <nfs-textbox [maxLength]="4" [Placeholder]="'Year *'" [Label]="'Year *'" formControlName="AGEINYEAR"
+                    [Name]="'AGEINYEAR'" [isControlDisable]="true" [Component]="this.ComponentName">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-6 top15" style="margin-top: 5px;padding-right: 0px;">
+                  <nfs-textbox [maxLength]="4" [Placeholder]="'Month *'" [Label]="'Month *'"
+                    formControlName="AGEINMONTH" [Name]="'AGEINMONTH'" [isControlDisable]="true"
+                    [Component]="this.ComponentName">
+                  </nfs-textbox>
+                </div>
+              </div>
+
+
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Nationality *'" [controlPlaceholder]="'Nationality'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.Nationality"
+                  formControlName="NATIONALITYCDE" [Name]="'NATIONALITYCDE'"
+                  (selectionChange)="selectionChange_NATIONALITYCDE($event)" [Component]="this.ComponentName">
+                </nfs-dropdown>
+              </div>
+
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Education Degree Status *'" [controlPlaceholder]="'Education Degree Status'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.EducationDegreeStatus" formControlName="EDUCATIONLOCATIONCDE"
+                [Name]="'EDUCATIONLOCATIONCDE'" [Component]="this.ComponentName"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Marital Status *'" [controlPlaceholder]="'Marital Status'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.MaritalStatusTypes" formControlName="MARITALSTATUSCDE"
+                  [Name]="'MARITALSTATUSCDE'" [Component]="this.ComponentName"
+                  (selectionChange)="ResetSpouseDetail($event)">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Religion *'" [controlPlaceholder]="'Religion'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.Religion"
+                formControlName="OTORLGNCDE" [Name]="'OTORLGNCDE'" [Component]="this.ComponentName"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-email [maxLength]="65" [placeholder]="'Email *'" [label]="'Email *'"
+                  formControlName="EMAILADDRESS" [Name]="'EMAILADDRESS'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isFromMpos">
+                </nfs-email>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-currency [mask]="'separator.2'" [Placeholder]="'Salary/Income *'" [Label]="'Salary/Income *'"
+                  formControlName="SALARY" [Name]="'SALARY'" [Component]="this.ComponentName"
+                  [isControlDisable]="this.isFromMpos">
+                </nfs-currency>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Occupation *'" [controlPlaceholder]="'Occupation'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.OccupationsTypes" formControlName="OCCUPATIONCDE"
+                [Name]="'OCCUPATIONCDE'" [Component]="this.ComponentName"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Credit Rating *'" [controlPlaceholder]="'Credit Rating'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.CreditRating" formControlName="CREDITRATING"
+                [Name]="'CREDITRATING'" [Component]="this.ComponentName"></nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="255" [Placeholder]="'Alias Name *'" [Label]="'Alias Name *'"
+                  formControlName="FIRSTNMELOCAL" [Name]="'FIRSTNMELOCAL'" [Component]="this.ComponentName">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-number [maxLength]="4" [Placeholder]="'No. Of Dependants *'" [Label]="'No. Of Dependants *'"
+                  formControlName="NUMBEROFDEPENDENTS" [Name]="'NUMBEROFDEPENDENTS'" [Component]="this.ComponentName"
+                  (Change)="onDependantsChange($event)">
+                </nfs-number>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-number [maxLength]="100" [Placeholder]="'Time on Book *'" [Label]="'Time on Book *'"
+                  formControlName="TIMEONBOOK" [Name]="'TIMEONBOOK'" [Component]="this.ComponentName"
+                  [isControlDisable]="true">
+                </nfs-number>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-number [maxLength]="100" [Placeholder]="'Month on Book *'" [Label]="'Month on Book *'"
+                  formControlName="MONTHONBOOK" [Name]="'MONTHONBOOK'" [Component]="this.ComponentName"
+                  [isControlDisable]="true">
+                </nfs-number>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Citizenship *'" [controlPlaceholder]="'Citizenship'" [Ismultiselect]="false"
+                  [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.Citizenship"
+                  formControlName="CITIZENSHIPCDE" [Name]="'CITIZENSHIPCDE'" [Component]="this.ComponentName">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-dropdown [Label]="'Country Domicile(WNA)'" [controlPlaceholder]="'Country Domicile(WNA)'"
+                  [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                  [noSearchEntriesFoundLabel]="'No Matching Values'"
+                  [DataArray]="this._masterDataService.CountryDomicile" formControlName="CNTRYDOMCDE"
+                  [Name]="'CNTRYDOMCDE'" [Component]="this.ComponentName" [isControlDisable]=this.isNotWNA>
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-2 top15">
+                <nfs-textbox [maxLength]="50" [Placeholder]="'Family Card Number *'" [Label]="'Family Card Number *'"
+                  formControlName="FAMILYCARDNO" [Name]="'FAMILYCARDNO'" [Component]="this.ComponentName">
+                </nfs-textbox>
+              </div>
+
+              @if (IsOL()) {
+                <div class="col-md-2 top32 iconPopup">
+                  <span class="popupSpn">Last Years-Net Profit</span>
+                  <div class="iconPopupMain customSetMore">
+                    <p (click)="openLastYearsNetProfit()">More</p>
+                  </div>
+                </div>
+              }
+
+              @if (this.Applicant.controls.PROPOSALAPPLICANT.controls.ROLECDE.value==='00005' && this._proposaldataService.PROPOSAL.controls.PROPOSALTYPECDE.value==='00001') {
+                <div class="col-md-2 top15 customTop2"
+                  >
+                  <nfs-dropdown [Label]="'Relationship'" [controlPlaceholder]="'Relationship'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._masterDataService.AllEmergencyContactRelationTypes"
+                    formControlName="GUARANTORRELATIONSHIPCDE" [Name]="'GUARANTORRELATIONSHIPCDE'"
+                    [Component]="this.ComponentName" [isControlDisable]=false>
+                  </nfs-dropdown>
+                </div>
+              }
+
+              <div class="col-md-2 top10">
+                <section class="example-section">
+                  <nfs-checkbox class="example-margin" formControlName="CONSENTTOSHARE" [Name]="'CONSENTTOSHARE'"
+                    [Label]="'Consent to share'">
+                  </nfs-checkbox>
+                </section>
+              </div>
+
+              <div class="col-md-2 top10">
+                <section class="example-section">
+                  <nfs-checkbox class="example-margin" formControlName="KTPIND" [Name]="'KTPIND'"
+                    [Label]="'KTPID Expiry'" [isControlDisable]="true">
+                  </nfs-checkbox>
+                </section>
+              </div>
+
+              <div class="col-md-2 top10">
+                <section class="example-section">
+                  <nfs-checkbox class="example-margin" formControlName="VIPIND" [Name]="'VIPIND'" [Label]="'VIP'">
+                  </nfs-checkbox>
+                </section>
+              </div>
+
+              <div class="col-md-2 top10">
+                <section class="example-section">
+                  <nfs-checkbox class="example-margin" formControlName="BLACKLISTIND" [Name]="'BLACKLISTIND'"
+                    [Label]="'Bad Customer'" [isControlDisable]="true">
+                  </nfs-checkbox>
+                </section>
+              </div>
+
+              <div class="col-md-2 top10" style="padding-left: 8px;">
+                <section class="example-section">
+                  <nfs-checkbox formControlName="ISOTOEMPLOYEEIND" class="example-margin" [Name]="'ISOTOEMPLOYEEIND'"
+                    [Label]="'Employee'" (Change)="onEmployeeCheckboxChange()" [isControlDisable]="IsMCOMCAMPAIGN()">
+                  </nfs-checkbox>
+                </section>
+              </div>
+
+              @if (this.Applicant.controls.PROPOSALAPPLICANT.controls.ROLECDE.value==='00003' && this._proposaldataService.PROPOSAL.controls.PROPOSALTYPECDE.value==='00001') {
+                <div
+                  class="col-md-2 top10">
+                  <section class="example-section">
+                    <nfs-checkbox class="example-margin" formControlName="CALCULATECOMMISSIONIND"
+                      [Name]="'CALCULATECOMMISSIONIND'" (Change)="onCommissionCheckboxChange()"
+                      [isControlDisable]="!Applicant.value.INDIVIDUALAPPLICANT.PROPOSALAPPLICANTINDIVIDUAL.ISOTOEMPLOYEEIND || IsOL() || IsMCOMCAMPAIGN()"
+                      [Label]="'Calculate Commission'">
+                    </nfs-checkbox>
+                  </section>
+                </div>
+              }
+              <div class="col-md-2 top10" style="padding-left: 8px;"
+                [formGroup]="Applicant.controls.PROPOSALAPPLICANTMAIN">
+                <section class="example-section">
+                  <nfs-checkbox class="example-margin" formControlName="SIGNATUREVERIFIED"
+                    [Name]="'SIGNATUREVERIFIED'" [isControlDisable]="IsOL()  || !isSignatureVerified"
+                  [Label]="'Signature Verified'"></nfs-checkbox>
+                </section>
+              </div>
+            </div>
+
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      @if (this.Applicant.controls.INDIVIDUALAPPLICANT.controls.PROPOSALAPPLICANTINDIVIDUAL.value.MARITALSTATUSCDE=='00001' || '') {
+        <mat-accordion class="paddingLeftRight12"
+          >
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Spouse Detail
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <!-- <div *ngFor="let spouse of applicant.controls.IndividualApplicant.controls.PRPLAPLTSPUSDETL.controls; let i = index;"> -->
+            <div class="TabInnerMainForm"
+              [formGroup]="Applicant.controls.INDIVIDUALAPPLICANT.controls.PROPOSALAPPSPOUSEDETAIL.controls[0]">
+              <div class="row fieldContainer">
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Title *'" [controlPlaceholder]="'Title'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.TitleCode"
+                    formControlName="TITLECDE" [Name]="'TITLECDE'" [Component]="this.getSpouseComponent()">
+                  </nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="30" [Placeholder]="'First Name'" [Label]="'First Name'"
+                    formControlName="FIRSTNME" [Name]="'FIRSTNME'" [Component]="this.getSpouseComponent()"
+                    (Change)="FIRSTNME_ValueChanged($event)">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15 iconPopup">
+                  <nfs-textbox [maxLength]="30" [Placeholder]="'Middle Name'" [Label]="'Middle Name'"
+                    formControlName="MIDDLENME" [Name]="'MIDDLENME'" [Component]="this.getSpouseComponent()"
+                    (Change)="MIDDLENME_ValueChanged($event)">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="30" [Placeholder]="'Last Name'" [Label]="'Last Name'"
+                    formControlName="LASTNME" [Name]="'LASTNME'" [Component]="this.getSpouseComponent()"
+                    (Change)="LASTNME_ValueChanged($event)">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Occupation'" [controlPlaceholder]="'Occupation'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._masterDataService.OccupationsTypes" formControlName="OCCUPATIONCDE"
+                    [Name]="'OCCUPATIONCDE'" [Component]="this.getSpouseComponent()"
+                  (selectionChange)="OCCUPATIONCDE_ValueChanged($event)"></nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-datepicker [Max]="this.maxDate" matInput [Placeholder]="'Date Of Birth'"
+                    [Label]="'Date Of Birth'" formControlName="BIRTHDATE" [Name]="'BIRTHDATE'"
+                    [Component]="this.getSpouseComponent()" (Change)="BIRTHDATE_ValueChanged($event)">
+                  </nfs-datepicker>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-number [maxLength]="2" [Placeholder]="'No. of Sons'" [Label]="'No. of Sons'"
+                    formControlName="NOOFSONS" [Name]="'NOOFSONS'" [Component]="this.getSpouseComponent()">
+                  </nfs-number>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-number [maxLength]="2" [Placeholder]="'No. of Daughters'" [Label]="'No. of Daughters'"
+                    formControlName="NOOFDAUGHTERS" [Name]="'NOOFDAUGHTERS'" [Component]="this.getSpouseComponent()">
+                  </nfs-number>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-currency [maxNumberLength]="11" [mask]="'separator.2'" [Placeholder]="'Monthly Income'"
+                    [Label]="'Monthly Income'" formControlName="MONTHLYINCOME" [Name]="'MONTHLYINCOME'"
+                    [Component]="this.getSpouseComponent()">
+                  </nfs-currency>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="25" [Placeholder]="'ID Number'" [Label]="'ID Number'"
+                    formControlName="IDCARDNBR" [Name]="'IDCARDNBR'" [Component]="this.getSpouseComponent()">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Nationality'" [controlPlaceholder]="'Nationality'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.Nationality"
+                    formControlName="NATIONALITYCDE" [Name]="'NATIONALITYCDE'" [Component]="this.getSpouseComponent()">
+                  </nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="50" [Placeholder]="'Present Place of Work'"
+                    [Label]="'Present Place of Work'" formControlName="PLACEOFWORK" [Name]="'PLACEOFWORK'"
+                    [Component]="this.getSpouseComponent()">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Designation'" [controlPlaceholder]="'Designation'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._employmentMasterDataService.Designation" formControlName="POSITIONCDE"
+                  [Name]="'POSITIONCDE'" [Component]="this.getSpouseComponent()"></nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Agreement'" [controlPlaceholder]="'Agreement'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._employmentMasterDataService.SpAgreementType" formControlName="OTOAGMTCDE"
+                  [Name]="'OTOAGMTCDE'" [Component]="this.getSpouseComponent()"></nfs-dropdown>
+                </div>
+                <div class="col-md-6 top15">
+                  <nfs-textbox [maxLength]="255" [Placeholder]="'Spouse Address'" [Label]="'Spouse Address'"
+                    formControlName="SPOUSEADDRESS" [Name]="'SPOUSEADDRESS'" [Component]="this.getSpouseComponent()">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="30" [Placeholder]="'Alias Name'" [Label]="'Alias Name'"
+                    formControlName="ALIASNAME" [Name]="'ALIASNAME'" [Component]="this.getSpouseComponent()">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="30" [Placeholder]="'Birth Place'" [Label]="'Birth Place'"
+                    formControlName="BIRTHPLACE" [Name]="'BIRTHPLACE'" [Component]="this.getSpouseComponent()">
+                  </nfs-textbox>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-currency [mask]="'separator.5'" [Placeholder]="'Total Income'" [Label]="'Total Income'"
+                    formControlName="TOTALINCOME" [Name]="'TOTALINCOME'" [Component]="this.getSpouseComponent()">
+                  </nfs-currency>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Employee Status *'" [controlPlaceholder]="'Employee Status'"
+                    [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._employmentMasterDataService.EmploymentStatus" formControlName="EMPLOYEESTATUSCDE"
+                  [Name]="'EMPLOYEESTATUSCDE'" [Component]="this.getSpouseComponent()"></nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Business Type'" [controlPlaceholder]="'Business Type'" [Ismultiselect]="false"
+                    [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._masterDataService.ReferenceBusinessType" formControlName="BUSINESSTYPECDE"
+                  [Name]="'BUSINESSTYPECDE'" [Component]="this.getSpouseComponent()"></nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-datepicker matInput [Placeholder]="'Joining Date'" [Label]="'Joining Date'"
+                    formControlName="JOININGDATE" [Name]="'JOININGDATE'" [Component]="this.getSpouseComponent()">
+                  </nfs-datepicker>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-datepicker matInput [Placeholder]="'Expired ID Date'" [Label]="'Expired ID Date'"
+                    formControlName="EXPIRYIDDATE" [Name]="'EXPIRYIDDATE'" [Component]="this.getSpouseComponent()">
+                  </nfs-datepicker>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      }
+      @if (this.PROPOSAL.controls.FINANCETYP.value === '00004' && this.Applicant.controls.PROPOSALAPPLICANT.controls.ROLECDE.value==='00003') {
+        <mat-accordion class="paddingLeftRight12"
+          >
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                OL Configuration
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="TabInnerMainForm" [formGroup]="Applicant.controls.PROPOSALAPPLICANTMAIN">
+              <div class="row fieldContainer">
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Invoice Option (OL)'" [controlPlaceholder]="'Invoice Option (OL)'"
+                    [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._masterDataService.InvoiceOptionOL" formControlName="INVCOPTNCDE"
+                  [Name]="'INVCOPTNCDE'" [Component]="this.ComponentName"></nfs-dropdown>
+                </div>
+                <div class="col-md-2 top15">
+                  <nfs-dropdown [Label]="'Accounting Type (OL)'" [controlPlaceholder]="'Accounting Type (OL)'"
+                    [Ismultiselect]="false" [EnableFilter]="false" [FilterControlPlaceholder]="'Find Some Values...'"
+                    [noSearchEntriesFoundLabel]="'No Matching Values'"
+                    [DataArray]="this._masterDataService.AccountingTypeOL" formControlName="ACCTYPCDE"
+                    [Name]="'ACCTYPCDE'" [Component]="this.ComponentName" [isControlDisable]=this.isExistingBPLoaded>
+                  </nfs-dropdown>
+                </div>
+              </div>
+            </div>
+            <div class="TabInnerMainForm"
+              [formGroup]="Applicant.controls.INDIVIDUALAPPLICANT.controls.PROPOSALAPPLICANTINDIVIDUAL">
+              <div class="row fieldContainer">
+                <div class="col-md-2 top15">
+                  <nfs-textbox [maxLength]="100" [Placeholder]="'Customer Code (OL)'" [Label]="'Customer Code (OL)'"
+                    formControlName="CUSTOMERCDEOL" [Name]="'CUSTOMERCDEOL'" [Component]="this.ComponentName">
+                  </nfs-textbox>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      }
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Address">
+    <ng-template matTabContent>
+      <div class="TabInnerMainAddress">
+        <app-address [Addresses]="this.Applicant.controls.ADDRESS" [ComponentName]="this.ComponentName">
+        </app-address>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Employement">
+    <ng-template matTabContent>
+      <div class="TabInnerMainAddress">
+        <app-employment
+          [Employments]="this.Applicant.controls.INDIVIDUALAPPLICANT.controls.PROPOSALAPPLICANTEMPLOYMENT"
+        [ComponentName]="this.ComponentName"></app-employment>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Bank">
+    <ng-template matTabContent>
+      <div class="TabInnerMainAddress">
+        <app-bank [Banks]="this.Applicant.controls.PROPOSALAPPLICANTBANK" [ComponentName]="this.ComponentName">
+        </app-bank>
+      </div>
+    </ng-template>
+  </mat-tab>
+  @if (this.ComponentName == CompName.IndividualBorrower) {
+    <mat-tab label="Family Member">
+      <ng-template matTabContent>
+        <div class="TabInnerMainAddress">
+          <app-family-member
+            [ApplicantFamilyMembers]="this.Applicant.controls.INDIVIDUALAPPLICANT.controls.PROPOSALAPPFAMILY"
+            [ApplicantInfo]="this.Applicant.controls.PROPOSALAPPLICANTMAIN" [ComponentName]="this.ComponentName">
+          </app-family-member>
+        </div>
+      </ng-template>
+    </mat-tab>
+  }
+  <mat-tab label="Reference">
+    <ng-template matTabContent>
+      <div class="TabInnerMainAddress">
+        <app-reference [ApplicantReference]="this.Applicant.controls.PROPOSALAPPLICANTPERSONNALREFERENCE"
+        [ComponentName]="this.ComponentName"></app-reference>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <!-- [ApplicantIncomeExpanse]="this.Applicant.controls.PrposalcashflowDetail.controls.PRPLFINLRATO" -->
+  <mat-tab label="Income/Expense(s)">
+    <ng-template matTabContent>
+      <div class="TabInnerMain tabInner2">
+        <app-incomeExpanse
+          [ApplicantIncomeExpanse]="this.Applicant.controls.PrposalcashflowDetail.controls.PRPLCSFLDETL"
+        [ComponentName]="this.ComponentName"></app-incomeExpanse>
+      </div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Asset(s)/Liability(ies)">
+    <ng-template matTabContent>
+      <div class="TabInnerMain">
+        <app-assetLiability
+          [ApplicantAssetLiability]="this.Applicant.controls.PrposalcashflowDetail.controls.PRPLCSFLDETL"
+        [ComponentName]="this.ComponentName"></app-assetLiability>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+</div>
+
+
+
+
+
+
+
+<!--
+
+
+<div class="formcontainer">
+  <div class="row">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Applicant</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Address</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-address></app-address>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Bank</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-bank></app-bank>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Income/Expense(s)</h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+
+        <div class="row fieldContainer">
+
+
+
+
+          <div class="cardDataMain">
+            <h3>Repayment Ability Analysis</h3>
+            <div class="col-md-12 top15">
+              <nfs-textbox formControlName="referenceNumber"
+                name="referenceNumber" [maxLength]="100"
+                [Placeholder]="'Debit Burden Ratio'"
+                [Label]="'Name'" [Name]="'referenceNumber'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-dropdown formControlName="companyId" [Label]="'Total Monthly Installment'" [Name]="'companyId'"
+                [controlPlaceholder]="'Total Monthly Installment'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-textbox formControlName="referenceNumber"
+                name="referenceNumber" [maxLength]="100"
+                [Placeholder]="'Total Monthly income after tax'"
+                [Label]="'Total Monthly income after tax'" [Name]="'referenceNumber'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-textbox formControlName="referenceNumber"
+                name="referenceNumber" [maxLength]="100"
+                [Placeholder]="'Corporate Bank Loan Exposure'"
+                [Label]="'Address'" [Name]="'referenceNumber'">
+              </nfs-textbox>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-dropdown formControlName="companyId" [Label]="'Monthly Debit of Bank Loan'" [Name]="'companyId'"
+                [controlPlaceholder]="'Monthly Debit of Bank Loan'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-textbox formControlName="referenceNumber"
+                name="referenceNumber" [maxLength]="100"
+                [Placeholder]="'Debt of Credit Card'"
+                [Label]="'Debt of Credit Card'" [Name]="'referenceNumber'">
+              </nfs-textbox>
+            </div>
+
+          </div>
+          <div class="cardDataMain ">
+            <h3>Score & Business Rule</h3>
+            <div class="row noPadding">
+              <div class="col-md-6 top15">
+                <nfs-textbox formControlName="referenceNumber"
+                  name="referenceNumber" [maxLength]="100"
+                  [Placeholder]="'Credit Score'"
+                  [Label]="'Credit Score'" [Name]="'referenceNumber'">
+                </nfs-textbox>
+              </div>
+              <div class="col-md-6 top15">
+                <nfs-textbox formControlName="referenceNumber"
+                  name="referenceNumber" [maxLength]="100"
+                  [Placeholder]="'Credit Level'"
+                  [Label]="'Credit Level'" [Name]="'referenceNumber'">
+                </nfs-textbox>
+              </div>
+            </div>
+
+            <div class="col-md-12 top15">
+              <nfs-dropdown formControlName="companyId" [Label]="'Worst Rule'" [Name]="'companyId'"
+                [controlPlaceholder]="'Worst Rule'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-dropdown formControlName="companyId" [Label]="'System Recomendation'" [Name]="'companyId'"
+                [controlPlaceholder]="'System Recomendation'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-12 top15">
+              <nfs-datepicker matInput readonly
+                formControlName="creationDate" name="creationDate"
+                [Placeholder]="'Call Balze Time'" [Label]="'Call Balze Time'">
+              </nfs-datepicker>
+            </div>
+            <div class="row noPadding">
+
+              <div class="col-md-6 top15">
+                <nfs-dropdown formControlName="companyId" [Label]="'No. of Rules Hit'" [Name]="'companyId'"
+                  [controlPlaceholder]="'No. of Rules Hit'" [Ismultiselect]="false" [EnableFilter]="true"
+                  [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-6 top15">
+                <nfs-dropdown formControlName="companyId" [Label]="'Four Eyes'" [Name]="'companyId'"
+                  [controlPlaceholder]="'Four Eyes'" [Ismultiselect]="false" [EnableFilter]="true"
+                  [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+                </nfs-dropdown>
+              </div>
+              <div class="col-md-6 top15">
+                <nfs-textbox formControlName="referenceNumber"
+                  name="referenceNumber" [maxLength]="100"
+                  [Placeholder]="'Initial Score'"
+                  [Label]="'Initial Score'" [Name]="'referenceNumber'">
+                </nfs-textbox>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="cardDataMain">
+              <h3>Score Details</h3>
+              <div class="row noPadding">
+                <div class="col-md-12 top15">
+                  <nfs-dropdown formControlName="companyId" [Label]="'Role'" [Name]="'companyId'"
+                    [controlPlaceholder]="'Role'" [Ismultiselect]="false" [EnableFilter]="true"
+                    [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+                  </nfs-dropdown>
+                </div>
+                <div class="col-md-12 top15">
+                  <nfs-textbox formControlName="referenceNumber"
+                    name="referenceNumber" [maxLength]="100"
+                    [Placeholder]="'Name'"
+                    [Label]="'Name'" [Name]="'referenceNumber'">
+                  </nfs-textbox>
+                </div>
+              </div>
+              <div class="row noPadding">
+
+                <div class="col-md-6 top15">
+                  <nfs-dropdown formControlName="companyId" [Label]="'Score Obtained'" [Name]="'companyId'"
+                    [controlPlaceholder]="'Score Obtained'" [Ismultiselect]="false" [EnableFilter]="true"
+                    [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+                  </nfs-dropdown>
+                </div>
+                <div class="col-md-6 top15">
+                  <nfs-dropdown formControlName="companyId" [Label]="'Credit Level'" [Name]="'companyId'"
+                    [controlPlaceholder]="'Credit Level'" [Ismultiselect]="false" [EnableFilter]="true"
+                    [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+                  </nfs-dropdown>
+                </div>
+              </div>
+
+            </div>
+            <div class="cardDataMain">
+              <h3>Blaze Interation Exception</h3>
+              <div class="row noPadding">
+                <div class="col-md-12 top15">
+                  <nfs-dropdown formControlName="companyId" [Label]="'Interation Result'" [Name]="'companyId'"
+                    [controlPlaceholder]="'Interation Result'" [Ismultiselect]="false" [EnableFilter]="true"
+                    [FilterControlPlaceholder]="''" [noSearchEntriesFoundLabel]="'No Matching Values'">
+                  </nfs-dropdown>
+                </div>
+                <div class="col-md-12 top15">
+                  <nfs-textbox formControlName="referenceNumber"
+                    name="referenceNumber" [maxLength]="100"
+                    [Placeholder]="'Result Description'"
+                    [Label]="'Result Description'" [Name]="'referenceNumber'">
+                  </nfs-textbox>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div> -->

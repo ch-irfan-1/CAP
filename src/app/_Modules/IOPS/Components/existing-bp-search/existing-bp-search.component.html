@@ -1,0 +1,18 @@
+<div class="existingBpSearchPage">
+  <button mat-icon-button class="close-button" (click)="cancel()" style="float:right">
+    <mat-icon class="close-icon" color="success">close</mat-icon>
+  </button>
+
+  <nfs-static-grid [inputArr]="this.ApplicantData" [isRadioBtnRequired]="false"
+    [radioPropertyName]="'DEFAULTIND'" [columns]="displayedColumnsForApplicant" (SelectionChange)="BPLoadchildOutput($event)"
+  (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="Applicantlabels" [IsDeleteRequired]="false" [ActionLabel]="'Load Applicant'"></nfs-static-grid>
+
+  @if (this.ContractData && this.ContractData.length > 0) {
+    <div>
+      <nfs-static-grid class="xyzTable2" [inputArr]="this.ContractData" [isRadioBtnRequired]="false"
+        [radioPropertyName]="'DEFAULTIND'" [columns]="displayedColumnsForContract" (SelectionChange)="BPLoadchildOutput($event)"
+      (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="ContractLabels" [IsDeleteRequired]="false" [ActionLabel]="'Load Contract'"></nfs-static-grid>
+    </div>
+  }
+
+</div>

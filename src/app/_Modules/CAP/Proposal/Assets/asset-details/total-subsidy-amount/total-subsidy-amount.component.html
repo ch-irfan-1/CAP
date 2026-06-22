@@ -1,0 +1,48 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Application Subsidy Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer">
+        <div class="col-md-12">
+            <div class="TabInnerMainForm">
+                <div class="row">
+                    <div class="col-md-3 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Subsidy Calculated Method'" [Label]="'Subsidy Calculated Method'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-3 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'No. of Installments'" [Label]="'No. of Installments'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-3 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Subsidy Amount'" [Label]="'Subsidy Amount'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-3 top15">
+                        <section class="example-section">
+                            <nfs-checkbox class="example-margin" formControlName="PRIVACYACTIND" [Name]="'PRIVACYACTIND'"
+                                [Label]="'Net Off'">
+                            </nfs-checkbox>
+                            <!-- <mat-checkbox class="example-margin" formControlName="PRIVACYACTIND">Net Off</mat-checkbox> -->
+                        </section>
+                    </div>
+                    <div class="col-md-12 searchBtns">
+                                        
+                        <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false"
+                            [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true">
+                        </nfs-button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+

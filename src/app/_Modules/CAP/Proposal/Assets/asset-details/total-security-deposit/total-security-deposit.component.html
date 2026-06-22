@@ -1,0 +1,141 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">RV Subsidy by factory</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer customAccordianMain">
+        <div class="col-md-12 noPadding">
+            <mat-accordion  [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Application Asset Financial Detail
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer">
+                        <div class="col-md-3 top15 customTop11">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Total Cost'" [Label]="'Total Cost'">
+                            </nfs-textbox> -->
+                            <nfs-currency [Placeholder]="'Total Cost'" [Label]="'Total Cost'" formControlName="TOTALCOST"
+                            [Name]="'TOTALCOST'" [Component]="'Assets'" [isControlDisable]=true>
+                        </nfs-currency>
+                        </div>
+                        <div class="col-md-3 top15 customTop11">
+                            <!-- <nfs-textbox [maxLength]="100" [Placeholder]="'Net Financed Amount'" [Label]="'Net Financed Amount'">
+                            </nfs-textbox> -->
+                            <nfs-currency [Placeholder]="'Net Financed Amount'" [Label]="'Net Financed Amount'"
+                            formControlName="ADJUSTEDFINANCEDAMT" [Name]="'ADJUSTEDFINANCEDAMT'" [Component]="'Assets'" [isControlDisable]=true>
+                        </nfs-currency>
+                        </div>
+                        <div class="col-md-3 top15 customTop11">
+                            <nfs-currency [maxLength]="100" [Placeholder]="'Down Payment'" [Label]="'Down Payment'" [isControlDisable]=true
+                            formControlName="CASHDEPOSITAMT" >
+                            </nfs-currency>
+                        </div>
+                        <div class="col-md-3 top15 customTop11">
+                            <!-- <nfs-textbox  [maxLength]="100" [Placeholder]="'Net Financed Amount (%)'" [Label]="'Net Financed Amount (%)'" >
+                            </nfs-textbox> -->
+                            <nfs-currency [Placeholder]="'Net Financed Amount (%)'" [Label]="'Net Financed Amount (%)'"
+                            formControlName="FINANNCEDPCT" [Name]="'FINANNCEDPCT'" [Component]="'Assets'" [isControlDisable]=true>
+                        </nfs-currency>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
+            <!-- <span class="SubHeading">Application Asset Financed Detail</span>
+            <div class="TabInnerMainForm">
+                <div class="row totalSecurityDepositBox">
+                    <div class="col-md-6 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Total Cost'" [Label]="'Total Cost'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-6 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Net Financed Amount'" [Label]="'Net Financed Amount'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-6 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Down Payment'" [Label]="'Down Payment'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-6 top15">
+                        <nfs-textbox  [maxLength]="100" [Placeholder]="'Net Financed Amount (%)'" [Label]="'Net Financed Amount (%)'" >
+                        </nfs-textbox>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+        <div class="col-md-12 noPadding topMargin35">
+
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" expanded="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Application Asset Security Deposit Detail
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="row fieldContainer padding20" >
+                        <div class="col-md-3 top15 customTop11">
+                            <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Deposit Calc Method'" [Label]="'Sec. Deposit Calc Method'" [isControlDisable]=true>
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15 customTop11">
+                            <nfs-currency [maxLength]="100" [Placeholder]="'Sec. Deposit %'" [Label]="'Sec. Deposit %'" [isControlDisable]=true >
+                            </nfs-currency>
+                        </div>
+                        <div class="col-md-3 top15 customTop11">
+                            <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Deposit Configuration'" [Label]="'Sec. Deposit Configuration'" [isControlDisable]=true>
+                            </nfs-textbox>
+                        </div>
+                        <div class="col-md-3 top15 customTop11">
+                            <nfs-currency  [maxLength]="100" [Placeholder]="'Sec. Deposit Amount'" [Label]="'Sec. Deposit Amount'" [isControlDisable]=true >
+                            </nfs-currency>
+                        </div>
+                        <div class="col-md-3" style="padding: 8px;padding-top: 0; margin-top: 6px !important;">
+                            <section class="example-section">
+                                <mat-checkbox class="example-margin"  [disabled]="true">Sec. Deposit Received by Introducer</mat-checkbox>
+                            </section>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
+            <!-- <span class="SubHeading">Application Asset Security Deposit Detail</span>
+            <div class="TabInnerMainForm">
+                <div class="row totalSecurityDepositBox">
+                    <div class="col-md-6 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Deposit Calc Method'" [Label]="'Sec. Deposit Calc Method'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-6 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Deposit %'" [Label]="'Sec. Deposit %'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-6 top15">
+                        <nfs-textbox [maxLength]="100" [Placeholder]="'Sec. Deposit Configuration'" [Label]="'Sec. Deposit Configuration'">
+                        </nfs-textbox>
+                    </div>
+                    <div class="col-md-6 top15">
+                        <nfs-textbox  [maxLength]="100" [Placeholder]="'Sec. Deposit Amount'" [Label]="'Sec. Deposit Amount'" >
+                        </nfs-textbox>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- <div class="col-md-12 searchBtns topMargin20">
+            <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false"
+                [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnOk()">
+            </nfs-button>
+        </div> -->
+    </div>
+</div>

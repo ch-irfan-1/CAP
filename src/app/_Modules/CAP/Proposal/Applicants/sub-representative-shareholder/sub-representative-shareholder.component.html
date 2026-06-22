@@ -1,0 +1,466 @@
+<div class="FormMain" [formGroup]="Representative">
+  <div class="row fieldContainer">
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Representative Type'" [controlPlaceholder]="'Representative Type'"
+        formControlName="REPRESENTATIVETYPE" [Name]="'REPRESENTATIVETYPE'" [Component]="this.ComponentName"
+        [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'" [AllowUnSelect] = "false"
+        [noSearchEntriesFoundLabel]="'No Matching Values'"
+        [DataArray]="this._masterDataService.RepresentativeType"
+      [Index] = "Index"></nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Type'" [controlPlaceholder]="'Type'" [Ismultiselect]="false"[AllowUnSelect] = "false"
+        formControlName="SHAREHOLDERTYPE" [Name]="'SHAREHOLDERTYPE'" [Component]="this.ComponentName" [EnableFilter]="true"
+        [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'" (selectionChange)="resetRepresentativeDetail($event)"
+        [DataArray]="this.typeDropdownList"
+      [Index] = "Index"></nfs-dropdown>
+    </div>
+    <div class="col-md-2 top15">
+      <nfs-dropdown [Label]="'Signatory'" [controlPlaceholder]="'Signatory'" [Ismultiselect]="false"
+        formControlName="SIGNATORYCDE" [Name]="'SIGNATORYCDE'" [Component]="this.ComponentName"
+        [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+        [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.Signatory"
+        [Index] = "Index">
+      </nfs-dropdown>
+    </div>
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'ID Type'" [controlPlaceholder]="'ID Type'" [Ismultiselect]="false"
+          formControlName="IDTYPECDE" [Name]="'IDTYPECDE'" [Component]="this.ComponentName" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this.idTypeList"
+          [Index] = "Index">
+        </nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'ID Number'" [Label]="'ID Number'" formControlName="IDCARDNBR"
+          [Name]="'IDCARDNBR'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Title'" [controlPlaceholder]="'Title'" [Ismultiselect]="false"
+          formControlName="TITLECDE" [Name]="'TITLECDE'" [Component]="this.ComponentName" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._masterDataService.TitleCode"
+          [Index] = "Index">
+        </nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'First Name'" [Label]="'First Name'"
+          formControlName="FIRSTNME" [Name]="'FIRSTNME'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'Middle Name'" [Label]="'Middle Name'"
+          formControlName="MIDDLENME" [Name]="'MIDDLENME'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'Last Name'" [Label]="'Last Name'" formControlName="LASTNME"
+          [Name]="'LASTNME'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-datepicker matInput [Placeholder]="'Enter Date'" [Label]="'Date Of Birth'"
+          formControlName="DATEOFBIRTH" [Name]="'DATEOFBIRTH'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-datepicker>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15" [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Age Years'" [Label]="'Age Years'" formControlName="AGEINYEAR"
+          [Name]="'AGEINYEAR'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15" [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Age Months'" [Label]="'Age Months'"
+          formControlName="AGEINMONTH" [Name]="'AGEINMONTHS'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Marital Status'" [controlPlaceholder]="'Marital Status'"
+          formControlName="MARITALSTATUSCDE" [Name]="'MARITALSTATUSCDE'" [Component]="this.ComponentName"
+          [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._masterDataService.MaritalStatusTypes"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Designation'" [controlPlaceholder]="'Designation'" formControlName="DESIGNATIONCDE"
+          [Name]="'DESIGNATIONCDE'" [Component]="this.ComponentName" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._employmentMasterDataService.Designation"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-email [maxLength]="50" [placeholder]="'Email'" [label]="'Email'" formControlName="EMAILADDRESS"
+          [Name]="'EMAILADDRESS'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-email>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="20" [Placeholder]="'Office Phone'" [Label]="'Office Phone'"
+          formControlName="OFFICEPHONE" [Name]="'OFFICEPHONE'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="20" [Placeholder]="'Home Phone'" [Label]="'Home Phone'"
+          formControlName="HOMEPHONE" [Name]="'HOMEPHONE'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="20" [Placeholder]="'Mobile Phone'" [Label]="'Mobile Phone'"
+          formControlName="MOBILEPHONE" [Name]="'MOBILEPHONE'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="20" [Placeholder]="'Fax'" [Label]="'Fax'" formControlName="FAX" [Name]="'FAX'"
+          [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Occupation'" [controlPlaceholder]="'Occupation'" [Ismultiselect]="false"
+          formControlName="OCCUPATIONCDE" [Name]="'OCCUPATIONCDE'" [Component]="this.ComponentName"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._masterDataService.OccupationsTypes"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'Company Name'" [Label]="'Company Name'"
+          formControlName="COMPANYNAMEINDIVIDUAL" [Name]="'COMPANYNAMEINDIVIDUAL'"
+          [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'Representative No.'" [Label]="'Representative No.'"
+          formControlName="REPRESENTATIVENBR" [Name]="'REPRESENTATIVENBR'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="50" [Placeholder]="'Tax Registration No.'" [Label]="'Tax Registration No.'"
+          formControlName="TAXREGISTRATIONNBR" [Name]="'TAXREGISTRATIONNBR'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Gender'" [controlPlaceholder]="'Gender'" [Ismultiselect]="false"
+          formControlName="GENDER" [Name]="'GENDER'" [Component]="this.ComponentName" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._masterDataService.GenderCode"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001' && (isRepresentativeTypeSelected==true || isTypeSelected==true)) {
+      <div class="col-md-2 top15"  [ngClass]="{ 'disabledDiv' : this.isPercentageShare }"
+        >
+        <nfs-currency [maxNumberLength]="3" [Placeholder]="'Percentage Share'" [Label]="'Percentage Share'"
+          formControlName="PERCENTAGESHARE" [Name]="'PERCENTAGESHARE'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001'&& (isRepresentativeTypeSelected==true || isTypeSelected==true)) {
+      <div class="col-md-2 top15"
+        >
+        <nfs-currency [maxLength]="100" [Placeholder]="'Deposited Capital'" [Label]="'Deposited Capital'"
+          formControlName="DEPOSITEDCAPITAL" [Name]="'DEPOSITEDCAPITAL'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00001'&& (isRepresentativeTypeSelected==true || isTypeSelected==true)) {
+      <div class="col-md-2 top15"
+        >
+        <nfs-currency [maxLength]="100" [Placeholder]="'Primary Capital'" [Label]="'Primary Capital'"
+          formControlName="PRIMARYCAPITAL" [Name]="'PRIMARYCAPITAL'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+    }
+    <!-------Company fields------->
+
+
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'ID Type'" [controlPlaceholder]="'ID Type'" [Ismultiselect]="false"
+          formControlName="IDTYPECDECOMY" [Name]="'IDTYPECDECOMY'" [Component]="this.ComponentName"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.idTypeList"
+          [Index] = "Index">
+        </nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'ID Number'" [Label]="'ID Number'"
+          formControlName="IDCARDNBRCOMY" [Name]="'IDCARDNBRCOMY'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+
+
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Name'" [Label]="'Name'" formControlName="COMPANYNAME"
+          [Name]="'COMPANYNAME'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Type'" [controlPlaceholder]="'Type'" [Ismultiselect]="false"
+          formControlName="TYPECDE" [Name]="'TYPECDE'" [Component]="this.ComponentName"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._masterDataService.ReferenceBusinessType"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Trading as'" [Label]="'Trading as'"
+          formControlName="TRADINGAS" [Name]="'TRADINGAS'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Business Type'" [controlPlaceholder]="'Business Type'"
+          formControlName="BUSINESSTYPECDE" [Component]="this.ComponentName" [Ismultiselect]="false"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._employmentMasterDataService.BusinessType" (selectionChange)="onChangeBusinessType($event)"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Business Line'" [controlPlaceholder]="'Business Line'" [Ismultiselect]="false"
+          formControlName="BUSINESSLINECDE" [Name]="'BUSINESSLINECDE'" [Component]="this.ComponentName"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="tempBusinessLineArray"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-datepicker readonly matInput [Placeholder]="'Established Since'" formControlName="ESTBSINC"
+          [Name]="'ESTBSINC'" [Component]="this.ComponentName" [Label]="'Established Since'" [Index] = "Index">
+        </nfs-datepicker>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15" [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Duration (Years)'" [Label]="'Duration (Years)'"
+          formControlName="AGEINYEARCOMP" [Name]="'AGEINYEARCOMP'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15" [ngClass]="'control-disabled'">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Duration (Months)'" [Label]="'Duration (Months)'"
+          formControlName="AGEINMONTHCOMP" [Name]="'AGEINMONTHCOMP'" [Component]="this.ComponentName">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-email [maxLength]="100" [placeholder]="'Email'" [label]="'Email'" formControlName="EMAILADDRESSCOMY"
+          [Name]="'EMAILADDRESSCOMY'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-email>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Economic Sector'" [controlPlaceholder]="'Economic Sector'" [Ismultiselect]="false"
+          formControlName="ECNMSCTRCDE" [Name]="'ECNMSCTRCDE'" [Component]="this.ComponentName"
+          [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._employmentMasterDataService.EconomicSector"
+        [Index] = "Index"></nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Tax Registion Number'" [Label]="'Tax Registion Number'"
+          formControlName="TAXREGISTRATIONNBRCOMY" [Name]="'TAXREGISTRATIONNBRCOMY'"
+          [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002' && (isRepresentativeTypeSelected==true || isTypeSelected==true)) {
+      <div class="col-md-2 top15"
+        >
+        <nfs-currency [Placeholder]="'Deposited Capital'" [Label]="'Deposited Capital'"
+          formControlName="DEPOSITEDCAPITALCOMY" [Name]="'DEPOSITEDCAPITALCOMY'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002' && (isRepresentativeTypeSelected==true || isTypeSelected==true)) {
+      <div class="col-md-2 top15" [ngClass]="{ 'disabledDiv' :  this.isPercentageShareEconomy }"
+        >
+        <nfs-currency  max="100" [maxNumberLength]="3" [Placeholder]="'Percentage Share'" [Label]="'Percentage Share'"
+          formControlName="PERCENTAGESHARECOMY" [Name]="'PERCENTAGESHARECOMY'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-textbox [maxLength]="100" [Placeholder]="'Company Format'" [Label]="'Company Format'"
+          formControlName="COMPANYFORMATCOMY" [Name]="'COMPANYFORMATCOMY'" [Component]="this.ComponentName" [Index] = "Index">
+        </nfs-textbox>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002' && (isRepresentativeTypeSelected==true || isTypeSelected==true)) {
+      <div class="col-md-2 top15"
+        >
+        <nfs-currency [maxLength]="100" [Placeholder]="'Primary Capital'" [Label]="'Primary Capital'"
+          formControlName="PRIMARYCAPITALCOMY" [Name]="'PRIMARYCAPITALCOMY'" [Component]="this.ComponentName">
+        </nfs-currency>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <nfs-dropdown [Label]="'Citizenship'" [controlPlaceholder]="'Citizenship'" formControlName="CTZNSHIPCDE"
+          [Name]="'CTZNSHIPCDE'" [Component]="this.ComponentName" [Ismultiselect]="false" [EnableFilter]="true"
+          [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+          [DataArray]="this._masterDataService.Citizenship"
+          [Index] = "Index">
+        </nfs-dropdown>
+      </div>
+    }
+    @if (this.Representative.controls.SHAREHOLDERTYPE.value=='00002') {
+      <div class="col-md-2 top15">
+        <section class="example-section">
+          <nfs-checkbox class="example-margin" formControlName="CONSENTTOSHARE" [Name]="'CONSENTTOSHARE'"
+            [Label]="'Consent To Share'">
+          </nfs-checkbox>
+          <!-- <mat-checkbox class="example-margin" formControlName="CONSENTTOSHARE">Consent To Share
+        </mat-checkbox> -->
+      </section>
+    </div>
+  }
+  <!------------------------>
+
+</div>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Address Detail
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="TabInnerMainForm">
+      <div class="row fieldContainer">
+        <div class="col-md-2 top15" [ngClass]="'control-disabled'">
+          <nfs-dropdown [Label]="'Country'" [controlPlaceholder]="'Country'" [Ismultiselect]="false"
+            formControlName="COUNTRYID" [Name]="'COUNTRYID'" [Component]="this.ComponentName"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this.CountryList"
+            [Index] = "Index">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-dropdown [Label]="'Province'" [controlPlaceholder]="'Province'" [Ismultiselect]="false"
+            formControlName="PROVINCEID" [Name]="'PROVINCEID'" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'"
+            [DataArray]="this._AddressMasterDataService.AllProvinceData" (selectionChange)="selectionChange_PROVINCEID($event)"
+            [Index] = "Index">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-dropdown [Label]="'Kotamadya/Kabupaten'" [controlPlaceholder]="'Kotamadya/Kabupaten'"
+            formControlName="KOTAMADYAIDOTO" [Name]="'KOTAMADYAIDOTO'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKotaByProvince" (selectionChange)="selectionChange_KOTAMADYAIDOTO($event)"
+            [Index] = "Index">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-dropdown [Label]="'Kecamatan'" [controlPlaceholder]="'Kecamatan'" [Ismultiselect]="false"
+            formControlName="KECAMATANIDOTO" [Name]="'KECAMATANIDOTO'" [EnableFilter]="true"
+            [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKecamatanByKota" (selectionChange)="selectionChange_KECAMATANIDOTO($event)"
+            [Index] = "Index">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-dropdown [Label]="'Kelurahan/Desa'" [controlPlaceholder]="'Kelurahan/Desa'"
+            formControlName="KELURAHANIDOTO" [Name]="'KELURAHANIDOTO'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+            [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.AllKelurahanByKeca"
+            [Index] = "Index">
+          </nfs-dropdown>
+        </div>
+        <div class="col-md-2 top15"
+          [ngClass]="{'control-disabled':  !(this.Representative.controls.KELURAHANIDOTO.value>0)}">
+          <nfs-number [maxLength]="3" [Placeholder]="'RW###'" [Label]="'RW###'" formControlName="RWOTO"
+            [Name]="'RWOTO'">
+          </nfs-number>
+        </div>
+        <div class="col-md-2 top15"
+          [ngClass]="{'control-disabled':  !(this.Representative.controls.KELURAHANIDOTO.value>0)}">
+          <nfs-number [maxLength]="3" [Placeholder]="'RT###'" [Label]="'RT###'" formControlName="RTOTO"
+            [Name]="'RTOTO'">
+          </nfs-number>
+        </div>
+        <div class="col-md-6 top15">
+          <nfs-textbox [maxLength]="500" [Placeholder]="'Address'" [Label]="'Address'"
+            formControlName="ADDRESSOTO" [Name]="'ADDRESSOTO'" [Index] = "Index">
+          </nfs-textbox>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-number [maxLength]="10" [Placeholder]="'Postal/Zip Code'" [Label]="'Postal/Zip Code'"
+            formControlName="POSTALCODE" [Name]="'POSTALCODE'">
+          </nfs-number>
+        </div>
+        <div class="col-md-2 top15">
+          <nfs-textbox [Placeholder]="'Area Code'" [Label]="'Area Code'"
+            formControlName="AREACDE"  [isControlDisable]="true">
+          </nfs-textbox>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>

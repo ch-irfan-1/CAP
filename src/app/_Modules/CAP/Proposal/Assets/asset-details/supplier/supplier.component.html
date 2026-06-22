@@ -1,0 +1,66 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Supplier/Dealer Search</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="row bodyContainer fieldContainer">
+        <div class="FormMain">
+            <div>
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title> Search Criteria </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div [formGroup]="this.SupplierSearchForm">
+                            <div class="row fieldContainer">
+                                <div class="col-md-3 top15">
+                                    <nfs-textbox formControlName="searchtxt" name="searchtxt" [maxLength]="100"
+                                        [Placeholder]="'Search By Name'" [Label]="'Search By Name'" [Name]="'searchtxt'">
+                                    </nfs-textbox>
+                                </div>
+                                <div class="col-md-3 btn-right IconBtnCircle">
+                                    <div>
+                                        <nfs-button [text]="''" [color]="'primary'" [disabled]="false" [matButton]="false"
+                                            [matRaisedButton]="false" [matRaisedButtonIcon]="true" [icon]="'search'"
+                                            (onBtnClick)='btnSearch()'></nfs-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <div class="topMargin20">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="true">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Results
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="tableMain rentalDetail">
+                            <nfs-static-grid [inputArr]="this.ProposalQueueDataset" [isRadioBtnRequired]="false"
+                                [IsActionRequired]="true" [ActionLabel]="'Select'" [IsDeleteRequired]="false"
+                                (SelectionChange)="LoadSupplierAction($event)" [columns]="ResultColumns" [Labels]="Labels"
+                                [pipes]="pipes">
+                            </nfs-static-grid>
+                        </div>
+                        <div class="col-md-12">
+                            <mat-paginator [selectConfig]="paginatorSelectConfig" [length]="totalRows" [pageSize]="selectedPageSize"
+                                [pageSizeOptions]="pageSizeOptions" (page)="PageSelectionChanged($event)">
+                            </mat-paginator>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        
+        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <h3 mat-dialog-title>Exposure Search</h3>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody">
+    <div class="">
+        <div class="TabInnerMain">
+            <mat-tab-group animationDuration="0ms" dynamicHeight >
+                <mat-tab label="Application Exposure">
+                    <ng-template matTabContent>
+                        <div class="tableMain rentalDetail">
+                            <div class="applicationExpScroll">
+                                <nfs-static-grid [inputArr]="this.FMLYPOSEXPR" [isRadioBtnRequired]="false"
+                                    [IsActionRequired]="false" [ActionLabel]="'Load Applicant'"
+                                    [IsDeleteRequired]="false" [columns]="appEXColumns" [Mode]="Mode"
+                                    [Labels]="appEXLabels" [pipes]="applicantexposurePipe">
+                                </nfs-static-grid>
+                            </div>
+                        </div>
+                    </ng-template>
+                </mat-tab>
+                <mat-tab label="Bad Customer">
+                    <ng-template matTabContent  class="top15">
+                        <mat-accordion>
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Internal Bad Customer
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="tableMain rentalDetail">
+                                    <nfs-static-grid [inputArr]="this.FMLYBLAKLISTEXPRINTR" [isRadioBtnRequired]="false"
+                                        [IsActionRequired]="false" [ActionLabel]="'Load Applicant'"
+                                        [IsDeleteRequired]="false" [columns]="internalBadCustColumns" [Mode]="Mode"
+                                        [Labels]="internalBadCustLabels" [pipes]="internalBadCustpips">
+                                    </nfs-static-grid>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+                        <mat-accordion class="top10 top10">
+                            <mat-expansion-panel [expanded]="true">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        External Bad Customer
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div class="tableMain rentalDetail">
+                                    <nfs-static-grid [inputArr]="this.FMLYBLAKLISTEXPREXTR" [isRadioBtnRequired]="false"
+                                        [IsActionRequired]="false" [ActionLabel]="'Load Applicant'"
+                                        [IsDeleteRequired]="false" [columns]="externalBadCustColumns" [Mode]="Mode"
+                                        [Labels]="externalBadCustLabels" [pipes]="externalBadCustpips">
+                                    </nfs-static-grid>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </ng-template>
+                </mat-tab>
+                <mat-tab label="Contract Exposure">
+                    <ng-template matTabContent>
+                        <div class="tableMain rentalDetail">
+                            <nfs-static-grid [inputArr]="this.FMLYCMSEXPR" [isRadioBtnRequired]="false"
+                                [columns]="contEXColumns" (ItemRemoved)="childOutput($event)" [IsActionRequired]="false"
+                                [ActionLabel]="'Load Applicant'" [IsDeleteRequired]="false"
+                                (SelectionChange)="childOutput($event)" [Mode]="Mode" [Labels]="contEXLabels" [pipes]="contractTermPipe">
+                            </nfs-static-grid>
+                        </div>
+                    </ng-template>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

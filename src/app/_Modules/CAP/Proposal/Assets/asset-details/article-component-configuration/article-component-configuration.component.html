@@ -1,0 +1,86 @@
+<div class="row popupHeader">
+  <div class="col-md-11">
+    <span class="popupMainHeading">Article Component Configuration</span>
+  </div>
+  <div class="col-md-1">
+    <button mat-icon-button class="close-button" [mat-dialog-close]="true" (click)="btnCancel_Click()">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="popupBody">
+  <div class="row bodyContainer fieldContainer customAccordianMain">
+    <div class="col-md-12 tableMain tableConfige" style="margin-top: 22px;">
+
+      <table mat-table [dataSource]="PRPLCMPTCNFG.value" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="AMNTCMPTCDE">
+          <th mat-header-cell *matHeaderCellDef> Component</th>
+          <td class="customWidth1" [style.display]="element.RowState == 4 ?'none':'table-cell'" mat-cell *matCellDef="let element">
+            <mat-form-field placeholder="never">
+              <mat-select [(value)]="element.AMNTCMPTCDE" disabled>
+                @for (data of this._insMasterData.AmountComponents; track data) {
+                  <mat-option
+                    [value]="data.code || data.id">
+                  {{ data.TextValue }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="AMNTCMPTCNFG">
+          <th mat-header-cell *matHeaderCellDef> Configuration Type</th>
+          <td class="customWidth2" mat-cell [style.display]="element.RowState == 4 ?'none':'table-cell'" *matCellDef="let element; let i=index">
+            <mat-form-field placeholder="never">
+              <mat-select [(value)]="element.AMNTCMPTCNFG" (selectionChange)="someMethod(i, element)"
+                [disabled]="this.isViewMode">
+                @for (data of this.filteredAssetComponent; track data) {
+                  <mat-option
+                    [value]="data.code || data.id">
+                  {{ data.TextValue }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="Component">
+        <th mat-header-cell *matHeaderCellDef> Component </th>
+        <td mat-cell *matCellDef="let element">
+          <nfs-textbox [maxLength]="100" [Placeholder]="'Policy Fee'" [Label]="''">
+          </nfs-textbox>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Configuration Type">
+        <th mat-header-cell *matHeaderCellDef> Configuration Type </th>
+        <td mat-cell *matCellDef="let element">
+          <nfs-dropdown [Label]="''" [controlPlaceholder]="'Upfront'" [Ismultiselect]="false"
+            [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+          [noSearchEntriesFoundLabel]="'No Matching Values'"></nfs-dropdown>
+        </td>
+      </ng-container>-->
+
+      <ng-container matColumnDef="PAYTOINTRODUCERIND">
+        <th mat-header-cell *matHeaderCellDef> Received by Dealer </th>
+        <td mat-cell [style.display]="element.RowState == 4 ?'none':'table-cell'" *matCellDef="let element; let i=index">
+          <section class="example-section">
+            <nfs-checkbox
+            (Change)="showOptions($event, i)" [(ngModel)]="element.PAYTOINTRODUCERIND" [isControlDisable]="this.isCF || element.IsDisabled ||  this.isViewMode"></nfs-checkbox>
+          </section>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+
+  <div class="col-md-12 searchBtns topMargin20">
+    <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [matButton]="false" [matRaisedButton]="false"
+      [matRaisedButtonIcon]="true" (onBtnClick)="btnOk_Click()">
+    </nfs-button>
+  </div>
+</div>
+
+</div>

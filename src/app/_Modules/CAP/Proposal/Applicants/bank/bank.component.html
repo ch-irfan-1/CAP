@@ -1,0 +1,40 @@
+<mat-tab-group #tabRef disableRipple (selectedIndexChange)="tabSelectionChange(tabRef.selectedIndex)">
+
+  @for (bank of (this.Banks.controls); track bank; let Bankindex = $index) {
+    <div>
+      @if (bank.controls.RowState.value != dataRowState.Removed) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Bank Info - {{getIndex(bank)+1}}
+            @if (!isViewMode) {
+              <button disableRipple class="tabsIconsAdjustment" (click)="removeBank(bank,Bankindex)"
+                mat-icon-button aria-label="remove tab">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </ng-template>
+          <ng-template matTabContent>
+            <app-sub-bank [Bank]="bank" [ComponentName]="this.getComponentName()" [Index]= "bank.value.VLDMSGIND + 1"
+            (DefaultBank)="this.defaultBankChange($event)"></app-sub-bank>
+          </ng-template>
+        </mat-tab>
+      }
+      <!-- <mat-tab  label="Bank {{Bankindex+1}}">
+      <app-sub-bank [Bank]="bank" (DefaultBank)="this.defaultBankChange($event)"></app-sub-bank>
+    </mat-tab>    -->
+  </div>
+}
+@if (!isViewMode) {
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <button class="addTab" (click)="AddBank()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      </button>
+    </ng-template>
+  </mat-tab>
+}
+@if (isViewMode && this.Banks.controls.length > 0) {
+  <mat-tab>
+  </mat-tab>
+}
+</mat-tab-group>

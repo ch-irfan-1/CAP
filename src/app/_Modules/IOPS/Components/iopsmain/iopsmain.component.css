@@ -1,0 +1,20 @@
+.posBtn {
+    display: inline-block;
+    padding: 0 25px;
+    font-size: 14px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    background: #f8f8f8;
+    color: #378a35 !important;
+    text-transform: capitalize;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  .commonForm {
+    padding: 15px 0;
+  }
+

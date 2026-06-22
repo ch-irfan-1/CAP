@@ -1,0 +1,200 @@
+<div class="genInfoPage TabInnerMain">
+  <div class="commonForm" [formGroup]="QoutMain">
+    <div>
+      <div class="row">
+        <div class="col-md-12 createLeadHeading topMargin30">
+          <p>Please fill in your Information</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer">
+            <div class="col-md-2 disable top15">
+              <nfs-textbox formControlName="QUOTATIONNBR" matInput name="Lead Number" [Placeholder]="'Lead Number'" [Name]="'QUOTATIONNBR'"
+                [Label]="'Lead Number'">
+              </nfs-textbox>
+            </div>
+            <!-- <div class="col-md-3"> </div> -->
+            <!-- <div class="col-md-3"> </div> -->
+            <!-- <div class="col-md-3"> </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer">
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="BPBRANCHID" [Name]="'BPBRANCHID'" [Label]="'Branch *'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AllBranches">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="BPINTRODUCERID" [Name]="'BPINTRODUCERID'" [Label]="'Dealer *'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AllDealerByBranch">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="FPGROUPID" [Label]="'FP Group *'" [Name]="'FPGROUPID'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+              [DataArray]="this._masterDataService.AllFpGroups"></nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-dropdown formControlName="FINANCIALPRODUCTID" [Label]="'FP Campaign *'"  [Name]="'FINANCIALPRODUCTID'"
+                [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+                [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+                [DataArray]="this._masterDataService.AllFpCampigns">
+              </nfs-dropdown>
+            </div>
+            <div class="col-md-2 top15">
+              <nfs-datepicker matInput formControlName="QUOTATIONDTE" name="QUOTATIONDTE" [Placeholder]="'Lead Date *'"
+                [Label]="'Lead Date *'">
+              </nfs-datepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-md-12 createLeadHeading">
+          <p>Lead Notes</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row fieldContainer">
+            <div class="col-md-6 textArea top15">
+              <nfs-textarea matInput formControlName="COMMENTS" [maxLength]="1000" matInput [Name]="'COMMENTS'"
+                [Placeholder]="'Lead Notes'" [Label]="'Lead Notes'">
+              </nfs-textarea>
+              <!--<mat-form-field appearance="fill" class="">
+              <mat-label>Comments</mat-label>
+              <textarea matInput placeholder="Comments"></textarea>
+            </mat-form-field>-->
+          </div>
+          @if (this.QoutMain.controls.APCSTATUSDSC.value == 'Assigned' && this.LoggedinUserRole!='00105') {
+            <div class="col-md-6 textArea top15">
+              <nfs-textarea matInput formControlName="APPLICATIONCENTERCOMMENTS" [maxLength]="255" matInput name="MHCOMMENTS"
+                [Placeholder]="'Assignment Comments'" [Label]="'Assignment Comments'" >
+              </nfs-textarea>
+              <!--<mat-form-field appearance="fill" class="">
+              <mat-label>APC User Comments</mat-label>
+              <textarea matInput placeholder="APC User Comments"></textarea>
+            </mat-form-field>>-->
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  @if (this.QoutMain.controls.APCSTATUSDSC.value == 'Cancelled') {
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row fieldContainer">
+          <div class="col-md-6 textArea top15">
+            <nfs-textarea matInput formControlName="CANCELLATIONCOMMENTS" [maxLength]="500" matInput name="CANCELLATIONCOMMENTS"
+              [Placeholder]="'Cancel Comments'" [Label]="'Cancel Comments'" >
+            </nfs-textarea>
+          </div>
+          <div class="col-md-2 top15">
+            <nfs-dropdown formControlName="CANCELLATIONREASON" [Label]="'Cancel Reason'" [controlPlaceholder]="'Select Some Values'"
+              [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Cancel Reason...'"
+              [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.CancellationTypes">
+            </nfs-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+
+<!-- <div class="row ml-2">
+<div class="col-lg-2 col-md-6">
+  <span class=validation-messages> &nbsp;
+    <small class="text-danger"></small>
+  </span>
+
+  <nfs-textbox formControlName="QUOTATIONNBR" matInput name="Lead Number" [Placeholder]="'Lead Number'"
+    [Label]="'Lead Number'">
+  </nfs-textbox>
+</div>
+</div>
+
+<div class="row ml-2">
+</div>
+
+<div class="row ml-2">
+  <div class="col-lg-2 col-md-6">
+    <span class=validation-messages> &nbsp;
+      <small class="text-danger"></small>
+    </span>
+    <nfs-dropdown formControlName="BPBRANCHID" [Label]="'Branch *'" [controlPlaceholder]="'Select Some Values'"
+      [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+      [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.AllBranches">
+    </nfs-dropdown>
+  </div>
+
+
+  <div class="col-lg-2 col-md-6">
+    <span class=validation-messages> &nbsp;
+      <small class="text-danger"></small>
+    </span>
+    <nfs-dropdown formControlName="BPINTRODUCERID" [Label]="'Dealer *'" [controlPlaceholder]="'Select Some Values'"
+      [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+      [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this._masterDataService.AllDealerByBranch">
+    </nfs-dropdown>
+  </div>
+
+  <div class="col-lg-2 col-md-6">
+    <span class=validation-messages> &nbsp;
+      <small class="text-danger"></small>
+    </span>
+    <nfs-dropdown formControlName="FPGROUPID" [Label]="'FP Group *'" [controlPlaceholder]="'Select Some Values'"
+      [Ismultiselect]="false" [EnableFilter]="true" [FilterControlPlaceholder]="'Find Some Values...'"
+    [noSearchEntriesFoundLabel]="'No Matching Values'" [DataArray]="this.fpData"></nfs-dropdown>
+  </div>
+
+  <div class="col-lg-2 col-md-6">
+    <span class=validation-messages> &nbsp;
+      <small class="text-danger"></small>
+    </span>
+    <nfs-dropdown formControlName="FINANCIALPRODUCTID" [Label]="'FP Campaign *'"
+      [controlPlaceholder]="'Select Some Values'" [Ismultiselect]="false" [EnableFilter]="true"
+      [FilterControlPlaceholder]="'Find Some Values...'" [noSearchEntriesFoundLabel]="'No Matching Values'"
+    [DataArray]="this.fpCampaignData"></nfs-dropdown>
+  </div>
+
+  <div class="col-lg-2 col-md-6">
+    <span class=validation-messages> &nbsp;
+      <small class="text-danger"></small>
+    </span>
+    <nfs-datepicker matInput formControlName="QUOTATIONDTE" name="QUOTATIONDTE" [Placeholder]="'Lead Date *'"
+      [Label]="'Lead Date *'">
+
+    </nfs-datepicker>
+  </div>
+
+</div>
+<div class="row ml-2">
+</div>
+<div class="row ml-2">
+  <div class="col-lg-2 col-md-6">
+    <span class=validation-messages> &nbsp;
+      <small class="text-danger"></small>
+    </span>
+    <mat-form-field class="text-area">
+      <textarea rows="5" cols="40" matInput formControlName="COMMENTS" maxlength="1000" matInput name="Lead Notes"
+      placeholder="Lead Notes"></textarea>
+    </mat-form-field>
+  </div>
+</div> -->
+</div>
+</div>

@@ -1,0 +1,36 @@
+<mat-tab-group #tabRef disableRipple (selectedIndexChange)="tabSelectionChange(tabRef.selectedIndex)">
+  @for (reference of (this.ApplicantReference.controls| RemovedStateFilter); track reference; let referenceIndex = $index) {
+    <div>
+      @if (reference.controls.RowState.value != dataRowState.Removed) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            Reference Info - {{referenceIndex+1}}
+            @if (!isViewMode) {
+              <button disableRipple class="tabsIconsAdjustment" (click)="removeReference(reference, referenceIndex)"
+                mat-icon-button aria-label="remove tab">
+                <mat-icon>close</mat-icon>
+              </button>
+            }
+          </ng-template>
+          <ng-template matTabContent>
+            <app-sub-reference [Reference]="reference" [ComponentName]="this.getComponentName()" [Index]= "referenceIndex + 1">
+            </app-sub-reference>
+          </ng-template>
+        </mat-tab>
+      }
+    </div>
+  }
+  @if (!isViewMode) {
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <button class="addTab" (click)="AddReference()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+        </button>
+      </ng-template>
+    </mat-tab>
+  }
+  @if (isViewMode && this.ApplicantReference.controls.length > 0) {
+    <mat-tab>
+    </mat-tab>
+  }
+</mat-tab-group>

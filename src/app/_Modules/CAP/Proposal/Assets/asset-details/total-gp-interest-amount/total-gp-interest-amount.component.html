@@ -1,0 +1,41 @@
+<div class="row popupHeader">
+    <div class="col-md-11">
+        <span class="popupMainHeading">Grace Period Detail</span>
+    </div>
+    <div class="col-md-1">
+        <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+            <mat-icon class="close-icon" color="warn">close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="popupBody gpInterest">
+    <div class="customAccordianMain">
+        <div class="row">
+            <div mat-dialog-content>
+                <ng-container [formGroup]="this.PROPOSALFINANCIALAGREEMENT">
+                <div class="row fieldContainer noMargin">
+                    <div class="col-md-3 top15 customTopBottom">
+                        <nfs-number formControlName="GPFREQUENCY" [Name]="'GPFREQUENCY'" (Change)="this.ValidateGPTerms($event, 'GPFREQUENCY')" [maxLength]="3" [Placeholder]="'GP Frequency (Months)'" [Label]="'GP Frequency (Months)'">
+                        </nfs-number>
+                    </div>
+                    <div class="col-md-3 top15 customTopBottom customleft">
+                        <nfs-number formControlName="GPTERMS" [Name]="'GPTERMS'" (Change)="this.ValidateGPTerms($event, 'GPTERMS')" [maxLength]="3" [Placeholder]="'Grace Periods Terms (Months)'" [Label]="'Grace Periods Terms (Months)'">
+                        </nfs-number>
+                    </div>
+                    <div class="col-md-3 top15 customTopBottom customleftPadding">
+                        <nfs-currency formControlName="GPINTERESTRTEFLAT" [Name]="'GPINTERESTRTEFLAT'" (Change)="this.ValidateGPTerms($event, 'GPINTERESTRTEFLAT')" [maxNumberLength]="3" [Placeholder]="'GP Interest Rate (Flat)'" [Label]="'GP Interest Rate (Flat)'"
+                        [mask] = "'separator.4'" (Change)= "gpInterestChange($event)">
+                        </nfs-currency>
+                    </div>
+                    <div class="col-md-3 searchBtns top15 customTopBottomBtn">
+                        <nfs-button [text]="'Ok'" [color]="'primary'" [disabled]="false" [alwaysEnable]="true"
+                            [matButton]="false" [matRaisedButton]="false" [matRaisedButtonIcon]="true" (onBtnClick)="btnOk()">
+                        </nfs-button>
+                    </div>
+                </div>
+            </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+

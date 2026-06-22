@@ -1,0 +1,85 @@
+<header [class.active1]="classApplied">
+  <div class="row">
+    <div class="col-md-6 col-xs-3 ">
+      <h2>{{elementClicked}}</h2>
+    </div>
+    <div class="col-md-6 col-xs-9 ">
+      <div style="float: right; clear: both;">
+        <span>
+          <!-- <img src="assets/Images/notification.png" class="headerNotif" /> -->
+          <!-- <img src="assets/Images/message.png" class="headerNotif" /> -->
+        </span>
+        <span>
+          <!-- <img src="assets/Images/new-user-icon2.png" /> -->
+        </span>
+        <span [matMenuTriggerFor]="menu" class="menuIcon">
+          <span class="userName">
+            {{this.username}}
+          </span>
+          <img src="assets/Images/down.png" />
+        </span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)='openDialog()'>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+
+</header>
+<div class="leftNav" [class.active1]="classApplied">
+  @if (this.appConfig.CompanyCode === '001') {
+    <img src="assets/Images/otoLogo.png" class="menuLogo" />
+  }
+  @if (this.appConfig.CompanyCode === '002') {
+    <img src="assets/Images/sof_logo.png" class="menuLogo" />
+  }
+  <button type="text" class="mobile-menu mobileOpnMenu desktopView">
+    <img src="assets/Images/collapseIcon.png" (click)="openMenu()" class="collapseOpen" />
+    <img src="assets/Images/collapseClose.png" (click)="openMenu()" class="collapseClose" />
+  </button>
+  <button type="text" class="mobile-menu mobileOpnMenu tabView">
+    <img src="assets/Images/collapseIcon.png" class="collapseOpen" />
+  </button>
+
+  <ul class="nav">
+    <li class="dashboardIcon tooltip " routerLinkActive="active" (click)="clickMe($event, 3)">
+      <a routerLink="/welcome">
+        <p></p>
+        <h4>Dashboard</h4>
+        <span class="tooltiptext">Dashboard</span>
+      </a>
+    </li>
+    <li class="iops tooltip createLead" *hasClaim="'canCreateLead'" routerLinkActive="active" (click)="clickMe($event , 1)">
+      <a routerLink="/IOPS/applicantType">
+        <p></p>
+        <h4>Create Lead</h4>
+        <span class="tooltiptext">Create Lead</span>
+      </a>
+    </li>
+    <li class="workQueue tooltip " *hasClaim="'canAccessLeadWorkqueue'" routerLinkActive="active"
+      (click)="clickMe($event, 2)">
+      <a routerLink="/WorkQueue">
+        <p></p>
+        <h4>Lead Queue</h4>
+        <span class="tooltiptext">Lead Queue</span>
+      </a>
+    </li>
+    <li class="iops tooltip " *hasClaim="'canCreateApplication'" routerLinkActive="active" (click)="clickMe($event, 4)">
+      <a routerLink="/Proposal/createProposal">
+        <p></p>
+        <h4>Create Proposal</h4>
+        <span class="tooltiptext">Create Proposal</span>
+      </a>
+    </li>
+    <li class="workQueue tooltip proposalueue" *hasClaim="'canAccessApplicationWorkqueue'" routerLinkActive="active"
+      (click)="clickMe($event, 5)">
+      <a routerLink="/ProposalQueue">
+        <p></p>
+        <h4>Proposal Queue</h4>
+        <span class="tooltiptext">Proposal Queue</span>
+      </a>
+    </li>
+  </ul>
+</div>

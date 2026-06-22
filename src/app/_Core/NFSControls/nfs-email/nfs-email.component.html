@@ -1,0 +1,11 @@
+<div>
+  <mat-form-field appearance="fill" class="directive controls-margin" [ngClass]="{'mandatory': isRequired}">
+    <mat-label [matTooltip]="label">{{label}}</mat-label>
+    <input class="customEmail" [formControl]="emailControl" maxlength="{{maxLength}}" type="email" placeholder="{{placeholder}}"
+      matInput maxlength="maxlength" minlength="minlength" autocomplete="{{autoComplete}}"
+      [readonly]="isControlDisable" [tabIndex]="SetTabIndex()" [matTooltip]="tooltipValue">
+    @if (isFieldNotValid()) {
+      <mat-error class="text-danger">{{ErrorMessage}}</mat-error>
+    }
+  </mat-form-field>
+</div>
