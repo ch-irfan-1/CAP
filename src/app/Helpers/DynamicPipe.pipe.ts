@@ -13,7 +13,7 @@ export class DynamicPipe implements PipeTransform {
         return eval('this.' + modifier + '(\'' + value + '\')')
     }
 
-    // adding a default format in case you don't want to pass the format
+    // adding a default for in case you don't want to pass the format
     // then 'dd-MM-yyyy' will be used
     formatDate(date: Date | string, format: string = 'dd-MM-yyyy'): string | null {
         if (date != 'null')
